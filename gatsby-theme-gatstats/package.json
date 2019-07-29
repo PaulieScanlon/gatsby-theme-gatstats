@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-theme-jam-example",
-  "author": "Jason Lengstorf <jason@gatsbyjs.com>",
+  "name": "gatsby-theme-gatstats",
+  "author": "Paul Scanlon <pauliescanlon@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jlengstorf/gatsby-theme-jam-example.git"
+    "url": "https://github.com/pauliescanlon/gatsby-theme-gatstats.git"
   },
   "version": "1.0.1",
   "main": "index.js",
@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.14",
-    "@mdx-js/react": "^1.0.21",
+    "@mdx-js/mdx": "^1.1.0",
     "gatsby-plugin-theme-ui": "^0.2.2",
     "theme-ui": "^0.2.2"
   },
