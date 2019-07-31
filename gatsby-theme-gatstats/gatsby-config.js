@@ -1,3 +1,5 @@
+const path = require("path")
+
 module.exports = {
   siteMetadata: {
     title: "Gatstats",
@@ -22,6 +24,12 @@ module.exports = {
       options: {
         name: "pages",
         path: `${__dirname}/src/pages`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: path.join(__dirname, `src/pages`),
       },
     },
   ],

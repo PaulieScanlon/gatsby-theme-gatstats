@@ -1,11 +1,6 @@
 import React from "react"
 import { css, Global } from "@emotion/core"
-import {
-  ThemeProvider,
-  Layout as StyledLayout,
-  Container,
-  Styled,
-} from "theme-ui"
+import { ThemeProvider, Layout, Container, Styled } from "theme-ui"
 import { graphql, StaticQuery } from "gatsby"
 
 import theme from "../gatsby-plugin-theme-ui"
@@ -14,7 +9,7 @@ import { SideBar } from "../components/SideBar"
 import { AppBar } from "../components/AppBar"
 import { Content } from "../components/Content"
 
-const Layout = ({ children }) => {
+const DefaultLayout = ({ children }) => {
   const [isNavOpen, setNavOpen] = React.useState(true)
 
   return (
@@ -39,7 +34,7 @@ const Layout = ({ children }) => {
         return (
           <ThemeProvider theme={theme}>
             <Styled.root>
-              <StyledLayout>
+              <Layout>
                 <Global
                   styles={css`
                     body {
@@ -58,7 +53,7 @@ const Layout = ({ children }) => {
                 <Content marginLeft={sideBarWidth}>
                   <Container>{children}</Container>
                 </Content>
-              </StyledLayout>
+              </Layout>
             </Styled.root>
           </ThemeProvider>
         )
@@ -67,4 +62,4 @@ const Layout = ({ children }) => {
   )
 }
 
-export default Layout
+export default DefaultLayout
