@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import PropTypes from "prop-types"
 
+import { ThemeToggle } from "../ThemeToggle"
+
 import { Styled, jsx } from "theme-ui"
 
 export const AppBar = ({ handleOpen }) => {
@@ -9,13 +11,15 @@ export const AppBar = ({ handleOpen }) => {
       sx={{
         alignItems: "center",
         display: "flex",
-        backgroundColor: "mutedLight",
+        justifyContent: "space-between",
+        backgroundColor: "background",
         boxSizing: "border-box",
         padding: 3,
         width: "100%",
       }}
     >
       <button onClick={() => handleOpen()}>open nav</button>
+      <ThemeToggle />
     </Styled.div>
   )
 }

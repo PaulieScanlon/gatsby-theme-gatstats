@@ -10,7 +10,7 @@ const pseudo = {
   color: "primary",
   "::before": {
     content: '"./"',
-    color: "success",
+    color: "secondary",
   },
   "::after": {
     content: '"~"',
@@ -35,24 +35,26 @@ export default {
     bold: 700,
   },
 
-  initialColorMode: "light",
+  initialColorMode: "dark",
 
   colors: {
-    text: "#f8f8f2",
-    background: "#171c30",
     primary: "#ff79c6",
     secondary: "#8be9fd",
-    success: "#50fa7b",
-    error: "#ff5555",
-    warning: "#f1fa8c",
+    text: "#171c30",
     mutedText: "#656e8b",
     mutedLight: "#2d3a5c",
     mutedDark: "#272d47",
+    background: "#f7f7f7",
+
     modes: {
       dark: {
-        text: "#353535",
-        background: "#ECEBF2",
-        primary: "#E64869",
+        primary: "#ff79c6",
+        secondary: "#8be9fd",
+        text: "#f7f7f7",
+        mutedText: "#656e8b",
+        mutedLight: "#2d3a5c",
+        mutedDark: "#272d47",
+        background: "#171c30",
       },
     },
   },

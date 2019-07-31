@@ -1,9 +1,8 @@
 /** @jsx jsx */
 import PropTypes from "prop-types"
-import { ClassNames } from "@emotion/core"
 
 import { StaticQuery, graphql, Link } from "gatsby"
-import { Styled, jsx, useThemeUI } from "theme-ui"
+import { Styled, jsx } from "theme-ui"
 
 export const SideBar = ({
   title,
@@ -13,8 +12,6 @@ export const SideBar = ({
   width,
 }) => {
   const conditionalLeft = isNavOpen ? "0" : "-100%"
-
-  const context = useThemeUI()
 
   return (
     <Styled.div
@@ -80,67 +77,62 @@ export const SideBar = ({
         `}
         render={data => {
           return (
-            <ClassNames>
-              {({ css }) => (
-                <Styled.ul
-                  sx={{
-                    padding: 0,
-                    margin: 0,
-                  }}
-                >
-                  {data.allMdx.edges
-                    .sort((item, i) => {
-                      return item.node.parent.name === "index"
-                        ? -1
-                        : i === "index"
-                        ? 1
-                        : 0
-                    })
-                    .map((item, index) => {
-                      const { name } = item.node.parent
+            <Styled.ul
+              sx={{
+                padding: 0,
+                margin: 0,
+              }}
+            >
+              {data.allMdx.edges
+                .sort((item, i) => {
+                  return item.node.parent.name === "index"
+                    ? -1
+                    : i === "index"
+                    ? 1
+                    : 0
+                })
+                .map((item, index) => {
+                  const { name } = item.node.parent
 
-                      return (
-                        <Link
-                          key={index}
-                          to={`/${name === "index" ? "" : name}`}
-                          sx={{
-                            color: "mutedText",
-                            display: "flex",
-                            paddingTop: 3,
-                            paddingBottom: 3,
-                            textDecoration: "none",
-                            textTransform: "capitalize",
-                            transition: ".2s linear all",
-                            "::before": {
-                              backgroundColor: "background",
-                              content: `""`,
-                              marginTop: -3,
-                              marginBottom: -3,
-                              marginRight: 3,
-                              width: 2,
-                            },
-                            ":hover": {
-                              color: "text",
-                              backgroundColor: "mutedLight",
-                            },
-                          }}
-                          activeClassName={css`
-                            color: ${context.theme.colors.text} !important;
-                            background-color: ${context.theme.colors
-                              .mutedLight} !important;
-                            &::before {
-                              background-color: ${context.theme.colors
-                                .primary} !important;
-                            }
-                          `}
-                        >
-                          {name === "index" ? "dashboard" : name}
-                        </Link>
-                      )
-                    })}
-                </Styled.ul>
-              )}
-            </ClassNames>
+                  return (
+                    <Link
+                      key={index}
+                      to={`/${name === "index" ? "" : name}`}
+                      sx={{
+                        color: "mutedText",
+                        display: "flex",
+                        paddingTop: 3,
+                        paddingBottom: 3,
+                        textDecoration: "none",
+                        textTransform: "capitalize",
+                        transition: ".2s linear all",
+                        "::before": {
+                          backgroundColor: "background",
+                          content: `""`,
+                          marginTop: -3,
+                          marginBottom: -3,
+                          marginRight: 3,
+                          width: 2,
+                        },
+                        ":hover": {
+                          color: "text",
+                          backgroundColor: "mutedLight",
+                        },
+                        "&.active": {
+                          color: "text",
+                          backgroundColor: "mutedLight",
+                          "::before": {
+                            backgroundColor: "primary",
+                          },
+                        },
+                      }}
+                      activeClassName="active"
+                    >
+                      {name === "index" ? "dashboard" : name}
+                    </Link>
+                  )
+                })}
+            </Styled.ul>
           )
         }}
       />
