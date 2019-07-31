@@ -1,14 +1,9 @@
-const transitions = {
-  transition: ".1s linear all",
-}
-
 const headings = {
   color: "text",
   fontFamily: "heading",
-  lineHeight: "1.2",
   fontWeight: "heading",
+  lineHeight: "normal",
   margin: 0,
-  ...transitions,
 }
 
 const pseudo = {
@@ -40,22 +35,19 @@ export default {
     bold: 700,
   },
 
-  lineHeights: {
-    body: 1.5,
-    heading: 1.125,
-  },
-
   initialColorMode: "light",
 
   colors: {
     text: "#f8f8f2",
-    background: "#282a36",
+    background: "#171c30",
     primary: "#ff79c6",
     secondary: "#8be9fd",
     success: "#50fa7b",
     error: "#ff5555",
     warning: "#f1fa8c",
-    muted: "#6272a4",
+    mutedText: "#656e8b",
+    mutedLight: "#2d3a5c",
+    mutedDark: "#272d47",
     modes: {
       dark: {
         text: "#353535",
@@ -82,25 +74,14 @@ export default {
       lineHeight: "body",
     },
 
-    Header: {
-      padding: [3, 4],
-      fontSize: 4,
-      justifyContent: "space-between",
-      color: "text",
-      bg: "background",
-    },
-
     Layout: {
+      position: "relative",
       color: "text",
       bg: "background",
     },
 
     Container: {
-      padding: [3, 4],
-    },
-
-    Footer: {
-      padding: 4,
+      padding: 3,
     },
 
     h1: {
@@ -142,7 +123,7 @@ export default {
       marginBottom: 1,
       fontWeight: "body",
       fontSize: 1,
-      color: "muted",
+      color: "text",
     },
 
     p: {
@@ -174,8 +155,8 @@ export default {
     },
 
     a: {
-      color: "muted",
-      ...transitions,
+      color: "mutedText",
+      transition: ".2s linear all",
       ":hover": {
         color: "text",
       },

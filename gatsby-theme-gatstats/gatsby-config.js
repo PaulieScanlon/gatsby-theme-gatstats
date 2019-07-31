@@ -1,6 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Theme Gatstats",
+    title: "Gatstats",
+    description:
+      "A Gatsby blog dashboard theme for blog statistics and GitHub recent activity.",
+    config: {
+      sideBarWidth: 300,
+    },
   },
   plugins: [
     "gatsby-plugin-theme-ui",
@@ -8,8 +13,15 @@ module.exports = {
       resolve: "gatsby-plugin-mdx",
       options: {
         defaultLayouts: {
-          default: require.resolve("./src/components/layout.js"),
+          default: require.resolve("./src/templates/defaultLayout.js"),
         },
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: `${__dirname}/src/pages`,
       },
     },
   ],
