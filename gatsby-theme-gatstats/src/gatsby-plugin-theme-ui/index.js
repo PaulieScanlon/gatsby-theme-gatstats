@@ -14,7 +14,7 @@ const pseudo = {
   },
   "::after": {
     content: '"~"',
-    color: "secondary",
+    color: "tertiary",
   },
 }
 
@@ -38,23 +38,23 @@ export default {
   initialColorMode: "dark",
 
   colors: {
-    primary: "#ff79c6",
-    secondary: "#8be9fd",
-    text: "#171c30",
-    mutedText: "#656e8b",
-    mutedLight: "#2d3a5c",
-    mutedDark: "#272d47",
-    background: "#f7f7f7",
+    primary: "#e963d7",
+    secondary: "#ffbf83",
+    tertiary: "#4e3aef",
+    text: "#ffffff",
+    mutedText: "#6e6eae",
+    mutedLight: "#000063",
+    background: "#000037",
 
     modes: {
-      dark: {
-        primary: "#ff79c6",
-        secondary: "#8be9fd",
-        text: "#f7f7f7",
-        mutedText: "#656e8b",
-        mutedLight: "#2d3a5c",
-        mutedDark: "#272d47",
-        background: "#171c30",
+      light: {
+        primary: "#e963d7",
+        secondary: "#ffbf83",
+        tertiary: "#4e3aef",
+        text: "#000037",
+        mutedText: "#a8a8bb",
+        mutedLight: "#ffffff",
+        background: "#f7f7f7",
       },
     },
   },

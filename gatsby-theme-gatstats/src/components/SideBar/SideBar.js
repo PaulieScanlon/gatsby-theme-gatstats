@@ -16,7 +16,7 @@ export const SideBar = ({
   return (
     <Styled.div
       sx={{
-        backgroundColor: "mutedDark",
+        backgroundColor: "mutedLight",
         display: "flex",
         flexDirection: "column",
         height: "100%",
@@ -120,7 +120,7 @@ export const SideBar = ({
                         },
                         "&.active": {
                           color: "text",
-                          backgroundColor: "mutedLight",
+                          backgroundColor: "background",
                           "::before": {
                             backgroundColor: "primary",
                           },
