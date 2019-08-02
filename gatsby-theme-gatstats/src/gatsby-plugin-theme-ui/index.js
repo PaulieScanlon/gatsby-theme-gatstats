@@ -43,8 +43,8 @@ export default {
     tertiary: "#4e3aef",
     text: "#ffffff",
     mutedText: "#6e6eae",
-    mutedLight: "#000063",
-    background: "#000037",
+    mutedLight: "#212241",
+    background: "#1b1c3b",
 
     modes: {
       light: {

@@ -116,7 +116,7 @@ export const SideBar = ({
                         },
                         ":hover": {
                           color: "text",
-                          backgroundColor: "mutedLight",
+                          backgroundColor: "background",
                         },
                         "&.active": {
                           color: "text",
