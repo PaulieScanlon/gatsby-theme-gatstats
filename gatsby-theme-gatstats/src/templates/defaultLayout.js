@@ -1,6 +1,7 @@
+/** @jsx jsx */
 import React from "react"
 import { css, Global } from "@emotion/core"
-import { ThemeProvider, Layout, Container, Styled } from "theme-ui"
+import { ThemeProvider, Layout, Container, Styled, jsx } from "theme-ui"
 import { graphql, StaticQuery } from "gatsby"
 
 import theme from "../gatsby-plugin-theme-ui"
@@ -49,6 +50,22 @@ const DefaultLayout = ({ children }) => {
                   width={sideBarWidth}
                   isNavOpen={isNavOpen}
                   handleClose={() => setNavOpen(false)}
+                />
+                {/* @TODO make this into a light box*/}
+                <Styled.div
+                  sx={{
+                    position: "absolute",
+                    backgroundColor: "#000",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    opacity: isNavOpen ? 0.5 : 0,
+                    zIndex: 1,
+                    transition: ".2s linear opacity",
+                    display: ["block", "block", "none"],
+                  }}
+                  onClick={() => setNavOpen(false)}
                 />
                 <Content marginLeft={sideBarWidth}>
                   <Container>{children}</Container>

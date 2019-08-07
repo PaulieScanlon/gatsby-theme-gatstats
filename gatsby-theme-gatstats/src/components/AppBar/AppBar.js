@@ -16,6 +16,7 @@ export const AppBar = ({ handleOpen }) => {
         boxSizing: "border-box",
         padding: 3,
         width: "100%",
+        zIndex: 2,
       }}
     >
       <button onClick={() => handleOpen()}>open nav</button>

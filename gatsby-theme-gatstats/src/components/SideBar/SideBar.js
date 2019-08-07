@@ -4,6 +4,8 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql, Link } from "gatsby"
 import { Styled, jsx } from "theme-ui"
 
+import { Icon } from "../Icon"
+
 export const SideBar = ({
   title,
   description,
@@ -17,6 +19,7 @@ export const SideBar = ({
     <Styled.div
       sx={{
         backgroundColor: "mutedLight",
+        boxShadow: [2, 2, 0],
         display: "flex",
         flexDirection: "column",
         height: "100%",
@@ -27,6 +30,7 @@ export const SideBar = ({
         position: ["absolute", "absolute", "fixed"],
         transition: "0.4s ease-in-out left",
         width: ["100%", width],
+        zIndex: 3,
       }}
     >
       <Styled.div
@@ -99,6 +103,7 @@ export const SideBar = ({
                       key={index}
                       to={`/${name === "index" ? "" : name}`}
                       sx={{
+                        alignItems: "center",
                         color: "mutedText",
                         display: "flex",
                         paddingTop: 3,
@@ -106,6 +111,9 @@ export const SideBar = ({
                         textDecoration: "none",
                         textTransform: "capitalize",
                         transition: ".2s linear all",
+                        svg: {
+                          marginRight: 3,
+                        },
                         "::before": {
                           backgroundColor: "background",
                           content: `""`,
@@ -116,11 +124,13 @@ export const SideBar = ({
                         },
                         ":hover": {
                           color: "text",
+
                           backgroundColor: "background",
                         },
                         "&.active": {
                           color: "text",
                           backgroundColor: "background",
+
                           "::before": {
                             backgroundColor: "primary",
                           },
@@ -128,6 +138,7 @@ export const SideBar = ({
                       }}
                       activeClassName="active"
                     >
+                      <Icon iconPath="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z" />
                       {name === "index" ? "dashboard" : name}
                     </Link>
                   )
