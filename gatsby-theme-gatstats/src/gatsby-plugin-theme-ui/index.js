@@ -19,7 +19,7 @@ const pseudo = {
 }
 
 export default {
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  space: [0, 4, 8, 16, 32, 48, 64, 128, 256, 512],
 
   fonts: {
     body: "system-ui, sans-serif",
