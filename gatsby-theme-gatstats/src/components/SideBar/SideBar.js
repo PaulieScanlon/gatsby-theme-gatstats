@@ -15,6 +15,33 @@ export const SideBar = ({
 }) => {
   const conditionalLeft = isNavOpen ? "0" : "-100%"
 
+  const linkStyles = {
+    alignItems: "center",
+    color: "mutedText",
+    borderLeftStyle: "solid",
+    borderLeftWidth: 3,
+    borderColor: "background",
+    display: "flex",
+    paddingTop: 3,
+    paddingBottom: 3,
+    textDecoration: "none",
+    textTransform: "capitalize",
+    transition: ".2s linear all",
+    svg: {
+      marginRight: 3,
+      marginLeft: 3,
+    },
+    ":hover": {
+      color: "text",
+      backgroundColor: "background",
+    },
+    "&.active-nav-item": {
+      color: "text",
+      backgroundColor: "background",
+      borderColor: "primary",
+    },
+  }
+
   return (
     <Styled.div
       sx={{
@@ -75,6 +102,7 @@ export const SideBar = ({
                   parent {
                     ... on File {
                       name
+                      relativeDirectory
                     }
                   }
                 }
@@ -98,6 +126,7 @@ export const SideBar = ({
                     ? 1
                     : 0
                 })
+                .filter(item => item.node.parent.relativeDirectory === "")
                 .map((item, index) => {
                   const { name } = item.node.parent
                   const { icon } = item.node.frontmatter
@@ -107,40 +136,28 @@ export const SideBar = ({
                       key={index}
                       sx={{
                         margin: 0,
+
+                        a: {
+                          ...linkStyles,
+                        },
                       }}
                     >
                       <Link
                         to={`/${name === "index" ? "" : name}`}
-                        sx={{
-                          alignItems: "center",
-                          color: "mutedText",
-                          borderLeftStyle: "solid",
-                          borderLeftWidth: 3,
-                          borderColor: "background",
-                          display: "flex",
-                          paddingTop: 3,
-                          paddingBottom: 3,
-                          textDecoration: "none",
-                          textTransform: "capitalize",
-                          transition: ".2s linear all",
-                          svg: {
-                            marginRight: 3,
-                            marginLeft: 3,
-                          },
-                          ":hover": {
-                            color: "text",
-                            backgroundColor: "background",
-                          },
-                          "&.active-nav-item": {
-                            color: "text",
-                            backgroundColor: "background",
-                            borderColor: "primary",
-                          },
-                        }}
+                        partiallyActive={true}
                         activeClassName="active-nav-item"
+                        // activeClassName={
+                        //   name === "index" ? null : "active-nav-item"
+                        // }
+                        // activeClassName="active-nav-item"
+                        // getProps={({ isPartiallyCurrent }) =>
+                        //   isPartiallyCurrent
+                        //     ? { className: "active-nav-item" }
+                        //     : null
+                        // }
                       >
                         <Icon iconPath={icon} />
-                        {name === "index" ? "dashboard" : name}
+                        {name}
                       </Link>
                     </Styled.li>
                   )
