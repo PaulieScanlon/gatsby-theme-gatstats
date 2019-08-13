@@ -92,17 +92,20 @@ export const SideBar = ({
       </Styled.div>
       <StaticQuery
         query={graphql`
-          query linksQuery {
-            allMdx {
+          query pagesQuery {
+            allFile(
+              filter: {
+                absolutePath: { regex: "/pages/" }
+                extension: { eq: "mdx" }
+              }
+            ) {
               edges {
                 node {
-                  frontmatter {
-                    icon
-                  }
-                  parent {
-                    ... on File {
-                      name
-                      relativeDirectory
+                  name
+                  childMdx {
+                    frontmatter {
+                      title
+                      icon
                     }
                   }
                 }
@@ -118,50 +121,39 @@ export const SideBar = ({
                 margin: 0,
               }}
             >
-              {data.allMdx.edges
-                .sort((item, i) => {
-                  return item.node.parent.name === "index"
-                    ? -1
-                    : i === "index"
-                    ? 1
-                    : 0
-                })
-                .filter(item => item.node.parent.relativeDirectory === "")
-                .map((item, index) => {
-                  const { name } = item.node.parent
-                  const { icon } = item.node.frontmatter
+              {data.allFile.edges.map((item, index) => {
+                const { name } = item.node
+                const { icon, title } = item.node.childMdx.frontmatter
 
-                  return (
-                    <Styled.li
-                      key={index}
-                      sx={{
-                        margin: 0,
+                return (
+                  <Styled.li
+                    key={index}
+                    sx={{
+                      margin: 0,
 
-                        a: {
-                          ...linkStyles,
-                        },
-                      }}
-                    >
+                      a: {
+                        ...linkStyles,
+                      },
+                    }}
+                  >
+                    {name === "index" ? (
+                      <Link to="/" activeClassName="active-nav-item">
+                        <Icon iconPath={icon} />
+                        {title}
+                      </Link>
+                    ) : (
                       <Link
-                        to={`/${name === "index" ? "" : name}`}
+                        to={name}
                         partiallyActive={true}
                         activeClassName="active-nav-item"
-                        // activeClassName={
-                        //   name === "index" ? null : "active-nav-item"
-                        // }
-                        // activeClassName="active-nav-item"
-                        // getProps={({ isPartiallyCurrent }) =>
-                        //   isPartiallyCurrent
-                        //     ? { className: "active-nav-item" }
-                        //     : null
-                        // }
                       >
                         <Icon iconPath={icon} />
-                        {name}
+                        {title}
                       </Link>
-                    </Styled.li>
-                  )
-                })}
+                    )}
+                  </Styled.li>
+                )
+              })}
             </Styled.ul>
           )
         }}
