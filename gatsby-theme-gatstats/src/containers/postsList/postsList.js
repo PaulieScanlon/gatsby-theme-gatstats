@@ -1,5 +1,6 @@
 import React from "react"
 import { StaticQuery } from "gatsby"
+import Img from "gatsby-image"
 
 import { Link } from "../../components/Link"
 
@@ -27,6 +28,17 @@ export const PostsList = () => {
                     description
                     tags
                     date
+                    featuredImage {
+                      childImageSharp {
+                        fluid {
+                          base64
+                          aspectRatio
+                          src
+                          srcSet
+                          sizes
+                        }
+                      }
+                    }
                   }
                 }
               }
@@ -36,12 +48,13 @@ export const PostsList = () => {
       `}
       render={data => {
         const { edges } = data.allFile
-        // console.log(edges)
+
         return (
           <ul>
             {edges.map((item, index) => {
               const { frontmatter } = item.node.childMdx
               const { relativeDirectory, name } = item.node
+
               return (
                 <li key={index}>
                   <Link
@@ -52,6 +65,10 @@ export const PostsList = () => {
                   >
                     {frontmatter.title}
                   </Link>
+                  <Img
+                    fluid={frontmatter.featuredImage.childImageSharp.fluid}
+                    sizes={frontmatter.featuredImage.childImageSharp.sizes}
+                  />
                 </li>
               )
             })}
