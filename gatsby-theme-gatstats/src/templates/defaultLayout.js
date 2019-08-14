@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from "react"
-import { css, Global } from "@emotion/core"
+import { Global, css } from "@emotion/core"
 import { ThemeProvider, Layout, Container, Styled, jsx } from "theme-ui"
 import { graphql, StaticQuery } from "gatsby"
 

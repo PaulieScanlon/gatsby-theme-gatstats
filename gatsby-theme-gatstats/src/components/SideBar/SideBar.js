@@ -143,7 +143,7 @@ export const SideBar = ({
                       </Link>
                     ) : (
                       <Link
-                        to={name}
+                        to={`/${name}`}
                         partiallyActive={true}
                         activeClassName="active-nav-item"
                       >

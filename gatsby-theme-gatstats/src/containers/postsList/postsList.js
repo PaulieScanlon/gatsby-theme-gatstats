@@ -37,6 +37,13 @@ export const PostsList = () => {
                           srcSet
                           sizes
                         }
+                        fixed {
+                          base64
+                          width
+                          height
+                          src
+                          srcSet
+                        }
                       }
                     }
                   }
@@ -67,7 +74,9 @@ export const PostsList = () => {
                   </Link>
                   <Img
                     fluid={frontmatter.featuredImage.childImageSharp.fluid}
-                    sizes={frontmatter.featuredImage.childImageSharp.sizes}
+                    // sizes={frontmatter.featuredImage.childImageSharp.sizes}
+                    // fixed={frontmatter.featuredImage.childImageSharp.fixed}
+                    alt={name}
                   />
                 </li>
               )
