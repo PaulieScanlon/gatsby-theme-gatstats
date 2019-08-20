@@ -51,7 +51,7 @@ const DefaultLayout = ({ children }) => {
                   isNavOpen={isNavOpen}
                   handleClose={() => setNavOpen(false)}
                 />
-                {/* @TODO make this into a light box*/}
+                {/* @TODO make this into a light box component and make it work properly */}
                 <Styled.div
                   sx={{
                     position: "absolute",

@@ -6,18 +6,6 @@ const headings = {
   margin: 0,
 }
 
-const pseudo = {
-  color: "primary",
-  "::before": {
-    content: '"./"',
-    color: "secondary",
-  },
-  "::after": {
-    content: '"~"',
-    color: "tertiary",
-  },
-}
-
 export default {
   space: [0, 4, 8, 16, 32, 48, 64, 128, 256, 512],
 
@@ -100,8 +88,6 @@ export default {
 
     h3: {
       ...headings,
-      ...pseudo,
-      color: "primary",
       marginBottom: 3,
       fontSize: 4,
     },

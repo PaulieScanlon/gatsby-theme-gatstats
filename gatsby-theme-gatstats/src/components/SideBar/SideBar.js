@@ -78,6 +78,15 @@ export const SideBar = ({
         <Styled.h3
           sx={{
             textAlign: "center",
+            color: "primary",
+            "::before": {
+              content: '"./"',
+              color: "secondary",
+            },
+            "::after": {
+              content: '"~"',
+              color: "tertiary",
+            },
           }}
         >
           {title}
@@ -130,7 +139,6 @@ export const SideBar = ({
                     key={index}
                     sx={{
                       margin: 0,
-
                       a: {
                         ...linkStyles,
                       },

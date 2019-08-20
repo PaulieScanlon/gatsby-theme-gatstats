@@ -18,51 +18,46 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       // Generated value based on filepath with "post" prefix. We
       // don't need a separating "/" before the value because
       // createFilePath returns a path with the leading "/".
-      value: `${value}`,
+      value: `/posts${value}`,
     })
   }
 }
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   // Destructure the createPage function from the actions object
   const { createPage } = actions
-
-  return new Promise((resolve, reject) => {
-    resolve(
-      graphql(
-        `
-          {
-            allMdx {
-              edges {
-                node {
-                  id
-                  fields {
-                    slug
-                  }
-                }
-              }
+  const result = await graphql(`
+    query {
+      allMdx {
+        edges {
+          node {
+            id
+            fields {
+              slug
             }
           }
-        `
-      ).then(result => {
-        // this is some boilerlate to handle errors
-        if (result.errors) {
-          reject(result.errors)
         }
-        // We'll call `createPage` for each result
-        result.data.allMdx.edges.forEach(({ node }) => {
-          createPage({
-            // This is the slug we created before
-            // (or `node.frontmatter.slug`)
-            path: node.fields.slug,
-            // This component will wrap our MDX content
-            component: path.join(__dirname, `src/templates/contentLayout.js`),
-            // We can use the values in this context in
-            // our page layout component
-            context: { id: node.id },
-          })
-        })
-      })
-    )
+      }
+    }
+  `)
+  if (result.errors) {
+    reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
+  }
+  // Create blog post pages.
+  const posts = result.data.allMdx.edges
+  // We'll call `createPage` for each result
+  posts.forEach(({ node }, index) => {
+    createPage({
+      // This is the slug we created before
+      // (or `node.frontmatter.slug`)
+      path: node.fields.slug,
+      // This component will wrap our MDX content
+      // component: "/src/templates/contentLayout.js",
+      component: path.join(__dirname, `src/templates/contentLayout.js`),
+      // component: path.resolve(`./src/templates/contentLayout.js`),
+      // We can use the values in this context in
+      // our page layout component
+      context: { id: node.id },
+    })
   })
 }

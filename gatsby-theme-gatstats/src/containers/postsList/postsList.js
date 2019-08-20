@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import { Styled, jsx } from "theme-ui"
+import { jsx, Flex, Box } from "theme-ui"
 import { StaticQuery } from "gatsby"
-import { Flex, Box } from "reflexbox"
 
 import { Card } from "../../components/Card"
 
@@ -58,11 +57,9 @@ export const PostsList = () => {
         const { edges } = data.allFile
 
         return (
-          <Styled.ul
-            style={{
-              padding: 0,
-              margin: 0,
-              listStyle: "none",
+          <Flex
+            sx={{
+              flexWrap: "wrap",
             }}
           >
             {edges.map((item, index) => {
@@ -70,16 +67,12 @@ export const PostsList = () => {
               const { relativeDirectory, name } = item.node
 
               return (
-                <Styled.li
+                <Box
                   key={index}
                   sx={{
-                    display: "inline-flex",
-                    boxShadow: 1,
-                    transition: "0.2s linear box-shadow",
-                    ":hover": {
-                      boxShadow: 3,
-                    },
-                    width: "33%",
+                    width: ["100%", "50%", "50%", "33%"],
+                    px: [1, 2],
+                    mb: 4,
                   }}
                 >
                   <Card
@@ -89,10 +82,10 @@ export const PostsList = () => {
                     description={frontmatter.description}
                     fluidImage={frontmatter.featuredImage.childImageSharp.fluid}
                   />
-                </Styled.li>
+                </Box>
               )
             })}
-          </Styled.ul>
+          </Flex>
         )
       }}
     />

@@ -15,6 +15,9 @@ export const Card = ({ link, date, title, description, fluidImage }) => {
       }}
     >
       <Styled.div
+        sx={{
+          boxShadow: 1,
+        }}
       >
         <Img
           fluid={fluidImage}
