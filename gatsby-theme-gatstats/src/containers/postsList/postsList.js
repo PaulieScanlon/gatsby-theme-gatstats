@@ -1,8 +1,9 @@
-import React from "react"
+/** @jsx jsx */
+import { Styled, jsx } from "theme-ui"
 import { StaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { Flex, Box } from "reflexbox"
 
-import { Link } from "../../components/Link"
+import { Card } from "../../components/Card"
 
 export const PostsList = () => {
   return (
@@ -57,31 +58,41 @@ export const PostsList = () => {
         const { edges } = data.allFile
 
         return (
-          <ul>
+          <Styled.ul
+            style={{
+              padding: 0,
+              margin: 0,
+              listStyle: "none",
+            }}
+          >
             {edges.map((item, index) => {
               const { frontmatter } = item.node.childMdx
               const { relativeDirectory, name } = item.node
 
               return (
-                <li key={index}>
-                  <Link
-                    href={`/posts/${relativeDirectory}/${name}`}
-                    sx={{
-                      textDecoration: "none",
-                    }}
-                  >
-                    {frontmatter.title}
-                  </Link>
-                  <Img
-                    fluid={frontmatter.featuredImage.childImageSharp.fluid}
-                    // sizes={frontmatter.featuredImage.childImageSharp.sizes}
-                    // fixed={frontmatter.featuredImage.childImageSharp.fixed}
-                    alt={name}
+                <Styled.li
+                  key={index}
+                  sx={{
+                    display: "inline-flex",
+                    boxShadow: 1,
+                    transition: "0.2s linear box-shadow",
+                    ":hover": {
+                      boxShadow: 3,
+                    },
+                    width: "33%",
+                  }}
+                >
+                  <Card
+                    link={`/posts/${relativeDirectory}/${name}`}
+                    date={frontmatter.date}
+                    title={frontmatter.title}
+                    description={frontmatter.description}
+                    fluidImage={frontmatter.featuredImage.childImageSharp.fluid}
                   />
-                </li>
+                </Styled.li>
               )
             })}
-          </ul>
+          </Styled.ul>
         )
       }}
     />

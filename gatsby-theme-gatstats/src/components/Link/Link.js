@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import PropTypes from "prop-types"
 import { jsx } from "theme-ui"
 import { Link as GatsbyLink } from "gatsby"
 import { Styled } from "theme-ui"
@@ -22,4 +23,8 @@ export const Link = ({ href, ...props }) => {
       activeClassName="active"
     />
   )
+}
+
+Link.propTypes = {
+  href: PropTypes.string.isRequired,
 }

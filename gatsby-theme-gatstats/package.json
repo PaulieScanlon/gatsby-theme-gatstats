@@ -30,6 +30,7 @@
     "gatsby-source-filesystem": "^2.1.6",
     "gatsby-transformer-sharp": "^2.2.6",
     "is-absolute-url": "^3.0.0",
+    "reflexbox": "^4.0.2",
     "theme-ui": "^0.2.2"
   },
   "keywords": [
