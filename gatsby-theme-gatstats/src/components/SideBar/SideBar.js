@@ -26,7 +26,7 @@ export const SideBar = ({
     paddingBottom: 3,
     textDecoration: "none",
     textTransform: "capitalize",
-    transition: ".2s linear all",
+    transition: ".2s linear background, .2s linear color",
     svg: {
       marginRight: 3,
       marginLeft: 3,
