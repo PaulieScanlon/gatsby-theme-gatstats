@@ -11,14 +11,16 @@ export const Card = ({ link, date, title, description, fluidImage }) => {
     <Link
       href={link}
       sx={{
+        display: "flex",
         textDecoration: "none",
+        transition: ".2s linear box-shadow",
+        boxShadow: 0,
+        ":hover": {
+          boxShadow: 1,
+        },
       }}
     >
-      <Styled.div
-        sx={{
-          boxShadow: 1,
-        }}
-      >
+      <Styled.div>
         <Img
           css={{
             height: 200,
