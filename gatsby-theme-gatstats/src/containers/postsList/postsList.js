@@ -37,13 +37,6 @@ export const PostsList = () => {
                           srcSet
                           sizes
                         }
-                        fixed {
-                          base64
-                          width
-                          height
-                          src
-                          srcSet
-                        }
                       }
                     }
                   }
@@ -70,9 +63,9 @@ export const PostsList = () => {
                 <Box
                   key={index}
                   sx={{
-                    width: ["100%", "50%", "50%", "33%"],
+                    width: ["100%", "50%", "50%", "50%", "33%"],
                     px: [1, 2],
-                    mb: 4,
+                    mb: 3,
                   }}
                 >
                   <Card

@@ -20,14 +20,15 @@ export const Card = ({ link, date, title, description, fluidImage }) => {
         }}
       >
         <Img
+          css={{
+            height: 200,
+          }}
           fluid={fluidImage}
-          // sizes={frontmatter.featuredImage.childImageSharp.sizes}
-          // fixed={frontmatter.featuredImage.childImageSharp.fixed}
           alt={title}
         />
         <Styled.div
           sx={{
-            padding: [2, 2, 3],
+            padding: 3,
             backgroundColor: "mutedLight",
           }}
         >
