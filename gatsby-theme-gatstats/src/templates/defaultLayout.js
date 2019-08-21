@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React from "react"
+
 import { Global, css } from "@emotion/core"
 import { ThemeProvider, Layout, Container, Styled, jsx } from "theme-ui"
 import { graphql, StaticQuery } from "gatsby"
@@ -9,9 +9,10 @@ import theme from "../gatsby-plugin-theme-ui"
 import { SideBar } from "../components/SideBar"
 import { AppBar } from "../components/AppBar"
 import { Content } from "../components/Content"
+import { useLocalStorage } from "../utils/useLocalStorage"
 
 const DefaultLayout = ({ children }) => {
-  const [isNavOpen, setNavOpen] = React.useState(true)
+  const [isNavOpen, setNavOpen] = useLocalStorage("gatstats-isNavOpen", false)
 
   return (
     <StaticQuery
@@ -51,8 +52,9 @@ const DefaultLayout = ({ children }) => {
                   isNavOpen={isNavOpen}
                   handleClose={() => setNavOpen(false)}
                 />
-                {/* @TODO make this into a light box component and make it work properly */}
+                {/* @TODO make this into a light box component */}
                 <Styled.div
+                  className="light-box"
                   sx={{
                     position: "absolute",
                     backgroundColor: "#000",
@@ -61,6 +63,7 @@ const DefaultLayout = ({ children }) => {
                     width: "100%",
                     height: "100%",
                     opacity: isNavOpen ? 0.5 : 0,
+                    cursor: isNavOpen ? "pointer" : "auto",
                     zIndex: 1,
                     transition: ".2s linear opacity",
                     display: ["block", "block", "none"],
