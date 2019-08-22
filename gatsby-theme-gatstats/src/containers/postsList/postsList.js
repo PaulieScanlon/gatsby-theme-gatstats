@@ -73,7 +73,7 @@ export const PostsList = () => {
                     date={frontmatter.date}
                     title={frontmatter.title}
                     description={frontmatter.description}
-                    fluidImage={frontmatter.featuredImage.childImageSharp.fluid}
+                    fluid={frontmatter.featuredImage.childImageSharp.fluid}
                   />
                 </Box>
               )

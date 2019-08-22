@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 
 import { Link } from "../../components/Link"
 
-export const Card = ({ link, date, title, description, fluidImage }) => {
+export const Card = ({ link, date, title, description, fluid }) => {
   return (
     <Link
       href={link}
@@ -25,7 +25,7 @@ export const Card = ({ link, date, title, description, fluidImage }) => {
           css={{
             height: 200,
           }}
-          fluid={fluidImage}
+          fluid={fluid}
           alt={title}
         />
         <Styled.div
@@ -54,7 +54,7 @@ Card.propTypes = {
   date: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  fluidImage: PropTypes.shape({
+  fluid: PropTypes.shape({
     base64: PropTypes.string.isRequired,
     aspectRatio: PropTypes.number.isRequired,
     src: PropTypes.string.isRequired,
