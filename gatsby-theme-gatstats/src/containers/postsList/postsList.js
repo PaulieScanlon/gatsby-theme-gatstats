@@ -30,8 +30,7 @@ export const PostsList = () => {
                     date
                     featuredImage {
                       childImageSharp {
-                        fluid {
-                          base64
+                        fluid(maxWidth: 786) {
                           aspectRatio
                           src
                           srcSet
@@ -63,7 +62,7 @@ export const PostsList = () => {
                 <Box
                   key={index}
                   sx={{
-                    width: ["100%", "50%", "50%", "50%", "33%"],
+                    width: ["100%", "100%", "50%"],
                     px: [1, 2],
                     mb: 3,
                   }}
