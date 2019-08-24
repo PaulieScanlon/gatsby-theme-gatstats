@@ -4,10 +4,11 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Img from "gatsby-image"
 
+import { Link } from "../components/Link"
 import DefaultLayout from "./defaultLayout"
 
 const ContentLayout = ({ data: { mdx } }) => {
-  const { title, featuredImage } = mdx.frontmatter
+  const { title, date, featuredImage } = mdx.frontmatter
 
   return (
     <DefaultLayout>
@@ -19,6 +20,7 @@ const ContentLayout = ({ data: { mdx } }) => {
             width: "100%",
             height: [250, 300],
             overflow: "hidden",
+            marginBottom: 4,
           }}
         >
           <Img
@@ -32,9 +34,10 @@ const ContentLayout = ({ data: { mdx } }) => {
           />
         </Styled.div>
       )}
-
+      <Styled.h5>{date}</Styled.h5>
       <Styled.h1>{title}</Styled.h1>
       <MDXRenderer>{mdx.body}</MDXRenderer>
+      <Link href="/posts">Back</Link>
     </DefaultLayout>
   )
 }
@@ -46,7 +49,7 @@ export const contentQuery = graphql`
       body
       frontmatter {
         title
-
+        date(formatString: "MMMM DD, YYYY")
         featuredImage {
           childImageSharp {
             fluid {

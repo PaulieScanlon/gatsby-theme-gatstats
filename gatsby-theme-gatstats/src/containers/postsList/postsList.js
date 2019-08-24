@@ -15,19 +15,17 @@ export const PostsList = () => {
               extension: { eq: "mdx" }
               name: { ne: "posts" }
             }
-            sort: { fields: [birthtime], order: DESC }
           ) {
             edges {
               node {
                 name
-                modifiedTime(formatString: "MMM DD, YYYY")
                 relativeDirectory
                 childMdx {
+                  excerpt(pruneLength: 100)
                   frontmatter {
                     title
-                    description
                     tags
-                    date
+                    date(formatString: "MMMM DD, YYYY")
                     featuredImage {
                       childImageSharp {
                         fluid(maxWidth: 786) {
@@ -55,12 +53,7 @@ export const PostsList = () => {
             }}
           >
             {edges.map((item, index) => {
-              const {
-                date,
-                title,
-                description,
-                featuredImage,
-              } = item.node.childMdx.frontmatter
+              const { frontmatter, excerpt } = item.node.childMdx
               const { relativeDirectory, name } = item.node
 
               return (
@@ -74,11 +67,13 @@ export const PostsList = () => {
                 >
                   <Card
                     link={`/posts/${relativeDirectory}/${name}`}
-                    date={date}
-                    title={title}
-                    description={description}
+                    date={frontmatter.date}
+                    title={frontmatter.title}
+                    excerpt={excerpt}
                     fluid={
-                      featuredImage ? featuredImage.childImageSharp.fluid : null
+                      frontmatter.featuredImage
+                        ? frontmatter.featuredImage.childImageSharp.fluid
+                        : null
                     }
                   />
                 </Box>

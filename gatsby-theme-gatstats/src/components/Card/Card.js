@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 
 import { Link } from "../../components/Link"
 
-export const Card = ({ link, date, title, description, fluid }) => (
+export const Card = ({ link, date, title, excerpt, fluid }) => (
   <Link
     href={link}
     sx={{
@@ -61,7 +61,7 @@ export const Card = ({ link, date, title, description, fluid }) => (
             marginBottom: 0,
           }}
         >
-          {description}
+          {excerpt}
         </Styled.p>
       </Styled.div>
     </Styled.div>
@@ -72,7 +72,7 @@ Card.propTypes = {
   link: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  excerpt: PropTypes.string.isRequired,
   fluid: PropTypes.oneOfType([
     PropTypes.shape({
       aspectRatio: PropTypes.number.isRequired,
