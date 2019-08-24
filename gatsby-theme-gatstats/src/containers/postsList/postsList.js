@@ -55,7 +55,12 @@ export const PostsList = () => {
             }}
           >
             {edges.map((item, index) => {
-              const { frontmatter } = item.node.childMdx
+              const {
+                date,
+                title,
+                description,
+                featuredImage,
+              } = item.node.childMdx.frontmatter
               const { relativeDirectory, name } = item.node
 
               return (
@@ -69,10 +74,12 @@ export const PostsList = () => {
                 >
                   <Card
                     link={`/posts/${relativeDirectory}/${name}`}
-                    date={frontmatter.date}
-                    title={frontmatter.title}
-                    description={frontmatter.description}
-                    fluid={frontmatter.featuredImage.childImageSharp.fluid}
+                    date={date}
+                    title={title}
+                    description={description}
+                    fluid={
+                      featuredImage ? featuredImage.childImageSharp.fluid : null
+                    }
                   />
                 </Box>
               )

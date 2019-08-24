@@ -10,36 +10,45 @@ export const Card = ({ link, date, title, description, fluid }) => (
   <Link
     href={link}
     sx={{
-      display: "block",
-      textDecoration: "none",
-      transition: ".2s linear box-shadow",
       backgroundColor: "mutedLight",
       boxShadow: 0,
+      display: "block",
+      height: "100%",
+      textDecoration: "none",
+      transition: ".2s linear box-shadow",
       ":hover": {
         boxShadow: 1,
       },
     }}
   >
-    <Styled.div>
-      <Styled.div
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          width: "100%",
-          height: [150, 200],
-          overflow: "hidden",
-        }}
-      >
-        <Img
-          fluid={fluid}
-          alt={title}
-          style={{
-            display: "block",
+    <Styled.div
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
+      }}
+    >
+      {fluid && (
+        <Styled.div
+          sx={{
+            display: "flex",
+            alignItems: "center",
             width: "100%",
-            height: "100%",
+            height: [150, 200],
+            overflow: "hidden",
           }}
-        />
-      </Styled.div>
+        >
+          <Img
+            fluid={fluid}
+            alt={title}
+            style={{
+              display: "block",
+              width: "100%",
+              height: "100%",
+            }}
+          />
+        </Styled.div>
+      )}
       <Styled.div
         sx={{
           padding: 3,
@@ -64,10 +73,13 @@ Card.propTypes = {
   date: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  fluid: PropTypes.shape({
-    aspectRatio: PropTypes.number.isRequired,
-    sizes: PropTypes.string.isRequired,
-    src: PropTypes.string.isRequired,
-    srcSet: PropTypes.string.isRequired,
-  }),
+  fluid: PropTypes.oneOfType([
+    PropTypes.shape({
+      aspectRatio: PropTypes.number.isRequired,
+      sizes: PropTypes.string.isRequired,
+      src: PropTypes.string.isRequired,
+      srcSet: PropTypes.string.isRequired,
+    }),
+    PropTypes.number,
+  ]),
 }
