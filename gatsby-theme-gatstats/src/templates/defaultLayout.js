@@ -62,11 +62,15 @@ const DefaultLayout = ({ children }) => {
                     left: 0,
                     width: "100%",
                     height: "100%",
-                    opacity: isNavOpen ? 0.5 : 0,
+                    opacity: isNavOpen ? 0.5 : 0.5,
                     cursor: isNavOpen ? "pointer" : "auto",
                     zIndex: 1,
                     transition: ".2s linear opacity",
-                    display: ["block", "block", "none"],
+                    display: [
+                      `${isNavOpen ? "block" : "none"}`,
+                      `${isNavOpen ? "block" : "none"}`,
+                      "none",
+                    ],
                   }}
                   onClick={() => setNavOpen(false)}
                 />

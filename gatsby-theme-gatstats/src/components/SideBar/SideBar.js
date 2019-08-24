@@ -145,7 +145,11 @@ export const SideBar = ({
                     }}
                   >
                     {name === "index" ? (
-                      <Link to="/" activeClassName="active-nav-item">
+                      <Link
+                        to="/"
+                        activeClassName="active-nav-item"
+                        onClick={() => handleClose()}
+                      >
                         <Icon iconPath={icon} />
                         {title}
                       </Link>
@@ -154,6 +158,7 @@ export const SideBar = ({
                         to={`/${name}`}
                         partiallyActive={true}
                         activeClassName="active-nav-item"
+                        onClick={() => handleClose()}
                       >
                         <Icon iconPath={icon} />
                         {title}
