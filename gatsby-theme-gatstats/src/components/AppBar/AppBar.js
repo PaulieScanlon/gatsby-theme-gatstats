@@ -12,7 +12,7 @@ export const AppBar = ({ handleOpen }) => {
         alignItems: "center",
         display: "flex",
         justifyContent: "space-between",
-        backgroundColor: "background",
+        backgroundColor: "mutedLight",
         boxSizing: "border-box",
         padding: 3,
         width: "100%",

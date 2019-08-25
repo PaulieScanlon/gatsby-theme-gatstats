@@ -3,6 +3,7 @@ import { jsx, Flex, Box } from "theme-ui"
 import { StaticQuery } from "gatsby"
 
 import { Card } from "../../components/Card"
+import { formatDate } from "../../utils/formatDate"
 
 export const PostsList = () => {
   return (
@@ -25,7 +26,7 @@ export const PostsList = () => {
                   frontmatter {
                     title
                     tags
-                    date(formatString: "MMMM DD, YYYY")
+                    date
                     featuredImage {
                       childImageSharp {
                         fluid(maxWidth: 786) {
@@ -52,33 +53,38 @@ export const PostsList = () => {
               flexWrap: "wrap",
             }}
           >
-            {edges.map((item, index) => {
-              const { frontmatter, excerpt } = item.node.childMdx
-              const { relativeDirectory, name } = item.node
-
-              return (
-                <Box
-                  key={index}
-                  sx={{
-                    width: ["100%", "100%", "50%"],
-                    px: [1, 2],
-                    mb: 3,
-                  }}
-                >
-                  <Card
-                    link={`/posts/${relativeDirectory}/${name}`}
-                    date={frontmatter.date}
-                    title={frontmatter.title}
-                    excerpt={excerpt}
-                    fluid={
-                      frontmatter.featuredImage
-                        ? frontmatter.featuredImage.childImageSharp.fluid
-                        : null
-                    }
-                  />
-                </Box>
-              )
-            })}
+            {edges
+              .sort((a, b) => {
+                const aDate = a.node.childMdx.frontmatter.date
+                const bDate = b.node.childMdx.frontmatter.date
+                return new Date(bDate) - new Date(aDate)
+              })
+              .map((item, index) => {
+                const { frontmatter, excerpt } = item.node.childMdx
+                const { relativeDirectory, name } = item.node
+                return (
+                  <Box
+                    key={index}
+                    sx={{
+                      width: ["100%", "100%", "50%"],
+                      px: [1, 2],
+                      mb: 3,
+                    }}
+                  >
+                    <Card
+                      link={`/posts/${relativeDirectory}/${name}`}
+                      date={formatDate(frontmatter.date)}
+                      title={frontmatter.title}
+                      excerpt={excerpt}
+                      fluid={
+                        frontmatter.featuredImage
+                          ? frontmatter.featuredImage.childImageSharp.fluid
+                          : null
+                      }
+                    />
+                  </Box>
+                )
+              })}
           </Flex>
         )
       }}
