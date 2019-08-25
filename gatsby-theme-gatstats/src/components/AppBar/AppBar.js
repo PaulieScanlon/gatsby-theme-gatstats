@@ -17,6 +17,8 @@ export const AppBar = ({ handleOpen }) => {
         padding: 3,
         width: "100%",
         zIndex: 2,
+        position: "fixed",
+        boxShadow: 0,
       }}
     >
       <button onClick={() => handleOpen()}>open nav</button>
