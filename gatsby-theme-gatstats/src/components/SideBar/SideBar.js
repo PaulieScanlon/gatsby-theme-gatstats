@@ -102,20 +102,18 @@ export const SideBar = ({
       <StaticQuery
         query={graphql`
           query pagesQuery {
-            allFile(
-              filter: {
-                absolutePath: { regex: "/pages/" }
-                extension: { eq: "mdx" }
-              }
+            allMdx(
+              filter: { fileAbsolutePath: { regex: "//pages//" } }
+              sort: { order: ASC, fields: [fields___slug] }
             ) {
               edges {
                 node {
-                  name
-                  childMdx {
-                    frontmatter {
-                      title
-                      icon
-                    }
+                  fields {
+                    slug
+                  }
+                  frontmatter {
+                    title
+                    icon
                   }
                 }
               }
@@ -130,9 +128,8 @@ export const SideBar = ({
                 margin: 0,
               }}
             >
-              {data.allFile.edges.map((item, index) => {
-                const { name } = item.node
-                const { icon, title } = item.node.childMdx.frontmatter
+              {data.allMdx.edges.map((item, index) => {
+                const { fields, frontmatter } = item.node
 
                 return (
                   <Styled.li
@@ -144,24 +141,24 @@ export const SideBar = ({
                       },
                     }}
                   >
-                    {name === "index" ? (
+                    {fields.slug === "/" ? (
                       <Link
                         to="/"
                         activeClassName="active-nav-item"
                         onClick={() => handleClose()}
                       >
-                        <Icon iconPath={icon} />
-                        {title}
+                        <Icon iconPath={frontmatter.icon} />
+                        {frontmatter.title}
                       </Link>
                     ) : (
                       <Link
-                        to={`/${name}`}
+                        to={fields.slug}
                         partiallyActive={true}
                         activeClassName="active-nav-item"
                         onClick={() => handleClose()}
                       >
-                        <Icon iconPath={icon} />
-                        {title}
+                        <Icon iconPath={frontmatter.icon} />
+                        {frontmatter.title}
                       </Link>
                     )}
                   </Styled.li>

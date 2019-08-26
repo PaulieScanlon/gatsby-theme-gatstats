@@ -9,6 +9,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   // `File` node here
   if (node.internal.type === "Mdx") {
     const value = createFilePath({ node, getNode })
+    let _path = ""
+
+    if (node.frontmatter.icon) {
+      _path = `${value}`
+    } else {
+      _path = `/posts${value}`
+    }
+    // console.log("value: ", value)
 
     createNodeField({
       // Name of the field you are adding
@@ -18,7 +26,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       // Generated value based on filepath with "post" prefix. We
       // don't need a separating "/" before the value because
       // createFilePath returns a path with the leading "/".
-      value: `/posts${value}`,
+      value: _path,
     })
   }
 }
@@ -52,9 +60,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       // (or `node.frontmatter.slug`)
       path: node.fields.slug,
       // This component will wrap our MDX content
-      // component: "/src/templates/contentLayout.js",
-      component: path.join(__dirname, `src/templates/contentLayout.js`),
-      // component: path.resolve(`./src/templates/contentLayout.js`),
+      // component: "/src/templates/PostLayout.js",
+      component: path.join(__dirname, `src/templates/PostLayout.js`),
+      // component: path.resolve(`./src/templates/PostLayout.js`),
       // We can use the values in this context in
       // our page layout component
       context: { id: node.id },

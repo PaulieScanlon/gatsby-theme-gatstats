@@ -7,7 +7,7 @@ import Img from "gatsby-image"
 import { Link } from "../components/Link"
 import DefaultLayout from "./defaultLayout"
 
-const ContentLayout = ({ data: { mdx } }) => {
+const PostLayout = ({ data: { mdx } }) => {
   const { title, date, featuredImage } = mdx.frontmatter
 
   return (
@@ -37,7 +37,13 @@ const ContentLayout = ({ data: { mdx } }) => {
       <Styled.h5>{date}</Styled.h5>
       <Styled.h1>{title}</Styled.h1>
       <MDXRenderer>{mdx.body}</MDXRenderer>
-      <Link href="/posts">Back</Link>
+      <Styled.div
+        sx={{
+          mb: 4,
+        }}
+      >
+        <Link href="/posts/">Back</Link>
+      </Styled.div>
     </DefaultLayout>
   )
 }
@@ -47,6 +53,12 @@ export const contentQuery = graphql`
     mdx(id: { eq: $id }) {
       id
       body
+      wordCount {
+        paragraphs
+        sentences
+        words
+      }
+      timeToRead
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
@@ -64,4 +76,4 @@ export const contentQuery = graphql`
     }
   }
 `
-export default ContentLayout
+export default PostLayout
