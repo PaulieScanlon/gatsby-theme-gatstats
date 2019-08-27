@@ -3,6 +3,8 @@ import { jsx, Flex, Box } from "theme-ui"
 import { StaticQuery } from "gatsby"
 
 import { Card } from "../../components/Card"
+import { PostsSearch } from "../../components/PostsSearch"
+
 import { formatDate } from "../../utils/formatDate"
 
 export const PostsList = () => {
@@ -41,39 +43,52 @@ export const PostsList = () => {
         }
       `}
       render={data => {
-        return (
-          <Flex
-            sx={{
-              flexWrap: "wrap",
-            }}
-          >
-            {data.allMdx.edges.map((item, index) => {
-              const { fields, excerpt, frontmatter } = item.node
+        const postNames = data.allMdx.edges
+          .map(item => item.node.frontmatter.title)
+          .reduce((newtitiles, title) => {
+            newtitiles.push({
+              value: title,
+            })
 
-              return (
-                <Box
-                  key={index}
-                  sx={{
-                    width: ["100%", "100%", "50%"],
-                    px: [1, 2],
-                    mb: 3,
-                  }}
-                >
-                  <Card
-                    link={fields.slug}
-                    date={formatDate(frontmatter.date)}
-                    title={frontmatter.title}
-                    excerpt={excerpt}
-                    fluid={
-                      frontmatter.featuredImage
-                        ? frontmatter.featuredImage.childImageSharp.fluid
-                        : null
-                    }
-                  />
-                </Box>
-              )
-            })}
-          </Flex>
+            return newtitiles
+          }, [])
+
+        return (
+          <div>
+            <PostsSearch postNames={postNames} />
+            <Flex
+              sx={{
+                flexWrap: "wrap",
+              }}
+            >
+              {data.allMdx.edges.map((item, index) => {
+                const { fields, excerpt, frontmatter } = item.node
+
+                return (
+                  <Box
+                    key={index}
+                    sx={{
+                      width: ["100%", "100%", "50%"],
+                      px: [1, 2],
+                      mb: 3,
+                    }}
+                  >
+                    <Card
+                      link={fields.slug}
+                      date={formatDate(frontmatter.date)}
+                      title={frontmatter.title}
+                      excerpt={excerpt}
+                      fluid={
+                        frontmatter.featuredImage
+                          ? frontmatter.featuredImage.childImageSharp.fluid
+                          : null
+                      }
+                    />
+                  </Box>
+                )
+              })}
+            </Flex>
+          </div>
         )
       }}
     />
