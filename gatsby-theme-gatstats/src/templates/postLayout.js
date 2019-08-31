@@ -12,6 +12,7 @@ const PostLayout = ({ data: { mdx } }) => {
 
   return (
     <DefaultLayout>
+      <Link href="/posts/">Back</Link>
       {featuredImage && (
         <Styled.div
           sx={{

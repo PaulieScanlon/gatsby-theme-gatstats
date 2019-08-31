@@ -1,58 +1,61 @@
-# Gatsby Theme Jam Submission Example
+<p align="center">
+  <a href="https://github.com/jlengstorf/gatsby-theme-jam-example">
+    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Forked from Gatsby Theme Jam Submission Example
+</h1>
 
-This repo is an example and potential starting point for theme creators.
+## 🚀 Getting started
 
-It includes:
-- a bare-bones theme (located in `theme/`) that includes basic setup
-- a demo site (located in `demo/`) that installs the theme
-- a Yarn workspaces configuration so the theme and demo can be worked on simultaneously
+1.  **Preview.**
 
-## How to use this repo
+To see the output of the theme start the demo app up
 
-**NOTE:** Make sure to replace `USERNAME` with your GitHub username and `THEMENAME` with your theme name.
-
-1.  Fork this repo.
-
-2.  Rename the forked repo `gatsby-theme-THEMENAME`. (Make sure to replace `THEMENAME` with your chosen name.)
-
-3.  Get the theme set up locally.
     ```sh
-    # clone the repo
-    git clone git@github.com:USERNAME/gatsby-theme-THEMENAME.git
-
-    # move into the directory
-    cd gatsby-theme-THEMENAME
-
-    # install dependencies
-    yarn
-    ```
-
-4.  Update `theme/package.json` with your info.
-    ```diff
-      {
-    +   "name": "gatsby-theme-THEMENAME",
-    +   "author": "Your Name <name@example.com>",
-        "repository": {
-          "type": "git",
-    +     "url": "https://github.com/USERNAME/gatsby-theme-THEMENAME.git"
-        },
-    ```
-
-5.  Start the demo site.
-    ```sh
+     cd gatsby-theme-gatstats/
     yarn workspace demo develop
     ```
 
-    The demo will start at http://localhost:8000
+1-1. **Start developing.**
 
-    **NOTE:** If you’re new to Yarn workspaces, check out [this post](https://www.gatsbyjs.org/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/) for details.
+    Occasional you'll need to clear the Gatsby cache
 
-6.  Start editing the theme! The demo site is configured to use the local theme, so any changes you make to the local `theme` directory will be reflected on the demo site for easy local development.
+    ```sh
+    cd gatsby-theme-gatstats/demo
+    rm -r .cache
+    ```
 
-7.  Follow the [submission checklist](./theme/README.md#submission-checklist) to make sure your theme qualifies to win!
+## 🧐 What's inside?
 
-8.  [Submit your theme](https://themejam.gatsbyjs.org/submit) to win!
+A quick look at the top-level files and directories you'll see in a Gatsby project.
 
-## More information
+    .
+    ├── node_modules
+    ├── public
+    ├── static
+    ├── src
+        ├── pages
+            ├── about.mdx
+            ├── contact.mdx
+            ├── randome_things.mdx
+        ├── posts
+            ├── 2018-11-23-random_name
+              ├── post-2.mdx
 
-For contest rules and more information, see [the Theme Jam website](https://themejam.gatsbyjs.org).
+1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+
+2.  **`/public`**: ...
+
+3.  **`/static`**: ...
+
+4.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+
+5.  **`/src/pages`**: This directory will contain top level pages that appear in the side bar nav.
+    The _frontmatter_ here contains two keys `title` and `icon` ... link to icon stuff here
+
+6.  **`/src/posts`**: This directory will contain sub directories and `.mdx` that are used to display posts. The dir name and file name are what is used in the url.
+    The _frontmatter_ here contains a title that is used by the post (probably keep the title and the `.mdx` name the same), a _date_ which as to be in ths format `YYYY-MM-DD`. We use this date to sort the posts in ASC order.
+    an optional _featuredImage_ this might also be used in SEO meta tags..
+    _tags_ ....

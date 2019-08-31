@@ -9,6 +9,8 @@ const headings = {
 export default {
   space: [0, 4, 8, 16, 32, 48, 64, 128, 256, 512],
 
+  borderWidths: [1, 2, 3],
+
   fonts: {
     body: "system-ui, sans-serif",
     heading: "inherit",
@@ -128,12 +130,12 @@ export default {
     },
 
     ul: {
-      paddingLeft: 20,
+      paddingLeft: 0,
       margin: 0,
     },
 
     ol: {
-      paddingLeft: 20,
+      paddingLeft: 0,
       margin: 0,
     },
 

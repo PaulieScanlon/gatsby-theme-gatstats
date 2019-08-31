@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import React from "react"
 import { jsx, Flex, Box } from "theme-ui"
 import { StaticQuery } from "gatsby"
 
@@ -8,6 +9,12 @@ import { PostsSearch } from "../../components/PostsSearch"
 import { formatDate } from "../../utils/formatDate"
 
 export const PostsList = () => {
+  const [postsFilter, setPostsFiler] = React.useState("")
+
+  const handlePostsFilter = filterValue => {
+    setPostsFiler(filterValue)
+  }
+
   return (
     <StaticQuery
       query={graphql`
@@ -52,16 +59,27 @@ export const PostsList = () => {
 
             return newtitiles
           }, [])
+          .filter(obj => obj.value === postsFilter || postsFilter === "")
+
+        const postDetails = data.allMdx.edges
+          .map(item => item)
+          .filter(
+            obj =>
+              obj.node.frontmatter.title === postsFilter || postsFilter === ""
+          )
 
         return (
           <div>
-            <PostsSearch postNames={postNames} />
+            <PostsSearch
+              postNames={postNames}
+              onSearch={filterValue => handlePostsFilter(filterValue)}
+            />
             <Flex
               sx={{
                 flexWrap: "wrap",
               }}
             >
-              {data.allMdx.edges.map((item, index) => {
+              {postDetails.map((item, index) => {
                 const { fields, excerpt, frontmatter } = item.node
 
                 return (
@@ -69,7 +87,7 @@ export const PostsList = () => {
                     key={index}
                     sx={{
                       width: ["100%", "100%", "50%"],
-                      px: [1, 2],
+                      px: 2,
                       mb: 3,
                     }}
                   >
