@@ -1,5 +1,4 @@
 /** @jsx jsx */
-
 import { Global, css } from "@emotion/core"
 import { ThemeProvider, Layout, Container, Styled, jsx } from "theme-ui"
 import { graphql, StaticQuery } from "gatsby"
@@ -7,6 +6,7 @@ import { graphql, StaticQuery } from "gatsby"
 import theme from "../gatsby-plugin-theme-ui"
 
 import { SideBar } from "../components/SideBar"
+import { Lightbox } from "../components/Lightbox"
 import { AppBar } from "../components/AppBar"
 import { Content } from "../components/Content"
 import { useLocalStorage } from "../utils/useLocalStorage"
@@ -52,27 +52,9 @@ const DefaultLayout = ({ children }) => {
                   isNavOpen={isNavOpen}
                   handleClose={() => setNavOpen(false)}
                 />
-                {/* @TODO make this into a light box component */}
-                <Styled.div
-                  className="light-box"
-                  sx={{
-                    position: "absolute",
-                    backgroundColor: "#000",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    opacity: isNavOpen ? 0.5 : 0.5,
-                    cursor: isNavOpen ? "pointer" : "auto",
-                    zIndex: 1,
-                    transition: ".2s linear opacity",
-                    display: [
-                      `${isNavOpen ? "block" : "none"}`,
-                      `${isNavOpen ? "block" : "none"}`,
-                      "none",
-                    ],
-                  }}
-                  onClick={() => setNavOpen(false)}
+                <Lightbox
+                  handleClick={() => setNavOpen(false)}
+                  isNavOpen={isNavOpen}
                 />
                 <Content marginLeft={sideBarWidth}>
                   <Container>{children}</Container>
