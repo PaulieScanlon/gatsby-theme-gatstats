@@ -103,11 +103,12 @@ export const SideBar = ({
         query={graphql`
           query pagesQuery {
             allMdx(
-              filter: { fileAbsolutePath: { regex: "//pages//" } }
+              filter: { fileAbsolutePath: { regex: "//src/pages//" } }
               sort: { order: ASC, fields: [fields___slug] }
             ) {
               edges {
                 node {
+                  fileAbsolutePath
                   fields {
                     slug
                   }
