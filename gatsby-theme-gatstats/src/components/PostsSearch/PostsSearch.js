@@ -4,6 +4,8 @@ import PropTypes from "prop-types"
 import Downshift from "downshift"
 import { Styled, jsx } from "theme-ui"
 
+import { SearchButton } from "../SearchButton"
+
 export const PostsSearch = ({ postTags, onSearch }) => {
   return (
     <Styled.div
@@ -57,6 +59,10 @@ export const PostsSearch = ({ postTags, onSearch }) => {
                     "::placeholder": {
                       color: "mutedText",
                     },
+                    //@TODO create proper focus style
+                    ":focus": {
+                      outline: "none",
+                    },
                   },
                 }}
               >
@@ -68,18 +74,24 @@ export const PostsSearch = ({ postTags, onSearch }) => {
                 />
 
                 {selectedItem ? (
-                  <button onClick={clearSelection} aria-label="clear selection">
-                    x
-                  </button>
+                  <SearchButton
+                    onClick={clearSelection}
+                    aria-label="clear selection"
+                    iconPath="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                  />
                 ) : (
-                  <button {...getToggleButtonProps()}>
-                    {isOpen ? "↑" : "↓"}
-                  </button>
+                  <SearchButton
+                    {...getToggleButtonProps()}
+                    iconPath={
+                      isOpen
+                        ? "M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+                        : "M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+                    }
+                  />
                 )}
               </Styled.div>
             </Styled.div>
             <Styled.div
-              className="outer-list"
               sx={{
                 position: "absolute",
                 backgroundColor: "mutedLight",
@@ -88,7 +100,7 @@ export const PostsSearch = ({ postTags, onSearch }) => {
                 boxShadow: 3,
               }}
             >
-              <Styled.div className="inner-list">
+              <Styled.div>
                 <ul
                   {...getMenuProps()}
                   style={{
