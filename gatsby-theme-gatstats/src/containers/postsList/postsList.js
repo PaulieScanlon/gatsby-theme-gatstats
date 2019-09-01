@@ -11,10 +11,6 @@ import { formatDate } from "../../utils/formatDate"
 export const PostsList = () => {
   const [postsFilter, setPostsFiler] = React.useState("")
 
-  const handlePostsFilter = filterValue => {
-    setPostsFiler(filterValue)
-  }
-
   return (
     <StaticQuery
       query={graphql`
@@ -23,6 +19,10 @@ export const PostsList = () => {
             filter: { fileAbsolutePath: { regex: "//posts//" } }
             sort: { order: DESC, fields: [frontmatter___date] }
           ) {
+            group(field: frontmatter___tags) {
+              fieldValue
+              totalCount
+            }
             edges {
               node {
                 excerpt(pruneLength: 100)
@@ -50,14 +50,13 @@ export const PostsList = () => {
         }
       `}
       render={data => {
-        const postNames = data.allMdx.edges
-          .map(item => item.node.frontmatter.title)
-          .reduce((newtitiles, title) => {
-            newtitiles.push({
-              value: title,
+        const postTags = data.allMdx.group
+          .map(item => item.fieldValue)
+          .reduce((newTags, tag) => {
+            newTags.push({
+              value: tag,
             })
-
-            return newtitiles
+            return newTags
           }, [])
           .filter(obj => obj.value === postsFilter || postsFilter === "")
 
@@ -65,14 +64,15 @@ export const PostsList = () => {
           .map(item => item)
           .filter(
             obj =>
-              obj.node.frontmatter.title === postsFilter || postsFilter === ""
+              obj.node.frontmatter.tags.includes(postsFilter) ||
+              postsFilter === ""
           )
 
         return (
           <div>
             <PostsSearch
-              postNames={postNames}
-              onSearch={filterValue => handlePostsFilter(filterValue)}
+              postTags={postTags}
+              onSearch={filterValue => setPostsFiler(filterValue)}
             />
             <Flex
               sx={{
@@ -81,12 +81,11 @@ export const PostsList = () => {
             >
               {postDetails.map((item, index) => {
                 const { fields, excerpt, frontmatter } = item.node
-
                 return (
                   <Box
                     key={index}
                     sx={{
-                      width: ["100%", "100%", "50%"],
+                      width: ["100%", "100%", "100%", "50%"],
                       px: 2,
                       mb: 3,
                     }}

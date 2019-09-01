@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import Downshift from "downshift"
 import { Styled, jsx } from "theme-ui"
 
-export const PostsSearch = ({ postNames, onSearch }) => {
+export const PostsSearch = ({ postTags, onSearch }) => {
   return (
     <Styled.div
       sx={{
@@ -13,11 +13,9 @@ export const PostsSearch = ({ postNames, onSearch }) => {
       }}
     >
       <Downshift
-        // isOpen
         onChange={selection =>
           selection ? onSearch(selection.value) : onSearch("")
         }
-        // onSelect={selection => onSearch(selection.value)}
         itemToString={item => (item ? item.value : "")}
       >
         {({
@@ -27,6 +25,7 @@ export const PostsSearch = ({ postNames, onSearch }) => {
           getMenuProps,
           getToggleButtonProps,
           isOpen,
+          toggleMenu,
           inputValue,
           clearSelection,
           selectedItem,
@@ -63,7 +62,8 @@ export const PostsSearch = ({ postNames, onSearch }) => {
               >
                 <input
                   {...getInputProps({
-                    placeholder: "Search Posts",
+                    placeholder: "Search Tags",
+                    onClick: () => toggleMenu(),
                   })}
                 />
 
@@ -94,10 +94,12 @@ export const PostsSearch = ({ postNames, onSearch }) => {
                   style={{
                     margin: 0,
                     paddingLeft: 0,
+                    maxHeight: isOpen ? "300px" : "0px",
+                    overflowY: "scroll",
                   }}
                 >
                   {isOpen
-                    ? postNames
+                    ? postTags
                         .filter(
                           item => !inputValue || item.value.includes(inputValue)
                         )
@@ -138,10 +140,10 @@ export const PostsSearch = ({ postNames, onSearch }) => {
 }
 
 PostsSearch.propTypes = {
-  postNames: PropTypes.arrayOf(
+  postTags: PropTypes.arrayOf(
     PropTypes.shape({
       value: PropTypes.string.isRequired,
     })
-  ),
+  ).isRequired,
   onSeach: PropTypes.func,
 }
