@@ -13,15 +13,7 @@ export const Link = ({ href, ...props }) => {
     // eslint-disable-next-line
     <Styled.a {...props} href={href} target="_blank" />
   ) : (
-    <Styled.a
-      sx={{
-        color: "success",
-      }}
-      {...props}
-      to={href}
-      as={GatsbyLink}
-      activeClassName="active"
-    />
+    <Styled.a {...props} to={href} as={GatsbyLink} activeClassName="active" />
   )
 }
 

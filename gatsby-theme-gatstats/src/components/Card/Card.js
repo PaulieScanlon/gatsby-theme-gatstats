@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 
 import { Link } from "../../components/Link"
 
-export const Card = ({ link, date, title, excerpt, fluid }) => (
+export const Card = ({ link, date, title, tags, excerpt, fluid }) => (
   <Link
     href={link}
     sx={{
@@ -56,13 +56,17 @@ export const Card = ({ link, date, title, excerpt, fluid }) => (
       >
         <Styled.h5>{date}</Styled.h5>
         <Styled.h4>{title}</Styled.h4>
-        <Styled.p
+        <Styled.p>{excerpt}</Styled.p>
+        <Styled.ul
           sx={{
-            marginBottom: 0,
+            listStyle: "none",
+            display: "flex",
           }}
         >
-          {excerpt}
-        </Styled.p>
+          {tags.map((item, index) => (
+            <Styled.li key={index}>{item}&nbsp;</Styled.li>
+          ))}
+        </Styled.ul>
       </Styled.div>
     </Styled.div>
   </Link>
@@ -72,6 +76,7 @@ Card.propTypes = {
   link: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string),
   excerpt: PropTypes.string.isRequired,
   fluid: PropTypes.oneOfType([
     PropTypes.shape({

@@ -94,6 +94,7 @@ export const PostsList = () => {
                       link={fields.slug}
                       date={formatDate(frontmatter.date)}
                       title={frontmatter.title}
+                      tags={frontmatter.tags}
                       excerpt={excerpt}
                       fluid={
                         frontmatter.featuredImage
