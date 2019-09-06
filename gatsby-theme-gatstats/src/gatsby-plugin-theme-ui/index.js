@@ -17,7 +17,7 @@ export default {
     monospace: "Menlo, monospace",
   },
 
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
+  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 76],
 
   fontWeights: {
     body: 400,
@@ -79,41 +79,37 @@ export default {
     h1: {
       ...headings,
       marginBottom: 3,
-      fontSize: 7,
+      fontSize: 8,
     },
 
     h2: {
       ...headings,
       marginBottom: 3,
-      fontSize: 6,
+      fontSize: 7,
     },
 
     h3: {
       ...headings,
       marginBottom: 3,
-      fontSize: 4,
+      fontSize: 6,
     },
 
     h4: {
       ...headings,
       marginBottom: 3,
-      fontSize: 4,
+      fontSize: 5,
     },
 
     h5: {
       ...headings,
-      marginBottom: 1,
-      fontWeight: "body",
-      fontSize: 1,
-      color: "secondary",
+      marginBottom: 3,
+      fontSize: 4,
     },
 
     h6: {
       ...headings,
-      marginBottom: 1,
-      fontWeight: "body",
-      fontSize: 1,
-      color: "text",
+      marginBottom: 3,
+      fontSize: 2,
     },
 
     p: {
@@ -129,15 +125,9 @@ export default {
       },
     },
 
-    ul: {
-      paddingLeft: 0,
-      margin: 0,
-    },
+    ul: { paddingLeft: 3 },
 
-    ol: {
-      paddingLeft: 0,
-      margin: 0,
-    },
+    ol: { paddingLeft: 3 },
 
     li: {
       color: "text",
@@ -153,16 +143,30 @@ export default {
     },
 
     pre: {
+      backgroundColor: "mutedLight",
       fontFamily: "monospace",
-      overflowX: "auto",
-      code: {
-        color: "inherit",
-      },
+      fontSize: 0,
+      px: 3,
+      py: 3,
+      borderStyle: "solid",
+      borderWidth: 0,
+      borderColor: "mutedText",
     },
 
     code: {
       fontFamily: "monospace",
-      fontSize: "inherit",
+      fontSize: 0,
+    },
+
+    blockquote: {
+      backgroundColor: "mutedLight",
+      borderLeftStyle: "solid",
+      borderLeftWidth: 4,
+      borderColor: "tertiary",
+      px: 3,
+      py: 3,
+      my: 3,
+      mx: [2, 3],
     },
 
     table: {
@@ -171,14 +175,23 @@ export default {
       borderSpacing: 0,
     },
 
+    tr: {},
+
     th: {
-      textAlign: "left",
-      borderBottomStyle: "solid",
+      backgroundColor: "mutedLight",
+      borderStyle: "solid",
+      borderWidth: 0,
+      borderColor: "mutedText",
+      px: 2,
+      py: 2,
     },
 
     td: {
-      textAlign: "left",
-      borderBottomStyle: "solid",
+      borderStyle: "solid",
+      borderWidth: 0,
+      borderColor: "mutedText",
+      px: 2,
+      py: 2,
     },
   },
 }

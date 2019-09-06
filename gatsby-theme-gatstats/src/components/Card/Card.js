@@ -54,13 +54,15 @@ export const Card = ({ link, date, title, tags, excerpt, fluid }) => (
           padding: 3,
         }}
       >
-        <Styled.h5>{date}</Styled.h5>
+        <Styled.h6>{date}</Styled.h6>
         <Styled.h4>{title}</Styled.h4>
         <Styled.p>{excerpt}</Styled.p>
         <Styled.ul
           sx={{
             listStyle: "none",
             display: "flex",
+            padding: 0,
+            margin: 0,
           }}
         >
           {tags.map((item, index) => (

@@ -43,12 +43,14 @@ const PostLayout = ({ data: { mdx } }) => {
           />
         </Styled.div>
       )}
-      <Styled.h5>{date}</Styled.h5>
+      <Styled.h6>{date}</Styled.h6>
       <Styled.h1>{title}</Styled.h1>
       <Styled.ul
         sx={{
           listStyle: "none",
           display: "flex",
+          padding: 0,
+          margin: 0,
         }}
       >
         {tags.map((item, index) => (
@@ -61,7 +63,15 @@ const PostLayout = ({ data: { mdx } }) => {
           mb: 4,
         }}
       >
-        <Link href="/posts/">Back</Link>
+        <Link
+          href="/posts/"
+          sx={{
+            display: "block",
+            mt: 5,
+          }}
+        >
+          Back
+        </Link>
       </Styled.div>
     </DefaultLayout>
   )

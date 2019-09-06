@@ -19,7 +19,7 @@ export const SideBar = ({
     alignItems: "center",
     color: "mutedText",
     borderLeftStyle: "solid",
-    borderLeftWidth: 3,
+    borderLeftWidth: 4,
     borderColor: "background",
     display: "flex",
     paddingTop: 3,
