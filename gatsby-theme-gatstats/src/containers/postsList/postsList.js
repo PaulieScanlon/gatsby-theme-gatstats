@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from "react"
 import { jsx, Flex, Box } from "theme-ui"
-import { StaticQuery } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 
 import { Card } from "../../components/Card"
 import { PostsSearch } from "../../components/PostsSearch"

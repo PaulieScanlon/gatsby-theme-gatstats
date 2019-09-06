@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui"
 
-import DefaulLayout from "gatsby-theme-gatstats/src/templates/defaultLayout"
+import DefaulLayout from "gatsby-theme-gatstats/src/templates/DefaultLayout"
 
 export default () => (
   <DefaulLayout>

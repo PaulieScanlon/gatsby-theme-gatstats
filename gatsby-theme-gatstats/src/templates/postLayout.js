@@ -5,7 +5,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Img from "gatsby-image"
 
 import { Link } from "../components/Link"
-import DefaultLayout from "./defaultLayout"
+import DefaultLayout from "./DefaultLayout"
 
 const PostLayout = ({ data: { mdx } }) => {
   const { title, tags, date, featuredImage } = mdx.frontmatter

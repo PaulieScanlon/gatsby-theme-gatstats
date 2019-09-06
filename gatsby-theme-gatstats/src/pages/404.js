@@ -2,7 +2,7 @@
 
 import { Styled, jsx } from "theme-ui"
 
-import DefaulLayout from "../templates/defaultLayout"
+import DefaulLayout from "../templates/DefaultLayout"
 
 export default () => (
   <DefaulLayout>
