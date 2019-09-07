@@ -52,14 +52,13 @@ export const PostsSearch = ({ postTags, onSearch }) => {
                     border: "none",
                     borderBottomStyle: "solid",
                     borderBottomWidth: 2,
-
-                    borderColor: lighten("background", 0.5),
+                    borderColor: "secondary",
                     p: 3,
                     fontFamily: "body",
                     fontSize: 2,
                     color: "inherit",
                     "::placeholder": {
-                      color: lighten("background", 0.5),
+                      color: "secondary",
                     },
                     //@TODO create proper focus style
                     ":focus": {
@@ -125,7 +124,7 @@ export const PostsSearch = ({ postTags, onSearch }) => {
                               item,
                             })}
                             sx={{
-                              color: lighten("background", 0.5),
+                              color: "secondary",
                               cursor: "pointer",
                               p: 3,
                               margin: 0,

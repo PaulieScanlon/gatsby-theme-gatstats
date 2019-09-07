@@ -1,4 +1,4 @@
-import { lighten } from "@theme-ui/color"
+import { darken, lighten } from "@theme-ui/color"
 
 const headings = {
   color: "text",
@@ -148,7 +148,7 @@ export default {
       py: 3,
       borderStyle: "solid",
       borderWidth: 0,
-      borderColor: lighten("background", 0.5),
+      borderColor: darken("background", 0.04),
     },
 
     code: {
@@ -177,9 +177,10 @@ export default {
 
     th: {
       bg: lighten("background", 0.04),
+      color: "text",
       borderStyle: "solid",
       borderWidth: 0,
-      borderColor: lighten("background", 0.5),
+      borderColor: "secondary",
       px: 2,
       py: 2,
     },
@@ -187,7 +188,7 @@ export default {
     td: {
       borderStyle: "solid",
       borderWidth: 0,
-      borderColor: lighten("background", 0.5),
+      borderColor: "secondary",
       px: 2,
       py: 2,
     },
