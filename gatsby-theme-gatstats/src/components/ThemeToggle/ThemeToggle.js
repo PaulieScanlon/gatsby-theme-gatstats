@@ -9,7 +9,7 @@ export const ThemeToggle = () => {
         setColorMode(colorMode === "light" ? "dark" : "light")
       }}
     >
-      Toggle {colorMode === "dark" ? "Light" : "Dark"}
+      Toggle {colorMode === "light" ? "Dark" : "Light"}
     </button>
   )
 }
