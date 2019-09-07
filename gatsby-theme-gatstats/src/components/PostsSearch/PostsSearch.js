@@ -3,6 +3,7 @@
 import PropTypes from "prop-types"
 import Downshift from "downshift"
 import { Styled, jsx } from "theme-ui"
+import { lighten } from "@theme-ui/color"
 
 import { SearchButton } from "../SearchButton"
 
@@ -45,19 +46,20 @@ export const PostsSearch = ({ postTags, onSearch }) => {
                   color: "text",
                   backgroundColor: "background",
                   input: {
+                    bg: lighten("background", 0.04),
                     display: "flex",
                     flexBasis: "100%",
                     border: "none",
                     borderBottomStyle: "solid",
                     borderBottomWidth: 2,
-                    borderColor: "mutedText",
+
+                    borderColor: lighten("background", 0.5),
                     p: 3,
                     fontFamily: "body",
                     fontSize: 2,
                     color: "inherit",
-                    backgroundColor: "mutedLight",
                     "::placeholder": {
-                      color: "mutedText",
+                      color: lighten("background", 0.5),
                     },
                     //@TODO create proper focus style
                     ":focus": {
@@ -93,8 +95,8 @@ export const PostsSearch = ({ postTags, onSearch }) => {
             </Styled.div>
             <Styled.div
               sx={{
+                bg: lighten("background", 0.04),
                 position: "absolute",
-                backgroundColor: "mutedLight",
                 width: "100%",
                 zIndex: 2,
                 boxShadow: 3,
@@ -123,7 +125,7 @@ export const PostsSearch = ({ postTags, onSearch }) => {
                               item,
                             })}
                             sx={{
-                              color: "mutedText",
+                              color: lighten("background", 0.5),
                               cursor: "pointer",
                               p: 3,
                               margin: 0,

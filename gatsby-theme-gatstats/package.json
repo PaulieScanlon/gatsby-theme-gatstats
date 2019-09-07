@@ -22,6 +22,7 @@
     "@emotion/core": "^10.0.14",
     "@mdx-js/mdx": "^1.1.1",
     "@mdx-js/react": "^1.1.1",
+    "@theme-ui/color": "^0.2.40",
     "downshift": "^3.2.12",
     "gatsby-image": "^2.2.8",
     "gatsby-plugin-mdx": "^1.0.19",
@@ -31,7 +32,7 @@
     "gatsby-source-filesystem": "^2.1.6",
     "gatsby-transformer-sharp": "^2.2.6",
     "is-absolute-url": "^3.0.0",
-    "theme-ui": "^0.2.2"
+    "theme-ui": "^0.2.41"
   },
   "keywords": [
     "gatsby",

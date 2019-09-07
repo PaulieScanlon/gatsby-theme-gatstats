@@ -4,15 +4,16 @@ import PropTypes from "prop-types"
 import { ThemeToggle } from "../ThemeToggle"
 
 import { Styled, jsx } from "theme-ui"
+import { lighten } from "@theme-ui/color"
 
 export const AppBar = ({ handleOpen }) => {
   return (
     <Styled.div
       sx={{
         alignItems: "center",
+        bg: lighten("background", 0.04),
         display: "flex",
         justifyContent: "space-between",
-        backgroundColor: "mutedLight",
         boxSizing: "border-box",
         padding: 3,
         width: "100%",

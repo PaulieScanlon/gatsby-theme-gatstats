@@ -1,3 +1,5 @@
+import { lighten } from "@theme-ui/color"
+
 const headings = {
   color: "text",
   fontFamily: "heading",
@@ -32,8 +34,6 @@ export default {
     secondary: "#ffbf83",
     tertiary: "#4e3aef",
     text: "#ffffff",
-    mutedText: "#6e6eae",
-    mutedLight: "#212241",
     background: "#1b1c3b",
 
     modes: {
@@ -42,8 +42,6 @@ export default {
         secondary: "#ffbf83",
         tertiary: "#4e3aef",
         text: "#000037",
-        mutedText: "#a8a8bb",
-        mutedLight: "#ffffff",
         background: "#f7f7f7",
       },
     },
@@ -135,7 +133,7 @@ export default {
     },
 
     a: {
-      color: "mutedText",
+      color: lighten("background", 0.5),
       transition: ".2s linear all",
       ":hover": {
         color: "text",
@@ -143,14 +141,14 @@ export default {
     },
 
     pre: {
-      backgroundColor: "mutedLight",
+      bg: lighten("background", 0.04),
       fontFamily: "monospace",
       fontSize: 0,
       px: 3,
       py: 3,
       borderStyle: "solid",
       borderWidth: 0,
-      borderColor: "mutedText",
+      borderColor: lighten("background", 0.5),
     },
 
     code: {
@@ -159,7 +157,7 @@ export default {
     },
 
     blockquote: {
-      backgroundColor: "mutedLight",
+      bg: lighten("background", 0.04),
       borderLeftStyle: "solid",
       borderLeftWidth: 4,
       borderColor: "tertiary",
@@ -178,10 +176,10 @@ export default {
     tr: {},
 
     th: {
-      backgroundColor: "mutedLight",
+      bg: lighten("background", 0.04),
       borderStyle: "solid",
       borderWidth: 0,
-      borderColor: "mutedText",
+      borderColor: lighten("background", 0.5),
       px: 2,
       py: 2,
     },
@@ -189,7 +187,7 @@ export default {
     td: {
       borderStyle: "solid",
       borderWidth: 0,
-      borderColor: "mutedText",
+      borderColor: lighten("background", 0.5),
       px: 2,
       py: 2,
     },

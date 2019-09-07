@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 
 import { StaticQuery, graphql, Link } from "gatsby"
 import { Styled, jsx } from "theme-ui"
+import { lighten } from "@theme-ui/color"
 
 import { Icon } from "../Icon"
 
@@ -17,7 +18,7 @@ export const SideBar = ({
 
   const linkStyles = {
     alignItems: "center",
-    color: "mutedText",
+    color: lighten("background", 0.5),
     borderLeftStyle: "solid",
     borderLeftWidth: 4,
     borderColor: "background",
@@ -45,7 +46,7 @@ export const SideBar = ({
   return (
     <Styled.div
       sx={{
-        backgroundColor: "mutedLight",
+        bg: lighten("background", 0.04),
         boxShadow: [2, 2, 0],
         display: "flex",
         flexDirection: "column",
