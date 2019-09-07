@@ -14,7 +14,7 @@ export const SearchButton = ({ iconPath, ...props }) => (
       border: "none",
       borderBottomStyle: "solid",
       borderBottomWidth: 2,
-      borderColor: "secondary",
+      borderColor: "muted",
       color: "text",
       cursor: "pointer",
       //@TODO create proper focus style

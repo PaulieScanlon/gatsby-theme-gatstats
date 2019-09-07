@@ -18,7 +18,7 @@ export const SideBar = ({
 
   const linkStyles = {
     alignItems: "center",
-    color: "secondary",
+    color: "muted",
     borderLeftStyle: "solid",
     borderLeftWidth: 4,
     borderColor: "background",
@@ -80,14 +80,6 @@ export const SideBar = ({
           sx={{
             textAlign: "center",
             color: "primary",
-            "::before": {
-              content: '"./"',
-              color: "secondary",
-            },
-            "::after": {
-              content: '"~"',
-              color: "tertiary",
-            },
           }}
         >
           {title}

@@ -30,19 +30,19 @@ export default {
   initialColorMode: "dark",
 
   colors: {
-    primary: "#e963d7",
-    secondary: "#6e6eae",
-    tertiary: "#4e3aef",
     text: "#ffffff",
     background: "#1b1c3b",
+    primary: "#e963d7",
+    secondary: "#4e3aef",
+    muted: "#6e6eae",
 
     modes: {
       light: {
-        primary: "#e963d7",
-        secondary: "#6e6eae",
-        tertiary: "#4e3aef",
         text: "#000037",
         background: "#f7f7f7",
+        primary: "#e963d7",
+        secondary: "#4e3aef",
+        muted: "#6e6eae",
       },
     },
   },
@@ -133,7 +133,7 @@ export default {
     },
 
     a: {
-      color: "secondary",
+      color: "muted",
       transition: ".2s linear all",
       ":hover": {
         color: "text",
@@ -160,7 +160,7 @@ export default {
       bg: lighten("background", 0.04),
       borderLeftStyle: "solid",
       borderLeftWidth: 4,
-      borderColor: "tertiary",
+      borderColor: "secondary",
       px: 3,
       py: 3,
       my: 3,
@@ -180,7 +180,7 @@ export default {
       color: "text",
       borderStyle: "solid",
       borderWidth: 0,
-      borderColor: "secondary",
+      borderColor: "muted",
       px: 2,
       py: 2,
     },
@@ -188,7 +188,7 @@ export default {
     td: {
       borderStyle: "solid",
       borderWidth: 0,
-      borderColor: "secondary",
+      borderColor: "muted",
       px: 2,
       py: 2,
     },
