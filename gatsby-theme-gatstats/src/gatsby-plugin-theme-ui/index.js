@@ -31,7 +31,7 @@ export default {
 
   colors: {
     primary: "#e963d7",
-    secondary: "#ffbf83",
+    secondary: "#6e6eae",
     tertiary: "#4e3aef",
     text: "#ffffff",
     background: "#1b1c3b",
@@ -39,7 +39,7 @@ export default {
     modes: {
       light: {
         primary: "#e963d7",
-        secondary: "#ffbf83",
+        secondary: "#6e6eae",
         tertiary: "#4e3aef",
         text: "#000037",
         background: "#f7f7f7",
@@ -133,7 +133,7 @@ export default {
     },
 
     a: {
-      color: lighten("background", 0.5),
+      color: "secondary",
       transition: ".2s linear all",
       ":hover": {
         color: "text",

@@ -5,7 +5,7 @@ export const ThemeToggle = () => {
   const [colorMode, setColorMode] = useColorMode()
   return (
     <button
-      onClick={e => {
+      onClick={() => {
         setColorMode(colorMode === "light" ? "dark" : "light")
       }}
     >

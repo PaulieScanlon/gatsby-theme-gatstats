@@ -22,6 +22,7 @@ export const PostsSearch = ({ postTags, onSearch }) => {
         itemToString={item => (item ? item.value : "")}
       >
         {({
+          getRootProps,
           getInputProps,
           getItemProps,
           getMenuProps,
@@ -32,7 +33,7 @@ export const PostsSearch = ({ postTags, onSearch }) => {
           clearSelection,
           selectedItem,
         }) => (
-          <div style={{ position: "relative" }}>
+          <div {...getRootProps()} style={{ position: "relative" }}>
             <Styled.div
               sx={{
                 display: "flex",

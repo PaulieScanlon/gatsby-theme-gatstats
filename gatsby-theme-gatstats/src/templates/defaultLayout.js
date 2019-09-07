@@ -1,6 +1,13 @@
 /** @jsx jsx */
 import { Global, css } from "@emotion/core"
-import { ThemeProvider, Layout, Container, Styled, jsx } from "theme-ui"
+import {
+  ThemeProvider,
+  ColorMode,
+  Layout,
+  Container,
+  Styled,
+  jsx,
+} from "theme-ui"
 import { graphql, StaticQuery } from "gatsby"
 
 import theme from "../gatsby-plugin-theme-ui"
@@ -35,6 +42,7 @@ const DefaultLayout = ({ children }) => {
 
         return (
           <ThemeProvider theme={theme}>
+            <ColorMode />
             <Styled.root>
               <Layout>
                 <Global

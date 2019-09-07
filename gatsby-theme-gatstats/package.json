@@ -32,7 +32,7 @@
     "gatsby-source-filesystem": "^2.1.6",
     "gatsby-transformer-sharp": "^2.2.6",
     "is-absolute-url": "^3.0.0",
-    "theme-ui": "^0.2.41"
+    "theme-ui": "^0.2.2"
   },
   "keywords": [
     "gatsby",

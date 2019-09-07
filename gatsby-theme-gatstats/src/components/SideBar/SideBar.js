@@ -18,7 +18,7 @@ export const SideBar = ({
 
   const linkStyles = {
     alignItems: "center",
-    color: lighten("background", 0.5),
+    color: "secondary",
     borderLeftStyle: "solid",
     borderLeftWidth: 4,
     borderColor: "background",
