@@ -55,8 +55,20 @@ export const Card = ({ link, date, title, tags, excerpt, fluid }) => (
           padding: 3,
         }}
       >
-        <Styled.h6>{date}</Styled.h6>
-        <Styled.h4>{title}</Styled.h4>
+        <Styled.h6
+          sx={{
+            color: "muted",
+          }}
+        >
+          {date}
+        </Styled.h6>
+        <Styled.h4
+          sx={{
+            color: "secondary",
+          }}
+        >
+          {title}
+        </Styled.h4>
         <Styled.p>{excerpt}</Styled.p>
         <Styled.ul
           sx={{

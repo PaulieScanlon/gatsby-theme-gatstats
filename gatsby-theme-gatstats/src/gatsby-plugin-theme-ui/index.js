@@ -33,7 +33,7 @@ export default {
     text: "#ffffff",
     background: "#1b1c3b",
     primary: "#e963d7",
-    secondary: "#4e3aef",
+    secondary: "#B388FF",
     muted: "#6e6eae",
 
     modes: {
@@ -41,7 +41,7 @@ export default {
         text: "#000037",
         background: "#f7f7f7",
         primary: "#e963d7",
-        secondary: "#4e3aef",
+        secondary: "#B388FF",
         muted: "#6e6eae",
       },
     },
