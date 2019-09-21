@@ -5,10 +5,12 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Img from "gatsby-image"
 
 import { Link } from "../components/Link"
+import { TagsList } from "../components/TagsList"
 import DefaultLayout from "./DefaultLayout"
 
 const PostLayout = ({ data: { mdx } }) => {
-  const { title, tags, date, featuredImage } = mdx.frontmatter
+  const { timeToRead, wordCount } = mdx,
+    { title, tags, date, featuredImage } = mdx.frontmatter
 
   return (
     <DefaultLayout>
@@ -45,18 +47,9 @@ const PostLayout = ({ data: { mdx } }) => {
       )}
       <Styled.h6>{date}</Styled.h6>
       <Styled.h1>{title}</Styled.h1>
-      <Styled.ul
-        sx={{
-          listStyle: "none",
-          display: "flex",
-          padding: 0,
-          margin: 0,
-        }}
-      >
-        {tags.map((item, index) => (
-          <Styled.li key={index}>{item}&nbsp;</Styled.li>
-        ))}
-      </Styled.ul>
+      <Styled.p>{`${timeToRead} min read / ${wordCount.words} words`}</Styled.p>
+      <TagsList tags={tags} size="large" />
+
       <MDXRenderer>{mdx.body}</MDXRenderer>
       <Styled.div
         sx={{
@@ -82,12 +75,10 @@ export const contentQuery = graphql`
     mdx(id: { eq: $id }) {
       id
       body
+      timeToRead
       wordCount {
-        paragraphs
-        sentences
         words
       }
-      timeToRead
       frontmatter {
         title
         tags

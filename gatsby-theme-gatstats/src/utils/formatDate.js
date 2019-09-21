@@ -1,26 +1,27 @@
 export const monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
   "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
 ]
 
-export const formatDate = srcDate => {
+export const formatDateForPosts = srcDate => {
   if (srcDate) {
     const dateStr = new Date(srcDate)
 
     return `
     ${
       monthNames[dateStr.getMonth()]
-    }${" "} ${dateStr.getDate()}, ${dateStr.getFullYear()}`
+    } ${dateStr.getDate()} ${dateStr.getFullYear()}`
   }
+
   return "__-__-__"
 }

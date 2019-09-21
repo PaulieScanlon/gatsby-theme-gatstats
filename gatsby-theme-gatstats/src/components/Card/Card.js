@@ -5,9 +5,19 @@ import { lighten } from "@theme-ui/color"
 
 import Img from "gatsby-image"
 
-import { Link } from "../../components/Link"
+import { TagsList } from "../TagsList"
+import { Link } from "../Link"
 
-export const Card = ({ link, date, title, tags, excerpt, fluid }) => (
+export const Card = ({
+  link,
+  date,
+  title,
+  tags,
+  excerpt,
+  fluid,
+  timeToRead,
+  wordCount,
+}) => (
   <Link
     href={link}
     sx={{
@@ -24,6 +34,7 @@ export const Card = ({ link, date, title, tags, excerpt, fluid }) => (
   >
     <Styled.div
       sx={{
+        position: "relative",
         display: "flex",
         flexDirection: "column",
         height: "100%",
@@ -52,36 +63,39 @@ export const Card = ({ link, date, title, tags, excerpt, fluid }) => (
       )}
       <Styled.div
         sx={{
+          display: "flex",
+          flexDirection: "column",
+          flexGrow: 1,
           padding: 3,
         }}
       >
         <Styled.h6
           sx={{
-            color: "muted",
+            color: "primary",
           }}
         >
           {date}
         </Styled.h6>
         <Styled.h4
           sx={{
-            color: "secondary",
+            color: "text",
           }}
         >
           {title}
         </Styled.h4>
-        <Styled.p>{excerpt}</Styled.p>
-        <Styled.ul
+        <Styled.p
           sx={{
-            listStyle: "none",
-            display: "flex",
-            padding: 0,
-            margin: 0,
+            flexGrow: 1,
           }}
         >
-          {tags.map((item, index) => (
-            <Styled.li key={index}>{item}&nbsp;</Styled.li>
-          ))}
-        </Styled.ul>
+          {excerpt}
+        </Styled.p>
+        <Styled.p
+          sx={{
+            fontSize: [1],
+          }}
+        >{`${timeToRead} min read / ${wordCount.words} words`}</Styled.p>
+        <TagsList tags={tags} />
       </Styled.div>
     </Styled.div>
   </Link>
@@ -102,4 +116,8 @@ Card.propTypes = {
     }),
     PropTypes.number,
   ]),
+  timeToRead: PropTypes.number.isRequired,
+  wordCount: PropTypes.shape({
+    words: PropTypes.number.isRequired,
+  }),
 }

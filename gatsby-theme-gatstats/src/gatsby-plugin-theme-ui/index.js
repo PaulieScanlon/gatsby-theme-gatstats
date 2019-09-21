@@ -11,6 +11,8 @@ const headings = {
 export default {
   space: [0, 4, 8, 16, 32, 48, 64, 128, 256, 512],
 
+  radii: [0, 2],
+
   borderWidths: [1, 2, 3],
 
   fonts: {
@@ -41,7 +43,7 @@ export default {
         text: "#000037",
         background: "#f7f7f7",
         primary: "#e963d7",
-        secondary: "#B388FF",
+        tertiary: "#4e3aef",
         muted: "#6e6eae",
       },
     },

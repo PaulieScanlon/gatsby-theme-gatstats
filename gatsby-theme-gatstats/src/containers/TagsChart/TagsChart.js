@@ -1,21 +1,27 @@
 /** @jsx jsx */
-
-import { jsx } from "theme-ui"
+import { Styled, jsx } from "theme-ui"
 import { StaticQuery, graphql } from "gatsby"
-
-import { Histogram } from "./Histogram"
-
-const mockData = require("./mock.data.json")
+import { VictoryLineChart } from "./VictoryLineChart"
 
 export const TagsChart = () => {
   return (
     <StaticQuery
       query={graphql`
-        query tagssQuery {
-          allMdx(filter: { frontmatter: { tags: { ne: null } } }) {
+        query tagsQuery {
+          allMdx(
+            filter: { fileAbsolutePath: { regex: "//posts//" } }
+            sort: { order: DESC, fields: [frontmatter___date] }
+          ) {
             group(field: frontmatter___tags) {
               fieldValue
               totalCount
+              edges {
+                node {
+                  frontmatter {
+                    date
+                  }
+                }
+              }
             }
           }
         }
@@ -23,15 +29,10 @@ export const TagsChart = () => {
       render={data => {
         const { group } = data.allMdx
 
-        // console.log("group: ", group)
-
         return (
-          <Histogram
-            data={group}
-            value={d => d.totalCount}
-            barHeight={20}
-            barGap={5}
-          />
+          <Styled.div>
+            <VictoryLineChart data={group} />
+          </Styled.div>
         )
       }}
     />

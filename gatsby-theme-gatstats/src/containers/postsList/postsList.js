@@ -6,7 +6,7 @@ import { StaticQuery, graphql } from "gatsby"
 import { Card } from "../../components/Card"
 import { PostsSearch } from "../../components/PostsSearch"
 
-import { formatDate } from "../../utils/formatDate"
+import { formatDateForPosts } from "../../utils/formatDate"
 
 export const PostsList = () => {
   const [postsFilter, setPostsFiler] = React.useState("")
@@ -28,6 +28,10 @@ export const PostsList = () => {
                 excerpt(pruneLength: 100)
                 fields {
                   slug
+                }
+                timeToRead
+                wordCount {
+                  words
                 }
                 frontmatter {
                   title
@@ -80,7 +84,13 @@ export const PostsList = () => {
               }}
             >
               {postDetails.map((item, index) => {
-                const { fields, excerpt, frontmatter } = item.node
+                const {
+                  fields,
+                  excerpt,
+                  frontmatter,
+                  timeToRead,
+                  wordCount,
+                } = item.node
                 return (
                   <Box
                     key={index}
@@ -92,7 +102,7 @@ export const PostsList = () => {
                   >
                     <Card
                       link={fields.slug}
-                      date={formatDate(frontmatter.date)}
+                      date={formatDateForPosts(frontmatter.date)}
                       title={frontmatter.title}
                       tags={frontmatter.tags}
                       excerpt={excerpt}
@@ -101,6 +111,8 @@ export const PostsList = () => {
                           ? frontmatter.featuredImage.childImageSharp.fluid
                           : null
                       }
+                      timeToRead={timeToRead}
+                      wordCount={wordCount}
                     />
                   </Box>
                 )
