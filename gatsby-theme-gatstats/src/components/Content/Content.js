@@ -11,6 +11,7 @@ export const Content = ({ children, marginLeft }) => {
         height: "1000px",
         ml: [0, 0, marginLeft],
         mt: 5,
+        p: 3,
       }}
     >
       {children}

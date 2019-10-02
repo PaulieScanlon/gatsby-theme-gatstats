@@ -18,7 +18,8 @@ import { AppBar } from "../components/AppBar"
 import { Content } from "../components/Content"
 import { useLocalStorage } from "../utils/useLocalStorage"
 
-const DefaultLayout = ({ children }) => {
+const DefaultLayout = ({ pageContext, children }) => {
+  const { isIndex } = pageContext || false
   const [isNavOpen, setNavOpen] = useLocalStorage("gatstats-isNavOpen", false)
 
   return (
@@ -64,8 +65,13 @@ const DefaultLayout = ({ children }) => {
                   handleClick={() => setNavOpen(false)}
                   isNavOpen={isNavOpen}
                 />
+
                 <Content marginLeft={sideBarWidth}>
-                  <Container>{children}</Container>
+                  {isIndex ? (
+                    <div>{children}</div>
+                  ) : (
+                    <Container>{children}</Container>
+                  )}
                 </Content>
               </Layout>
             </Styled.root>

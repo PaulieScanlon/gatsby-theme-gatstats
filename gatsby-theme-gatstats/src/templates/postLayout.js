@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Styled, jsx } from "theme-ui"
+import { Container, Styled, jsx } from "theme-ui"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Img from "gatsby-image"
@@ -14,58 +14,60 @@ const PostLayout = ({ data: { mdx } }) => {
 
   return (
     <DefaultLayout>
-      <Link
-        href="/posts/"
-        sx={{
-          display: "block",
-          mb: 3,
-        }}
-      >
-        Back
-      </Link>
-      {featuredImage && (
-        <Styled.div
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            width: "100%",
-            height: [250, 300],
-            overflow: "hidden",
-            mb: 4,
-          }}
-        >
-          <Img
-            fluid={featuredImage.childImageSharp.fluid}
-            alt={title}
-            style={{
-              display: "block",
-              width: "100%",
-              height: "100%",
-            }}
-          />
-        </Styled.div>
-      )}
-      <Styled.h6>{date}</Styled.h6>
-      <Styled.h1>{title}</Styled.h1>
-      <Styled.p>{`${timeToRead} min read / ${wordCount.words} words`}</Styled.p>
-      <TagsList tags={tags} size="large" />
-
-      <MDXRenderer>{mdx.body}</MDXRenderer>
-      <Styled.div
-        sx={{
-          mb: 4,
-        }}
-      >
+      <Container>
         <Link
           href="/posts/"
           sx={{
             display: "block",
-            mt: 5,
+            mb: 3,
           }}
         >
           Back
         </Link>
-      </Styled.div>
+        {featuredImage && (
+          <Styled.div
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              width: "100%",
+              height: [250, 300],
+              overflow: "hidden",
+              mb: 4,
+            }}
+          >
+            <Img
+              fluid={featuredImage.childImageSharp.fluid}
+              alt={title}
+              style={{
+                display: "block",
+                width: "100%",
+                height: "100%",
+              }}
+            />
+          </Styled.div>
+        )}
+        <Styled.h6>{date}</Styled.h6>
+        <Styled.h1>{title}</Styled.h1>
+        <Styled.p>{`${timeToRead} min read / ${wordCount.words} words`}</Styled.p>
+        <TagsList tags={tags} size="large" />
+
+        <MDXRenderer>{mdx.body}</MDXRenderer>
+        <Styled.div
+          sx={{
+            mb: 4,
+          }}
+        >
+          <Link
+            href="/posts/"
+            sx={{
+              display: "block",
+              mt: 5,
+            }}
+          >
+            Back
+          </Link>
+        </Styled.div>
+      </Container>
     </DefaultLayout>
   )
 }
