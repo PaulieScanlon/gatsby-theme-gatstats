@@ -5,5 +5,12 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    logo: "logo",
+    description: "A Gatsby blog dashboard theme",
+    config: {
+      sideBarWidth: 200,
+    },
+  },
   plugins: ["gatsby-theme-gatstats"],
 }

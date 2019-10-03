@@ -1,4 +1,4 @@
-import { darken, lighten } from "@theme-ui/color"
+// import { darken, lighten } from "@theme-ui/color"
 
 const headings = {
   color: "text",
@@ -21,7 +21,7 @@ export default {
     monospace: "Menlo, monospace",
   },
 
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 76],
+  fontSizes: [12, 14, 16, 18, 24, 32, 48, 64, 76],
 
   fontWeights: {
     body: 400,
@@ -29,22 +29,23 @@ export default {
     bold: 700,
   },
 
-  initialColorMode: "dark",
+  initialColorModeName: "light",
 
   colors: {
-    text: "#ffffff",
-    background: "#1b1c3b",
-    primary: "#e963d7",
-    secondary: "#B388FF",
-    muted: "#6e6eae",
-
+    text: "#656d8c",
+    background: "#ffffff",
+    primary: "#ec3cbd",
+    secondary: "#c456d9",
+    tertiary: "#ac68eb",
+    muted: "#c3cbd9",
     modes: {
-      light: {
-        text: "#000037",
-        background: "#f7f7f7",
-        primary: "#e963d7",
-        tertiary: "#4e3aef",
-        muted: "#6e6eae",
+      dark: {
+        text: "#ffffff",
+        background: "#1b1c3b",
+        primary: "#ec3cbd",
+        secondary: "#c456d9",
+        tertiary: "#ac68eb",
+        muted: "#c3cbd9",
       },
     },
   },
@@ -143,14 +144,16 @@ export default {
     },
 
     pre: {
-      bg: lighten("background", 0.04),
+      backgroundColor: "background",
+      // bg: lighten("background", 0.04),
       fontFamily: "monospace",
       fontSize: 0,
       px: 3,
       py: 3,
       borderStyle: "solid",
       borderWidth: 0,
-      borderColor: darken("background", 0.04),
+      borderColor: "background",
+      // borderColor: darken("background", 0.04),
     },
 
     code: {
@@ -159,7 +162,8 @@ export default {
     },
 
     blockquote: {
-      bg: lighten("background", 0.04),
+      backgroundColor: "background",
+      // bg: lighten("background", 0.04),
       borderLeftStyle: "solid",
       borderLeftWidth: 4,
       borderColor: "secondary",
@@ -178,7 +182,8 @@ export default {
     tr: {},
 
     th: {
-      bg: lighten("background", 0.04),
+      backgroundColor: "background",
+      // bg: lighten("background", 0.04),
       color: "text",
       borderStyle: "solid",
       borderWidth: 0,

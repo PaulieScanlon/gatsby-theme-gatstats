@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import PropTypes from "prop-types"
 import { Styled, jsx } from "theme-ui"
-import { lighten } from "@theme-ui/color"
+// import { lighten } from "@theme-ui/color"
 
 import { Icon } from "../Icon"
 
@@ -10,7 +10,8 @@ export const SearchButton = ({ iconPath, ...props }) => (
     as="button"
     {...props}
     sx={{
-      bg: lighten("background", 0.04),
+      backgroundColor: "background",
+      // bg: lighten("background", 0.04),
       border: "none",
       borderBottomStyle: "solid",
       borderBottomWidth: 2,

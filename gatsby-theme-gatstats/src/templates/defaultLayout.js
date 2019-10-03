@@ -1,13 +1,6 @@
-/** @jsx jsx */
+import React from "react"
 import { Global, css } from "@emotion/core"
-import {
-  ThemeProvider,
-  ColorMode,
-  Layout,
-  Container,
-  Styled,
-  jsx,
-} from "theme-ui"
+import { ThemeProvider, ColorMode, Layout, Container, Styled } from "theme-ui"
 import { graphql, StaticQuery } from "gatsby"
 
 import theme from "../gatsby-plugin-theme-ui"
@@ -28,7 +21,7 @@ const DefaultLayout = ({ pageContext, children }) => {
         query defaultQuery {
           site {
             siteMetadata {
-              title
+              logo
               description
               config {
                 sideBarWidth
@@ -38,7 +31,7 @@ const DefaultLayout = ({ pageContext, children }) => {
         }
       `}
       render={data => {
-        const { title, description } = data.site.siteMetadata
+        const { logo, description } = data.site.siteMetadata
         const { sideBarWidth } = data.site.siteMetadata.config
 
         return (
@@ -55,7 +48,7 @@ const DefaultLayout = ({ pageContext, children }) => {
                 />
                 <AppBar handleOpen={() => setNavOpen(true)} />
                 <SideBar
-                  title={title}
+                  logo={logo}
                   description={description}
                   width={sideBarWidth}
                   isNavOpen={isNavOpen}
@@ -65,7 +58,6 @@ const DefaultLayout = ({ pageContext, children }) => {
                   handleClick={() => setNavOpen(false)}
                   isNavOpen={isNavOpen}
                 />
-
                 <Content marginLeft={sideBarWidth}>
                   {isIndex ? (
                     <div>{children}</div>

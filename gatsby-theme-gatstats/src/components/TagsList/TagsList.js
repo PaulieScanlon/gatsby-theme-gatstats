@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import PropTypes from "prop-types"
 import { Styled, jsx } from "theme-ui"
-import { lighten } from "@theme-ui/color"
+// import { lighten } from "@theme-ui/color"
 
 export const TagsList = ({ tags, size }) => {
   return (
@@ -30,7 +30,8 @@ export const TagsList = ({ tags, size }) => {
             borderStyle: "solid",
             borderWidth: 0,
             borderColor: "background",
-            bg: lighten("background", 0.04),
+            backgroundColor: "background",
+            // bg: lighten("background", 0.04),
           }}
         >
           {item}

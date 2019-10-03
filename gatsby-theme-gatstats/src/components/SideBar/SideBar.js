@@ -3,12 +3,12 @@ import PropTypes from "prop-types"
 
 import { StaticQuery, graphql, Link } from "gatsby"
 import { Styled, jsx } from "theme-ui"
-import { lighten } from "@theme-ui/color"
+// import { lighten } from "@theme-ui/color"
 
 import { Icon } from "../Icon"
 
 export const SideBar = ({
-  title,
+  logo,
   description,
   isNavOpen,
   handleClose,
@@ -46,7 +46,8 @@ export const SideBar = ({
   return (
     <Styled.div
       sx={{
-        bg: lighten("background", 0.04),
+        backgroundColor: "background",
+        // bg: lighten("background", 0.04),
         boxShadow: [2, 2, 0],
         display: "flex",
         flexDirection: "column",
@@ -82,7 +83,7 @@ export const SideBar = ({
             color: "primary",
           }}
         >
-          {title}
+          {logo}
         </Styled.h3>
         <Styled.h6
           sx={{
@@ -167,7 +168,7 @@ export const SideBar = ({
 }
 
 SideBar.propTypes = {
-  title: PropTypes.string.isRequired,
+  logo: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   isNavOpen: PropTypes.bool.isRequired,
   handleClose: PropTypes.func,

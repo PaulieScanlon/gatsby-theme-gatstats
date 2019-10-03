@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import PropTypes from "prop-types"
 import { Styled, jsx } from "theme-ui"
-import { lighten } from "@theme-ui/color"
+// import { lighten } from "@theme-ui/color"
 
 import Img from "gatsby-image"
 
@@ -21,7 +21,8 @@ export const Card = ({
   <Link
     href={link}
     sx={{
-      bg: lighten("background", 0.04),
+      backgroundColor: "background",
+      // bg: lighten("background", 0.04),
       boxShadow: 0,
       display: "block",
       height: "100%",
