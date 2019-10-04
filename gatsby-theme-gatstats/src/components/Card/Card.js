@@ -14,7 +14,7 @@ export const Card = ({
   title,
   tags,
   excerpt,
-  fluid,
+  fixed,
   timeToRead,
   wordCount,
 }) => (
@@ -37,29 +37,25 @@ export const Card = ({
       sx={{
         position: "relative",
         display: "flex",
-        flexDirection: "column",
         height: "100%",
       }}
     >
-      {fluid && (
-        <Styled.div
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            width: "100%",
-            height: [150, 200],
-            overflow: "hidden",
-          }}
-        >
-          <Img
-            fluid={fluid}
-            alt={title}
-            style={{
-              display: "block",
-              width: "100%",
-              height: "100%",
+      {fixed && (
+        <Styled.div sx={{ display: "flex", alignItems: "center", padding: 3 }}>
+          <Styled.div
+            sx={{
+              display: "flex",
+              overflow: "hidden",
+              borderRadius: 50,
             }}
-          />
+          >
+            <Img
+              fixed={fixed}
+              alt={title}
+              width={fixed.width}
+              height={fixed.height}
+            />
+          </Styled.div>
         </Styled.div>
       )}
       <Styled.div
@@ -70,20 +66,13 @@ export const Card = ({
           padding: 3,
         }}
       >
-        <Styled.h6
-          sx={{
-            color: "primary",
-          }}
-        >
-          {date}
-        </Styled.h6>
-        <Styled.h4
+        <Styled.h5
           sx={{
             color: "text",
           }}
         >
           {title}
-        </Styled.h4>
+        </Styled.h5>
         <Styled.p
           sx={{
             flexGrow: 1,
@@ -91,6 +80,13 @@ export const Card = ({
         >
           {excerpt}
         </Styled.p>
+        <Styled.h6
+          sx={{
+            color: "primary",
+          }}
+        >
+          {date}
+        </Styled.h6>
         <Styled.p
           sx={{
             fontSize: [1],
@@ -108,10 +104,11 @@ Card.propTypes = {
   title: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string),
   excerpt: PropTypes.string.isRequired,
-  fluid: PropTypes.oneOfType([
+  fixed: PropTypes.oneOfType([
     PropTypes.shape({
       aspectRatio: PropTypes.number.isRequired,
-      sizes: PropTypes.string.isRequired,
+      width: PropTypes.number,
+      height: PropTypes.number,
       src: PropTypes.string.isRequired,
       srcSet: PropTypes.string.isRequired,
     }),

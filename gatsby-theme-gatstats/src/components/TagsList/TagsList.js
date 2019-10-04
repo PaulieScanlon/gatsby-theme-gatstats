@@ -23,7 +23,6 @@ export const TagsList = ({ tags, size }) => {
         <Styled.li
           key={index}
           sx={{
-            padding: 2,
             color: "muted",
             fontSize: size === "small" ? 0 : 2,
             borderRadius: 1,

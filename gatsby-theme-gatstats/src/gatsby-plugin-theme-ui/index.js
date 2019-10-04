@@ -1,5 +1,3 @@
-// import { darken, lighten } from "@theme-ui/color"
-
 const headings = {
   color: "text",
   fontFamily: "heading",
@@ -109,7 +107,7 @@ export default {
 
     h6: {
       ...headings,
-      marginBottom: 3,
+      marginBottom: 2,
       fontSize: 2,
     },
 
@@ -120,7 +118,7 @@ export default {
       fontWeight: "body",
       lineHeight: "body",
       marginTop: 0,
-      marginBottom: 4,
+      marginBottom: 2,
       a: {
         color: "primary",
       },

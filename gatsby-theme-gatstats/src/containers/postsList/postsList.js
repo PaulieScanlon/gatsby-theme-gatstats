@@ -39,11 +39,12 @@ export const PostsList = () => {
                   date
                   featuredImage {
                     childImageSharp {
-                      fluid(maxWidth: 786) {
+                      fixed(fit: COVER, width: 100, height: 100) {
                         aspectRatio
+                        width
+                        height
                         src
                         srcSet
-                        sizes
                       }
                     }
                   }
@@ -95,7 +96,7 @@ export const PostsList = () => {
                   <Box
                     key={index}
                     sx={{
-                      width: ["100%", "100%", "100%", "50%"],
+                      width: "100%",
                       px: 2,
                       mb: 3,
                     }}
@@ -109,6 +110,11 @@ export const PostsList = () => {
                       fluid={
                         frontmatter.featuredImage
                           ? frontmatter.featuredImage.childImageSharp.fluid
+                          : null
+                      }
+                      fixed={
+                        frontmatter.featuredImage
+                          ? frontmatter.featuredImage.childImageSharp.fixed
                           : null
                       }
                       timeToRead={timeToRead}

@@ -4,8 +4,6 @@ import { useColorMode } from "theme-ui"
 export const ThemeToggle = () => {
   const [colorMode, setColorMode] = useColorMode()
 
-  console.log("colorMode: ", colorMode)
-
   return (
     <button
       onClick={() => {

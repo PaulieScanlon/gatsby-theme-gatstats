@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+
+import { jsx, Flex, Box } from "theme-ui"
 import { StaticQuery, graphql } from "gatsby"
 
 import { Card } from "../../components/Card"
@@ -14,7 +15,7 @@ export const LatestPost = () => {
           allMdx(
             filter: { fileAbsolutePath: { regex: "//posts//" } }
             sort: { order: DESC, fields: [frontmatter___date] }
-            limit: 1
+            limit: 3
           ) {
             edges {
               node {
@@ -32,11 +33,12 @@ export const LatestPost = () => {
                   date
                   featuredImage {
                     childImageSharp {
-                      fluid(maxWidth: 786) {
+                      fixed(fit: COVER, width: 100, height: 100) {
                         aspectRatio
+                        width
+                        height
                         src
                         srcSet
-                        sizes
                       }
                     }
                   }
@@ -47,29 +49,54 @@ export const LatestPost = () => {
         }
       `}
       render={data => {
-        const {
-          fields,
-          excerpt,
-          frontmatter,
-          timeToRead,
-          wordCount,
-        } = data.allMdx.edges[0].node
-
         return (
-          <Card
-            link={fields.slug}
-            date={formatDateForPosts(frontmatter.date)}
-            title={frontmatter.title}
-            tags={frontmatter.tags}
-            excerpt={excerpt}
-            fluid={
-              frontmatter.featuredImage
-                ? frontmatter.featuredImage.childImageSharp.fluid
-                : null
-            }
-            timeToRead={timeToRead}
-            wordCount={wordCount}
-          />
+          <Flex
+            sx={{
+              flexWrap: "wrap",
+            }}
+          >
+            {data.allMdx.edges.map((item, index) => {
+              const {
+                fields,
+                excerpt,
+                frontmatter,
+                timeToRead,
+                wordCount,
+              } = item.node
+
+              return (
+                <Box
+                  key={index}
+                  sx={{
+                    width: "100%",
+                    px: 2,
+                    mb: 3,
+                  }}
+                >
+                  <Card
+                    key={index}
+                    link={fields.slug}
+                    date={formatDateForPosts(frontmatter.date)}
+                    title={frontmatter.title}
+                    tags={frontmatter.tags}
+                    excerpt={excerpt}
+                    fluid={
+                      frontmatter.featuredImage
+                        ? frontmatter.featuredImage.childImageSharp.fluid
+                        : null
+                    }
+                    fixed={
+                      frontmatter.featuredImage
+                        ? frontmatter.featuredImage.childImageSharp.fixed
+                        : null
+                    }
+                    timeToRead={timeToRead}
+                    wordCount={wordCount}
+                  />
+                </Box>
+              )
+            })}
+          </Flex>
         )
       }}
     />
