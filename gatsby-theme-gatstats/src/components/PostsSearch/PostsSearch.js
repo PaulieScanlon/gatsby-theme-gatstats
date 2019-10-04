@@ -11,7 +11,6 @@ export const PostsSearch = ({ postTags, onSearch }) => {
   return (
     <Styled.div
       sx={{
-        px: 2,
         mb: 4,
       }}
     >

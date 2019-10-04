@@ -6,10 +6,10 @@
 
 module.exports = {
   siteMetadata: {
-    logo: "logo",
+    logo: "</>",
     description: "A Gatsby blog dashboard theme",
     config: {
-      sideBarWidth: 200,
+      sideBarWidth: 230,
     },
   },
   plugins: ["gatsby-theme-gatstats"],

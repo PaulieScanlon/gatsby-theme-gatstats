@@ -1,0 +1,30 @@
+/** @jsx jsx */
+import { jsx, Flex, Box, Styled } from "theme-ui"
+
+import { TagsChart } from "../features/TagsChart"
+import { LatestPost } from "../features/LatestPost"
+
+export const DashboardLayout = () => (
+  <Styled.div>
+    <Flex
+      sx={{
+        flexWrap: "wrap",
+      }}
+    >
+      <Box
+        sx={{
+          width: ["100%", "100%", "100%", "100%", "50%"],
+        }}
+      >
+        <TagsChart />
+      </Box>
+      <Box
+        sx={{
+          width: ["100%", "100%", "100%", "100%", "50%"],
+        }}
+      >
+        <LatestPost />
+      </Box>
+    </Flex>
+  </Styled.div>
+)

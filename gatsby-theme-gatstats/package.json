@@ -23,6 +23,11 @@
     "@mdx-js/mdx": "^1.5.0",
     "@mdx-js/react": "^1.5.0",
     "@theme-ui/color": "^0.2.40",
+    "@vx/gradient": "^0.0.192",
+    "@vx/group": "^0.0.192",
+    "@vx/mock-data": "^0.0.192",
+    "@vx/responsive": "^0.0.192",
+    "@vx/shape": "^0.0.192",
     "downshift": "^3.3.4",
     "gatsby": "^2.15.28",
     "gatsby-image": "^2.2.23",
@@ -35,8 +40,7 @@
     "is-absolute-url": "^3.0.3",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "theme-ui": "^0.2.43",
-    "victory": "^33.0.5"
+    "theme-ui": "^0.2.43"
   },
   "keywords": [
     "gatsby",

@@ -2,11 +2,11 @@ const path = require("path")
 
 module.exports = {
   siteMetadata: {
-    logo: "logo",
+    logo: "</>",
     description:
       "A Gatsby blog dashboard theme for blog statistics and GitHub recent activity.",
     config: {
-      sideBarWidth: 200,
+      sideBarWidth: 230,
     },
   },
   plugins: [

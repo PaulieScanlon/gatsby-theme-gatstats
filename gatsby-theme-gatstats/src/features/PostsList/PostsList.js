@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from "react"
-import { jsx, Flex, Box } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import { StaticQuery, graphql } from "gatsby"
 
 import { Card } from "../../components/Card"
@@ -79,11 +79,7 @@ export const PostsList = () => {
               postTags={postTags}
               onSearch={filterValue => setPostsFiler(filterValue)}
             />
-            <Flex
-              sx={{
-                flexWrap: "wrap",
-              }}
-            >
+            <Styled.div>
               {postDetails.map((item, index) => {
                 const {
                   fields,
@@ -93,11 +89,9 @@ export const PostsList = () => {
                   wordCount,
                 } = item.node
                 return (
-                  <Box
+                  <Styled.div
                     key={index}
                     sx={{
-                      width: "100%",
-                      px: 2,
                       mb: 3,
                     }}
                   >
@@ -120,10 +114,10 @@ export const PostsList = () => {
                       timeToRead={timeToRead}
                       wordCount={wordCount}
                     />
-                  </Box>
+                  </Styled.div>
                 )
               })}
-            </Flex>
+            </Styled.div>
           </div>
         )
       }}

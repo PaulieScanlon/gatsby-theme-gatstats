@@ -27,16 +27,18 @@ export default {
     bold: 700,
   },
 
-  initialColorModeName: "light",
+  initialColorModeName: "dark",
 
   colors: {
-    text: "#656d8c",
-    background: "#ffffff",
-    primary: "#ec3cbd",
-    secondary: "#c456d9",
-    tertiary: "#ac68eb",
-    muted: "#c3cbd9",
     modes: {
+      light: {
+        text: "#656d8c",
+        background: "#ffffff",
+        primary: "#ec3cbd",
+        secondary: "#c456d9",
+        tertiary: "#ac68eb",
+        muted: "#c3cbd9",
+      },
       dark: {
         text: "#ffffff",
         background: "#1b1c3b",
@@ -101,7 +103,7 @@ export default {
 
     h5: {
       ...headings,
-      marginBottom: 3,
+      marginBottom: 2,
       fontSize: 4,
     },
 
@@ -109,6 +111,7 @@ export default {
       ...headings,
       marginBottom: 2,
       fontSize: 2,
+      fontWeight: "body",
     },
 
     p: {

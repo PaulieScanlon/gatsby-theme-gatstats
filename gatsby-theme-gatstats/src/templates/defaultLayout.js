@@ -60,7 +60,7 @@ const DefaultLayout = ({ pageContext, children }) => {
                 />
                 <Content marginLeft={sideBarWidth}>
                   {isIndex ? (
-                    <div>{children}</div>
+                    <>{children}</>
                   ) : (
                     <Container>{children}</Container>
                   )}

@@ -87,12 +87,14 @@ export const Card = ({
         >
           {date}
         </Styled.h6>
-        <Styled.p
-          sx={{
-            fontSize: [1],
-          }}
-        >{`${timeToRead} min read / ${wordCount.words} words`}</Styled.p>
-        <TagsList tags={tags} />
+        {wordCount && (
+          <Styled.p
+            sx={{
+              fontSize: [1],
+            }}
+          >{`${timeToRead} min read / ${wordCount.words} words`}</Styled.p>
+        )}
+        {tags && <TagsList tags={tags} />}
       </Styled.div>
     </Styled.div>
   </Link>
@@ -114,8 +116,8 @@ Card.propTypes = {
     }),
     PropTypes.number,
   ]),
-  timeToRead: PropTypes.number.isRequired,
+  timeToRead: PropTypes.number,
   wordCount: PropTypes.shape({
-    words: PropTypes.number.isRequired,
+    words: PropTypes.number,
   }),
 }
