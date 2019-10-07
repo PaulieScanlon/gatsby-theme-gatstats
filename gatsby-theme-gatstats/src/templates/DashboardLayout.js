@@ -2,6 +2,7 @@
 import { jsx, Flex, Box, Styled } from "theme-ui"
 
 import { TagsChart } from "../features/TagsChart"
+import { DaysChart } from "../features/DaysChart"
 import { LatestPost } from "../features/LatestPost"
 
 export const DashboardLayout = () => (
@@ -17,6 +18,13 @@ export const DashboardLayout = () => (
         }}
       >
         <TagsChart />
+      </Box>
+      <Box
+        sx={{
+          width: ["100%", "100%", "100%", "100%", "50%"],
+        }}
+      >
+        <DaysChart />
       </Box>
       <Box
         sx={{

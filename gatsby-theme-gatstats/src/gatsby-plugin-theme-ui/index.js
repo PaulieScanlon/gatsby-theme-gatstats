@@ -19,7 +19,7 @@ export default {
     monospace: "Menlo, monospace",
   },
 
-  fontSizes: [12, 14, 16, 18, 24, 32, 48, 64, 76],
+  fontSizes: [12, 14, 16, 18, 20, 24, 32, 48, 64],
 
   fontWeights: {
     body: 400,
@@ -27,7 +27,7 @@ export default {
     bold: 700,
   },
 
-  initialColorModeName: "dark",
+  // initialColorModeName: "dark",
 
   colors: {
     modes: {
@@ -64,7 +64,7 @@ export default {
     root: {
       fontFamily: "body",
       fontWeight: "body",
-      lineHeight: "body",
+      lineHeight: "normal",
     },
 
     Layout: {

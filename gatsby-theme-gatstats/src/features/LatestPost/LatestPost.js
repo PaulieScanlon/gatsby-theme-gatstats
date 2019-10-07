@@ -48,12 +48,22 @@ export const LatestPost = () => {
         return (
           <Styled.div
             sx={{
-              m: 3,
+              display: "flex",
+              height: "100%",
             }}
           >
-            <Styled.h5 sx={{ mb: 0 }}>NEW POSTS</Styled.h5>
-            <Styled.h6 sx={{ color: "muted" }}>Last 3 blog posts</Styled.h6>
-            <LatestPostCards data={data.allMdx.edges} />
+            <Styled.div
+              sx={{
+                margin: 3,
+                padding: 3,
+                boxShadow: 0,
+                flex: 1,
+              }}
+            >
+              <Styled.h5 sx={{ mb: 0 }}>NEW POSTS</Styled.h5>
+              <Styled.h6 sx={{ color: "muted" }}>Last 3 blog posts</Styled.h6>
+              <LatestPostCards data={data.allMdx.edges} />
+            </Styled.div>
           </Styled.div>
         )
       }}

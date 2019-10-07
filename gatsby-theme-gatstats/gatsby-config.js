@@ -6,7 +6,7 @@ module.exports = {
     description:
       "A Gatsby blog dashboard theme for blog statistics and GitHub recent activity.",
     config: {
-      sideBarWidth: 230,
+      sideBarWidth: 250,
     },
   },
   plugins: [

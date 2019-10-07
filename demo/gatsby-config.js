@@ -9,7 +9,7 @@ module.exports = {
     logo: "</>",
     description: "A Gatsby blog dashboard theme",
     config: {
-      sideBarWidth: 230,
+      sideBarWidth: 250,
     },
   },
   plugins: ["gatsby-theme-gatstats"],

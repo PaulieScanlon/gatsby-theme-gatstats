@@ -12,17 +12,15 @@ export const VxPie = ({ data, width, height }) => {
   return (
     <Styled.div
       sx={{
-        backgroundColor: "background",
         // backgroundImage: t =>
         //   `radial-gradient(${t.colors.muted}, ${t.colors.background})`,
-        boxShadow: 0,
+
         padding: 3,
         svg: {
           rect: {
             fill: "none",
           },
           g: {
-            filter: "drop-shadow( 0 5px 1px black )",
             path: {
               fill: "primary",
             },
@@ -40,7 +38,7 @@ export const VxPie = ({ data, width, height }) => {
           <Pie
             data={data}
             pieValue={d => d.usage}
-            outerRadius={radius}
+            outerRadius={radius - 20}
             innerRadius={radius - 80}
             cornerRadius={3}
             padAngle={0.05}
@@ -52,7 +50,7 @@ export const VxPie = ({ data, width, height }) => {
                 const { startAngle, endAngle } = arc
                 const hasSpaceForLabel = endAngle - startAngle >= 0.1
                 return (
-                  <g key={`browser-${arc.data.label}-${i}`}>
+                  <g key={`arc-${arc.data.label}-${i}`}>
                     <path d={pie.path(arc)} fillOpacity={opacity} />
                     {hasSpaceForLabel && (
                       <text
