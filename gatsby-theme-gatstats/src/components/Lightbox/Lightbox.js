@@ -19,6 +19,7 @@ export const Lightbox = ({ handleClick, isNavOpen }) => (
       display: [
         `${isNavOpen ? "block" : "none"}`,
         `${isNavOpen ? "block" : "none"}`,
+        `${isNavOpen ? "block" : "none"}`,
         "none",
       ],
     }}

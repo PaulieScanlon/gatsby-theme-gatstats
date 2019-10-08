@@ -9,7 +9,7 @@ export const Content = ({ children, marginLeft }) => {
       sx={{
         backgroundColor: "background",
         height: "1000px",
-        ml: [0, 0, marginLeft],
+        ml: [0, 0, 0, marginLeft],
         mt: 5,
         p: 3,
       }}

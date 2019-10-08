@@ -1,6 +1,13 @@
-import React from "react"
+/** @jsx jsx */
 import { Global, css } from "@emotion/core"
-import { ThemeProvider, ColorMode, Layout, Container, Styled } from "theme-ui"
+import {
+  ThemeProvider,
+  ColorMode,
+  Layout,
+  Container,
+  Styled,
+  jsx,
+} from "theme-ui"
 import { graphql, StaticQuery } from "gatsby"
 
 import theme from "../gatsby-plugin-theme-ui"
@@ -60,7 +67,14 @@ const DefaultLayout = ({ pageContext, children }) => {
                 />
                 <Content marginLeft={sideBarWidth}>
                   {isIndex ? (
-                    <>{children}</>
+                    <Styled.div
+                      sx={{
+                        maxWidth: 2000,
+                        margin: "0 auto",
+                      }}
+                    >
+                      {children}
+                    </Styled.div>
                   ) : (
                     <Container>{children}</Container>
                   )}

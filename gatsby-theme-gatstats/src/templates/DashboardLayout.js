@@ -14,21 +14,21 @@ export const DashboardLayout = () => (
     >
       <Box
         sx={{
-          width: ["100%", "100%", "100%", "100%", "50%"],
+          width: ["100%", "50%"],
         }}
       >
         <TagsChart />
       </Box>
       <Box
         sx={{
-          width: ["100%", "100%", "100%", "100%", "50%"],
+          width: ["100%", "50%"],
         }}
       >
         <DaysChart />
       </Box>
       <Box
         sx={{
-          width: ["100%", "100%", "100%", "100%", "50%"],
+          width: ["100%", "100%"],
         }}
       >
         <LatestPost />

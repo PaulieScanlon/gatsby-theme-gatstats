@@ -6,8 +6,8 @@
 
 module.exports = {
   siteMetadata: {
-    logo: "</>",
-    description: "A Gatsby blog dashboard theme",
+    logo: "<GatStats/>",
+    description: "Data viz for blogs 👻",
     config: {
       sideBarWidth: 250,
     },

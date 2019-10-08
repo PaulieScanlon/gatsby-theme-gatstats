@@ -52,7 +52,7 @@ export const SideBar = ({
         display: "flex",
         flexDirection: "column",
         height: "100%",
-        left: [conditionalLeft, conditionalLeft, 0],
+        left: [conditionalLeft, conditionalLeft, conditionalLeft, 0],
         margin: 0,
         overflow: "auto",
         padding: 0,
@@ -65,7 +65,7 @@ export const SideBar = ({
       <Styled.div
         sx={{
           alignItems: "center",
-          display: ["flex", "flex", "none"],
+          display: ["flex", "flex", "flex", "none"],
           justifyContent: "flex-end",
           padding: 3,
         }}

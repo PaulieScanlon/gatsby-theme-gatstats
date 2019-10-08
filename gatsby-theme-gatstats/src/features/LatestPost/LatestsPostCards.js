@@ -1,13 +1,11 @@
 /** @jsx jsx */
-
 import { jsx, Styled } from "theme-ui"
-
 import { Card } from "../../components/Card"
 import { formatDateForPosts } from "../../utils/formatDate"
 
 export const LatestPostCards = ({ data }) => {
   return (
-    <Styled.div>
+    <Styled.div sx={{}}>
       {data.map((item, index) => {
         const { fields, excerpt, frontmatter } = item.node
 

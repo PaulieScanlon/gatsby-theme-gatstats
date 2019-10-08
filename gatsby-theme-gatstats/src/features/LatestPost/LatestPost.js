@@ -3,6 +3,8 @@ import { jsx, Styled } from "theme-ui"
 import { StaticQuery, graphql } from "gatsby"
 import { LatestPostCards } from "./LatestsPostCards"
 
+import { CardHeaders } from "../../components/CardHeaders"
+
 export const LatestPost = () => {
   return (
     <StaticQuery
@@ -29,7 +31,7 @@ export const LatestPost = () => {
                   date
                   featuredImage {
                     childImageSharp {
-                      fixed(fit: COVER, width: 100, height: 100) {
+                      fixed(fit: COVER, width: 70, height: 70) {
                         aspectRatio
                         width
                         height
@@ -60,8 +62,7 @@ export const LatestPost = () => {
                 flex: 1,
               }}
             >
-              <Styled.h5 sx={{ mb: 0 }}>NEW POSTS</Styled.h5>
-              <Styled.h6 sx={{ color: "muted" }}>Last 3 blog posts</Styled.h6>
+              <CardHeaders heading="New posts" subHeading="Last 3 blog posts" />
               <LatestPostCards data={data.allMdx.edges} />
             </Styled.div>
           </Styled.div>

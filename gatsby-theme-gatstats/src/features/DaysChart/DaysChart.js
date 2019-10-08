@@ -4,6 +4,8 @@ import { StaticQuery, graphql } from "gatsby"
 import { ParentSize } from "@vx/responsive"
 import { VxBar } from "./VxBar"
 
+import { CardHeaders } from "../../components/CardHeaders"
+
 export const DaysChart = () => {
   return (
     <StaticQuery
@@ -68,15 +70,25 @@ export const DaysChart = () => {
                 padding: 3,
                 boxShadow: 0,
                 flex: 1,
+                overflow: "hidden",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
               }}
             >
-              <Styled.h5 sx={{ mb: 0 }}>POSTS</Styled.h5>
-              <Styled.h6 sx={{ color: "muted" }}>By day of the week</Styled.h6>
-              <ParentSize>
-                {parent => (
-                  <VxBar width={parent.width} height={300} data={vxBarData} />
-                )}
-              </ParentSize>
+              <CardHeaders heading="Posts" subHeading="By day of the week" />
+
+              <Styled.div
+                sx={{
+                  mb: 4,
+                }}
+              >
+                <ParentSize>
+                  {parent => (
+                    <VxBar width={parent.width} height={300} data={vxBarData} />
+                  )}
+                </ParentSize>
+              </Styled.div>
             </Styled.div>
           </Styled.div>
         )

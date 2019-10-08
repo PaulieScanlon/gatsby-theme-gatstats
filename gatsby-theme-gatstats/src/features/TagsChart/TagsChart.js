@@ -4,6 +4,8 @@ import { StaticQuery, graphql } from "gatsby"
 import { ParentSize } from "@vx/responsive"
 import { VxPie } from "./VxPie"
 
+import { CardHeaders } from "../../components/CardHeaders"
+
 export const TagsChart = () => {
   return (
     <StaticQuery
@@ -51,15 +53,21 @@ export const TagsChart = () => {
                 padding: 3,
                 boxShadow: 0,
                 flex: 1,
+                overflow: "hidden",
               }}
             >
-              <Styled.h5 sx={{ mb: 0 }}>TAGS</Styled.h5>
-              <Styled.h6 sx={{ color: "muted" }}>By popularity</Styled.h6>
-              <ParentSize>
-                {parent => (
-                  <VxPie width={parent.width} height={300} data={vxPieData} />
-                )}
-              </ParentSize>
+              <CardHeaders heading="Tags" subHeading="By popularity" />
+              <Styled.div
+                sx={{
+                  mb: 4,
+                }}
+              >
+                <ParentSize>
+                  {parent => (
+                    <VxPie width={parent.width} height={300} data={vxPieData} />
+                  )}
+                </ParentSize>
+              </Styled.div>
             </Styled.div>
           </Styled.div>
         )

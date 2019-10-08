@@ -2,7 +2,7 @@
 // import React from "react"
 // import PropTypes from "prop-types"
 import { jsx, Styled } from "theme-ui"
-import { Bar, Line } from "@vx/shape"
+import { Bar } from "@vx/shape"
 import { Group } from "@vx/group"
 import { AxisBottom } from "@vx/axis"
 import { scaleBand, scaleLinear } from "@vx/scale"
@@ -38,6 +38,8 @@ export const VxBar = ({ data, width, height }) => {
           ".vx-group": {
             rect: {
               fill: "primary",
+              // backgroundImage: t =>
+              //   `radial-gradient(${t.colors.muted}, ${t.colors.background})`,
             },
           },
           ".vx-axis-bottom": {
@@ -59,7 +61,8 @@ export const VxBar = ({ data, width, height }) => {
         <Group>
           {data.map((d, i) => {
             const day = x(d)
-            const barWidth = 16
+            const opacity = 0.1 * (d.count + 2)
+            const barWidth = xScale.bandwidth()
             const barHeight = yMax - yScale(y(d))
             const barX = xScale(day)
             const barY = yMax - barHeight
@@ -72,26 +75,18 @@ export const VxBar = ({ data, width, height }) => {
                 width={barWidth}
                 height={barHeight}
                 rx={8}
+                opacity={opacity}
               />
             )
           })}
         </Group>
-        <AxisBottom
-          top={yMax}
-          // left={-10}
-          scale={xScale}
-          hideAxisLine={true}
-          tickLabelProps={() => ({
-            textAnchor: "middle",
-          })}
-        >
+        <AxisBottom top={yMax} scale={xScale} hideAxisLine={true}>
           {axis => {
             return (
               <g>
                 {axis.ticks.map((tick, index) => {
-                  // TODO the 14 and8 is hard coded to center the text... they shouldn't be
-                  const tickX = tick.to.x - 14
-                  const tickY = tick.to.y + 8
+                  const tickX = tick.to.x
+                  const tickY = tick.to.y * 2
                   return (
                     <Group key={`tick-${data[index].day}-{index}`}>
                       <text transform={`translate(${tickX}, ${tickY})`}>

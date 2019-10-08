@@ -23,6 +23,8 @@ export const Card = ({
     sx={{
       backgroundColor: "background",
       // bg: lighten("background", 0.04),
+      // bg: lighten("primary", 0.875),
+      boxSizing: "border-box",
       boxShadow: 0,
       display: "block",
       height: "100%",
@@ -63,7 +65,7 @@ export const Card = ({
           display: "flex",
           flexDirection: "column",
           flexGrow: 1,
-          padding: 3,
+          padding: 2,
         }}
       >
         <Styled.h5
@@ -90,7 +92,7 @@ export const Card = ({
         {wordCount && (
           <Styled.p
             sx={{
-              fontSize: [1],
+              fontSize: 1,
             }}
           >{`${timeToRead} min read / ${wordCount.words} words`}</Styled.p>
         )}

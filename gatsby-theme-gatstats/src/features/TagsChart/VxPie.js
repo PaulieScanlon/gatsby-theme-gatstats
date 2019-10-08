@@ -12,10 +12,6 @@ export const VxPie = ({ data, width, height }) => {
   return (
     <Styled.div
       sx={{
-        // backgroundImage: t =>
-        //   `radial-gradient(${t.colors.muted}, ${t.colors.background})`,
-
-        padding: 3,
         svg: {
           rect: {
             fill: "none",
@@ -38,8 +34,8 @@ export const VxPie = ({ data, width, height }) => {
           <Pie
             data={data}
             pieValue={d => d.usage}
-            outerRadius={radius - 20}
-            innerRadius={radius - 80}
+            outerRadius={radius - 0}
+            innerRadius={radius - 90}
             cornerRadius={3}
             padAngle={0.05}
           >
