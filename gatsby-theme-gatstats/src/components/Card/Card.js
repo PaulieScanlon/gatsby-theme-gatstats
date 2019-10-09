@@ -43,7 +43,7 @@ export const Card = ({
       }}
     >
       {fixed && (
-        <Styled.div sx={{ display: "flex", alignItems: "center", padding: 3 }}>
+        <Styled.div sx={{ display: "flex", alignItems: "center", pl: 3 }}>
           <Styled.div
             sx={{
               display: "flex",
@@ -65,7 +65,7 @@ export const Card = ({
           display: "flex",
           flexDirection: "column",
           flexGrow: 1,
-          padding: 2,
+          padding: 3,
         }}
       >
         <Styled.h5

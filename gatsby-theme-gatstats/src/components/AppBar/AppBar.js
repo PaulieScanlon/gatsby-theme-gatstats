@@ -6,7 +6,7 @@ import { ThemeToggle } from "../ThemeToggle"
 import { Styled, jsx } from "theme-ui"
 // import { lighten } from "@theme-ui/color"
 
-export const AppBar = ({ handleOpen }) => {
+export const AppBar = ({ onOpen }) => {
   return (
     <Styled.div
       sx={{
@@ -23,12 +23,12 @@ export const AppBar = ({ handleOpen }) => {
         boxShadow: 0,
       }}
     >
-      <button onClick={() => handleOpen()}>open nav</button>
+      <button onClick={() => onOpen()}>open nav</button>
       <ThemeToggle />
     </Styled.div>
   )
 }
 
 AppBar.propTypes = {
-  handleOpen: PropTypes.func.isRequired,
+  onOpen: PropTypes.func.isRequired,
 }

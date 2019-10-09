@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Flex, Box, Styled } from "theme-ui"
 
+import { YearChart } from "../features/YearChart"
 import { TagsChart } from "../features/TagsChart"
 import { DaysChart } from "../features/DaysChart"
 import { LatestPost } from "../features/LatestPost"
@@ -12,6 +13,13 @@ export const DashboardLayout = () => (
         flexWrap: "wrap",
       }}
     >
+      <Box
+        sx={{
+          width: ["100%", "70%"],
+        }}
+      >
+        <YearChart />
+      </Box>
       <Box
         sx={{
           width: ["100%", "50%"],

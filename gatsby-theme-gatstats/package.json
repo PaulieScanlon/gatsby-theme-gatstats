@@ -24,6 +24,8 @@
     "@mdx-js/react": "^1.5.0",
     "@theme-ui/color": "^0.2.40",
     "@vx/axis": "^0.0.192",
+    "@vx/curve": "^0.0.192",
+    "@vx/glyph": "^0.0.192",
     "@vx/gradient": "^0.0.192",
     "@vx/group": "^0.0.192",
     "@vx/mock-data": "^0.0.192",

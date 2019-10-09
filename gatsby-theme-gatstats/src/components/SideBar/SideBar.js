@@ -7,13 +7,7 @@ import { Styled, jsx } from "theme-ui"
 
 import { Icon } from "../Icon"
 
-export const SideBar = ({
-  logo,
-  description,
-  isNavOpen,
-  handleClose,
-  width,
-}) => {
+export const SideBar = ({ logo, description, isNavOpen, onClose, width }) => {
   const conditionalLeft = isNavOpen ? "0" : "-100%"
 
   const linkStyles = {
@@ -56,9 +50,9 @@ export const SideBar = ({
         margin: 0,
         overflow: "auto",
         padding: 0,
-        position: ["absolute", "absolute", "fixed"],
+        position: "fixed",
         transition: "0.4s ease-in-out left",
-        width: ["100%", width],
+        width: ["100%", width, width],
         zIndex: 3,
       }}
     >
@@ -70,7 +64,7 @@ export const SideBar = ({
           padding: 3,
         }}
       >
-        <button onClick={() => handleClose()}>close nav</button>
+        <button onClick={() => onClose()}>close nav</button>
       </Styled.div>
       <Styled.div
         sx={{
@@ -140,7 +134,7 @@ export const SideBar = ({
                       <Link
                         to="/"
                         activeClassName="active-nav-item"
-                        onClick={() => handleClose()}
+                        onClick={() => onClose()}
                       >
                         <Icon iconPath={frontmatter.icon} />
                         {frontmatter.title}
@@ -150,7 +144,7 @@ export const SideBar = ({
                         to={fields.slug}
                         partiallyActive={true}
                         activeClassName="active-nav-item"
-                        onClick={() => handleClose()}
+                        onClick={() => onClose()}
                       >
                         <Icon iconPath={frontmatter.icon} />
                         {frontmatter.title}
@@ -171,6 +165,6 @@ SideBar.propTypes = {
   logo: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   isNavOpen: PropTypes.bool.isRequired,
-  handleClose: PropTypes.func,
+  onClose: PropTypes.func,
   width: PropTypes.number.isRequired,
 }

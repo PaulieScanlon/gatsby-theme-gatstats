@@ -1473,12 +1473,22 @@
     classnames "^2.2.5"
     prop-types "^15.6.0"
 
-"@vx/curve@0.0.192":
+"@vx/curve@0.0.192", "@vx/curve@^0.0.192":
   version "0.0.192"
   resolved "https://registry.yarnpkg.com/@vx/curve/-/curve-0.0.192.tgz#be64214e1ca5e6c5f66a22db9c747de3146f8dbd"
   integrity sha512-NCijtrq0k+t2eWFhbsPEYGXTQfhdHB/l+1MqRUXM6pyl5k/HcEyGEV4C+H3M9l2cn8THegs/2DUKnUDZp2wTng==
   dependencies:
     d3-shape "^1.0.6"
+
+"@vx/glyph@^0.0.192":
+  version "0.0.192"
+  resolved "https://registry.yarnpkg.com/@vx/glyph/-/glyph-0.0.192.tgz#8f8e62771418d10f0cfa4bfac9f991481978e29e"
+  integrity sha512-wne/fuuaQqp17yB3keqTGPURXlf7ejDQ6xJJA0gIgTtwcwA7mHEWpAbtSCxtrSUiQgmfqC6KMBZgC84UcSDanA==
+  dependencies:
+    "@vx/group" "0.0.192"
+    classnames "^2.2.5"
+    d3-shape "^1.2.0"
+    prop-types "^15.6.2"
 
 "@vx/gradient@^0.0.192":
   version "0.0.192"

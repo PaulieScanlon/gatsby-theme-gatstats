@@ -2,11 +2,11 @@
 import { Styled, jsx } from "theme-ui"
 import PropTypes from "prop-types"
 
-export const Lightbox = ({ handleClick, isNavOpen }) => (
+export const Lightbox = ({ onClick, isNavOpen }) => (
   <Styled.div
     className="light-box"
     sx={{
-      position: "absolute",
+      position: "fixed",
       backgroundColor: "#000",
       top: 0,
       left: 0,
@@ -23,11 +23,11 @@ export const Lightbox = ({ handleClick, isNavOpen }) => (
         "none",
       ],
     }}
-    onClick={() => handleClick()}
+    onClick={() => onClick()}
   />
 )
 
 Lightbox.PpopTypes = {
   isNavOpen: PropTypes.bool,
-  handleClick: PropTypes.func,
+  onClick: PropTypes.func,
 }

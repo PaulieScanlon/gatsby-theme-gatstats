@@ -38,6 +38,7 @@ const DefaultLayout = ({ pageContext, children }) => {
         }
       `}
       render={data => {
+        document.body.style.overflow = isNavOpen ? "hidden" : "auto"
         const { logo, description } = data.site.siteMetadata
         const { sideBarWidth } = data.site.siteMetadata.config
 
@@ -53,16 +54,16 @@ const DefaultLayout = ({ pageContext, children }) => {
                     }
                   `}
                 />
-                <AppBar handleOpen={() => setNavOpen(true)} />
+                <AppBar onOpen={() => setNavOpen(true)} />
                 <SideBar
                   logo={logo}
                   description={description}
                   width={sideBarWidth}
                   isNavOpen={isNavOpen}
-                  handleClose={() => setNavOpen(false)}
+                  onClose={() => setNavOpen(false)}
                 />
                 <Lightbox
-                  handleClick={() => setNavOpen(false)}
+                  onClick={() => setNavOpen(false)}
                   isNavOpen={isNavOpen}
                 />
                 <Content marginLeft={sideBarWidth}>
