@@ -142,9 +142,18 @@ export default {
       color: "secondary",
       cursor: "pointer",
       fontSize: [1, 2],
+      outline: "none",
+      borderWidth: 0,
+      borderStyle: "solid",
+      borderColor: "background",
       transition: ".2s linear all",
       ":hover": {
         color: "muted",
+      },
+      ":focus": {
+        borderWidth: 0,
+        borderStyle: "dashed",
+        borderColor: "text",
       },
     },
 

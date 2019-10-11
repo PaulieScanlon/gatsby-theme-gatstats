@@ -16,6 +16,12 @@ const PostLayout = ({ data: { mdx } }) => {
       <Container>
         <Styled.a
           onClick={() => window.history.back()}
+          tabIndex={1}
+          onKeyDown={e => {
+            if (e.key === "Enter") {
+              window.history.back()
+            }
+          }}
           sx={{
             display: "inline-block",
             mb: 3,
@@ -58,6 +64,12 @@ const PostLayout = ({ data: { mdx } }) => {
         >
           <Styled.a
             onClick={() => window.history.back()}
+            tabIndex={1}
+            onKeyDown={e => {
+              if (e.key === "Enter") {
+                window.history.back()
+              }
+            }}
             sx={{
               display: "inline-block",
               mt: 5,

@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import PropTypes from "prop-types"
 import { Styled, jsx } from "theme-ui"
-// import { lighten } from "@theme-ui/color"
 
 import Img from "gatsby-image"
 
@@ -25,12 +24,21 @@ export const Card = ({
       boxSizing: "border-box",
       boxShadow: theme => `0 0 8px 8px ${theme.colors.shadow}`,
       borderRadius: 1,
+      outline: "none",
+      borderWidth: 0,
+      borderStyle: "solid",
+      borderColor: "background",
       display: "block",
       height: "100%",
       textDecoration: "none",
       transition: ".1s all box-shadow, ",
       ":hover": {
         transform: "scale(1.01)",
+      },
+      ":focus": {
+        borderWidth: 0,
+        borderStyle: "dashed",
+        borderColor: "text",
       },
     }}
   >

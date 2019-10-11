@@ -28,6 +28,7 @@ export const PostsSearch = ({ postTags, onSearch }) => {
           inputValue,
           clearSelection,
           selectedItem,
+          highlightedIndex,
         }) => (
           <div>
             <div style={{ position: "relative" }}>
@@ -46,7 +47,10 @@ export const PostsSearch = ({ postTags, onSearch }) => {
                       backgroundColor: "surface",
                       display: "flex",
                       flexBasis: "100%",
-                      border: "none",
+                      outline: "none",
+                      borderWidth: 0,
+                      borderStyle: "solid",
+                      borderColor: "background",
                       borderRadius: 2,
                       p: 3,
                       fontFamily: "body",
@@ -55,9 +59,10 @@ export const PostsSearch = ({ postTags, onSearch }) => {
                       "::placeholder": {
                         color: "muted",
                       },
-                      //@TODO create proper focus style
                       ":focus": {
-                        outline: "none",
+                        borderWidth: 0,
+                        borderStyle: "dashed",
+                        borderColor: "text",
                       },
                     },
                   }}
@@ -66,6 +71,13 @@ export const PostsSearch = ({ postTags, onSearch }) => {
                     {...getInputProps({
                       placeholder: "Search Tags",
                       onClick: () => toggleMenu(),
+                      onKeyDown(e) {
+                        if (e.key === "Enter" && highlightedIndex === null) {
+                          return selectedItem
+                            ? onSearch(selectedItem.value)
+                            : null
+                        }
+                      },
                     })}
                   />
 
@@ -122,7 +134,8 @@ export const PostsSearch = ({ postTags, onSearch }) => {
                                 item,
                               })}
                               sx={{
-                                color: "muted",
+                                color:
+                                  highlightedIndex === index ? "text" : "muted",
                                 cursor: "pointer",
                                 p: 3,
                                 margin: 0,

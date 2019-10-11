@@ -14,6 +14,12 @@ export const SideBar = ({ logo, description, isNavOpen, onClose, width }) => {
     color: "muted",
     borderRadius: 2,
     display: "flex",
+
+    outline: "none",
+    borderWidth: 0,
+    borderStyle: "solid",
+    borderColor: "surface",
+
     pt: 3,
     pb: 3,
     textDecoration: "none",
@@ -32,6 +38,12 @@ export const SideBar = ({ logo, description, isNavOpen, onClose, width }) => {
     },
     "&.active-nav-item": {
       color: "secondary",
+    },
+
+    ":focus": {
+      borderWidth: 0,
+      borderStyle: "dashed",
+      borderColor: "text",
     },
   }
 
