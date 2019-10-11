@@ -21,17 +21,16 @@ export const Card = ({
   <Link
     href={link}
     sx={{
-      backgroundColor: "background",
-      // bg: lighten("background", 0.04),
-      // bg: lighten("primary", 0.875),
+      backgroundColor: "surface",
       boxSizing: "border-box",
-      boxShadow: 0,
+      boxShadow: theme => `0 0 8px 8px ${theme.colors.shadow}`,
+      borderRadius: 1,
       display: "block",
       height: "100%",
       textDecoration: "none",
-      transition: ".2s linear box-shadow",
+      transition: ".1s all box-shadow, ",
       ":hover": {
-        boxShadow: 1,
+        transform: "scale(1.01)",
       },
     }}
   >

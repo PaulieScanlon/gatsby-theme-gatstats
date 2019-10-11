@@ -4,17 +4,30 @@ import { Bar } from "@vx/shape"
 import { Group } from "@vx/group"
 import { AxisBottom } from "@vx/axis"
 import { scaleBand, scaleLinear } from "@vx/scale"
+import { withTooltip, Tooltip } from "@vx/tooltip"
+import { GridRows } from "@vx/grid"
 
-// accessors
 const x = d => d.day
 const y = d => d.count
 
-export const VxBar = ({ data, width, height }) => {
-  // scales
+const VxBarChart = ({
+  showTooltip,
+  hideTooltip,
+  tooltipData,
+  tooltipOpen,
+  tooltipLeft,
+  tooltipTop,
+  tooltipTimeout,
+  width,
+  height,
+  data,
+}) => {
+  if (!data) return null
+
   const xScale = scaleBand({
     rangeRound: [0, width],
     domain: data.map(x),
-    padding: 0.4,
+    padding: 0.6,
   })
 
   const yScale = scaleLinear({
@@ -22,16 +35,37 @@ export const VxBar = ({ data, width, height }) => {
     domain: [0, Math.max(...data.map(y))],
   })
 
+  const handleTooltip = ({ barX, barY, d }) => {
+    showTooltip({
+      tooltipLeft: barX - 15,
+      tooltipTop: barY - 34,
+      tooltipData: d,
+    })
+  }
+
   return (
     <Styled.div
       sx={{
+        ".vx-tooltip-portal": {
+          ".tooltip-text": {
+            color: "primary",
+          },
+        },
         svg: {
           rect: {
             fill: "none",
           },
+          ".vx-rows": {
+            ".vx-line": {
+              stroke: "muted",
+              opacity: 0.3,
+            },
+          },
           ".vx-group": {
             rect: {
               fill: "primary",
+              cursor: "pointer",
+              WebkitTapHighlightColor: "transparent",
             },
           },
           ".vx-axis-bottom": {
@@ -49,8 +83,12 @@ export const VxBar = ({ data, width, height }) => {
       }}
     >
       <svg width="100%" height={height} style={{ overflow: "visible" }}>
-        <rect width={width} height={height} />
         <Group>
+          <GridRows
+            lineStyle={{ pointerEvents: "none" }}
+            scale={yScale}
+            width={width}
+          />
           {data.map((d, i) => {
             const day = x(d)
             const opacity = 0.1 * (d.count + 2)
@@ -68,6 +106,24 @@ export const VxBar = ({ data, width, height }) => {
                 height={barHeight}
                 rx={8}
                 opacity={opacity}
+                onMouseEnter={() => {
+                  if (tooltipTimeout) clearTimeout(tooltipTimeout)
+                  handleTooltip({ barX, barY, d })
+                }}
+                onMouseLeave={() => {
+                  tooltipTimeout = setTimeout(() => {
+                    hideTooltip()
+                  }, 500)
+                }}
+                onTouchStart={() => {
+                  if (tooltipTimeout) clearTimeout(tooltipTimeout)
+                  handleTooltip({ barX, barY, d })
+                }}
+                onTouchEnd={() => {
+                  tooltipTimeout = setTimeout(() => {
+                    hideTooltip()
+                  }, 500)
+                }}
               />
             )
           })}
@@ -78,7 +134,7 @@ export const VxBar = ({ data, width, height }) => {
               <g>
                 {axis.ticks.map((tick, index) => {
                   const tickX = tick.to.x
-                  const tickY = tick.to.y * 2
+                  const tickY = tick.to.y * 4
                   return (
                     <Group key={`tick-${data[index].day}-${index}`}>
                       <text transform={`translate(${tickX}, ${tickY})`}>
@@ -92,6 +148,16 @@ export const VxBar = ({ data, width, height }) => {
           }}
         </AxisBottom>
       </svg>
+      {tooltipOpen && (
+        <Tooltip left={tooltipLeft} top={tooltipTop}>
+          <div className="tooltip-text">
+            {tooltipData.day}
+            <strong> {tooltipData.count}</strong>
+          </div>
+        </Tooltip>
+      )}
     </Styled.div>
   )
 }
+
+export const VxBar = withTooltip(VxBarChart)

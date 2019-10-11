@@ -6,43 +6,76 @@ import { LinePath } from "@vx/shape"
 import { AxisBottom } from "@vx/axis"
 import { scaleTime, scaleLinear } from "@vx/scale"
 import { curveMonotoneX } from "@vx/curve"
+import { withTooltip, Tooltip } from "@vx/tooltip"
+import { GridRows } from "@vx/grid"
 
-// accessors
-const date = d => d.date
-const value = d => d.value
+const month = d => d.month
+const count = d => d.count
 
-export const VxLine = ({ width, height, data }) => {
-  const margin = 16
+const VxLineChart = ({
+  showTooltip,
+  hideTooltip,
+  tooltipData,
+  tooltipOpen,
+  tooltipLeft,
+  tooltipTop,
+  tooltipTimeout,
+  width,
+  height,
+  data,
+}) => {
+  const margin = 32
 
-  // scales
+  if (!data) return null
+
   const xScale = scaleTime({
-    // domain: [new Date("2018-01-01"), new Date("2018-12-31")],
-    domain: [Math.min(...data.map(date)), Math.max(...data.map(date))],
+    domain: [0, 11],
   })
 
   const yScale = scaleLinear({
-    domain: [0, Math.max(...data.map(value))],
+    domain: [0, Math.max(...data.map(count))],
   })
 
-  // positions
-  const x = d => xScale(date(d))
-  const y = d => yScale(value(d))
-
-  // update scale range to match bounds
+  const x = d => xScale(month(d))
+  const y = d => yScale(count(d))
 
   xScale.range([margin, width - margin])
-  yScale.range([height, margin])
+  yScale.range([height - margin, margin])
+
+  const handleTooltip = ({ cx, cy, d }) => {
+    showTooltip({
+      tooltipLeft: cx - 24,
+      tooltipTop: cy - 36,
+      tooltipData: d,
+    })
+  }
 
   return (
     <Styled.div
       sx={{
+        ".vx-tooltip-portal": {
+          ".tooltip-text": {
+            color: "primary",
+          },
+        },
         svg: {
           g: {
             path: {
               stroke: "primary",
               strokeWidth: 3,
             },
+            ".vx-rows": {
+              ".vx-line": {
+                stroke: "muted",
+                opacity: 0.3,
+              },
+            },
             ".vx-glyph": {
+              ".vx-dot-hidden": {
+                fill: "transparent",
+                cursor: "pointer",
+                WebkitTapHighlightColor: "transparent",
+              },
               ".vx-dot-fill": {
                 fill: "background",
               },
@@ -65,9 +98,16 @@ export const VxLine = ({ width, height, data }) => {
         },
       }}
     >
-      <svg width={width} height={height}>
+      <svg width="100%" height={height} style={{ overflow: "visible" }}>
         <Group>
+          <GridRows
+            lineStyle={{ pointerEvents: "none" }}
+            scale={yScale}
+            width={width}
+            numTicks={6}
+          />
           <LinePath data={data} x={x} y={y} curve={curveMonotoneX} />
+
           {data.map((d, i) => {
             const cx = x(d)
             const cy = y(d)
@@ -75,25 +115,45 @@ export const VxLine = ({ width, height, data }) => {
               <g key={`line-point-${i}`}>
                 <GlyphDot className="vx-dot-outline" cx={cx} cy={cy} r={7} />
                 <GlyphDot className="vx-dot-fill" cx={cx} cy={cy} r={4} />
+                <GlyphDot
+                  className="vx-dot-hidden"
+                  cx={cx}
+                  cy={cy}
+                  r={30}
+                  onMouseEnter={() => {
+                    if (tooltipTimeout) clearTimeout(tooltipTimeout)
+                    handleTooltip({ cx, cy, d })
+                  }}
+                  onMouseLeave={() => {
+                    tooltipTimeout = setTimeout(() => {
+                      hideTooltip()
+                    }, 500)
+                  }}
+                  onTouchStart={() => {
+                    if (tooltipTimeout) clearTimeout(tooltipTimeout)
+                    handleTooltip({ cx, cy, d })
+                  }}
+                  onTouchEnd={() => {
+                    tooltipTimeout = setTimeout(() => {
+                      hideTooltip()
+                    }, 500)
+                  }}
+                />
               </g>
             )
           })}
         </Group>
-        <AxisBottom top={height - margin * 2} scale={xScale}>
+        <AxisBottom top={height} scale={xScale}>
           {axis => {
             return (
               <g>
                 {axis.ticks.map((tick, index) => {
-                  // console.log("tick: ", tick)
-
                   const tickX = tick.to.x
                   const tickY = tick.to.y * 2
-                  const value = tick.formattedValue
-
                   return (
-                    <Group key={`tick-${value}-${index}`}>
+                    <Group key={`tick-${data[index].day}-${index}`}>
                       <text transform={`translate(${tickX}, ${tickY})`}>
-                        {value}
+                        {data[index].label}
                       </text>
                     </Group>
                   )
@@ -103,6 +163,16 @@ export const VxLine = ({ width, height, data }) => {
           }}
         </AxisBottom>
       </svg>
+      {tooltipOpen && (
+        <Tooltip left={tooltipLeft} top={tooltipTop}>
+          <div className="tooltip-text">
+            {tooltipData.monthName}
+            <strong> {tooltipData.count}</strong>
+          </div>
+        </Tooltip>
+      )}
     </Styled.div>
   )
 }
+
+export const VxLine = withTooltip(VxLineChart)

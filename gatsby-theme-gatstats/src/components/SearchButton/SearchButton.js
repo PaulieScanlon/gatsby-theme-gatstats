@@ -11,16 +11,15 @@ export const SearchButton = ({ iconPath, ...props }) => (
     {...props}
     sx={{
       backgroundColor: "background",
-      // bg: lighten("background", 0.04),
       border: "none",
-      borderBottomStyle: "solid",
-      borderBottomWidth: 2,
-      borderColor: "muted",
-      color: "text",
+      color: "muted",
       cursor: "pointer",
-      //@TODO create proper focus style
+      transition: ".2s linear all",
       ":focus": {
         outline: "none",
+      },
+      ":hover": {
+        color: "text",
       },
     }}
   >

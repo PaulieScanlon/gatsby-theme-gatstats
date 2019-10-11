@@ -66,9 +66,10 @@ export const DaysChart = () => {
           >
             <Styled.div
               sx={{
+                borderRadius: 1,
+                backgroundColor: "surface",
                 margin: 3,
                 padding: 3,
-                boxShadow: 0,
                 flex: 1,
                 overflow: "hidden",
                 display: "flex",

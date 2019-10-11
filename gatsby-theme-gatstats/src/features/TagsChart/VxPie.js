@@ -5,6 +5,8 @@ import { Pie } from "@vx/shape"
 import { Group } from "@vx/group"
 
 export const VxPie = ({ data, width, height }) => {
+  if (!data) return null
+
   const radius = Math.min(width, height) / 2
   const centerY = height / 2
   const centerX = width / 2
@@ -35,9 +37,9 @@ export const VxPie = ({ data, width, height }) => {
             data={data}
             pieValue={d => d.usage}
             outerRadius={radius - 0}
-            innerRadius={radius - 90}
-            cornerRadius={3}
-            padAngle={0.05}
+            innerRadius={radius - 60}
+            cornerRadius={6}
+            padAngle={0.04}
           >
             {pie => {
               return pie.arcs.map((arc, i) => {

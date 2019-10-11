@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 
 import { StaticQuery, graphql, Link } from "gatsby"
 import { Styled, jsx } from "theme-ui"
-// import { lighten } from "@theme-ui/color"
 
 import { Icon } from "../Icon"
 
@@ -13,38 +12,37 @@ export const SideBar = ({ logo, description, isNavOpen, onClose, width }) => {
   const linkStyles = {
     alignItems: "center",
     color: "muted",
-    borderLeftStyle: "solid",
-    borderLeftWidth: 4,
-    borderColor: "background",
+    borderRadius: 2,
     display: "flex",
-    paddingTop: 3,
-    paddingBottom: 3,
+    pt: 3,
+    pb: 3,
     textDecoration: "none",
     textTransform: "capitalize",
     transition: ".2s linear background, .2s linear color",
+    ml: 3,
+    mr: 3,
+    mb: 3,
     svg: {
-      marginRight: 3,
-      marginLeft: 3,
+      mr: 3,
+      ml: 3,
     },
     ":hover": {
-      color: "text",
+      color: "secondary",
       backgroundColor: "background",
     },
     "&.active-nav-item": {
-      color: "text",
-      backgroundColor: "background",
-      borderColor: "primary",
+      color: "secondary",
     },
   }
 
   return (
     <Styled.div
       sx={{
-        backgroundColor: "background",
-        // bg: lighten("background", 0.04),
-        boxShadow: [2, 2, 0],
+        backgroundColor: "surface",
         display: "flex",
         flexDirection: "column",
+        boxSizing: "border-box",
+        boxShadow: 0,
         height: "100%",
         left: [conditionalLeft, conditionalLeft, conditionalLeft, 0],
         margin: 0,

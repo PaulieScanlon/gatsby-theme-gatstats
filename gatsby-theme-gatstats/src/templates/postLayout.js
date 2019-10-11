@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Img from "gatsby-image"
 
-import { Link } from "../components/Link"
 import { TagsList } from "../components/TagsList"
 import DefaultLayout from "./DefaultLayout"
 
@@ -15,15 +14,15 @@ const PostLayout = ({ data: { mdx } }) => {
   return (
     <DefaultLayout>
       <Container>
-        <Link
-          href="/posts/"
+        <Styled.a
+          onClick={() => window.history.back()}
           sx={{
-            display: "block",
+            display: "inline-block",
             mb: 3,
           }}
         >
           Back
-        </Link>
+        </Styled.a>
         {featuredImage && (
           <Styled.div
             sx={{
@@ -57,15 +56,15 @@ const PostLayout = ({ data: { mdx } }) => {
             mb: 4,
           }}
         >
-          <Link
-            href="/posts/"
+          <Styled.a
+            onClick={() => window.history.back()}
             sx={{
-              display: "block",
+              display: "inline-block",
               mt: 5,
             }}
           >
             Back
-          </Link>
+          </Styled.a>
         </Styled.div>
       </Container>
     </DefaultLayout>

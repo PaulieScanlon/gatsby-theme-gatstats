@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import PropTypes from "prop-types"
 import { Styled, jsx } from "theme-ui"
-// import { lighten } from "@theme-ui/color"
 
 export const TagsList = ({ tags, size }) => {
   return (
@@ -24,13 +23,12 @@ export const TagsList = ({ tags, size }) => {
           key={index}
           sx={{
             color: "muted",
-            fontSize: size === "small" ? 0 : 2,
-            borderRadius: 1,
+            fontSize: 0,
+            borderRadius: 0,
             borderStyle: "solid",
             borderWidth: 0,
             borderColor: "background",
-            backgroundColor: "background",
-            // bg: lighten("background", 0.04),
+            padding: 1,
           }}
         >
           {item}

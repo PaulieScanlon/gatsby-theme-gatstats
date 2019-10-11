@@ -22,6 +22,11 @@ const DefaultLayout = ({ pageContext, children }) => {
   const { isIndex } = pageContext || false
   const [isNavOpen, setNavOpen] = useLocalStorage("gatstats-isNavOpen", false)
 
+  const handleIsNavOpen = isNavOpen => {
+    setNavOpen(isNavOpen)
+    //document.body.style.overflow = isNavOpen ? "hidden" : "auto"
+  }
+
   return (
     <StaticQuery
       query={graphql`
@@ -38,7 +43,6 @@ const DefaultLayout = ({ pageContext, children }) => {
         }
       `}
       render={data => {
-        document.body.style.overflow = isNavOpen ? "hidden" : "auto"
         const { logo, description } = data.site.siteMetadata
         const { sideBarWidth } = data.site.siteMetadata.config
 
@@ -54,16 +58,16 @@ const DefaultLayout = ({ pageContext, children }) => {
                     }
                   `}
                 />
-                <AppBar onOpen={() => setNavOpen(true)} />
+                <AppBar onOpen={() => handleIsNavOpen(true)} />
                 <SideBar
                   logo={logo}
                   description={description}
                   width={sideBarWidth}
                   isNavOpen={isNavOpen}
-                  onClose={() => setNavOpen(false)}
+                  onClose={() => handleIsNavOpen(false)}
                 />
                 <Lightbox
-                  onClick={() => setNavOpen(false)}
+                  onClick={() => handleIsNavOpen(false)}
                   isNavOpen={isNavOpen}
                 />
                 <Content marginLeft={sideBarWidth}>

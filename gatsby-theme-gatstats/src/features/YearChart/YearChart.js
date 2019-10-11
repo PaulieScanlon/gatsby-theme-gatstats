@@ -29,33 +29,44 @@ export const YearChart = () => {
         }
       `}
       render={data => {
-        // TODO create an array of dates from Jan to Dec then add the counts to that rather than
-        // trying to create them from map and reduce. The chart needs all the months
-        // regardless of if there's an associated value
-        const prepData = data.allMdx.edges
+        const vxLineData = data.allMdx.edges
           .map(item => {
-            let newDate = new Date(item.node.frontmatter.date)
             return {
-              day: newDate.getDay(),
-              month: newDate.getMonth(),
-              year: newDate.getFullYear(),
-              date: item.node.frontmatter.date,
+              month: new Date(item.node.frontmatter.date).getMonth(),
+              year: new Date(item.node.frontmatter.date).getFullYear(),
             }
           })
           .filter(item => item.year === currentYear)
-          .reduce((items, item) => {
-            let { date } = item
-
-            items[date] = items[date] = {
-              date: new Date(date),
-              value: items[date] ? items[date].value + 1 : 1,
+          .reduce(
+            (items, item) => {
+              const { month } = item
+              items[month] = items[month] || []
+              items[month].push(month)
+              return items
+            },
+            [
+              [{ label: "J", monthName: "Jan", month: 0, count: 0 }],
+              [{ label: "F", monthName: "Feb", month: 1, count: 0 }],
+              [{ label: "M", monthName: "Mar", month: 2, count: 0 }],
+              [{ label: "A", monthName: "Apr", month: 3, count: 0 }],
+              [{ label: "M", monthName: "May", month: 4, count: 0 }],
+              [{ label: "J", monthName: "Jun", month: 5, count: 0 }],
+              [{ label: "J", monthName: "Jul", month: 6, count: 0 }],
+              [{ label: "A", monthName: "Aug", month: 7, count: 0 }],
+              [{ label: "S", monthName: "Sep", month: 8, count: 0 }],
+              [{ label: "O", monthName: "Oct", month: 9, count: 0 }],
+              [{ label: "N", monthName: "Nov", month: 10, count: 0 }],
+              [{ label: "D", monthName: "Dec", month: 11, count: 0 }],
+            ]
+          )
+          .map(item => {
+            return {
+              label: item[0].label,
+              monthName: item[0].monthName,
+              month: item[0].month,
+              count: item.length - 1,
             }
-            return items
-          }, [])
-
-        const vxLineData = Object.keys(prepData).map(item => {
-          return { date: prepData[item].date, value: prepData[item].value }
-        })
+          })
 
         return (
           <Styled.div
@@ -66,9 +77,10 @@ export const YearChart = () => {
           >
             <Styled.div
               sx={{
+                borderRadius: 1,
+                backgroundColor: "surface",
                 margin: 3,
                 padding: 3,
-                boxShadow: 0,
                 flex: 1,
                 overflow: "hidden",
                 display: "flex",
@@ -77,7 +89,6 @@ export const YearChart = () => {
               }}
             >
               <CardHeaders heading="Posts" subHeading="This Year" />
-
               <Styled.div
                 sx={{
                   mb: 3,
@@ -100,6 +111,3 @@ export const YearChart = () => {
     />
   )
 }
-
-//date: Tue Oct 08 2019 14:27:51 GMT+0100 (British Summer Time) {}
-//value: 1306

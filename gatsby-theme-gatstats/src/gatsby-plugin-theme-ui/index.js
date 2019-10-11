@@ -3,13 +3,14 @@ const headings = {
   fontFamily: "heading",
   fontWeight: "heading",
   lineHeight: "normal",
+  wordBreak: "break-all",
   margin: 0,
 }
 
 export default {
   space: [0, 4, 8, 16, 32, 48, 64, 128, 256, 512],
 
-  radii: [0, 2],
+  radii: [4, 8, 50],
 
   borderWidths: [1, 2, 3],
 
@@ -27,25 +28,29 @@ export default {
     bold: 700,
   },
 
-  // initialColorModeName: "dark",
+  initialColorModeName: "dark",
 
   colors: {
     modes: {
       light: {
         text: "#656d8c",
-        background: "#ffffff",
+        background: "#fbefff",
+        surface: "#ffffff",
         primary: "#ec3cbd",
         secondary: "#c456d9",
         tertiary: "#ac68eb",
         muted: "#c3cbd9",
+        shadow: " rgba(251, 239, 255, 0.7)",
       },
       dark: {
-        text: "#ffffff",
+        text: "#c3cbd9",
         background: "#1b1c3b",
+        surface: "#222449",
         primary: "#ec3cbd",
         secondary: "#c456d9",
         tertiary: "#ac68eb",
-        muted: "#c3cbd9",
+        muted: "#4f518f",
+        shadow: " rgba(27, 28, 59, 0.5)",
       },
     },
   },
@@ -53,11 +58,11 @@ export default {
   breakpoints: ["576px", "768px", "992px", "1200px"],
 
   shadows: [
-    "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
-    "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)",
-    "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)",
-    "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)",
-    "0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)",
+    "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.20)",
+    "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.19)",
+    "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.19)",
+    "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.18)",
+    "0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.17)",
   ],
 
   styles: {
@@ -80,51 +85,48 @@ export default {
     h1: {
       ...headings,
       marginBottom: 3,
-      fontSize: 8,
+      fontSize: [6, 7, 8],
     },
 
     h2: {
       ...headings,
       marginBottom: 3,
-      fontSize: 7,
+      fontSize: [5, 7],
     },
 
     h3: {
       ...headings,
       marginBottom: 3,
-      fontSize: 6,
+      fontSize: [4, 6],
     },
 
     h4: {
       ...headings,
       marginBottom: 3,
-      fontSize: 5,
+      fontSize: [2, 5],
     },
 
     h5: {
       ...headings,
       marginBottom: 2,
-      fontSize: 4,
+      fontSize: [2, 4],
     },
 
     h6: {
       ...headings,
       marginBottom: 2,
-      fontSize: 2,
+      fontSize: [1, 2],
       fontWeight: "body",
     },
 
     p: {
       color: "text",
       fontFamily: "body",
-      fontSize: 2,
+      fontSize: [1, 2],
       fontWeight: "body",
       lineHeight: "body",
       marginTop: 0,
       marginBottom: 2,
-      a: {
-        color: "primary",
-      },
     },
 
     ul: { paddingLeft: 3 },
@@ -137,16 +139,17 @@ export default {
     },
 
     a: {
-      color: "muted",
+      color: "secondary",
+      cursor: "pointer",
+      fontSize: [1, 2],
       transition: ".2s linear all",
       ":hover": {
-        color: "text",
+        color: "muted",
       },
     },
 
     pre: {
       backgroundColor: "background",
-      // bg: lighten("background", 0.04),
       fontFamily: "monospace",
       fontSize: 0,
       px: 3,
@@ -154,7 +157,6 @@ export default {
       borderStyle: "solid",
       borderWidth: 0,
       borderColor: "background",
-      // borderColor: darken("background", 0.04),
     },
 
     code: {
@@ -164,7 +166,6 @@ export default {
 
     blockquote: {
       backgroundColor: "background",
-      // bg: lighten("background", 0.04),
       borderLeftStyle: "solid",
       borderLeftWidth: 4,
       borderColor: "secondary",
@@ -184,7 +185,6 @@ export default {
 
     th: {
       backgroundColor: "background",
-      // bg: lighten("background", 0.04),
       color: "text",
       borderStyle: "solid",
       borderWidth: 0,

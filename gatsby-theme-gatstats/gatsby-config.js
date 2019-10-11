@@ -2,8 +2,8 @@ const path = require("path")
 
 module.exports = {
   siteMetadata: {
-    logo: "<GatStats/>",
-    description: "Data viz for blogs 👻",
+    logo: "</>",
+    description: "GatStats. Data viz for blogs",
     config: {
       sideBarWidth: 250,
     },

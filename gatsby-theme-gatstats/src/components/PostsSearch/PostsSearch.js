@@ -1,9 +1,7 @@
 /** @jsx jsx */
-
 import PropTypes from "prop-types"
 import Downshift from "downshift"
 import { Styled, jsx } from "theme-ui"
-// import { lighten } from "@theme-ui/color"
 
 import { SearchButton } from "../SearchButton"
 
@@ -21,7 +19,6 @@ export const PostsSearch = ({ postTags, onSearch }) => {
         itemToString={item => (item ? item.value : "")}
       >
         {({
-          getRootProps,
           getInputProps,
           getItemProps,
           getMenuProps,
@@ -44,16 +41,13 @@ export const PostsSearch = ({ postTags, onSearch }) => {
                   sx={{
                     display: "flex",
                     color: "text",
-                    backgroundColor: "background",
+
                     input: {
-                      backgroundColor: "background",
-                      // bg: lighten("background", 0.04),
+                      backgroundColor: "surface",
                       display: "flex",
                       flexBasis: "100%",
                       border: "none",
-                      borderBottomStyle: "solid",
-                      borderBottomWidth: 2,
-                      borderColor: "muted",
+                      borderRadius: 2,
                       p: 3,
                       fontFamily: "body",
                       fontSize: 2,
@@ -95,12 +89,13 @@ export const PostsSearch = ({ postTags, onSearch }) => {
               </Styled.div>
               <Styled.div
                 sx={{
-                  backgroundColor: "background",
-                  // bg: lighten("background", 0.04),
+                  backgroundColor: "surface",
                   position: "absolute",
                   width: "100%",
+                  borderRadius: 1,
+                  boxShadow: theme => `0 0 8px 8px ${theme.colors.shadow}`,
                   zIndex: 2,
-                  boxShadow: 3,
+                  mt: 3,
                 }}
               >
                 <Styled.div>
@@ -137,7 +132,6 @@ export const PostsSearch = ({ postTags, onSearch }) => {
                                 listStyle: "none",
                                 ":hover": {
                                   color: "text",
-                                  backgroundColor: "background",
                                 },
                               }}
                             >
