@@ -28,24 +28,26 @@ export default {
     bold: 700,
   },
 
-  initialColorModeName: "dark",
+  initialColorModeName: "wtf",
 
   colors: {
     modes: {
       light: {
-        text: "#4f4e53",
-        muted: "#c2c9da",
+        text: "#666666",
+        muted: "#999999",
         background: "#e7e9f1",
         surface: "#ffffff",
-        primary: "#0556b2",
-        secondary: "#3166a1",
-        shadow: " rgba(235, 237, 246, 0.5)",
+        sideBar: "#272c36",
+        primary: "#3c39cb",
+        secondary: "#4f4dd0",
+        shadow: " rgba(236, 235, 242, 0.5)",
       },
       dark: {
         text: "#c3cbd9",
         muted: "#4f518f",
         background: "#1b1c3b",
         surface: "#222449",
+        sideBar: "#222449",
         primary: "#ec3cbd",
         secondary: "#c456d9",
         shadow: " rgba(27, 28, 59, 0.5)",

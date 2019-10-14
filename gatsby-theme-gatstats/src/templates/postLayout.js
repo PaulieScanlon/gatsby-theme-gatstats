@@ -4,15 +4,17 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Img from "gatsby-image"
 
+import { Seo } from "../components/Seo"
 import { TagsList } from "../components/TagsList"
 import DefaultLayout from "./DefaultLayout"
 
 const PostLayout = ({ data: { mdx } }) => {
-  const { timeToRead, wordCount } = mdx,
+  const { excerpt, timeToRead, wordCount } = mdx,
     { title, tags, date, featuredImage } = mdx.frontmatter
 
   return (
     <DefaultLayout>
+      <Seo title={title} excerpt={excerpt} tags={tags} />
       <Container
         sx={{
           backgroundColor: "surface",
@@ -99,6 +101,7 @@ export const contentQuery = graphql`
     mdx(id: { eq: $id }) {
       id
       body
+      excerpt
       timeToRead
       wordCount {
         words

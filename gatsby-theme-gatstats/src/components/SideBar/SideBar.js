@@ -18,7 +18,7 @@ export const SideBar = ({ logo, description, isNavOpen, onClose, width }) => {
     outline: "none",
     borderWidth: 0,
     borderStyle: "solid",
-    borderColor: "surface",
+    borderColor: "sideBar",
 
     pt: 3,
     pb: 3,
@@ -38,6 +38,7 @@ export const SideBar = ({ logo, description, isNavOpen, onClose, width }) => {
     },
     "&.active-nav-item": {
       color: "secondary",
+      backgroundColor: "background",
     },
 
     ":focus": {
@@ -50,7 +51,7 @@ export const SideBar = ({ logo, description, isNavOpen, onClose, width }) => {
   return (
     <Styled.div
       sx={{
-        backgroundColor: "surface",
+        backgroundColor: "sideBar",
         display: "flex",
         flexDirection: "column",
         boxSizing: "border-box",
@@ -91,6 +92,7 @@ export const SideBar = ({ logo, description, isNavOpen, onClose, width }) => {
         </Styled.h3>
         <Styled.h6
           sx={{
+            color: "muted",
             textAlign: "center",
           }}
         >
