@@ -51,7 +51,8 @@ export const TagsChart = () => {
               sx={{
                 borderRadius: 1,
                 backgroundColor: "surface",
-                margin: 3,
+                mb: 3,
+                mr: [0, 2],
                 padding: 3,
                 flex: 1,
                 overflow: "hidden",

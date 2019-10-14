@@ -58,9 +58,9 @@ export const LatestPost = () => {
               sx={{
                 borderRadius: 1,
                 backgroundColor: "surface",
-                margin: 3,
                 padding: 3,
                 flex: 1,
+                mb: 3,
               }}
             >
               <CardHeaders heading="New posts" subHeading="Last 3 blog posts" />

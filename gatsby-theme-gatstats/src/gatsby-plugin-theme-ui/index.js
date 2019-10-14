@@ -33,23 +33,21 @@ export default {
   colors: {
     modes: {
       light: {
-        text: "#656d8c",
-        background: "#fbefff",
+        text: "#4f4e53",
+        muted: "#c2c9da",
+        background: "#e7e9f1",
         surface: "#ffffff",
-        primary: "#ec3cbd",
-        secondary: "#c456d9",
-        tertiary: "#ac68eb",
-        muted: "#c3cbd9",
-        shadow: " rgba(251, 239, 255, 0.7)",
+        primary: "#0556b2",
+        secondary: "#3166a1",
+        shadow: " rgba(235, 237, 246, 0.5)",
       },
       dark: {
         text: "#c3cbd9",
+        muted: "#4f518f",
         background: "#1b1c3b",
         surface: "#222449",
         primary: "#ec3cbd",
         secondary: "#c456d9",
-        tertiary: "#ac68eb",
-        muted: "#4f518f",
         shadow: " rgba(27, 28, 59, 0.5)",
       },
     },
@@ -76,10 +74,6 @@ export default {
       position: "relative",
       color: "text",
       bg: "background",
-    },
-
-    Container: {
-      padding: 3,
     },
 
     h1: {
@@ -145,7 +139,7 @@ export default {
       outline: "none",
       borderWidth: 0,
       borderStyle: "solid",
-      borderColor: "background",
+      borderColor: "surface",
       transition: ".2s linear all",
       ":hover": {
         color: "muted",

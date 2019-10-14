@@ -79,7 +79,7 @@ export const YearChart = () => {
               sx={{
                 borderRadius: 1,
                 backgroundColor: "surface",
-                margin: 3,
+                mb: 3,
                 padding: 3,
                 flex: 1,
                 overflow: "hidden",
@@ -91,7 +91,7 @@ export const YearChart = () => {
               <CardHeaders heading="Posts" subHeading="This Year" />
               <Styled.div
                 sx={{
-                  mb: 3,
+                  mb: 4,
                 }}
               >
                 <ParentSize>

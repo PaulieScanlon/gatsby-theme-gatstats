@@ -13,7 +13,12 @@ const PostLayout = ({ data: { mdx } }) => {
 
   return (
     <DefaultLayout>
-      <Container>
+      <Container
+        sx={{
+          backgroundColor: "surface",
+          borderRadius: 1,
+        }}
+      >
         <Styled.a
           onClick={() => window.history.back()}
           tabIndex={1}
@@ -51,10 +56,16 @@ const PostLayout = ({ data: { mdx } }) => {
             />
           </Styled.div>
         )}
-        <Styled.h6>{date}</Styled.h6>
-        <Styled.h1>{title}</Styled.h1>
+        <Styled.h6
+          sx={{
+            color: "primary",
+          }}
+        >
+          {date}
+        </Styled.h6>
         <Styled.p>{`${timeToRead} min read / ${wordCount.words} words`}</Styled.p>
-        <TagsList tags={tags} size="large" />
+        <TagsList tags={tags} />
+        <Styled.h1>{title}</Styled.h1>
 
         <MDXRenderer>{mdx.body}</MDXRenderer>
         <Styled.div

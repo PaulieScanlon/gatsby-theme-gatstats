@@ -9,7 +9,8 @@ export const PostsSearch = ({ postTags, onSearch }) => {
   return (
     <Styled.div
       sx={{
-        mb: 4,
+        mt: 3,
+        mb: 3,
       }}
     >
       <Downshift
@@ -105,7 +106,6 @@ export const PostsSearch = ({ postTags, onSearch }) => {
                   position: "absolute",
                   width: "100%",
                   borderRadius: 1,
-                  boxShadow: theme => `0 0 8px 8px ${theme.colors.shadow}`,
                   zIndex: 2,
                   mt: 3,
                 }}

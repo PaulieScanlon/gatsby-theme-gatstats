@@ -73,11 +73,10 @@ const VxLineChart = ({
             ".vx-glyph": {
               ".vx-dot-hidden": {
                 fill: "transparent",
-                cursor: "pointer",
                 WebkitTapHighlightColor: "transparent",
               },
               ".vx-dot-fill": {
-                fill: "background",
+                fill: "surface",
               },
               ".vx-dot-outline": {
                 fill: "primary",

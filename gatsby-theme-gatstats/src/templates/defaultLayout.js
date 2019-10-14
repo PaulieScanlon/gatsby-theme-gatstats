@@ -3,8 +3,8 @@ import { Global, css } from "@emotion/core"
 import {
   ThemeProvider,
   ColorMode,
-  Layout,
   Container,
+  Layout,
   Styled,
   jsx,
 } from "theme-ui"
@@ -55,6 +55,7 @@ const DefaultLayout = ({ pageContext, children }) => {
                   styles={css`
                     body {
                       margin: 0;
+                      min-width: 320px;
                     }
                   `}
                 />
@@ -74,14 +75,23 @@ const DefaultLayout = ({ pageContext, children }) => {
                   {isIndex ? (
                     <Styled.div
                       sx={{
-                        maxWidth: 2000,
+                        pt: [2, 3],
+                        pl: [2, 3],
+                        pr: [2, 3],
+                        maxWidth: 1700,
                         margin: "0 auto",
                       }}
                     >
                       {children}
                     </Styled.div>
                   ) : (
-                    <Container>{children}</Container>
+                    <Container
+                      sx={{
+                        p: [2, 3],
+                      }}
+                    >
+                      {children}
+                    </Container>
                   )}
                 </Content>
               </Layout>

@@ -75,6 +75,13 @@ export const Card = ({
           padding: 3,
         }}
       >
+        <Styled.h6
+          sx={{
+            color: "primary",
+          }}
+        >
+          {date}
+        </Styled.h6>
         <Styled.h5
           sx={{
             color: "text",
@@ -85,17 +92,11 @@ export const Card = ({
         <Styled.p
           sx={{
             flexGrow: 1,
+            mb: 0,
           }}
         >
           {excerpt}
         </Styled.p>
-        <Styled.h6
-          sx={{
-            color: "primary",
-          }}
-        >
-          {date}
-        </Styled.h6>
         {wordCount && (
           <Styled.p
             sx={{

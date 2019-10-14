@@ -64,7 +64,6 @@ const VxBarChart = ({
           ".vx-group": {
             rect: {
               fill: "primary",
-              cursor: "pointer",
               WebkitTapHighlightColor: "transparent",
             },
           },

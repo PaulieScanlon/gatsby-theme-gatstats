@@ -2,7 +2,7 @@
 import PropTypes from "prop-types"
 import { Styled, jsx } from "theme-ui"
 
-export const TagsList = ({ tags, size }) => {
+export const TagsList = ({ tags }) => {
   return (
     <Styled.ul
       sx={{
@@ -11,7 +11,6 @@ export const TagsList = ({ tags, size }) => {
         flexWrap: "wrap",
         padding: 0,
         margin: 0,
-        marginBottom: size === "small" ? 0 : 3,
         "> li:nth-of-type(n)": {
           marginRight: 1,
           marginBottom: 1,
@@ -23,7 +22,7 @@ export const TagsList = ({ tags, size }) => {
           key={index}
           sx={{
             color: "muted",
-            fontSize: 0,
+            fontSize: 1,
             borderRadius: 0,
             borderStyle: "solid",
             borderWidth: 0,
@@ -38,11 +37,6 @@ export const TagsList = ({ tags, size }) => {
   )
 }
 
-TagsList.defaultProps = {
-  size: "small",
-}
-
 TagsList.propTypes = {
-  size: PropTypes.oneOf(["small", "large"]),
   tags: PropTypes.arrayOf(PropTypes.string),
 }

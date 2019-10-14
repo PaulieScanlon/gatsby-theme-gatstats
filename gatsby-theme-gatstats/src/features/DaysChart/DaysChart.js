@@ -68,7 +68,8 @@ export const DaysChart = () => {
               sx={{
                 borderRadius: 1,
                 backgroundColor: "surface",
-                margin: 3,
+                mb: 3,
+                ml: [0, 2],
                 padding: 3,
                 flex: 1,
                 overflow: "hidden",
