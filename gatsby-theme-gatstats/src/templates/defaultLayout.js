@@ -17,9 +17,10 @@ import { Lightbox } from "../components/Lightbox"
 import { AppBar } from "../components/AppBar"
 import { Content } from "../components/Content"
 import { useLocalStorage } from "../utils/useLocalStorage"
+import { Seo } from "../components/Seo"
 
 const DefaultLayout = ({ pageContext, children }) => {
-  const { isIndex } = pageContext || false
+  const { isIndex, pagePath } = pageContext || false
   const [isNavOpen, setNavOpen] = useLocalStorage("gatstats-isNavOpen", false)
 
   const handleIsNavOpen = isNavOpen => {
@@ -33,7 +34,7 @@ const DefaultLayout = ({ pageContext, children }) => {
         query defaultQuery {
           site {
             siteMetadata {
-              logo
+              title
               description
               config {
                 sideBarWidth
@@ -43,11 +44,12 @@ const DefaultLayout = ({ pageContext, children }) => {
         }
       `}
       render={data => {
-        const { logo, description } = data.site.siteMetadata
+        const { title, description } = data.site.siteMetadata
         const { sideBarWidth } = data.site.siteMetadata.config
 
         return (
           <ThemeProvider theme={theme}>
+            <Seo title={title} titleTemplate={pagePath} />
             <ColorMode />
             <Styled.root>
               <Layout>
@@ -61,7 +63,7 @@ const DefaultLayout = ({ pageContext, children }) => {
                 />
                 <AppBar onOpen={() => handleIsNavOpen(true)} />
                 <SideBar
-                  logo={logo}
+                  title={title}
                   description={description}
                   width={sideBarWidth}
                   isNavOpen={isNavOpen}

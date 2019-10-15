@@ -6,7 +6,7 @@ import { Styled, jsx } from "theme-ui"
 
 import { Icon } from "../Icon"
 
-export const SideBar = ({ logo, description, isNavOpen, onClose, width }) => {
+export const SideBar = ({ title, description, isNavOpen, onClose, width }) => {
   const conditionalLeft = isNavOpen ? "0" : "-100%"
 
   const linkStyles = {
@@ -82,18 +82,21 @@ export const SideBar = ({ logo, description, isNavOpen, onClose, width }) => {
           padding: 3,
         }}
       >
-        <Styled.h3
+        <Styled.h4
           sx={{
             textAlign: "center",
             color: "primary",
+            mt: 4,
+            mb: 1,
           }}
         >
-          {logo}
-        </Styled.h3>
+          {title}
+        </Styled.h4>
         <Styled.h6
           sx={{
             color: "muted",
             textAlign: "center",
+            mb: 6,
           }}
         >
           {description}
@@ -174,7 +177,7 @@ export const SideBar = ({ logo, description, isNavOpen, onClose, width }) => {
 }
 
 SideBar.propTypes = {
-  logo: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   isNavOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func,

@@ -33,13 +33,13 @@ export default {
   colors: {
     modes: {
       light: {
-        text: "#666666",
-        muted: "#999999",
-        background: "#e7e9f1",
+        text: "#525967",
+        muted: "#b3b2b2",
+        background: "#f7f7f7",
         surface: "#ffffff",
-        sideBar: "#272c36",
-        primary: "#3c39cb",
-        secondary: "#4f4dd0",
+        sideBar: "#25272f",
+        primary: "#9049dc",
+        secondary: "#c487ff",
         shadow: " rgba(236, 235, 242, 0.5)",
       },
       dark: {
@@ -122,7 +122,7 @@ export default {
       fontWeight: "body",
       lineHeight: "body",
       marginTop: 0,
-      marginBottom: 2,
+      marginBottom: 4,
     },
 
     ul: { paddingLeft: 3 },

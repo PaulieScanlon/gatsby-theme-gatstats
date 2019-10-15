@@ -4,9 +4,9 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Img from "gatsby-image"
 
-import { Seo } from "../components/Seo"
 import { TagsList } from "../components/TagsList"
 import DefaultLayout from "./DefaultLayout"
+import { Seo } from "../components/Seo"
 
 const PostLayout = ({ data: { mdx } }) => {
   const { excerpt, timeToRead, wordCount } = mdx,
@@ -14,7 +14,7 @@ const PostLayout = ({ data: { mdx } }) => {
 
   return (
     <DefaultLayout>
-      <Seo title={title} excerpt={excerpt} tags={tags} />
+      <Seo title={title} description={excerpt} tags={tags} />
       <Container
         sx={{
           backgroundColor: "surface",
@@ -31,7 +31,7 @@ const PostLayout = ({ data: { mdx } }) => {
           }}
           sx={{
             display: "inline-block",
-            mb: 3,
+            mb: 4,
           }}
         >
           Back
@@ -65,16 +65,16 @@ const PostLayout = ({ data: { mdx } }) => {
         >
           {date}
         </Styled.h6>
-        <Styled.p>{`${timeToRead} min read / ${wordCount.words} words`}</Styled.p>
+        <Styled.p
+          sx={{
+            mb: 2,
+          }}
+        >{`${timeToRead} min read / ${wordCount.words} words`}</Styled.p>
         <TagsList tags={tags} />
         <Styled.h1>{title}</Styled.h1>
 
         <MDXRenderer>{mdx.body}</MDXRenderer>
-        <Styled.div
-          sx={{
-            mb: 4,
-          }}
-        >
+        <Styled.div>
           <Styled.a
             onClick={() => window.history.back()}
             tabIndex={1}
@@ -85,7 +85,7 @@ const PostLayout = ({ data: { mdx } }) => {
             }}
             sx={{
               display: "inline-block",
-              mt: 5,
+              mt: 4,
             }}
           >
             Back

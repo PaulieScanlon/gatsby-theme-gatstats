@@ -51,6 +51,7 @@ exports.onCreatePage = ({ page, actions }) => {
     ...page,
     context: {
       ...page.context,
+      pagePath: page.path.split("/").join(""),
       isIndex: page.path === "/" ? true : false,
     },
   })

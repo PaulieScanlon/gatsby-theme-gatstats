@@ -6,8 +6,8 @@
 
 module.exports = {
   siteMetadata: {
-    logo: "</>",
-    description: "GatStats. Data viz for blogs",
+    title: "Gat Stats",
+    description: "Data viz for blogs",
     config: {
       sideBarWidth: 250,
     },

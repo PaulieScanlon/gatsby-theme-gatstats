@@ -92,7 +92,8 @@ export const Card = ({
         <Styled.p
           sx={{
             flexGrow: 1,
-            mb: 0,
+            color: "muted",
+            mb: 2,
           }}
         >
           {excerpt}
@@ -101,6 +102,7 @@ export const Card = ({
           <Styled.p
             sx={{
               fontSize: 1,
+              mb: 2,
             }}
           >{`${timeToRead} min read / ${wordCount.words} words`}</Styled.p>
         )}
