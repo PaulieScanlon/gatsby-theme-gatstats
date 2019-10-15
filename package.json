@@ -1,4 +1,5 @@
 {
+  "private": true,
   "scripts": {
     "develop": "yarn workspace demo develop",
     "build": "yarn workspace demo build"
