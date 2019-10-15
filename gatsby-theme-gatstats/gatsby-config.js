@@ -21,10 +21,18 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: "src/pages",
+        // path: path.join(__dirname, `src/pages`),
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
         path: "src/pages",
+        // path: path.join(__dirname, `src/pages`),
       },
     },
     {
@@ -32,6 +40,7 @@ module.exports = {
       options: {
         name: "posts",
         path: "src/posts",
+        // path: path.join(__dirname, `src/posts`),
       },
     },
   ],

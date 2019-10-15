@@ -4,7 +4,7 @@
     "build": "yarn workspace demo build"
   },
   "workspaces": [
-    "gatsby-theme-gatstats",
-    "demo"
+    "demo",
+    "gatsby-theme-gatstats"
   ]
 }
