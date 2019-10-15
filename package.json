@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "yarn workspace gatsby-theme-gatstats gatsby build"
+    "build": "yarn workspace demo gatsby build"
   },
   "workspaces": [
     "gatsby-theme-gatstats",
