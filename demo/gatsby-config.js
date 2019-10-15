@@ -5,12 +5,5 @@
  */
 
 module.exports = {
-  siteMetadata: {
-    title: "Gat Stats",
-    description: "Data viz for blogs",
-    config: {
-      sideBarWidth: 250,
-    },
-  },
   plugins: ["gatsby-theme-gatstats"],
 }
