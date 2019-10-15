@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import React from "react"
 import { Global, css } from "@emotion/core"
 import {
   ThemeProvider,
@@ -16,16 +17,16 @@ import { SideBar } from "../components/SideBar"
 import { Lightbox } from "../components/Lightbox"
 import { AppBar } from "../components/AppBar"
 import { Content } from "../components/Content"
-import { useLocalStorage } from "../utils/useLocalStorage"
+
 import { Seo } from "../components/Seo"
 
 const DefaultLayout = ({ pageContext, children }) => {
   const { isIndex, pagePath } = pageContext || false
-  const [isNavOpen, setNavOpen] = useLocalStorage("gatstats-isNavOpen", false)
+
+  const [isNavOpen, setNavOpen] = React.useState(false)
 
   const handleIsNavOpen = isNavOpen => {
     setNavOpen(isNavOpen)
-    //document.body.style.overflow = isNavOpen ? "hidden" : "auto"
   }
 
   return (
