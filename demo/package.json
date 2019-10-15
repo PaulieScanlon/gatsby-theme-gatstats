@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "demo",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -12,7 +12,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
-    "gatsby-theme-gatstats": "*",
+    "@pauliescanlon/gatsby-theme-gatstats": "*",
     "gatsby": "^2.15.28",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
