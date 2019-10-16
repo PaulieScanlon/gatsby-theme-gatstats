@@ -13,19 +13,22 @@
     "storybook:build": "build-storybook -s ./public -o ../demo/public/storybook"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.21",
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
-    "gatsby": "^2.15.28",
+    "gatsby": "^2.16.3",
     "gatsby-plugin-mdx": "^1.0.52",
     "gatsby-plugin-page-creator": "^2.1.27",
+    "gatsby-plugin-theme-ui": "^0.2.43",
     "react": "^16.10.2",
-    "react-dom": "^16.10.2"
+    "react-dom": "^16.10.2",
+    "theme-ui": "^0.2.44"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@storybook/react": "^5.2.4",
     "babel-loader": "^8.0.6",
-    "gatsby": "^2.15.28",
+    "gatsby": "^2.16.3",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
   },

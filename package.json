@@ -4,7 +4,8 @@
     "develop": "yarn workspace demo develop",
     "build": "yarn workspace demo build && npm run storybook:build",
     "storybook": "yarn workspace @pauliescanlon/gatsby-theme-gatstats storybook",
-    "storybook:build": "yarn workspace @pauliescanlon/gatsby-theme-gatstats storybook:build"
+    "storybook:build": "yarn workspace @pauliescanlon/gatsby-theme-gatstats storybook:build",
+    "clean": "yarn workspace demo clean"
   },
   "workspaces": [
     "demo",

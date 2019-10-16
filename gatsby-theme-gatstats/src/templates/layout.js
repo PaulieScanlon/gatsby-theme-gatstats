@@ -1,5 +1,16 @@
-import React from "react"
+/** @jsx jsx */
+import { ThemeProvider, jsx } from "theme-ui"
+import { Header } from "../components/Header"
+
+import theme from "../../gatsby-plugin-theme-ui"
 
 export default ({ children }) => {
-  return <div style={{ border: "1px solid blue" }}>{children}</div>
+  return (
+    <ThemeProvider theme={theme}>
+      <div>
+        <Header />
+        {children}
+      </div>
+    </ThemeProvider>
+  )
 }

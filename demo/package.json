@@ -6,6 +6,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "clean": "gatsby clean",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -13,7 +14,7 @@
   },
   "dependencies": {
     "@pauliescanlon/gatsby-theme-gatstats": "*",
-    "gatsby": "^2.15.28",
+    "gatsby": "^2.16.3",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
   },
