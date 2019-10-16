@@ -13,7 +13,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-page-creator`,
       options: {
-        path: path.join(__dirname, `src/pages`),
+        // path: path.join(__dirname, `src/pages`),
+        path: "src/pages",
       },
     },
   ],
