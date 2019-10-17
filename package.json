@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "serve": "yarn workspace demo serve",
     "develop": "yarn workspace demo develop",
     "build": "yarn workspace demo build && npm run storybook:build",
     "storybook": "yarn workspace @pauliescanlon/gatsby-theme-gatstats storybook",

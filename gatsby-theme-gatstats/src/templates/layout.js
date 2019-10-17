@@ -1,16 +1,21 @@
 /** @jsx jsx */
-import { ThemeProvider, jsx } from "theme-ui"
+import { Global, css } from "@emotion/core"
+import { jsx } from "theme-ui"
 import { Header } from "../components/Header"
-
-import theme from "../../gatsby-plugin-theme-ui"
 
 export default ({ children }) => {
   return (
-    <ThemeProvider theme={theme}>
-      <div>
-        <Header />
-        {children}
-      </div>
-    </ThemeProvider>
+    <div>
+      <Global
+        styles={css`
+          body {
+            margin: 0;
+            min-width: 320px;
+          }
+        `}
+      />
+      <Header />
+      {children}
+    </div>
   )
 }

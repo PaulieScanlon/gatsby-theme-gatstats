@@ -14,6 +14,12 @@ To preview and develop componets/features run storybook.
         yarn storybook
     ```
 
+To preview the build serve the static files.
+
+```sh
+    yarn serve
+```
+
 1-2. **Helpers.**
 
     Occasional you'll need to clear the Gatsby cache.

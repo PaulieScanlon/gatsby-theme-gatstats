@@ -1,10 +1,19 @@
 export default {
+  initialColorModeName: "light",
+
   colors: {
-    text: "#333",
+    text: "#000",
     background: "#fff",
-    primary: "#639",
-    secondary: "#ff6347",
+    primary: "#07c",
+    modes: {
+      dark: {
+        text: "#fff",
+        background: "#000",
+        primary: "#0cf",
+      },
+    },
   },
+
   fonts: {
     body: "system-ui, sans-serif",
     heading: "system-ui, sans-serif",
