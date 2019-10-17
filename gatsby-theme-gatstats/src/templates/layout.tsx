@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import { Global, css } from "@emotion/core"
-import { jsx } from "theme-ui"
-import { Header } from "../components/Header"
+import { Global, css } from '@emotion/core'
+import { jsx } from 'theme-ui'
+import { Header } from '../components/Header'
 
-export default ({ children }) => {
+const Layout: React.FC = ({ children }) => {
   return (
     <div>
       <Global
@@ -19,3 +19,5 @@ export default ({ children }) => {
     </div>
   )
 }
+
+export default Layout

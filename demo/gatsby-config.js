@@ -5,5 +5,5 @@
  */
 
 module.exports = {
-  plugins: ["@pauliescanlon/gatsby-theme-gatstats"],
+  plugins: ['@pauliescanlon/gatsby-theme-gatstats']
 }

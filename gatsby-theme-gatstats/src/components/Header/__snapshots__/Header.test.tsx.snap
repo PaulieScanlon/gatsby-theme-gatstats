@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header> renders correctly 1`] = `
+<RootProvider
+  theme={
+    Object {
+      "colors": Object {
+        "background": "#fff",
+        "modes": Object {
+          "dark": Object {
+            "background": "#000",
+            "primary": "#0cf",
+            "text": "#fff",
+          },
+        },
+        "primary": "#07c",
+        "text": "#000",
+      },
+      "fontSizes": Array [
+        12,
+        14,
+        16,
+        20,
+        24,
+        32,
+        48,
+        64,
+        72,
+      ],
+      "fontWeights": Object {
+        "body": 400,
+        "bold": 700,
+        "heading": 700,
+      },
+      "fonts": Object {
+        "body": "system-ui, sans-serif",
+        "heading": "system-ui, sans-serif",
+        "monospace": "Menlo, monospace",
+      },
+      "initialColorModeName": "light",
+      "lineHeights": Object {
+        "body": 1.5,
+        "heading": 1.125,
+      },
+    }
+  }
+>
+  <Header>
+    children
+  </Header>
+</RootProvider>
+`;
