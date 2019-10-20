@@ -9,7 +9,8 @@
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["gatsby-theme-gatstats/src/types"]
   },
 
   "include": ["gatsby-theme-gatstats/src/**/*"],

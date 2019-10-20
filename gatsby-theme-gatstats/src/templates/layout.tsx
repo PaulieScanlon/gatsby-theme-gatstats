@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { Global, css } from '@emotion/core'
 import { jsx } from 'theme-ui'
+import { Main } from '../components/Main'
 import { Header } from '../components/Header'
 
 const Layout: React.FC = ({ children }) => {
@@ -15,7 +16,7 @@ const Layout: React.FC = ({ children }) => {
         `}
       />
       <Header />
-      {children}
+      <Main>{children}</Main>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Header> renders correctly 1`] = `
+exports[`<Main> renders correctly 1`] = `
 <RootProvider
   theme={
     Object {
@@ -257,8 +257,8 @@ exports[`<Header> renders correctly 1`] = `
     }
   }
 >
-  <Header>
+  <Main>
     children
-  </Header>
+  </Main>
 </RootProvider>
 `;

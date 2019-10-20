@@ -10,4 +10,4 @@ export default {
   }
 }
 
-export const usage = () => <Header>children</Header>
+export const usage = () => <Header />

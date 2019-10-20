@@ -1,37 +1,20 @@
 /** @jsx jsx */
-import { useColorMode, jsx, Styled } from 'theme-ui'
+import { jsx, Styled } from 'theme-ui'
 
-interface IHeaderProps {
-  /** Temp prop */
-  showToggle?: boolean
-}
+import { ToggleSwitch } from '../ToggleSwitch'
 
-export const Header: React.FC<IHeaderProps> = ({
-  children,
-  showToggle = true
-}) => {
-  const [colorMode, setColorMode] = useColorMode()
-
-  return (
-    <Styled.div
-      sx={{
-        padding: 3,
-        color: 'background',
-        backgroundColor: 'primary'
-      }}
-    >
-      {showToggle && (
-        <div>
-          <button
-            onClick={() => {
-              setColorMode(colorMode === 'light' ? 'dark' : 'light')
-            }}
-          >
-            Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-          </button>
-        </div>
-      )}
-      {children}
-    </Styled.div>
-  )
-}
+export const Header: React.FC = () => (
+  <Styled.div
+    sx={{
+      display: 'flex',
+      justifyContent: 'flex-end',
+      padding: [2, 3],
+      color: 'primaryText',
+      backgroundColor: 'surface',
+      boxShadow: 0,
+      zIndex: 2
+    }}
+  >
+    <ToggleSwitch />
+  </Styled.div>
+)
