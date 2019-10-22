@@ -36,8 +36,8 @@ export default {
 
     primary: '#3ed9c0',
     secondary: '#6acbac',
-    surface: '#ffffff',
-    background: '#eeeeee',
+    surface: '#dedede',
+    background: '#f7f7f7',
 
     modes: {
       dark: {
@@ -56,6 +56,7 @@ export default {
   breakpoints: ['576px', '768px', '992px', '1200px'],
 
   shadows: [
+    `0 0 0 2px`,
     '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.20)',
     '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.19)',
     '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.19)',
@@ -69,12 +70,6 @@ export default {
       fontWeight: 'body',
       lineHeight: 'normal'
     },
-
-    // Layout: {
-    //   position: 'relative',
-    //   color: 'text',
-    //   bg: 'background'
-    // },
 
     h1: {
       ...headings,
@@ -123,12 +118,14 @@ export default {
       marginBottom: 4
     },
 
-    ul: { paddingLeft: 3 },
+    ul: { color: 'text', fontFamily: 'body', fontSize: [1, 2], paddingLeft: 3 },
 
-    ol: { paddingLeft: 3 },
+    ol: { color: 'text', fontFamily: 'body', fontSize: [1, 2], paddingLeft: 3 },
 
     li: {
       color: 'text',
+      fontFamily: 'body',
+      fontSize: [1, 2],
       marginBottom: 3
     },
 
@@ -137,16 +134,12 @@ export default {
       cursor: 'pointer',
       fontSize: [1, 2],
       outline: 'none',
-      borderWidth: 0,
-      borderStyle: 'solid',
       transition: '.2s linear all',
       ':hover': {
-        color: 'muted'
+        color: 'text'
       },
       ':focus': {
-        borderWidth: 0,
-        borderStyle: 'dashed',
-        borderColor: 'text'
+        color: 'text'
       }
     },
 
@@ -201,6 +194,10 @@ export default {
       borderColor: 'muted',
       px: 2,
       py: 2
+    },
+
+    hr: {
+      opacity: 0
     }
   }
 }

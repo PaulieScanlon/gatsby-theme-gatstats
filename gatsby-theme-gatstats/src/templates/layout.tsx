@@ -1,12 +1,13 @@
 /** @jsx jsx */
 import { Global, css } from '@emotion/core'
-import { jsx } from 'theme-ui'
+import { jsx, Styled } from 'theme-ui'
+
 import { Main } from '../components/Main'
-import { Header } from '../components/Header'
+import { SideBarContainer } from '../components/SideBar/SideBarContainer'
 
 const Layout: React.FC = ({ children }) => {
   return (
-    <div>
+    <Styled.div>
       <Global
         styles={css`
           body {
@@ -15,9 +16,17 @@ const Layout: React.FC = ({ children }) => {
           }
         `}
       />
-      <Header />
-      <Main>{children}</Main>
-    </div>
+
+      <Styled.div
+        sx={{
+          margin: '0 auto',
+          maxWidth: ['100%', 1400]
+        }}
+      >
+        <Main>{children}</Main>
+        <SideBarContainer />
+      </Styled.div>
+    </Styled.div>
   )
 }
 

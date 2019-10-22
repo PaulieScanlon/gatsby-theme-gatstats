@@ -1,6 +1,13 @@
 const path = require('path')
 
 module.exports = {
+  siteMetadata: {
+    title: 'Gat Stats',
+    description: 'Data viz for blogs',
+    config: {
+      sideBarWidth: 250
+    }
+  },
   plugins: [
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-typescript',

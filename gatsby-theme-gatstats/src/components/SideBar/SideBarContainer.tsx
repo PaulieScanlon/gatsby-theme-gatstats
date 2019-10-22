@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Styled } from 'theme-ui'
-import { Header } from '../Header'
+
+import { SideBar } from './SideBar'
 
 const commonStyles = {
   display: 'flex',
@@ -19,22 +20,22 @@ const commonStyles = {
   paddingTop: 0
 }
 
-export const Main: React.FC = ({ children }) => (
+export const SideBarContainer: React.FC = () => (
   <Styled.div
     sx={{
-      ...commonStyles
+      ...commonStyles,
+      position: 'relative'
     }}
   >
-    <Header />
     <Styled.div
       sx={{
         ...commonStyles,
-        marginLeft: [0, 0, 0, 250],
-        paddingLeft: [3, 4],
-        paddingRight: [3, 4]
+        position: 'fixed',
+        top: 0,
+        height: '100%'
       }}
     >
-      {children}
+      <SideBar sideBarWidth={250} />
     </Styled.div>
   </Styled.div>
 )
