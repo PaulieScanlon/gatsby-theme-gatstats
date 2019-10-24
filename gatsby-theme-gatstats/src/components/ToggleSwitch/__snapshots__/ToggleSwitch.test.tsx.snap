@@ -22,7 +22,7 @@ exports[`<ToggleSwitch> renders correctly 1`] = `
             "background": "#131127",
             "primary": "#ec3cbd",
             "secondary": "#c456d9",
-            "surface": "#171530",
+            "surface": "#1f1c3e",
             "text": "#ffffff",
             "textDark": "#272643",
             "textLight": "#59587b",

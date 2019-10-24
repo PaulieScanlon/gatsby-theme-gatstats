@@ -48,7 +48,7 @@ export default {
 
         primary: '#ec3cbd',
         secondary: '#c456d9',
-        surface: '#171530',
+        surface: '#1f1c3e',
         background: '#131127',
         transparent: `rgba(0,0,0,0)`
       }

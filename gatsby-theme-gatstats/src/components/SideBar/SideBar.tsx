@@ -1,9 +1,8 @@
 /** @jsx jsx */
 import { jsx, Styled } from 'theme-ui'
 
-import { ILink } from '../../types'
-
 import { SideBarNavList } from '../SideBarNavList'
+import { ILink } from '../../types'
 
 interface ISideBarProps {
   /** The width of the SideBar */
@@ -12,39 +11,32 @@ interface ISideBarProps {
   links: ILink[]
 }
 
-export const SideBar: React.FC<ISideBarProps> = ({ sideBarWidth, links }) => (
-  <Styled.div
-    sx={{
-      height: '100%',
-      backgroundColor: 'background',
-      borderRightWidth: 0,
-      borderRightStyle: 'solid',
-      borderRightColor: 'surface',
-      width: sideBarWidth
-    }}
-  >
+export const SideBar: React.FC<ISideBarProps> = ({ sideBarWidth, links }) => {
+  return (
     <Styled.div
       sx={{
-        padding: [2, 3]
+        height: '100%',
+        backgroundColor: 'background',
+        borderRightWidth: 0,
+        borderRightStyle: 'solid',
+        borderRightColor: 'surface',
+        width: sideBarWidth
       }}
     >
-      <Styled.ul
+      <Styled.div
         sx={{
-          margin: 0,
-          padding: 0
+          pl: 3,
+          pr: 3
         }}
       >
-        {links.map((link, index) => {
-          return (
-            <SideBarNavList
-              key={index}
-              slug={link.slug}
-              icon={link.icon}
-              title={link.title}
-            />
-          )
-        })}
-      </Styled.ul>
+        <Styled.div
+          className="this-will-be-the-profile"
+          sx={{
+            height: 64
+          }}
+        />
+        <SideBarNavList links={links} />
+      </Styled.div>
     </Styled.div>
-  </Styled.div>
-)
+  )
+}

@@ -6,7 +6,7 @@ export interface ILinkProps {
   isCurrent: string
   isPartiallyCurrent: string
   href: string
-  location: string
+  location?: string
 }
 
 export interface ILink {

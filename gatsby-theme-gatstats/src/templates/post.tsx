@@ -1,24 +1,16 @@
 /** @jsx jsx */
-import { Styled, jsx } from 'theme-ui'
+
+import { jsx } from 'theme-ui'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import { Content } from '../components/Content'
-import { SideBarContainer } from '../components/SideBar/SideBarContainer'
+import Layout from './layout'
 
 const Post = ({ data: { mdx } }: any) => {
   return (
-    <Styled.div
-      sx={{
-        margin: '0 auto',
-        maxWidth: theme => theme.breakpoints[3]
-      }}
-    >
-      <Content>
-        <MDXRenderer>{mdx.body}</MDXRenderer>
-      </Content>
-      <SideBarContainer />
-    </Styled.div>
+    <Layout>
+      <MDXRenderer>{mdx.body}</MDXRenderer>
+    </Layout>
   )
 }
 

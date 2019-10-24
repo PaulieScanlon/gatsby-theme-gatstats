@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import * as React from 'react'
 import { Global, css } from '@emotion/core'
 import { jsx, Styled } from 'theme-ui'
 
@@ -7,11 +8,13 @@ import { SideBarContainer } from '../components/SideBar/SideBarContainer'
 
 const Layout: React.FC = ({ children }) => {
   return (
-    <Styled.div>
+    <React.Fragment>
       <Global
         styles={css`
           body {
+            position: relative;
             margin: 0;
+            min-height: 100%;
             min-width: 320px;
           }
         `}
@@ -26,7 +29,7 @@ const Layout: React.FC = ({ children }) => {
         <Content>{children}</Content>
         <SideBarContainer />
       </Styled.div>
-    </Styled.div>
+    </React.Fragment>
   )
 }
 
