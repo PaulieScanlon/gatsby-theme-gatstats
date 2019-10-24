@@ -36,8 +36,9 @@ export default {
 
     primary: '#3ed9c0',
     secondary: '#6acbac',
-    surface: '#dedede',
+    surface: '#f0f0f0',
     background: '#f7f7f7',
+    transparent: `rgba(0,0,0,0)`,
 
     modes: {
       dark: {
@@ -47,8 +48,9 @@ export default {
 
         primary: '#ec3cbd',
         secondary: '#c456d9',
-        surface: '#201f3b',
-        background: '#131127'
+        surface: '#171530',
+        background: '#131127',
+        transparent: `rgba(0,0,0,0)`
       }
     }
   },
@@ -113,7 +115,7 @@ export default {
       fontFamily: 'body',
       fontSize: [1, 2],
       fontWeight: 'body',
-      lineHeight: 'body',
+      lineHeight: 'normal',
       marginTop: 0,
       marginBottom: 4
     },

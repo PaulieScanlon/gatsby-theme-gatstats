@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { StaticQuery, graphql } from 'gatsby'
 import { jsx, Styled } from 'theme-ui'
 
 import { SideBar } from './SideBar'
@@ -21,21 +22,56 @@ const commonStyles = {
 }
 
 export const SideBarContainer: React.FC = () => (
-  <Styled.div
-    sx={{
-      ...commonStyles,
-      position: 'relative'
+  <StaticQuery
+    query={graphql`
+      query pagesQuery {
+        allMdx(
+          filter: { fileAbsolutePath: { regex: "//src/pages//" } }
+          sort: { order: ASC, fields: [fields___slug] }
+        ) {
+          edges {
+            node {
+              fileAbsolutePath
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                icon
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={data => {
+      const links = data.allMdx.edges.map((item: any) => {
+        return {
+          slug: item.node.fields.slug,
+          icon: item.node.frontmatter.icon,
+          title: item.node.frontmatter.title
+        }
+      })
+
+      return (
+        <Styled.div
+          sx={{
+            ...commonStyles,
+            position: 'relative'
+          }}
+        >
+          <Styled.div
+            sx={{
+              ...commonStyles,
+              position: 'fixed',
+              top: 0,
+              height: '100%'
+            }}
+          >
+            <SideBar sideBarWidth={250} links={links} />
+          </Styled.div>
+        </Styled.div>
+      )
     }}
-  >
-    <Styled.div
-      sx={{
-        ...commonStyles,
-        position: 'fixed',
-        top: 0,
-        height: '100%'
-      }}
-    >
-      <SideBar sideBarWidth={250} />
-    </Styled.div>
-  </Styled.div>
+  />
 )

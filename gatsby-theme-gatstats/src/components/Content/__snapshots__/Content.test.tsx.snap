@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Main> renders correctly 1`] = `
+exports[`<Content> renders correctly 1`] = `
 <RootProvider
   theme={
     Object {
@@ -22,18 +22,20 @@ exports[`<Main> renders correctly 1`] = `
             "background": "#131127",
             "primary": "#ec3cbd",
             "secondary": "#c456d9",
-            "surface": "#201f3b",
+            "surface": "#171530",
             "text": "#ffffff",
             "textDark": "#272643",
             "textLight": "#59587b",
+            "transparent": "rgba(0,0,0,0)",
           },
         },
         "primary": "#3ed9c0",
         "secondary": "#6acbac",
-        "surface": "#dedede",
+        "surface": "#f0f0f0",
         "text": "#444444",
         "textDark": "#333333",
         "textLight": "#999999",
+        "transparent": "rgba(0,0,0,0)",
       },
       "fontSizes": Array [
         12,
@@ -220,7 +222,7 @@ exports[`<Main> renders correctly 1`] = `
             2,
           ],
           "fontWeight": "body",
-          "lineHeight": "body",
+          "lineHeight": "normal",
           "marginBottom": 4,
           "marginTop": 0,
         },
@@ -274,8 +276,8 @@ exports[`<Main> renders correctly 1`] = `
     }
   }
 >
-  <Main>
+  <Content>
     children
-  </Main>
+  </Content>
 </RootProvider>
 `;

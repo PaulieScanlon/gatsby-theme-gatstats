@@ -1,12 +1,18 @@
 /** @jsx jsx */
 import { jsx, Styled } from 'theme-ui'
 
+import { ILink } from '../../types'
+
+import { SideBarNavList } from '../SideBarNavList'
+
 interface ISideBarProps {
   /** The width of the SideBar */
   sideBarWidth: number
+  /** Array of Links to display */
+  links: ILink[]
 }
 
-export const SideBar: React.FC<ISideBarProps> = ({ sideBarWidth }) => (
+export const SideBar: React.FC<ISideBarProps> = ({ sideBarWidth, links }) => (
   <Styled.div
     sx={{
       height: '100%',
@@ -22,11 +28,22 @@ export const SideBar: React.FC<ISideBarProps> = ({ sideBarWidth }) => (
         padding: [2, 3]
       }}
     >
-      <Styled.ul>
-        <Styled.li>nav Styled.link a</Styled.li>
-        <Styled.li>nav Styled.link b</Styled.li>
-        <Styled.li>nav Styled.link c</Styled.li>
-        <Styled.li>nav Styled.link d</Styled.li>
+      <Styled.ul
+        sx={{
+          margin: 0,
+          padding: 0
+        }}
+      >
+        {links.map((link, index) => {
+          return (
+            <SideBarNavList
+              key={index}
+              slug={link.slug}
+              icon={link.icon}
+              title={link.title}
+            />
+          )
+        })}
       </Styled.ul>
     </Styled.div>
   </Styled.div>

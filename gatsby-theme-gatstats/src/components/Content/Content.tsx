@@ -19,7 +19,7 @@ const commonStyles = {
   paddingTop: 0
 }
 
-export const Main: React.FC = ({ children }) => (
+export const Content: React.FC = ({ children }) => (
   <Styled.div
     sx={{
       ...commonStyles

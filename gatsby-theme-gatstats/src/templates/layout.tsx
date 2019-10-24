@@ -2,7 +2,7 @@
 import { Global, css } from '@emotion/core'
 import { jsx, Styled } from 'theme-ui'
 
-import { Main } from '../components/Main'
+import { Content } from '../components/Content'
 import { SideBarContainer } from '../components/SideBar/SideBarContainer'
 
 const Layout: React.FC = ({ children }) => {
@@ -20,10 +20,10 @@ const Layout: React.FC = ({ children }) => {
       <Styled.div
         sx={{
           margin: '0 auto',
-          maxWidth: ['100%', 1400]
+          maxWidth: theme => theme.breakpoints[3]
         }}
       >
-        <Main>{children}</Main>
+        <Content>{children}</Content>
         <SideBarContainer />
       </Styled.div>
     </Styled.div>
