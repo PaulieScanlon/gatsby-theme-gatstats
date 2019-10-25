@@ -8,7 +8,7 @@ const headings = {
 }
 
 export default {
-  space: [0, 4, 8, 16, 24, 32],
+  space: [0, 4, 8, 16, 24, 32, 48],
 
   radii: [4, 8, 50],
 
@@ -58,6 +58,10 @@ export default {
   },
 
   breakpoints: ['576px', '768px', '992px', '1200px'],
+
+  transitions: {
+    sideBarTransition: '.3s ease-in-out margin-left'
+  },
 
   shadows: [
     `0 0 0 2px`,

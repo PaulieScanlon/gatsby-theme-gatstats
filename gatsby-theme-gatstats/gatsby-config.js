@@ -5,7 +5,7 @@ module.exports = {
     title: 'Gat Stats',
     description: 'Data viz for blogs',
     config: {
-      sideBarWidth: 250
+      sideBarWidth: 244
     }
   },
   plugins: [

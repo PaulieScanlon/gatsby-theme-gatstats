@@ -3,7 +3,8 @@ import * as React from 'react'
 import { Global, css } from '@emotion/core'
 import { jsx, Styled } from 'theme-ui'
 
-import { Header } from '../components/Header'
+import { HeaderContainer } from '../components/Header'
+import { LightBox } from '../components/Lightbox'
 import { ContentContainer } from '../components/Content'
 import { SideBarContainer } from '../components/SideBar/SideBarContainer'
 
@@ -30,9 +31,10 @@ const Layout: React.FC = ({ children }) => {
         }}
       >
         <SideBarProvider>
-          <Header />
-          <ContentContainer>{children}</ContentContainer>
+          <HeaderContainer />
           <SideBarContainer />
+          <LightBox />
+          <ContentContainer>{children}</ContentContainer>
         </SideBarProvider>
       </Styled.div>
     </React.Fragment>

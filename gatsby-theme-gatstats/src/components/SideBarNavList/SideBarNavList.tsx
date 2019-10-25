@@ -15,7 +15,7 @@ interface ISideBarNavListProps {
 }
 
 export const SideBarNavList: React.FC<ISideBarNavListProps> = ({ links }) => {
-  const { state, dispatch } = React.useContext(SideBarContext)
+  const { dispatch } = React.useContext(SideBarContext)
   const [currentActive, setCurrentActive] = React.useState('')
 
   const getProps = ({ isCurrent, isPartiallyCurrent, href }: ILinkProps) => {
@@ -31,7 +31,6 @@ export const SideBarNavList: React.FC<ISideBarNavListProps> = ({ links }) => {
         padding: 0
       }}
     >
-      <Styled.h5>{state.isNavOpen ? 'nav is open' : 'nav is closed'}</Styled.h5>
       {links.map((link, index) => {
         const { slug, title, icon } = link
         return (

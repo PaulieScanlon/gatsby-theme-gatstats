@@ -1,12 +1,7 @@
 import * as React from 'react'
-interface IIconProps extends React.HTMLAttributes<HTMLOrSVGElement> {
-  /** The path of icon */
-  iconPath: string
-  /** The icon fill */
-  iconFill?: 'initial' | 'inherit' | 'currentcolor' | string
-  /**  The icon size */
-  iconSize?: string | number
-}
+
+import { IIcon } from '../../types'
+interface IIconProps extends IIcon, React.HTMLAttributes<HTMLOrSVGElement> {}
 
 export const Icon: React.FC<IIconProps> = ({
   style,

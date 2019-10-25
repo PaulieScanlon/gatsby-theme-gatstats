@@ -1,7 +1,7 @@
 import * as React from 'react'
 //https://medium.com/@seantheurgel/react-hooks-as-state-management-usecontext-useeffect-usereducer-a75472a862fe
 
-const initialState = { isNavOpen: true }
+const initialState = { isNavOpen: false }
 
 const reducer = (state: any, actions: any) => {
   switch (actions.type) {

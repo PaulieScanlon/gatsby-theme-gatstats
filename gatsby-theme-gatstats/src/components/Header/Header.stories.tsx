@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Header } from '.'
+import { Header } from './Header'
 
 export default {
   title: 'Header',
@@ -10,4 +10,4 @@ export default {
   }
 }
 
-export const usage = () => <Header />
+export const usage = () => <Header sideBarWidth={0} />

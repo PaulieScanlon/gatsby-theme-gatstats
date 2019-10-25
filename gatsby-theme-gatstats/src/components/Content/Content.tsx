@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import * as React from 'react'
 import { jsx, Styled } from 'theme-ui'
 
 import { ISite } from '../../types'
@@ -21,16 +20,12 @@ const commonStyles = {
   paddingTop: 0
 }
 
-// import { SideBarContext } from '../Context'
-
 interface IContentProps extends ISite {}
 
 export const Content: React.FC<IContentProps> = ({
   children,
   sideBarWidth
 }) => {
-  // const { state } = React.useContext(SideBarContext)
-
   return (
     <Styled.div
       sx={{
@@ -41,10 +36,9 @@ export const Content: React.FC<IContentProps> = ({
         sx={{
           ...commonStyles,
           marginLeft: [0, 0, 0, `${sideBarWidth}px`],
-          // marginLeft: [0, 0, 0, `${state.isNavOpen ? '250px' : '0px'}`],
           paddingLeft: [3, 4],
           paddingRight: [3, 4],
-          transition: '.3s ease-in-out margin-left'
+          transition: theme => theme.sideBarTranstion
         }}
       >
         {children}

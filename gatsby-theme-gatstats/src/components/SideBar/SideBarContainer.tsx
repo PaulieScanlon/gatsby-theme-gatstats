@@ -4,23 +4,6 @@ import { jsx, Styled } from 'theme-ui'
 
 import { SideBar } from './SideBar'
 
-const commonStyles = {
-  display: 'flex',
-  flexBasis: 'auto',
-  flexDirection: 'column',
-  flexShrink: 0,
-  marginBottom: 0,
-  marginLeft: 0,
-  marginRight: 0,
-  marginTop: 0,
-  minHeight: 0,
-  minWidth: 0,
-  paddingBottom: 0,
-  paddingLeft: 0,
-  paddingRight: 0,
-  paddingTop: 0
-}
-
 export const SideBarContainer: React.FC = () => (
   <StaticQuery
     query={graphql`
@@ -65,10 +48,24 @@ export const SideBarContainer: React.FC = () => (
       return (
         <Styled.div
           sx={{
-            ...commonStyles,
             position: 'fixed',
             top: 0,
-            height: '100%'
+            height: '100%',
+            display: 'flex',
+            flexBasis: 'auto',
+            flexDirection: 'column',
+            flexShrink: 0,
+            marginBottom: 0,
+            marginLeft: 0,
+            marginRight: 0,
+            marginTop: 0,
+            minHeight: 0,
+            minWidth: 0,
+            paddingBottom: 0,
+            paddingLeft: 0,
+            paddingRight: 0,
+            paddingTop: 0,
+            zIndex: 2
           }}
         >
           <SideBar sideBarWidth={sideBarWidth} links={links} />
