@@ -30,26 +30,28 @@ export default {
 
   initialColorModeName: 'light',
   colors: {
-    text: '#444444',
-    textLight: '#999999',
-    textDark: '#333333',
+    text: '#37474f',
+    textLight: '#90a4ae',
 
-    primary: '#3ed9c0',
-    secondary: '#6acbac',
-    surface: '#f0f0f0',
-    background: '#f7f7f7',
+    primary: '#0288d1',
+    secondary: '#4fc3f7',
+
+    surface: '#f3f3f3',
+    background: '#fdfdfd',
+
     transparent: `rgba(0,0,0,0)`,
 
     modes: {
       dark: {
         text: '#ffffff',
-        textLight: '#59587b',
-        textDark: '#272643',
+        textLight: '#4c4b80',
 
-        primary: '#ec3cbd',
-        secondary: '#c456d9',
+        primary: '#F012BE',
+        secondary: '#B10DC9',
+
         surface: '#1f1c3e',
         background: '#131127',
+
         transparent: `rgba(0,0,0,0)`
       }
     }
@@ -173,6 +175,8 @@ export default {
     },
 
     table: {
+      color: 'textLight',
+      fontFamily: 'body',
       width: '100%',
       borderCollapse: 'separate',
       borderSpacing: 0
@@ -183,9 +187,12 @@ export default {
     th: {
       backgroundColor: 'background',
       color: 'text',
+      borderTopColor: 'textLight',
+      borderLeftColor: 'textLight',
+      borderBottomColor: 'transparent',
+      borderRightColor: 'textLight',
       borderStyle: 'solid',
       borderWidth: 0,
-      borderColor: 'muted',
       px: 2,
       py: 2
     },
@@ -193,7 +200,7 @@ export default {
     td: {
       borderStyle: 'solid',
       borderWidth: 0,
-      borderColor: 'muted',
+      borderColor: 'textLight',
       px: 2,
       py: 2
     },

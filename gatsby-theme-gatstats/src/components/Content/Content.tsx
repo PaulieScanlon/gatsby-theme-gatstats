@@ -1,6 +1,8 @@
 /** @jsx jsx */
+import * as React from 'react'
 import { jsx, Styled } from 'theme-ui'
-import { Header } from '../Header'
+
+import { ISite } from '../../types'
 
 const commonStyles = {
   display: 'flex',
@@ -19,22 +21,34 @@ const commonStyles = {
   paddingTop: 0
 }
 
-export const Content: React.FC = ({ children }) => (
-  <Styled.div
-    sx={{
-      ...commonStyles
-    }}
-  >
-    <Header />
+// import { SideBarContext } from '../Context'
+
+interface IContentProps extends ISite {}
+
+export const Content: React.FC<IContentProps> = ({
+  children,
+  sideBarWidth
+}) => {
+  // const { state } = React.useContext(SideBarContext)
+
+  return (
     <Styled.div
       sx={{
-        ...commonStyles,
-        marginLeft: [0, 0, 0, 250],
-        paddingLeft: [3, 4],
-        paddingRight: [3, 4]
+        ...commonStyles
       }}
     >
-      {children}
+      <Styled.div
+        sx={{
+          ...commonStyles,
+          marginLeft: [0, 0, 0, `${sideBarWidth}px`],
+          // marginLeft: [0, 0, 0, `${state.isNavOpen ? '250px' : '0px'}`],
+          paddingLeft: [3, 4],
+          paddingRight: [3, 4],
+          transition: '.3s ease-in-out margin-left'
+        }}
+      >
+        {children}
+      </Styled.div>
     </Styled.div>
-  </Styled.div>
-)
+  )
+}

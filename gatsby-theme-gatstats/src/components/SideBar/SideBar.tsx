@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import * as React from 'react'
 import { jsx, Styled } from 'theme-ui'
 
 import { SideBarNavList } from '../SideBarNavList'
@@ -15,12 +16,20 @@ export const SideBar: React.FC<ISideBarProps> = ({ sideBarWidth, links }) => {
   return (
     <Styled.div
       sx={{
+        position: 'relative',
         height: '100%',
         backgroundColor: 'background',
         borderRightWidth: 0,
         borderRightStyle: 'solid',
         borderRightColor: 'surface',
-        width: sideBarWidth
+        width: sideBarWidth,
+        left: [
+          `-${sideBarWidth}px`,
+          `-${sideBarWidth}px`,
+          `-${sideBarWidth}px`,
+          '0px'
+        ],
+        transition: '.3s ease-in-out left'
       }}
     >
       <Styled.div

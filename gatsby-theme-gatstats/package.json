@@ -24,6 +24,7 @@
     "@mdx-js/react": "^1.5.1",
     "@types/theme-ui": "^0.2.3",
     "gatsby": "^2.16.3",
+    "gatsby-plugin-layout": "^1.1.13",
     "gatsby-plugin-mdx": "^1.0.52",
     "gatsby-plugin-page-creator": "^2.1.27",
     "gatsby-plugin-sharp": "^2.2.32",

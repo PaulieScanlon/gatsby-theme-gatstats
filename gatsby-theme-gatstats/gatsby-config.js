@@ -12,14 +12,21 @@ module.exports = {
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-typescript',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-mdx',
     {
-      resolve: 'gatsby-plugin-mdx',
+      resolve: 'gatsby-plugin-layout',
       options: {
-        defaultLayouts: {
-          default: require.resolve('./src/templates/layout.tsx')
-        }
+        component: require.resolve('./src/templates/layout.tsx')
       }
     },
+    // {
+    //   resolve: 'gatsby-plugin-mdx',
+    //   options: {
+    //     defaultLayouts: {
+    //       default: require.resolve('./src/templates/layout.tsx')
+    //     }
+    //   }
+    // },
     {
       resolve: 'gatsby-plugin-page-creator',
       options: {

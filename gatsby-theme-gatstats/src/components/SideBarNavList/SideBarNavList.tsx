@@ -7,17 +7,15 @@ import { SideBarNavItem } from '../SideBarNavItem'
 
 import { ILink, ILinkProps } from '../../types'
 
+import { SideBarContext } from '../Context'
+
 interface ISideBarNavListProps {
-  /** onClick that takes no args and returns nothing */
-  onClick?: () => void
   /** Array of Links to display */
   links: ILink[]
 }
 
-export const SideBarNavList: React.FC<ISideBarNavListProps> = ({
-  onClick,
-  links
-}) => {
+export const SideBarNavList: React.FC<ISideBarNavListProps> = ({ links }) => {
+  const { state, dispatch } = React.useContext(SideBarContext)
   const [currentActive, setCurrentActive] = React.useState('')
 
   const getProps = ({ isCurrent, isPartiallyCurrent, href }: ILinkProps) => {
@@ -33,6 +31,7 @@ export const SideBarNavList: React.FC<ISideBarNavListProps> = ({
         padding: 0
       }}
     >
+      <Styled.h5>{state.isNavOpen ? 'nav is open' : 'nav is closed'}</Styled.h5>
       {links.map((link, index) => {
         const { slug, title, icon } = link
         return (
@@ -49,7 +48,7 @@ export const SideBarNavList: React.FC<ISideBarNavListProps> = ({
           >
             <Link
               getProps={getProps as any}
-              onClick={() => onClick && onClick()}
+              onClick={() => dispatch({ type: 'closeNav' })}
               to={slug}
               sx={{
                 display: 'block',

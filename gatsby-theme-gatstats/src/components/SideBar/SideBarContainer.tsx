@@ -25,6 +25,13 @@ export const SideBarContainer: React.FC = () => (
   <StaticQuery
     query={graphql`
       query pagesQuery {
+        site {
+          siteMetadata {
+            config {
+              sideBarWidth
+            }
+          }
+        }
         allMdx(
           filter: { fileAbsolutePath: { regex: "//src/pages//" } }
           sort: { order: ASC, fields: [fields___slug] }
@@ -45,6 +52,8 @@ export const SideBarContainer: React.FC = () => (
       }
     `}
     render={data => {
+      const { sideBarWidth } = data.site.siteMetadata.config
+
       const links = data.allMdx.edges.map((item: any) => {
         return {
           slug: item.node.fields.slug,
@@ -57,19 +66,12 @@ export const SideBarContainer: React.FC = () => (
         <Styled.div
           sx={{
             ...commonStyles,
-            position: 'relative'
+            position: 'fixed',
+            top: 0,
+            height: '100%'
           }}
         >
-          <Styled.div
-            sx={{
-              ...commonStyles,
-              position: 'fixed',
-              top: 0,
-              height: '100%'
-            }}
-          >
-            <SideBar sideBarWidth={250} links={links} />
-          </Styled.div>
+          <SideBar sideBarWidth={sideBarWidth} links={links} />
         </Styled.div>
       )
     }}

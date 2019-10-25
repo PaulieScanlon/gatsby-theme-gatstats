@@ -3,8 +3,11 @@ import * as React from 'react'
 import { Global, css } from '@emotion/core'
 import { jsx, Styled } from 'theme-ui'
 
-import { Content } from '../components/Content'
+import { Header } from '../components/Header'
+import { ContentContainer } from '../components/Content'
 import { SideBarContainer } from '../components/SideBar/SideBarContainer'
+
+import { SideBarProvider } from '../components/Context'
 
 const Layout: React.FC = ({ children }) => {
   return (
@@ -26,8 +29,11 @@ const Layout: React.FC = ({ children }) => {
           maxWidth: theme => theme.breakpoints[3]
         }}
       >
-        <Content>{children}</Content>
-        <SideBarContainer />
+        <SideBarProvider>
+          <Header />
+          <ContentContainer>{children}</ContentContainer>
+          <SideBarContainer />
+        </SideBarProvider>
       </Styled.div>
     </React.Fragment>
   )
