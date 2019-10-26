@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Styled, jsx } from 'theme-ui'
 
-import Layout from '../templates/layout'
+import Layout from '../layouts/layout'
 
 export default () => (
   <Layout>

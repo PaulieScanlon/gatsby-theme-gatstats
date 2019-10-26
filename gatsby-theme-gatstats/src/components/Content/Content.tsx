@@ -38,6 +38,7 @@ export const Content: React.FC<IContentProps> = ({
           marginLeft: [0, 0, 0, `${sideBarWidth}px`],
           paddingLeft: [3, 4],
           paddingRight: [3, 4],
+          overflow: 'hidden',
           transition: theme => theme.sideBarTranstion
         }}
       >

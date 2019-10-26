@@ -2,6 +2,8 @@
 import * as React from 'react'
 import { Global, css } from '@emotion/core'
 import { jsx, Styled } from 'theme-ui'
+import { Transition } from '../components/Transition'
+import { Location } from '@reach/router'
 
 import { HeaderContainer } from '../components/Header'
 import { LightBox } from '../components/Lightbox'
@@ -31,10 +33,20 @@ const Layout: React.FC = ({ children }) => {
         }}
       >
         <SideBarProvider>
-          <HeaderContainer />
-          <SideBarContainer />
-          <LightBox />
-          <ContentContainer>{children}</ContentContainer>
+          <Location>
+            {({ location }) => {
+              return (
+                <React.Fragment>
+                  <HeaderContainer location={location} />
+                  <SideBarContainer />
+                  <LightBox />
+                  <ContentContainer>
+                    <Transition location={location}>{children}</Transition>
+                  </ContentContainer>
+                </React.Fragment>
+              )
+            }}
+          </Location>
         </SideBarProvider>
       </Styled.div>
     </React.Fragment>

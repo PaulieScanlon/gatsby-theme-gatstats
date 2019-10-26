@@ -4,14 +4,8 @@ import { jsx } from 'theme-ui'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import Layout from './layout'
-
 const Post = ({ data: { mdx } }: any) => {
-  return (
-    <Layout>
-      <MDXRenderer>{mdx.body}</MDXRenderer>
-    </Layout>
-  )
+  return <MDXRenderer>{mdx.body}</MDXRenderer>
 }
 
 export const contentQuery = graphql`

@@ -33,6 +33,9 @@ export const SideBarNavList: React.FC<ISideBarNavListProps> = ({ links }) => {
     >
       {links.map((link, index) => {
         const { slug, title, icon } = link
+
+        const isActive = slug === currentActive ? true : false
+
         return (
           <Styled.li
             key={index}
@@ -52,6 +55,7 @@ export const SideBarNavList: React.FC<ISideBarNavListProps> = ({ links }) => {
               sx={{
                 display: 'block',
                 borderRadius: 2,
+                cursor: isActive ? 'default' : 'pointer',
                 ml: 3,
                 mr: 3,
                 mb: 3,
@@ -65,7 +69,7 @@ export const SideBarNavList: React.FC<ISideBarNavListProps> = ({ links }) => {
               <SideBarNavItem
                 title={title}
                 icon={icon}
-                isActive={slug === currentActive ? true : false}
+                isActive={isActive ? true : false}
               />
             </Link>
           </Styled.li>

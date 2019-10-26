@@ -16,14 +16,15 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-layout',
       options: {
-        component: require.resolve('./src/templates/layout.tsx')
+        component: require.resolve('./src/layouts/layout.tsx')
       }
     },
+
     // {
     //   resolve: 'gatsby-plugin-mdx',
     //   options: {
     //     defaultLayouts: {
-    //       default: require.resolve('./src/templates/layout.tsx')
+    //       default: require.resolve('./src/layouts/layout.tsx')
     //     }
     //   }
     // },

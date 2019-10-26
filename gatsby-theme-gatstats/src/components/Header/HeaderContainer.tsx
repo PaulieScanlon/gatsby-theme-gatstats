@@ -1,10 +1,19 @@
 /** @jsx jsx */
 import { StaticQuery, graphql } from 'gatsby'
 import { jsx } from 'theme-ui'
+import { WindowLocation } from '@reach/router'
 
 import { Header } from './Header'
 
-export const HeaderContainer: React.FC = ({ children }) => (
+interface IHeaderContainerProps {
+  /** @reach/router WindowLocation*/
+  location: WindowLocation
+}
+
+export const HeaderContainer: React.FC<IHeaderContainerProps> = ({
+  children,
+  location
+}) => (
   <StaticQuery
     query={graphql`
       query headerQuery {
@@ -20,7 +29,11 @@ export const HeaderContainer: React.FC = ({ children }) => (
     render={data => {
       const { sideBarWidth } = data.site.siteMetadata.config
 
-      return <Header sideBarWidth={sideBarWidth}>{children}</Header>
+      return (
+        <Header sideBarWidth={sideBarWidth} location={location}>
+          {children}
+        </Header>
+      )
     }}
   />
 )
