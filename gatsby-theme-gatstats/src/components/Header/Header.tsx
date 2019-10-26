@@ -1,23 +1,19 @@
 /** @jsx jsx */
 import * as React from 'react'
 import { jsx, Styled } from 'theme-ui'
-import { WindowLocation } from '@reach/router'
 
 import { ToggleSwitch } from '../ToggleSwitch'
 
 import { SideBarContext } from '../Context'
-import { ISite } from '../../types'
+import { ISite, IPathname } from '../../types'
 import { ButtonIcon } from '../ButtonIcon/ButtonIcon'
 
-interface IHeaderProps extends ISite {
-  /** @reach/router WindowLocation*/
-  location: WindowLocation
-}
+interface IHeaderProps extends ISite, IPathname {}
 
-export const Header: React.FC<IHeaderProps> = ({ sideBarWidth, location }) => {
+export const Header: React.FC<IHeaderProps> = ({ sideBarWidth, pathname }) => {
   const { dispatch } = React.useContext(SideBarContext)
   return (
-    <Styled.div
+    <header
       sx={{
         position: 'sticky',
         top: 0,
@@ -65,10 +61,10 @@ export const Header: React.FC<IHeaderProps> = ({ sideBarWidth, location }) => {
             color: 'textLight'
           }}
         >
-          {location.pathname}
+          {pathname}
         </Styled.h6>
         <ToggleSwitch />
       </Styled.div>
-    </Styled.div>
+    </header>
   )
 }

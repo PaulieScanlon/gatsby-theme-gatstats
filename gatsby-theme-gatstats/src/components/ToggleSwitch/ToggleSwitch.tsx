@@ -22,7 +22,16 @@ export const ToggleSwitch: React.FC = () => {
   }
 
   return (
-    <React.Fragment>
+    <label
+      title={toggleSwitchName}
+      htmlFor={toggleSwitchName}
+      sx={{
+        position: 'relative',
+        display: 'inline-flex',
+        alignItems: 'center',
+        cursor: 'pointer'
+      }}
+    >
       <input
         type="checkbox"
         id={toggleSwitchName}
@@ -31,30 +40,33 @@ export const ToggleSwitch: React.FC = () => {
         onKeyPress={e => handleKeyPress(e)}
         sx={{
           position: 'absolute',
-          opacity: 0,
-          ':checked + label': {
-            span: {
-              left: [23, 30]
-            }
+          display: 'none',
+          [`:checked + .gatstats-toggle-button`]: {
+            left: [23, 30]
           },
-          '+ label': {
-            span: {
-              left: 1
-            }
+          [`+ .gatstats-toggle-button`]: {
+            left: 2
           },
-          ':focus + label': {
+          [`:focus ~ .gatstats-toggle-track`]: {
             borderRadius: [24, 32],
             boxShadow: theme => `${theme.shadows[0]} ${theme.colors.textLight}`
           }
         }}
       />
-      <label
-        title={toggleSwitchName}
-        htmlFor={toggleSwitchName}
-        className="gatstats-toggle-label"
-        onChange={() => handleChange()}
+      <span
+        className="gatstats-toggle-button"
         sx={{
-          position: 'relative',
+          position: 'absolute',
+          width: [20, 24],
+          height: [20, 24],
+          borderRadius: [24, 32],
+          backgroundColor: 'primary',
+          transition: 'background-color .2s linear , left .2s ease-in-out'
+        }}
+      />
+      <span
+        className="gatstats-toggle-track"
+        sx={{
           display: 'inline-flex',
           outline: 'none',
           cursor: 'pointer',
@@ -63,19 +75,7 @@ export const ToggleSwitch: React.FC = () => {
           borderRadius: [24, 32],
           backgroundColor: 'surface'
         }}
-      >
-        <span
-          sx={{
-            position: 'absolute',
-            top: 1,
-            width: [20, 24],
-            height: [20, 24],
-            borderRadius: [24, 32],
-            backgroundColor: 'primary',
-            transition: 'background-color .2s linear , left .2s ease-in-out'
-          }}
-        />
-      </label>
-    </React.Fragment>
+      />
+    </label>
   )
 }

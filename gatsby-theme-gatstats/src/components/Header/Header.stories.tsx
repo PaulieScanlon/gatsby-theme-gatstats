@@ -10,4 +10,4 @@ export default {
   }
 }
 
-export const usage = () => <Header sideBarWidth={0} />
+export const usage = () => <Header sideBarWidth={0} pathname="/about-me" />

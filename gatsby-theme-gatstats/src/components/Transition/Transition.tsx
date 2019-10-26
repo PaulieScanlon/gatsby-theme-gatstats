@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { WindowLocation } from '@reach/router'
-
 import {
   TransitionGroup,
   Transition as ReactTransition
 } from 'react-transition-group'
+
+import { IPathname } from '../../types'
 
 const timeout = 250
 
@@ -31,19 +31,16 @@ const getTransitionStyles: TTransitionStyles = {
   }
 }
 
-interface ITransitionProps {
-  /** @reach/router WindowLocation*/
-  location: WindowLocation
-}
+interface ITransitionProps extends IPathname {}
 
 export const Transition: React.FC<ITransitionProps> = ({
   children,
-  location
+  pathname
 }) => {
   return (
     <TransitionGroup>
       <ReactTransition
-        key={location.pathname}
+        key={pathname}
         timeout={{
           enter: timeout,
           exit: timeout

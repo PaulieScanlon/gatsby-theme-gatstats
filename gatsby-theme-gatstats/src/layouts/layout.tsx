@@ -2,15 +2,17 @@
 import * as React from 'react'
 import { Global, css } from '@emotion/core'
 import { jsx, Styled } from 'theme-ui'
-import { Transition } from '../components/Transition'
+
 import { Location } from '@reach/router'
 
+import { Transition } from '../components/Transition'
 import { HeaderContainer } from '../components/Header'
 import { LightBox } from '../components/Lightbox'
 import { ContentContainer } from '../components/Content'
 import { SideBarContainer } from '../components/SideBar/SideBarContainer'
 
 import { SideBarProvider } from '../components/Context'
+import { IPathname } from '../types'
 
 const Layout: React.FC = ({ children }) => {
   return (
@@ -35,13 +37,14 @@ const Layout: React.FC = ({ children }) => {
         <SideBarProvider>
           <Location>
             {({ location }) => {
+              const { pathname }: IPathname = location
               return (
                 <React.Fragment>
-                  <HeaderContainer location={location} />
+                  <HeaderContainer pathname={pathname} />
                   <SideBarContainer />
                   <LightBox />
                   <ContentContainer>
-                    <Transition location={location}>{children}</Transition>
+                    <Transition pathname={pathname}>{children}</Transition>
                   </ContentContainer>
                 </React.Fragment>
               )
