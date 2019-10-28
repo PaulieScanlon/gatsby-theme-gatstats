@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import * as React from 'react'
 import { StaticQuery, graphql, Link } from 'gatsby'
-import { jsx } from 'theme-ui'
+import { jsx, Flex, Box } from 'theme-ui'
 
 import { PostCard } from '../PostCard'
 
@@ -42,6 +42,12 @@ export const PostsListContainer: React.FC<IPostsListContainerProps> = () => (
                       src
                       srcSet
                     }
+                    fluid {
+                      aspectRatio
+                      sizes
+                      src
+                      srcSet
+                    }
                   }
                 }
               }
@@ -54,23 +60,36 @@ export const PostsListContainer: React.FC<IPostsListContainerProps> = () => (
       const { edges } = data.allMdx
 
       return (
-        <React.Fragment>
+        <Flex
+          sx={{
+            flexWrap: 'wrap',
+            '> :nth-of-type(odd)': {
+              pr: [0, 0, 4]
+            }
+          }}
+        >
           {edges.map((item: IPostCard, index: number) => {
             const { slug } = item.node.fields
 
             return (
-              <Link
+              <Box
                 key={index}
-                to={slug}
                 sx={{
-                  textDecoration: 'none'
+                  width: ['100%', '100%', '50%']
                 }}
               >
-                <PostCard {...item} />
-              </Link>
+                <Link
+                  to={slug}
+                  sx={{
+                    textDecoration: 'none'
+                  }}
+                >
+                  <PostCard {...item} />
+                </Link>
+              </Box>
             )
           })}
-        </React.Fragment>
+        </Flex>
       )
     }}
   />

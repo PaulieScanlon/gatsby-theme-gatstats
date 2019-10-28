@@ -9,13 +9,12 @@ export interface IPostCard {
       tags: string[]
       title: string
       featuredImage?: {
-        childImageSharp: {
-          fixed: {
+        childImageSharp?: {
+          fluid: {
             aspectRatio: number
-            height: number
+            sizes: string
             src: string
             srcSet: string
-            width: number
           }
         }
       }

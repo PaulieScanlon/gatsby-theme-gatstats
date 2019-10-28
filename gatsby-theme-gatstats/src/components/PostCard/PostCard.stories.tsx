@@ -23,12 +23,11 @@ export const usage = () => (
         title: 'Storybook blog post',
         featuredImage: {
           childImageSharp: {
-            fixed: {
-              aspectRatio: 1,
-              height: 100,
-              src: 'https://placekitten.com/g/100/100',
-              srcSet: 'https://placekitten.com/g/100/100',
-              width: 100
+            fluid: {
+              aspectRatio: 1.5,
+              sizes: '(max-width: 800px) 100vw, 800px',
+              src: 'https://placekitten.com/g/800/800',
+              srcSet: 'https://placekitten.com/g/800/800'
             }
           }
         }

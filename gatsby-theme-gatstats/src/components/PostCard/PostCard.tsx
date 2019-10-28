@@ -19,37 +19,24 @@ export const PostCard: React.FC<IPostProps> = ({ ...props }) => {
     <article
       sx={{
         display: 'flex',
-        flexDirection: ['column', 'column', 'row'],
-        alignItems: 'center',
+        flexDirection: 'column',
         color: 'text',
         fontFamily: 'body',
         backgroundColor: 'surface',
-        mb: 3,
-        p: [2, 3],
+        mb: 4,
         overflow: 'hidden',
         borderRadius: 1
       }}
     >
-      {featuredImage && (
-        <Styled.div
-          sx={{
-            overflow: 'hidden',
-            borderRadius: '100%',
-            minWidth: featuredImage.childImageSharp.fixed.width,
-            height: featuredImage.childImageSharp.fixed.height,
-            borderStyle: 'solid',
-            borderWidth: 2,
-            borderColor: 'background',
-            margin: 0
-          }}
-        >
-          <Img alt={title} fixed={featuredImage.childImageSharp.fixed} />
-        </Styled.div>
-      )}
+      {featuredImage &&
+        featuredImage.childImageSharp &&
+        featuredImage.childImageSharp.fluid && (
+          <Img alt={title} fluid={featuredImage.childImageSharp.fluid} />
+        )}
 
       <Styled.div
         sx={{
-          pl: 3
+          p: [2, 3]
         }}
       >
         <Styled.div
