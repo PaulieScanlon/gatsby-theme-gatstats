@@ -6,7 +6,7 @@ import { ToggleSwitch } from '../ToggleSwitch'
 
 import { SideBarContext } from '../Context'
 import { ISite, IPathname } from '../../types'
-import { ButtonIcon } from '../ButtonIcon/ButtonIcon'
+import { ButtonIcon } from '../ButtonIcon'
 
 interface IHeaderProps extends ISite, IPathname {}
 
@@ -30,7 +30,8 @@ export const Header: React.FC<IHeaderProps> = ({ sideBarWidth, pathname }) => {
         borderBottomStyle: 'solid',
         borderBottomColor: 'surface',
         marginLeft: [0, 0, 0, `${sideBarWidth}px`],
-        transition: theme => theme.sideBarTransition
+        transition: theme => theme.sideBarTransition,
+        zIndex: 1
       }}
     >
       <Styled.div>

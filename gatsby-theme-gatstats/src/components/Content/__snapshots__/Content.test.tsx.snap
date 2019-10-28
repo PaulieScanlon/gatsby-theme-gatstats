@@ -283,7 +283,9 @@ exports[`<Content> renders correctly 1`] = `
     }
   }
 >
-  <Content>
+  <Content
+    sideBarWidth={0}
+  >
     children
   </Content>
 </RootProvider>

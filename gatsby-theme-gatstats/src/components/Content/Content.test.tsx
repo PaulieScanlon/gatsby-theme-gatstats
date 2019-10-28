@@ -10,7 +10,7 @@ describe('<Content>', () => {
   it('renders correctly', () => {
     const wrapper = shallow(
       <ThemeProvider theme={theme}>
-        <Content>children</Content>
+        <Content sideBarWidth={0}>children</Content>
       </ThemeProvider>
     )
     expect(wrapper).toMatchSnapshot()

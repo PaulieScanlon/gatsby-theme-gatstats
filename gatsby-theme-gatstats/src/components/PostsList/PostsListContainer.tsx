@@ -1,7 +1,11 @@
 /** @jsx jsx */
-import { StaticQuery, graphql } from 'gatsby'
+import * as React from 'react'
+import { StaticQuery, graphql, Link } from 'gatsby'
 import { jsx } from 'theme-ui'
 
+import { PostCard } from '../PostCard'
+
+import { IPostCard } from '../../types'
 interface IPostsListContainerProps {
   /** Amount of items to display in the list */
   listAmount?: number
@@ -15,10 +19,6 @@ export const PostsListContainer: React.FC<IPostsListContainerProps> = () => (
           filter: { fileAbsolutePath: { regex: "//posts//" } }
           sort: { order: DESC, fields: [frontmatter___date] }
         ) {
-          group(field: frontmatter___tags) {
-            fieldValue
-            totalCount
-          }
           edges {
             node {
               excerpt(pruneLength: 100)
@@ -33,6 +33,17 @@ export const PostsListContainer: React.FC<IPostsListContainerProps> = () => (
                 title
                 tags
                 date
+                featuredImage {
+                  childImageSharp {
+                    fixed(fit: COVER, width: 130, height: 130) {
+                      aspectRatio
+                      width
+                      height
+                      src
+                      srcSet
+                    }
+                  }
+                }
               }
             }
           }
@@ -40,9 +51,27 @@ export const PostsListContainer: React.FC<IPostsListContainerProps> = () => (
       }
     `}
     render={data => {
-      console.log(data)
+      const { edges } = data.allMdx
 
-      return <div>Posts List</div>
+      return (
+        <React.Fragment>
+          {edges.map((item: IPostCard, index: number) => {
+            const { slug } = item.node.fields
+
+            return (
+              <Link
+                key={index}
+                to={slug}
+                sx={{
+                  textDecoration: 'none'
+                }}
+              >
+                <PostCard {...item} />
+              </Link>
+            )
+          })}
+        </React.Fragment>
+      )
     }}
   />
 )

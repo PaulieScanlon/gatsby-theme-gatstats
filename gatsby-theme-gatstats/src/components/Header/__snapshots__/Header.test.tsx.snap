@@ -283,7 +283,10 @@ exports[`<Header> renders correctly 1`] = `
     }
   }
 >
-  <Header>
+  <Header
+    pathname="/about-me"
+    sideBarWidth={0}
+  >
     children
   </Header>
 </RootProvider>

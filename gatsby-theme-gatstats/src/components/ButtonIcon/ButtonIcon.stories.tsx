@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { ButtonIcon } from './ButtonIcon'
+import { ButtonIcon } from '.'
 
 export default {
   title: 'ButtonIcon',
