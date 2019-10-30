@@ -40,16 +40,16 @@ export const ToggleSwitch: React.FC = () => {
         onKeyPress={e => handleKeyPress(e)}
         sx={{
           position: 'absolute',
-          display: 'none',
+          opacity: 0,
           [`:checked + .gatstats-toggle-button`]: {
             left: [23, 30]
           },
-          [`+ .gatstats-toggle-button`]: {
+          [`:not(:checked) + .gatstats-toggle-button`]: {
             left: 2
           },
-          [`:focus ~ .gatstats-toggle-track`]: {
+          [':focus ~ .gatstats-toggle-track']: {
             borderRadius: [24, 32],
-            boxShadow: theme => `${theme.shadows[0]} ${theme.colors.textLight}`
+            boxShadow: theme => `${theme.shadows[0]} ${theme.colors.textMuted}`
           }
         }}
       />

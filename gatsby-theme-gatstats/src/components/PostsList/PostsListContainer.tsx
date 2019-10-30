@@ -81,7 +81,15 @@ export const PostsListContainer: React.FC<IPostsListContainerProps> = () => (
                 <Link
                   to={slug}
                   sx={{
-                    textDecoration: 'none'
+                    display: 'flex',
+                    textDecoration: 'none',
+                    borderRadius: 1,
+                    mb: 4,
+                    ':focus': {
+                      outline: 'none',
+                      boxShadow: theme =>
+                        `${theme.shadows[0]} ${theme.colors.textMuted}`
+                    }
                   }}
                 >
                   <PostCard {...item} />

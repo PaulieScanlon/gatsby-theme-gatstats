@@ -37,7 +37,8 @@ export const ButtonIcon: React.FC<IButtonIconProps> = ({
         width: [28, 32],
         height: [28, 32],
         ':focus ': {
-          boxShadow: theme => `${theme.shadows[0]} ${theme.colors.textLight}`
+          boxShadow: theme =>
+            `${theme.shadows[0]} ${theme.colors.textSecondary}`
         }
       }}
     >

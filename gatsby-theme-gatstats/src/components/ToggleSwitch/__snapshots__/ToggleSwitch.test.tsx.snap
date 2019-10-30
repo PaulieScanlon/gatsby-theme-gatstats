@@ -20,19 +20,21 @@ exports[`<ToggleSwitch> renders correctly 1`] = `
         "modes": Object {
           "dark": Object {
             "background": "#131127",
-            "primary": "#F012BE",
-            "secondary": "#B10DC9",
-            "surface": "#1f1c3e",
+            "primary": "#a92aeb",
+            "secondary": "#688ce0",
+            "surface": "#1a1832",
             "text": "#ffffff",
-            "textLight": "#4c4b80",
+            "textMuted": "#4e4c7a",
+            "textSecondary": "#d2d2f1",
             "transparent": "rgba(0,0,0,0)",
           },
         },
         "primary": "#0288d1",
         "secondary": "#4fc3f7",
-        "surface": "#f3f3f3",
+        "surface": "#f6f6f6",
         "text": "#37474f",
-        "textLight": "#90a4ae",
+        "textMuted": "#afbec5",
+        "textSecondary": "#436271",
         "transparent": "rgba(0,0,0,0)",
       },
       "fontSizes": Array [
@@ -157,7 +159,7 @@ exports[`<ToggleSwitch> renders correctly 1`] = `
           "color": "text",
           "fontFamily": "heading",
           "fontSize": Array [
-            2,
+            4,
             5,
           ],
           "fontWeight": "heading",
@@ -170,7 +172,7 @@ exports[`<ToggleSwitch> renders correctly 1`] = `
           "color": "text",
           "fontFamily": "heading",
           "fontSize": Array [
-            2,
+            3,
             4,
           ],
           "fontWeight": "heading",
@@ -214,7 +216,7 @@ exports[`<ToggleSwitch> renders correctly 1`] = `
           "paddingLeft": 3,
         },
         "p": Object {
-          "color": "textLight",
+          "color": "textSecondary",
           "fontFamily": "body",
           "fontSize": Array [
             1,
@@ -243,12 +245,12 @@ exports[`<ToggleSwitch> renders correctly 1`] = `
         "table": Object {
           "borderCollapse": "separate",
           "borderSpacing": 0,
-          "color": "textLight",
+          "color": "textSecondary",
           "fontFamily": "body",
           "width": "100%",
         },
         "td": Object {
-          "borderColor": "textLight",
+          "borderColor": "textSecondary",
           "borderStyle": "solid",
           "borderWidth": 0,
           "px": 2,
@@ -257,10 +259,10 @@ exports[`<ToggleSwitch> renders correctly 1`] = `
         "th": Object {
           "backgroundColor": "background",
           "borderBottomColor": "transparent",
-          "borderLeftColor": "textLight",
-          "borderRightColor": "textLight",
+          "borderLeftColor": "textSecondary",
+          "borderRightColor": "textSecondary",
           "borderStyle": "solid",
-          "borderTopColor": "textLight",
+          "borderTopColor": "textSecondary",
           "borderWidth": 0,
           "color": "text",
           "px": 2,

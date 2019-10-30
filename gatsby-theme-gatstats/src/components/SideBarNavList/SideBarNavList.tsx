@@ -55,14 +55,14 @@ export const SideBarNavList: React.FC<ISideBarNavListProps> = ({ links }) => {
               sx={{
                 display: 'block',
                 borderRadius: 2,
-                cursor: isActive ? 'default' : 'pointer',
+                cursor: 'pointer',
                 ml: 3,
                 mr: 3,
                 mb: 3,
                 ':focus ': {
                   outline: 'none',
                   boxShadow: theme =>
-                    `${theme.shadows[0]} ${theme.colors.textLight}`
+                    `${theme.shadows[0]} ${theme.colors.textMuted}`
                 }
               }}
             >

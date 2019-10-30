@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import * as React from 'react'
 import { jsx, Styled } from 'theme-ui'
-
 import Img from 'gatsby-image'
 
-import { formatDate } from '../../utils'
+import { Tag } from '../Tag'
 
+import { formatDate, colorRange } from '../../utils'
 import { IPostCard } from '../../types'
 
 interface IPostProps extends IPostCard {}
@@ -15,6 +15,9 @@ export const PostCard: React.FC<IPostProps> = ({ ...props }) => {
 
   const { date, tags, title, featuredImage } = frontmatter
 
+  //@TODO need to get the current colours from theme and check this re-renders
+  const scale = colorRange('#a92aeb', '#688ce0', tags.length)
+
   return (
     <article
       sx={{
@@ -23,7 +26,6 @@ export const PostCard: React.FC<IPostProps> = ({ ...props }) => {
         color: 'text',
         fontFamily: 'body',
         backgroundColor: 'surface',
-        mb: 4,
         overflow: 'hidden',
         borderRadius: 1
       }}
@@ -39,43 +41,65 @@ export const PostCard: React.FC<IPostProps> = ({ ...props }) => {
           p: [2, 3]
         }}
       >
+        <Styled.h4
+          sx={{
+            mt: [2, 4]
+          }}
+        >
+          {title}
+        </Styled.h4>
         <Styled.div
           sx={{
             fontSize: 0,
-            color: 'secondary'
+            color: 'secondary',
+            mb: 3
           }}
         >
           {formatDate(date)}
         </Styled.div>
-        <Styled.h5>{title}</Styled.h5>
-        <Styled.div>{excerpt}</Styled.div>
-        <ul>
+        <Styled.p>{excerpt}</Styled.p>
+        <ul
+          sx={{
+            display: 'flex',
+            p: 0,
+            mt: 0,
+            mb: 4,
+            '> :nth-of-type(n)': {
+              mr: 2
+            }
+          }}
+        >
           {tags.map((tag, index) => (
-            <li
-              key={index}
-              sx={{
-                fontSize: 0
-              }}
-            >
+            <Tag key={index} color={scale[index]}>
               {tag}
-            </li>
+            </Tag>
           ))}
         </ul>
         <Styled.div
           sx={{
-            fontSize: 0,
-            color: 'textLight'
+            display: 'flex',
+            justifyContent: 'flex-end',
+            '> :nth-of-type(odd)': {
+              mr: 2
+            }
           }}
         >
-          Time to read: {timeToRead}
-        </Styled.div>
-        <Styled.div
-          sx={{
-            fontSize: 0,
-            color: 'textLight'
-          }}
-        >
-          Word count: {wordCount.words}
+          <Styled.div
+            sx={{
+              fontSize: 0,
+              color: 'textMuted'
+            }}
+          >
+            Time to read: {timeToRead}
+          </Styled.div>
+          <Styled.div
+            sx={{
+              fontSize: 0,
+              color: 'textMuted'
+            }}
+          >
+            Word count: {wordCount.words}
+          </Styled.div>
         </Styled.div>
       </Styled.div>
     </article>

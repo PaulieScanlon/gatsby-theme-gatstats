@@ -31,6 +31,7 @@ const Layout: React.FC = ({ children }) => {
       <Styled.div
         sx={{
           margin: '0 auto',
+          backgroundColor: 'background',
           maxWidth: theme => theme.breakpoints[3]
         }}
       >

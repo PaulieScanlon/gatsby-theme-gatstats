@@ -17,7 +17,8 @@ const commonStyles = {
   paddingBottom: 0,
   paddingLeft: 0,
   paddingRight: 0,
-  paddingTop: 0
+  // Special case to allow for PostCard <a> to have box-shadow focus state
+  paddingTop: 2
 }
 
 interface IContentProps extends ISite {}

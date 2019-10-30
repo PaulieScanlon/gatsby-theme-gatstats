@@ -31,12 +31,13 @@ export default {
   initialColorModeName: 'light',
   colors: {
     text: '#37474f',
-    textLight: '#90a4ae',
+    textSecondary: '#436271',
+    textMuted: '#afbec5',
 
     primary: '#0288d1',
     secondary: '#4fc3f7',
 
-    surface: '#f3f3f3',
+    surface: '#f6f6f6',
     background: '#fdfdfd',
 
     transparent: `rgba(0,0,0,0)`,
@@ -44,12 +45,13 @@ export default {
     modes: {
       dark: {
         text: '#ffffff',
-        textLight: '#4c4b80',
+        textSecondary: '#d2d2f1',
+        textMuted: '#4e4c7a',
 
-        primary: '#F012BE',
-        secondary: '#B10DC9',
+        primary: '#a92aeb',
+        secondary: '#688ce0',
 
-        surface: '#1f1c3e',
+        surface: '#1a1832',
         background: '#131127',
 
         transparent: `rgba(0,0,0,0)`
@@ -100,13 +102,13 @@ export default {
     h4: {
       ...headings,
       marginBottom: 3,
-      fontSize: [2, 5]
+      fontSize: [4, 5]
     },
 
     h5: {
       ...headings,
       marginBottom: 2,
-      fontSize: [2, 4]
+      fontSize: [3, 4]
     },
 
     h6: {
@@ -117,7 +119,7 @@ export default {
     },
 
     p: {
-      color: 'textLight',
+      color: 'textSecondary',
       fontFamily: 'body',
       fontSize: [1, 2],
       fontWeight: 'body',
@@ -179,7 +181,7 @@ export default {
     },
 
     table: {
-      color: 'textLight',
+      color: 'textSecondary',
       fontFamily: 'body',
       width: '100%',
       borderCollapse: 'separate',
@@ -191,10 +193,10 @@ export default {
     th: {
       backgroundColor: 'background',
       color: 'text',
-      borderTopColor: 'textLight',
-      borderLeftColor: 'textLight',
+      borderTopColor: 'textSecondary',
+      borderLeftColor: 'textSecondary',
       borderBottomColor: 'transparent',
-      borderRightColor: 'textLight',
+      borderRightColor: 'textSecondary',
       borderStyle: 'solid',
       borderWidth: 0,
       px: 2,
@@ -204,7 +206,7 @@ export default {
     td: {
       borderStyle: 'solid',
       borderWidth: 0,
-      borderColor: 'textLight',
+      borderColor: 'textSecondary',
       px: 2,
       py: 2
     },

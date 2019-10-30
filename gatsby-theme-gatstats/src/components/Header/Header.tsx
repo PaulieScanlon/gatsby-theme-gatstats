@@ -59,7 +59,7 @@ export const Header: React.FC<IHeaderProps> = ({ sideBarWidth, pathname }) => {
         <Styled.h6
           sx={{
             mb: 0,
-            color: 'textLight'
+            color: 'textSecondary'
           }}
         >
           {pathname}
