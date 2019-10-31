@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Header> renders correctly 1`] = `
+exports[`<Tag> renders correctly 1`] = `
 <RootProvider
   theme={
     Object {
@@ -285,9 +285,8 @@ exports[`<Header> renders correctly 1`] = `
     }
   }
 >
-  <Header
-    pathname="/about-me"
-    sideBarWidth={0}
-  />
+  <Tag>
+    Javascript
+  </Tag>
 </RootProvider>
 `;

@@ -7,9 +7,9 @@ import { Location } from '@reach/router'
 
 import { Transition } from '../components/Transition'
 import { HeaderContainer } from '../components/Header'
-import { LightBox } from '../components/Lightbox'
+import { Lightbox } from '../components/Lightbox'
 import { ContentContainer } from '../components/Content'
-import { SideBarContainer } from '../components/SideBar/SideBarContainer'
+import { SideBarContainer } from '../components/SideBar/SideBar.Container'
 
 import { SideBarProvider } from '../components/Context'
 import { IPathname } from '../types'
@@ -43,7 +43,7 @@ const Layout: React.FC = ({ children }) => {
                 <React.Fragment>
                   <HeaderContainer pathname={pathname} />
                   <SideBarContainer />
-                  <LightBox />
+                  <Lightbox />
                   <ContentContainer>
                     <Transition pathname={pathname}>{children}</Transition>
                   </ContentContainer>

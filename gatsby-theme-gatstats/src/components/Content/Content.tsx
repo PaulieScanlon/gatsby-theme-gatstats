@@ -26,25 +26,23 @@ interface IContentProps extends ISite {}
 export const Content: React.FC<IContentProps> = ({
   children,
   sideBarWidth
-}) => {
-  return (
+}) => (
+  <Styled.div
+    sx={{
+      ...commonStyles
+    }}
+  >
     <Styled.div
       sx={{
-        ...commonStyles
+        ...commonStyles,
+        marginLeft: [0, 0, 0, `${sideBarWidth}px`],
+        paddingLeft: [3, 4],
+        paddingRight: [3, 4],
+        overflow: 'hidden',
+        transition: theme => theme.sideBarTranstion
       }}
     >
-      <Styled.div
-        sx={{
-          ...commonStyles,
-          marginLeft: [0, 0, 0, `${sideBarWidth}px`],
-          paddingLeft: [3, 4],
-          paddingRight: [3, 4],
-          overflow: 'hidden',
-          transition: theme => theme.sideBarTranstion
-        }}
-      >
-        {children}
-      </Styled.div>
+      {children}
     </Styled.div>
-  )
-}
+  </Styled.div>
+)

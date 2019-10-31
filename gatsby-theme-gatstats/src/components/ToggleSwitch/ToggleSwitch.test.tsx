@@ -4,14 +4,12 @@ import { shallow } from 'enzyme'
 import { ThemeProvider } from 'theme-ui'
 import theme from '../../gatsby-plugin-theme-ui'
 
-import { ToggleSwitch } from './'
+import { usage } from './ToggleSwitch.stories'
 
 describe('<ToggleSwitch>', () => {
   it('renders correctly', () => {
     const wrapper = shallow(
-      <ThemeProvider theme={theme}>
-        <ToggleSwitch />
-      </ThemeProvider>
+      <ThemeProvider theme={theme}>{usage()}</ThemeProvider>
     )
     expect(wrapper).toMatchSnapshot()
   })

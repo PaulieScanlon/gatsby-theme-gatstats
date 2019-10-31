@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Header> renders correctly 1`] = `
+exports[`<Transition> renders correctly 1`] = `
 <RootProvider
   theme={
     Object {
@@ -285,9 +285,10 @@ exports[`<Header> renders correctly 1`] = `
     }
   }
 >
-  <Header
+  <Transition
     pathname="/about-me"
-    sideBarWidth={0}
-  />
+  >
+    children
+  </Transition>
 </RootProvider>
 `;

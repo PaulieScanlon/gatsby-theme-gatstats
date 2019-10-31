@@ -6,7 +6,9 @@ import { Icon } from '../Icon'
 
 import { IIcon } from '../../types'
 
-interface IButtonIconProps extends IIcon, React.HTMLProps<HTMLButtonElement> {}
+interface IButtonIconProps
+  extends IIcon,
+    React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 export const ButtonIcon: React.FC<IButtonIconProps> = ({
   iconPath,
@@ -14,7 +16,7 @@ export const ButtonIcon: React.FC<IButtonIconProps> = ({
 }) => {
   return (
     <button
-      {...(rest as any)}
+      {...rest}
       sx={{
         appearance: 'none',
         display: 'inline-flex',
@@ -33,7 +35,7 @@ export const ButtonIcon: React.FC<IButtonIconProps> = ({
         border: 0,
         borderRadius: 2,
         outline: 'none',
-        //TODO hmmm widths and heights need to match ToggleSwitch so should be part of the theme
+        //TODO widths and heights need to match ToggleSwitch so should be part of the theme
         width: [28, 32],
         height: [28, 32],
         ':focus ': {

@@ -1,0 +1,1557 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ButtonIcon> renders correctly 1`] = `
+<RootProvider
+  theme={
+    Object {
+      "borderWidths": Array [
+        1,
+        2,
+        3,
+      ],
+      "breakpoints": Array [
+        "576px",
+        "768px",
+        "992px",
+        "1200px",
+      ],
+      "colors": Object {
+        "background": "#fdfdfd",
+        "modes": Object {
+          "dark": Object {
+            "background": "#131127",
+            "primary": "#a92aeb",
+            "secondary": "#688ce0",
+            "surface": "#1a1832",
+            "text": "#ffffff",
+            "textMuted": "#4e4c7a",
+            "textSecondary": "#d2d2f1",
+            "transparent": "rgba(0,0,0,0)",
+          },
+        },
+        "primary": "#0288d1",
+        "secondary": "#4fc3f7",
+        "surface": "#f6f6f6",
+        "text": "#37474f",
+        "textMuted": "#afbec5",
+        "textSecondary": "#436271",
+        "transparent": "rgba(0,0,0,0)",
+      },
+      "fontSizes": Array [
+        12,
+        14,
+        16,
+        18,
+        20,
+        24,
+        32,
+        48,
+        64,
+      ],
+      "fontWeights": Object {
+        "body": 400,
+        "bold": 700,
+        "heading": 700,
+      },
+      "fonts": Object {
+        "body": "system-ui, sans-serif",
+        "heading": "system-ui, sans-serif",
+        "monospace": "Menlo, monospace",
+      },
+      "initialColorModeName": "light",
+      "radii": Array [
+        4,
+        8,
+        50,
+      ],
+      "shadows": Array [
+        "0 0 0 2px",
+        "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.20)",
+        "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.19)",
+        "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.19)",
+        "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.18)",
+        "0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.17)",
+      ],
+      "space": Array [
+        0,
+        4,
+        8,
+        16,
+        24,
+        32,
+        48,
+      ],
+      "styles": Object {
+        "a": Object {
+          ":focus": Object {
+            "color": "text",
+          },
+          ":hover": Object {
+            "color": "text",
+          },
+          "color": "secondary",
+          "cursor": "pointer",
+          "fontSize": Array [
+            1,
+            2,
+          ],
+          "outline": "none",
+          "transition": ".2s linear all",
+        },
+        "blockquote": Object {
+          "backgroundColor": "background",
+          "borderColor": "secondary",
+          "borderLeftStyle": "solid",
+          "borderLeftWidth": 4,
+          "mx": Array [
+            2,
+            3,
+          ],
+          "my": 3,
+          "px": 3,
+          "py": 3,
+        },
+        "code": Object {
+          "fontFamily": "monospace",
+          "fontSize": 0,
+        },
+        "h1": Object {
+          "color": "text",
+          "fontFamily": "heading",
+          "fontSize": Array [
+            6,
+            7,
+            8,
+          ],
+          "fontWeight": "heading",
+          "lineHeight": "normal",
+          "margin": 0,
+          "marginBottom": 3,
+          "wordBreak": "break-all",
+        },
+        "h2": Object {
+          "color": "text",
+          "fontFamily": "heading",
+          "fontSize": Array [
+            5,
+            7,
+          ],
+          "fontWeight": "heading",
+          "lineHeight": "normal",
+          "margin": 0,
+          "marginBottom": 3,
+          "wordBreak": "break-all",
+        },
+        "h3": Object {
+          "color": "text",
+          "fontFamily": "heading",
+          "fontSize": Array [
+            4,
+            6,
+          ],
+          "fontWeight": "heading",
+          "lineHeight": "normal",
+          "margin": 0,
+          "marginBottom": 3,
+          "wordBreak": "break-all",
+        },
+        "h4": Object {
+          "color": "text",
+          "fontFamily": "heading",
+          "fontSize": Array [
+            4,
+            5,
+          ],
+          "fontWeight": "heading",
+          "lineHeight": "normal",
+          "margin": 0,
+          "marginBottom": 3,
+          "wordBreak": "break-all",
+        },
+        "h5": Object {
+          "color": "text",
+          "fontFamily": "heading",
+          "fontSize": Array [
+            3,
+            4,
+          ],
+          "fontWeight": "heading",
+          "lineHeight": "normal",
+          "margin": 0,
+          "marginBottom": 2,
+          "wordBreak": "break-all",
+        },
+        "h6": Object {
+          "color": "text",
+          "fontFamily": "heading",
+          "fontSize": Array [
+            1,
+            2,
+          ],
+          "fontWeight": "body",
+          "lineHeight": "normal",
+          "margin": 0,
+          "marginBottom": 2,
+          "wordBreak": "break-all",
+        },
+        "hr": Object {
+          "opacity": 0,
+        },
+        "li": Object {
+          "color": "text",
+          "fontFamily": "body",
+          "fontSize": Array [
+            1,
+            2,
+          ],
+          "marginBottom": 3,
+        },
+        "ol": Object {
+          "color": "text",
+          "fontFamily": "body",
+          "fontSize": Array [
+            1,
+            2,
+          ],
+          "paddingLeft": 3,
+        },
+        "p": Object {
+          "color": "textSecondary",
+          "fontFamily": "body",
+          "fontSize": Array [
+            1,
+            2,
+          ],
+          "fontWeight": "body",
+          "lineHeight": "normal",
+          "marginBottom": 4,
+          "marginTop": 0,
+        },
+        "pre": Object {
+          "backgroundColor": "background",
+          "borderColor": "background",
+          "borderStyle": "solid",
+          "borderWidth": 0,
+          "fontFamily": "monospace",
+          "fontSize": 0,
+          "px": 3,
+          "py": 3,
+        },
+        "root": Object {
+          "fontFamily": "body",
+          "fontWeight": "body",
+          "lineHeight": "normal",
+        },
+        "table": Object {
+          "borderCollapse": "separate",
+          "borderSpacing": 0,
+          "color": "textSecondary",
+          "fontFamily": "body",
+          "width": "100%",
+        },
+        "td": Object {
+          "borderColor": "textSecondary",
+          "borderStyle": "solid",
+          "borderWidth": 0,
+          "px": 2,
+          "py": 2,
+        },
+        "th": Object {
+          "backgroundColor": "background",
+          "borderBottomColor": "transparent",
+          "borderLeftColor": "textSecondary",
+          "borderRightColor": "textSecondary",
+          "borderStyle": "solid",
+          "borderTopColor": "textSecondary",
+          "borderWidth": 0,
+          "color": "text",
+          "px": 2,
+          "py": 2,
+        },
+        "tr": Object {},
+        "ul": Object {
+          "color": "text",
+          "fontFamily": "body",
+          "fontSize": Array [
+            1,
+            2,
+          ],
+          "paddingLeft": 3,
+        },
+      },
+      "transitions": Object {
+        "sideBarTransition": ".3s ease-in-out margin-left",
+      },
+    }
+  }
+>
+  <ButtonIcon
+    iconPath="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+  />
+</RootProvider>
+`;
+
+exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "borderWidths": Array [
+        1,
+        2,
+        3,
+      ],
+      "breakpoints": Array [
+        "576px",
+        "768px",
+        "992px",
+        "1200px",
+      ],
+      "colors": Object {
+        "background": "#fdfdfd",
+        "modes": Object {
+          "dark": Object {
+            "background": "#131127",
+            "primary": "#a92aeb",
+            "secondary": "#688ce0",
+            "surface": "#1a1832",
+            "text": "#ffffff",
+            "textMuted": "#4e4c7a",
+            "textSecondary": "#d2d2f1",
+            "transparent": "rgba(0,0,0,0)",
+          },
+        },
+        "primary": "#0288d1",
+        "secondary": "#4fc3f7",
+        "surface": "#f6f6f6",
+        "text": "#37474f",
+        "textMuted": "#afbec5",
+        "textSecondary": "#436271",
+        "transparent": "rgba(0,0,0,0)",
+      },
+      "fontSizes": Array [
+        12,
+        14,
+        16,
+        18,
+        20,
+        24,
+        32,
+        48,
+        64,
+      ],
+      "fontWeights": Object {
+        "body": 400,
+        "bold": 700,
+        "heading": 700,
+      },
+      "fonts": Object {
+        "body": "system-ui, sans-serif",
+        "heading": "system-ui, sans-serif",
+        "monospace": "Menlo, monospace",
+      },
+      "initialColorModeName": "light",
+      "radii": Array [
+        4,
+        8,
+        50,
+      ],
+      "shadows": Array [
+        "0 0 0 2px",
+        "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.20)",
+        "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.19)",
+        "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.19)",
+        "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.18)",
+        "0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.17)",
+      ],
+      "space": Array [
+        0,
+        4,
+        8,
+        16,
+        24,
+        32,
+        48,
+      ],
+      "styles": Object {
+        "a": Object {
+          ":focus": Object {
+            "color": "text",
+          },
+          ":hover": Object {
+            "color": "text",
+          },
+          "color": "secondary",
+          "cursor": "pointer",
+          "fontSize": Array [
+            1,
+            2,
+          ],
+          "outline": "none",
+          "transition": ".2s linear all",
+        },
+        "blockquote": Object {
+          "backgroundColor": "background",
+          "borderColor": "secondary",
+          "borderLeftStyle": "solid",
+          "borderLeftWidth": 4,
+          "mx": Array [
+            2,
+            3,
+          ],
+          "my": 3,
+          "px": 3,
+          "py": 3,
+        },
+        "code": Object {
+          "fontFamily": "monospace",
+          "fontSize": 0,
+        },
+        "h1": Object {
+          "color": "text",
+          "fontFamily": "heading",
+          "fontSize": Array [
+            6,
+            7,
+            8,
+          ],
+          "fontWeight": "heading",
+          "lineHeight": "normal",
+          "margin": 0,
+          "marginBottom": 3,
+          "wordBreak": "break-all",
+        },
+        "h2": Object {
+          "color": "text",
+          "fontFamily": "heading",
+          "fontSize": Array [
+            5,
+            7,
+          ],
+          "fontWeight": "heading",
+          "lineHeight": "normal",
+          "margin": 0,
+          "marginBottom": 3,
+          "wordBreak": "break-all",
+        },
+        "h3": Object {
+          "color": "text",
+          "fontFamily": "heading",
+          "fontSize": Array [
+            4,
+            6,
+          ],
+          "fontWeight": "heading",
+          "lineHeight": "normal",
+          "margin": 0,
+          "marginBottom": 3,
+          "wordBreak": "break-all",
+        },
+        "h4": Object {
+          "color": "text",
+          "fontFamily": "heading",
+          "fontSize": Array [
+            4,
+            5,
+          ],
+          "fontWeight": "heading",
+          "lineHeight": "normal",
+          "margin": 0,
+          "marginBottom": 3,
+          "wordBreak": "break-all",
+        },
+        "h5": Object {
+          "color": "text",
+          "fontFamily": "heading",
+          "fontSize": Array [
+            3,
+            4,
+          ],
+          "fontWeight": "heading",
+          "lineHeight": "normal",
+          "margin": 0,
+          "marginBottom": 2,
+          "wordBreak": "break-all",
+        },
+        "h6": Object {
+          "color": "text",
+          "fontFamily": "heading",
+          "fontSize": Array [
+            1,
+            2,
+          ],
+          "fontWeight": "body",
+          "lineHeight": "normal",
+          "margin": 0,
+          "marginBottom": 2,
+          "wordBreak": "break-all",
+        },
+        "hr": Object {
+          "opacity": 0,
+        },
+        "li": Object {
+          "color": "text",
+          "fontFamily": "body",
+          "fontSize": Array [
+            1,
+            2,
+          ],
+          "marginBottom": 3,
+        },
+        "ol": Object {
+          "color": "text",
+          "fontFamily": "body",
+          "fontSize": Array [
+            1,
+            2,
+          ],
+          "paddingLeft": 3,
+        },
+        "p": Object {
+          "color": "textSecondary",
+          "fontFamily": "body",
+          "fontSize": Array [
+            1,
+            2,
+          ],
+          "fontWeight": "body",
+          "lineHeight": "normal",
+          "marginBottom": 4,
+          "marginTop": 0,
+        },
+        "pre": Object {
+          "backgroundColor": "background",
+          "borderColor": "background",
+          "borderStyle": "solid",
+          "borderWidth": 0,
+          "fontFamily": "monospace",
+          "fontSize": 0,
+          "px": 3,
+          "py": 3,
+        },
+        "root": Object {
+          "fontFamily": "body",
+          "fontWeight": "body",
+          "lineHeight": "normal",
+        },
+        "table": Object {
+          "borderCollapse": "separate",
+          "borderSpacing": 0,
+          "color": "textSecondary",
+          "fontFamily": "body",
+          "width": "100%",
+        },
+        "td": Object {
+          "borderColor": "textSecondary",
+          "borderStyle": "solid",
+          "borderWidth": 0,
+          "px": 2,
+          "py": 2,
+        },
+        "th": Object {
+          "backgroundColor": "background",
+          "borderBottomColor": "transparent",
+          "borderLeftColor": "textSecondary",
+          "borderRightColor": "textSecondary",
+          "borderStyle": "solid",
+          "borderTopColor": "textSecondary",
+          "borderWidth": 0,
+          "color": "text",
+          "px": 2,
+          "py": 2,
+        },
+        "tr": Object {},
+        "ul": Object {
+          "color": "text",
+          "fontFamily": "body",
+          "fontSize": Array [
+            1,
+            2,
+          ],
+          "paddingLeft": 3,
+        },
+      },
+      "transitions": Object {
+        "sideBarTransition": ".3s ease-in-out margin-left",
+      },
+    }
+  }
+>
+  <RootProvider
+    theme={
+      Object {
+        "borderWidths": Array [
+          1,
+          2,
+          3,
+        ],
+        "breakpoints": Array [
+          "576px",
+          "768px",
+          "992px",
+          "1200px",
+        ],
+        "colors": Object {
+          "background": "#fdfdfd",
+          "modes": Object {
+            "dark": Object {
+              "background": "#131127",
+              "primary": "#a92aeb",
+              "secondary": "#688ce0",
+              "surface": "#1a1832",
+              "text": "#ffffff",
+              "textMuted": "#4e4c7a",
+              "textSecondary": "#d2d2f1",
+              "transparent": "rgba(0,0,0,0)",
+            },
+          },
+          "primary": "#0288d1",
+          "secondary": "#4fc3f7",
+          "surface": "#f6f6f6",
+          "text": "#37474f",
+          "textMuted": "#afbec5",
+          "textSecondary": "#436271",
+          "transparent": "rgba(0,0,0,0)",
+        },
+        "fontSizes": Array [
+          12,
+          14,
+          16,
+          18,
+          20,
+          24,
+          32,
+          48,
+          64,
+        ],
+        "fontWeights": Object {
+          "body": 400,
+          "bold": 700,
+          "heading": 700,
+        },
+        "fonts": Object {
+          "body": "system-ui, sans-serif",
+          "heading": "system-ui, sans-serif",
+          "monospace": "Menlo, monospace",
+        },
+        "initialColorModeName": "light",
+        "radii": Array [
+          4,
+          8,
+          50,
+        ],
+        "shadows": Array [
+          "0 0 0 2px",
+          "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.20)",
+          "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.19)",
+          "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.19)",
+          "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.18)",
+          "0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.17)",
+        ],
+        "space": Array [
+          0,
+          4,
+          8,
+          16,
+          24,
+          32,
+          48,
+        ],
+        "styles": Object {
+          "a": Object {
+            ":focus": Object {
+              "color": "text",
+            },
+            ":hover": Object {
+              "color": "text",
+            },
+            "color": "secondary",
+            "cursor": "pointer",
+            "fontSize": Array [
+              1,
+              2,
+            ],
+            "outline": "none",
+            "transition": ".2s linear all",
+          },
+          "blockquote": Object {
+            "backgroundColor": "background",
+            "borderColor": "secondary",
+            "borderLeftStyle": "solid",
+            "borderLeftWidth": 4,
+            "mx": Array [
+              2,
+              3,
+            ],
+            "my": 3,
+            "px": 3,
+            "py": 3,
+          },
+          "code": Object {
+            "fontFamily": "monospace",
+            "fontSize": 0,
+          },
+          "h1": Object {
+            "color": "text",
+            "fontFamily": "heading",
+            "fontSize": Array [
+              6,
+              7,
+              8,
+            ],
+            "fontWeight": "heading",
+            "lineHeight": "normal",
+            "margin": 0,
+            "marginBottom": 3,
+            "wordBreak": "break-all",
+          },
+          "h2": Object {
+            "color": "text",
+            "fontFamily": "heading",
+            "fontSize": Array [
+              5,
+              7,
+            ],
+            "fontWeight": "heading",
+            "lineHeight": "normal",
+            "margin": 0,
+            "marginBottom": 3,
+            "wordBreak": "break-all",
+          },
+          "h3": Object {
+            "color": "text",
+            "fontFamily": "heading",
+            "fontSize": Array [
+              4,
+              6,
+            ],
+            "fontWeight": "heading",
+            "lineHeight": "normal",
+            "margin": 0,
+            "marginBottom": 3,
+            "wordBreak": "break-all",
+          },
+          "h4": Object {
+            "color": "text",
+            "fontFamily": "heading",
+            "fontSize": Array [
+              4,
+              5,
+            ],
+            "fontWeight": "heading",
+            "lineHeight": "normal",
+            "margin": 0,
+            "marginBottom": 3,
+            "wordBreak": "break-all",
+          },
+          "h5": Object {
+            "color": "text",
+            "fontFamily": "heading",
+            "fontSize": Array [
+              3,
+              4,
+            ],
+            "fontWeight": "heading",
+            "lineHeight": "normal",
+            "margin": 0,
+            "marginBottom": 2,
+            "wordBreak": "break-all",
+          },
+          "h6": Object {
+            "color": "text",
+            "fontFamily": "heading",
+            "fontSize": Array [
+              1,
+              2,
+            ],
+            "fontWeight": "body",
+            "lineHeight": "normal",
+            "margin": 0,
+            "marginBottom": 2,
+            "wordBreak": "break-all",
+          },
+          "hr": Object {
+            "opacity": 0,
+          },
+          "li": Object {
+            "color": "text",
+            "fontFamily": "body",
+            "fontSize": Array [
+              1,
+              2,
+            ],
+            "marginBottom": 3,
+          },
+          "ol": Object {
+            "color": "text",
+            "fontFamily": "body",
+            "fontSize": Array [
+              1,
+              2,
+            ],
+            "paddingLeft": 3,
+          },
+          "p": Object {
+            "color": "textSecondary",
+            "fontFamily": "body",
+            "fontSize": Array [
+              1,
+              2,
+            ],
+            "fontWeight": "body",
+            "lineHeight": "normal",
+            "marginBottom": 4,
+            "marginTop": 0,
+          },
+          "pre": Object {
+            "backgroundColor": "background",
+            "borderColor": "background",
+            "borderStyle": "solid",
+            "borderWidth": 0,
+            "fontFamily": "monospace",
+            "fontSize": 0,
+            "px": 3,
+            "py": 3,
+          },
+          "root": Object {
+            "fontFamily": "body",
+            "fontWeight": "body",
+            "lineHeight": "normal",
+          },
+          "table": Object {
+            "borderCollapse": "separate",
+            "borderSpacing": 0,
+            "color": "textSecondary",
+            "fontFamily": "body",
+            "width": "100%",
+          },
+          "td": Object {
+            "borderColor": "textSecondary",
+            "borderStyle": "solid",
+            "borderWidth": 0,
+            "px": 2,
+            "py": 2,
+          },
+          "th": Object {
+            "backgroundColor": "background",
+            "borderBottomColor": "transparent",
+            "borderLeftColor": "textSecondary",
+            "borderRightColor": "textSecondary",
+            "borderStyle": "solid",
+            "borderTopColor": "textSecondary",
+            "borderWidth": 0,
+            "color": "text",
+            "px": 2,
+            "py": 2,
+          },
+          "tr": Object {},
+          "ul": Object {
+            "color": "text",
+            "fontFamily": "body",
+            "fontSize": Array [
+              1,
+              2,
+            ],
+            "paddingLeft": 3,
+          },
+        },
+        "transitions": Object {
+          "sideBarTransition": ".3s ease-in-out margin-left",
+        },
+      }
+    }
+  >
+    <BaseProvider
+      components={
+        Object {
+          "a": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "b": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "blockquote": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "code": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "delete": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "div": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "em": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "h1": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "h2": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "h3": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "h4": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "h5": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "h6": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "hr": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "i": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "img": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "inlineCode": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "li": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "ol": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "p": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "pre": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "root": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "strong": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "table": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "td": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "th": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "thematicBreak": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "tr": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "ul": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+        }
+      }
+      context={
+        Object {
+          "__THEME_UI__": true,
+          "colorMode": "light",
+          "components": Object {
+            "a": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "b": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "blockquote": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "code": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "delete": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "div": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "em": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "h1": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "h2": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "h3": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "h4": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "h5": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "h6": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "hr": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "i": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "img": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "inlineCode": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "li": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "ol": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "p": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "pre": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "root": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "strong": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "table": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "td": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "th": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "thematicBreak": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "tr": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "ul": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+          },
+          "emotionVersion": "10.0.21",
+          "setColorMode": [Function],
+          "theme": Object {
+            "borderWidths": Array [
+              1,
+              2,
+              3,
+            ],
+            "breakpoints": Array [
+              "576px",
+              "768px",
+              "992px",
+              "1200px",
+            ],
+            "colors": Object {
+              "background": "#fdfdfd",
+              "modes": Object {
+                "dark": Object {
+                  "background": "#131127",
+                  "primary": "#a92aeb",
+                  "secondary": "#688ce0",
+                  "surface": "#1a1832",
+                  "text": "#ffffff",
+                  "textMuted": "#4e4c7a",
+                  "textSecondary": "#d2d2f1",
+                  "transparent": "rgba(0,0,0,0)",
+                },
+              },
+              "primary": "#0288d1",
+              "secondary": "#4fc3f7",
+              "surface": "#f6f6f6",
+              "text": "#37474f",
+              "textMuted": "#afbec5",
+              "textSecondary": "#436271",
+              "transparent": "rgba(0,0,0,0)",
+            },
+            "fontSizes": Array [
+              12,
+              14,
+              16,
+              18,
+              20,
+              24,
+              32,
+              48,
+              64,
+            ],
+            "fontWeights": Object {
+              "body": 400,
+              "bold": 700,
+              "heading": 700,
+            },
+            "fonts": Object {
+              "body": "system-ui, sans-serif",
+              "heading": "system-ui, sans-serif",
+              "monospace": "Menlo, monospace",
+            },
+            "initialColorModeName": "light",
+            "radii": Array [
+              4,
+              8,
+              50,
+            ],
+            "shadows": Array [
+              "0 0 0 2px",
+              "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.20)",
+              "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.19)",
+              "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.19)",
+              "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.18)",
+              "0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.17)",
+            ],
+            "space": Array [
+              0,
+              4,
+              8,
+              16,
+              24,
+              32,
+              48,
+            ],
+            "styles": Object {
+              "a": Object {
+                ":focus": Object {
+                  "color": "text",
+                },
+                ":hover": Object {
+                  "color": "text",
+                },
+                "color": "secondary",
+                "cursor": "pointer",
+                "fontSize": Array [
+                  1,
+                  2,
+                ],
+                "outline": "none",
+                "transition": ".2s linear all",
+              },
+              "blockquote": Object {
+                "backgroundColor": "background",
+                "borderColor": "secondary",
+                "borderLeftStyle": "solid",
+                "borderLeftWidth": 4,
+                "mx": Array [
+                  2,
+                  3,
+                ],
+                "my": 3,
+                "px": 3,
+                "py": 3,
+              },
+              "code": Object {
+                "fontFamily": "monospace",
+                "fontSize": 0,
+              },
+              "h1": Object {
+                "color": "text",
+                "fontFamily": "heading",
+                "fontSize": Array [
+                  6,
+                  7,
+                  8,
+                ],
+                "fontWeight": "heading",
+                "lineHeight": "normal",
+                "margin": 0,
+                "marginBottom": 3,
+                "wordBreak": "break-all",
+              },
+              "h2": Object {
+                "color": "text",
+                "fontFamily": "heading",
+                "fontSize": Array [
+                  5,
+                  7,
+                ],
+                "fontWeight": "heading",
+                "lineHeight": "normal",
+                "margin": 0,
+                "marginBottom": 3,
+                "wordBreak": "break-all",
+              },
+              "h3": Object {
+                "color": "text",
+                "fontFamily": "heading",
+                "fontSize": Array [
+                  4,
+                  6,
+                ],
+                "fontWeight": "heading",
+                "lineHeight": "normal",
+                "margin": 0,
+                "marginBottom": 3,
+                "wordBreak": "break-all",
+              },
+              "h4": Object {
+                "color": "text",
+                "fontFamily": "heading",
+                "fontSize": Array [
+                  4,
+                  5,
+                ],
+                "fontWeight": "heading",
+                "lineHeight": "normal",
+                "margin": 0,
+                "marginBottom": 3,
+                "wordBreak": "break-all",
+              },
+              "h5": Object {
+                "color": "text",
+                "fontFamily": "heading",
+                "fontSize": Array [
+                  3,
+                  4,
+                ],
+                "fontWeight": "heading",
+                "lineHeight": "normal",
+                "margin": 0,
+                "marginBottom": 2,
+                "wordBreak": "break-all",
+              },
+              "h6": Object {
+                "color": "text",
+                "fontFamily": "heading",
+                "fontSize": Array [
+                  1,
+                  2,
+                ],
+                "fontWeight": "body",
+                "lineHeight": "normal",
+                "margin": 0,
+                "marginBottom": 2,
+                "wordBreak": "break-all",
+              },
+              "hr": Object {
+                "opacity": 0,
+              },
+              "li": Object {
+                "color": "text",
+                "fontFamily": "body",
+                "fontSize": Array [
+                  1,
+                  2,
+                ],
+                "marginBottom": 3,
+              },
+              "ol": Object {
+                "color": "text",
+                "fontFamily": "body",
+                "fontSize": Array [
+                  1,
+                  2,
+                ],
+                "paddingLeft": 3,
+              },
+              "p": Object {
+                "color": "textSecondary",
+                "fontFamily": "body",
+                "fontSize": Array [
+                  1,
+                  2,
+                ],
+                "fontWeight": "body",
+                "lineHeight": "normal",
+                "marginBottom": 4,
+                "marginTop": 0,
+              },
+              "pre": Object {
+                "backgroundColor": "background",
+                "borderColor": "background",
+                "borderStyle": "solid",
+                "borderWidth": 0,
+                "fontFamily": "monospace",
+                "fontSize": 0,
+                "px": 3,
+                "py": 3,
+              },
+              "root": Object {
+                "fontFamily": "body",
+                "fontWeight": "body",
+                "lineHeight": "normal",
+              },
+              "table": Object {
+                "borderCollapse": "separate",
+                "borderSpacing": 0,
+                "color": "textSecondary",
+                "fontFamily": "body",
+                "width": "100%",
+              },
+              "td": Object {
+                "borderColor": "textSecondary",
+                "borderStyle": "solid",
+                "borderWidth": 0,
+                "px": 2,
+                "py": 2,
+              },
+              "th": Object {
+                "backgroundColor": "background",
+                "borderBottomColor": "transparent",
+                "borderLeftColor": "textSecondary",
+                "borderRightColor": "textSecondary",
+                "borderStyle": "solid",
+                "borderTopColor": "textSecondary",
+                "borderWidth": 0,
+                "color": "text",
+                "px": 2,
+                "py": 2,
+              },
+              "tr": Object {},
+              "ul": Object {
+                "color": "text",
+                "fontFamily": "body",
+                "fontSize": Array [
+                  1,
+                  2,
+                ],
+                "paddingLeft": 3,
+              },
+            },
+            "transitions": Object {
+              "sideBarTransition": ".3s ease-in-out margin-left",
+            },
+          },
+        }
+      }
+    >
+      <MDXProvider
+        components={
+          Object {
+            "a": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "b": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "blockquote": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "code": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "delete": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "div": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "em": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "h1": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "h2": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "h3": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "h4": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "h5": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "h6": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "hr": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "i": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "img": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "inlineCode": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "li": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "ol": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "p": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "pre": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "root": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "strong": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "table": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "td": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "th": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "thematicBreak": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "tr": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "ul": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+          }
+        }
+      >
+        <ButtonIcon
+          autoFocus={true}
+          iconPath="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+        >
+          <EmotionCssPropInternal
+            __EMOTION_TYPE_PLEASE_DO_NOT_USE__="button"
+            autoFocus={true}
+            css={[Function]}
+          >
+            <button
+              autoFocus={true}
+              className="css-1vemgyg"
+            >
+              <Icon
+                iconPath="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+              >
+                <svg
+                  className="jato-icon undefined"
+                  height={24}
+                  id="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                  preserveAspectRatio="xMidYMid meet"
+                  style={Object {}}
+                  viewBox="0 0 24 24"
+                  width={24}
+                  x="0"
+                  y="0"
+                >
+                  <path
+                    d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                    fill="currentcolor"
+                  />
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                </svg>
+              </Icon>
+            </button>
+          </EmotionCssPropInternal>
+        </ButtonIcon>
+      </MDXProvider>
+    </BaseProvider>
+  </RootProvider>
+</ThemeProvider>
+`;

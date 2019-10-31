@@ -1,1 +1,1 @@
-export * from './LightBox'
+export * from './Lightbox'

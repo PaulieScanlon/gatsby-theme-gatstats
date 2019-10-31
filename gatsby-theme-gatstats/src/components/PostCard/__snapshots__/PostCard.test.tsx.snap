@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Header> renders correctly 1`] = `
+exports[`<PostCard> renders correctly 1`] = `
 <RootProvider
   theme={
     Object {
@@ -285,9 +285,38 @@ exports[`<Header> renders correctly 1`] = `
     }
   }
 >
-  <Header
-    pathname="/about-me"
-    sideBarWidth={0}
+  <PostCard
+    node={
+      Object {
+        "excerpt": "This is a blog post excerpt limited to 100 characters",
+        "fields": Object {
+          "slug": "/posts/name-of-post",
+        },
+        "frontmatter": Object {
+          "date": "2014-02-27T08:19:38.441-00:00",
+          "featuredImage": Object {
+            "childImageSharp": Object {
+              "fluid": Object {
+                "aspectRatio": 1.5,
+                "sizes": "(max-width: 800px) 100vw, 800px",
+                "src": "https://placekitten.com/g/800/800",
+                "srcSet": "https://placekitten.com/g/800/800",
+              },
+            },
+          },
+          "tags": Array [
+            "JavaScript",
+            "TypeScript",
+            "React",
+          ],
+          "title": "Storybook blog post",
+        },
+        "timeToRead": 100,
+        "wordCount": Object {
+          "words": 20,
+        },
+      }
+    }
   />
 </RootProvider>
 `;

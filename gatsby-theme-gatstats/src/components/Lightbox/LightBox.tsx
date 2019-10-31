@@ -4,7 +4,7 @@ import { jsx, Styled } from 'theme-ui'
 
 import { SideBarContext } from '../Context'
 
-export const LightBox: React.FC = () => {
+export const Lightbox: React.FC = () => {
   const { state, dispatch } = React.useContext(SideBarContext)
   return (
     <Styled.div
