@@ -4,7 +4,7 @@ import { jsx, Styled } from 'theme-ui'
 
 import { ToggleSwitch } from '../ToggleSwitch'
 
-import { SideBarContext } from '../Context'
+import { SideBarContext } from '../SideBarContext'
 import { ISite, IPathname } from '../../types'
 import { ButtonIcon } from '../ButtonIcon'
 
@@ -12,6 +12,7 @@ interface IHeaderProps extends ISite, IPathname {}
 
 export const Header: React.FC<IHeaderProps> = ({ sideBarWidth, pathname }) => {
   const { dispatch } = React.useContext(SideBarContext)
+
   return (
     <header
       sx={{
@@ -56,14 +57,24 @@ export const Header: React.FC<IHeaderProps> = ({ sideBarWidth, pathname }) => {
           flexBasis: '100%'
         }}
       >
-        <Styled.h6
+        <Styled.div
           sx={{
-            mb: 0,
-            color: 'textSecondary'
+            overflow: 'hidden'
           }}
         >
-          {pathname}
-        </Styled.h6>
+          <Styled.h6
+            sx={{
+              mb: 0,
+              width: [170, 400, 600, 650],
+              color: 'textSecondary',
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis'
+            }}
+          >
+            {pathname}
+          </Styled.h6>
+        </Styled.div>
         <ToggleSwitch />
       </Styled.div>
     </header>

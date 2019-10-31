@@ -7,7 +7,7 @@ import { SideBarNavItem } from '../SideBarNavItem'
 
 import { ILink, ILinkProps } from '../../types'
 
-import { SideBarContext } from '../Context'
+import { SideBarContext } from '../SideBarContext'
 
 interface ISideBarNavListProps {
   /** Array of Links to display */

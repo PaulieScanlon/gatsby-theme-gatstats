@@ -4,7 +4,7 @@ import { jsx, Styled } from 'theme-ui'
 
 import { SideBarNavList } from '../SideBarNavList'
 import { ILink } from '../../types'
-import { SideBarContext } from '../Context'
+import { SideBarContext } from '../SideBarContext'
 
 interface ISideBarProps {
   /** The width of the SideBar */

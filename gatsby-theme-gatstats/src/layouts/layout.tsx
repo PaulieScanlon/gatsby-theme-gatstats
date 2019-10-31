@@ -11,7 +11,7 @@ import { Lightbox } from '../components/Lightbox'
 import { ContentContainer } from '../components/Content'
 import { SideBarContainer } from '../components/SideBar/SideBar.Container'
 
-import { SideBarProvider } from '../components/Context'
+import { SideBarProvider } from '../components/SideBarContext'
 import { IPathname } from '../types'
 
 const Layout: React.FC = ({ children }) => {
@@ -39,6 +39,9 @@ const Layout: React.FC = ({ children }) => {
           <Location>
             {({ location }) => {
               const { pathname }: IPathname = location
+
+              console.log('pathname: ', pathname.split('/'))
+
               return (
                 <React.Fragment>
                   <HeaderContainer pathname={pathname} />
