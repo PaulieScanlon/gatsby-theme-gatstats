@@ -4,7 +4,7 @@ import { jsx, Flex, Box, Styled } from 'theme-ui'
 import { YearChartContainer } from '../../components/YearChart'
 import { TagsChartContainer } from '../../components/TagsChart'
 import { DaysChartContainer } from '../../components/DaysChart'
-// import { LatestPost } from "../features/LatestPost"
+import { LatestPostsContainer } from '../../components/LatestPosts'
 
 export const Dashboard = () => (
   <Styled.div>
@@ -42,10 +42,12 @@ export const Dashboard = () => (
       </Box>
       <Box
         sx={{
-          width: ['100%', '100%', '100%']
+          width: ['100%', '100%', '50%'],
+          pl: [0, 0, 2],
+          pb: 3
         }}
       >
-        {/* <LatestPost /> */}
+        <LatestPostsContainer />
       </Box>
     </Flex>
   </Styled.div>

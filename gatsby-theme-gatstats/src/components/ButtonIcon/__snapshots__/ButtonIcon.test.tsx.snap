@@ -185,8 +185,8 @@ exports[`<ButtonIcon> renders correctly 1`] = `
           "color": "text",
           "fontFamily": "heading",
           "fontSize": Array [
-            1,
             2,
+            3,
           ],
           "fontWeight": "body",
           "lineHeight": "normal",
@@ -476,8 +476,8 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
           "color": "text",
           "fontFamily": "heading",
           "fontSize": Array [
-            1,
             2,
+            3,
           ],
           "fontWeight": "body",
           "lineHeight": "normal",
@@ -760,8 +760,8 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
             "color": "text",
             "fontFamily": "heading",
             "fontSize": Array [
-              1,
               2,
+              3,
             ],
             "fontWeight": "body",
             "lineHeight": "normal",
@@ -1287,8 +1287,8 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
                 "color": "text",
                 "fontFamily": "heading",
                 "fontSize": Array [
-                  1,
                   2,
+                  3,
                 ],
                 "fontWeight": "body",
                 "lineHeight": "normal",

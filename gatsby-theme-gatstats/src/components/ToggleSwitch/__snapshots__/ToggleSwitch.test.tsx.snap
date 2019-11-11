@@ -185,8 +185,8 @@ exports[`<ToggleSwitch> renders correctly 1`] = `
           "color": "text",
           "fontFamily": "heading",
           "fontSize": Array [
-            1,
             2,
+            3,
           ],
           "fontWeight": "body",
           "lineHeight": "normal",

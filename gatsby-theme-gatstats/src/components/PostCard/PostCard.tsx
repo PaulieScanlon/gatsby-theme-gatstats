@@ -27,7 +27,11 @@ export const PostCard: React.FC<IPostProps> = ({ ...props }) => {
         fontFamily: 'body',
         backgroundColor: 'surface',
         overflow: 'hidden',
-        borderRadius: 1
+        borderRadius: 1,
+        transition: '.2s linear all',
+        ':hover': {
+          filter: 'brightness(110%)'
+        }
       }}
     >
       {featuredImage &&
@@ -43,7 +47,10 @@ export const PostCard: React.FC<IPostProps> = ({ ...props }) => {
       >
         <Styled.h4
           sx={{
-            mt: [2, 4]
+            mt: [2, 4],
+            ':hover': {
+              textDecoration: 'underline'
+            }
           }}
         >
           {title}

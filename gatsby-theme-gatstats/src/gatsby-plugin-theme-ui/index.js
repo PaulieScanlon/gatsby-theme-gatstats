@@ -115,7 +115,7 @@ export default {
     h6: {
       ...headings,
       marginBottom: 2,
-      fontSize: [1, 2],
+      fontSize: [2, 3],
       fontWeight: 'body'
     },
 
