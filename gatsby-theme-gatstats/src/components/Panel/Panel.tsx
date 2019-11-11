@@ -24,7 +24,8 @@ export const Panel: React.FC<IPanelProps> = ({
         backgroundColor: 'surface',
         overflow: 'hidden',
         borderRadius: 1,
-        p: [2, 3]
+        p: [2, 3],
+        mb: 4
       }}
     >
       <Styled.div>

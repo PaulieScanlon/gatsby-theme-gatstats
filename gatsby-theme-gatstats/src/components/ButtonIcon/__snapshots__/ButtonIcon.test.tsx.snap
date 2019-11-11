@@ -16,25 +16,25 @@ exports[`<ButtonIcon> renders correctly 1`] = `
         "1200px",
       ],
       "colors": Object {
-        "background": "#fdfdfd",
+        "background": "#131127",
         "modes": Object {
-          "dark": Object {
-            "background": "#131127",
-            "primary": "#a92aeb",
-            "secondary": "#688ce0",
-            "surface": "#1a1832",
-            "text": "#ffffff",
-            "textMuted": "#4e4c7a",
-            "textSecondary": "#d2d2f1",
+          "light": Object {
+            "background": "#fdfdfd",
+            "primary": "#0288d1",
+            "secondary": "#4fc3f7",
+            "surface": "#f6f6f6",
+            "text": "#37474f",
+            "textMuted": "#afbec5",
+            "textSecondary": "#436271",
             "transparent": "rgba(0,0,0,0)",
           },
         },
-        "primary": "#0288d1",
-        "secondary": "#4fc3f7",
-        "surface": "#f6f6f6",
-        "text": "#37474f",
-        "textMuted": "#eceff1",
-        "textSecondary": "#436271",
+        "primary": "#a92aeb",
+        "secondary": "#688ce0",
+        "surface": "#1a1832",
+        "text": "#ffffff",
+        "textMuted": "#4e4c7a",
+        "textSecondary": "#d2d2f1",
         "transparent": "rgba(0,0,0,0)",
       },
       "fontSizes": Array [
@@ -58,7 +58,7 @@ exports[`<ButtonIcon> renders correctly 1`] = `
         "heading": "system-ui, sans-serif",
         "monospace": "Menlo, monospace",
       },
-      "initialColorModeName": "light",
+      "initialColorModeName": "dark",
       "radii": Array [
         4,
         8,
@@ -307,25 +307,25 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
         "1200px",
       ],
       "colors": Object {
-        "background": "#fdfdfd",
+        "background": "#131127",
         "modes": Object {
-          "dark": Object {
-            "background": "#131127",
-            "primary": "#a92aeb",
-            "secondary": "#688ce0",
-            "surface": "#1a1832",
-            "text": "#ffffff",
-            "textMuted": "#4e4c7a",
-            "textSecondary": "#d2d2f1",
+          "light": Object {
+            "background": "#fdfdfd",
+            "primary": "#0288d1",
+            "secondary": "#4fc3f7",
+            "surface": "#f6f6f6",
+            "text": "#37474f",
+            "textMuted": "#afbec5",
+            "textSecondary": "#436271",
             "transparent": "rgba(0,0,0,0)",
           },
         },
-        "primary": "#0288d1",
-        "secondary": "#4fc3f7",
-        "surface": "#f6f6f6",
-        "text": "#37474f",
-        "textMuted": "#eceff1",
-        "textSecondary": "#436271",
+        "primary": "#a92aeb",
+        "secondary": "#688ce0",
+        "surface": "#1a1832",
+        "text": "#ffffff",
+        "textMuted": "#4e4c7a",
+        "textSecondary": "#d2d2f1",
         "transparent": "rgba(0,0,0,0)",
       },
       "fontSizes": Array [
@@ -349,7 +349,7 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
         "heading": "system-ui, sans-serif",
         "monospace": "Menlo, monospace",
       },
-      "initialColorModeName": "light",
+      "initialColorModeName": "dark",
       "radii": Array [
         4,
         8,
@@ -591,25 +591,25 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
           "1200px",
         ],
         "colors": Object {
-          "background": "#fdfdfd",
+          "background": "#131127",
           "modes": Object {
-            "dark": Object {
-              "background": "#131127",
-              "primary": "#a92aeb",
-              "secondary": "#688ce0",
-              "surface": "#1a1832",
-              "text": "#ffffff",
-              "textMuted": "#4e4c7a",
-              "textSecondary": "#d2d2f1",
+            "light": Object {
+              "background": "#fdfdfd",
+              "primary": "#0288d1",
+              "secondary": "#4fc3f7",
+              "surface": "#f6f6f6",
+              "text": "#37474f",
+              "textMuted": "#afbec5",
+              "textSecondary": "#436271",
               "transparent": "rgba(0,0,0,0)",
             },
           },
-          "primary": "#0288d1",
-          "secondary": "#4fc3f7",
-          "surface": "#f6f6f6",
-          "text": "#37474f",
-          "textMuted": "#eceff1",
-          "textSecondary": "#436271",
+          "primary": "#a92aeb",
+          "secondary": "#688ce0",
+          "surface": "#1a1832",
+          "text": "#ffffff",
+          "textMuted": "#4e4c7a",
+          "textSecondary": "#d2d2f1",
           "transparent": "rgba(0,0,0,0)",
         },
         "fontSizes": Array [
@@ -633,7 +633,7 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
           "heading": "system-ui, sans-serif",
           "monospace": "Menlo, monospace",
         },
-        "initialColorModeName": "light",
+        "initialColorModeName": "dark",
         "radii": Array [
           4,
           8,
@@ -984,7 +984,7 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
       context={
         Object {
           "__THEME_UI__": true,
-          "colorMode": "light",
+          "colorMode": "dark",
           "components": Object {
             "a": Object {
               "$$typeof": Symbol(react.forward_ref),
@@ -1118,25 +1118,25 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
               "1200px",
             ],
             "colors": Object {
-              "background": "#fdfdfd",
+              "background": "#131127",
               "modes": Object {
-                "dark": Object {
-                  "background": "#131127",
-                  "primary": "#a92aeb",
-                  "secondary": "#688ce0",
-                  "surface": "#1a1832",
-                  "text": "#ffffff",
-                  "textMuted": "#4e4c7a",
-                  "textSecondary": "#d2d2f1",
+                "light": Object {
+                  "background": "#fdfdfd",
+                  "primary": "#0288d1",
+                  "secondary": "#4fc3f7",
+                  "surface": "#f6f6f6",
+                  "text": "#37474f",
+                  "textMuted": "#afbec5",
+                  "textSecondary": "#436271",
                   "transparent": "rgba(0,0,0,0)",
                 },
               },
-              "primary": "#0288d1",
-              "secondary": "#4fc3f7",
-              "surface": "#f6f6f6",
-              "text": "#37474f",
-              "textMuted": "#eceff1",
-              "textSecondary": "#436271",
+              "primary": "#a92aeb",
+              "secondary": "#688ce0",
+              "surface": "#1a1832",
+              "text": "#ffffff",
+              "textMuted": "#4e4c7a",
+              "textSecondary": "#d2d2f1",
               "transparent": "rgba(0,0,0,0)",
             },
             "fontSizes": Array [
@@ -1160,7 +1160,7 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
               "heading": "system-ui, sans-serif",
               "monospace": "Menlo, monospace",
             },
-            "initialColorModeName": "light",
+            "initialColorModeName": "dark",
             "radii": Array [
               4,
               8,
@@ -1521,7 +1521,7 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
           >
             <button
               autoFocus={true}
-              className="css-1vemgyg"
+              className="css-1dxutgc"
             >
               <Icon
                 iconPath="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"

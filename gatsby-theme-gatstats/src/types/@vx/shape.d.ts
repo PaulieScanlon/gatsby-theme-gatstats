@@ -998,6 +998,25 @@ declare module '@vx/shape' {
         p5: any
       ): any
 
+      function x(p0: any, p1: any, p2: any, p3: any, p4: any, p5: any): any
+
+      function y(p0: any, p1: any, p2: any, p3: any, p4: any, p5: any): any
+
+      function width(p0: any, p1: any, p2: any, p3: any, p4: any, p5: any): any
+
+      function height(p0: any, p1: any, p2: any, p3: any, p4: any, p5: any): any
+
+      function rx(p0: any, p1: any, p2: any, p3: any, p4: any, p5: any): any
+
+      function opacity(
+        p0: any,
+        p1: any,
+        p2: any,
+        p3: any,
+        p4: any,
+        p5: any
+      ): any
+
       namespace className {
         function isRequired(
           p0: any,
@@ -1010,6 +1029,28 @@ declare module '@vx/shape' {
       }
 
       namespace innerRef {
+        function isRequired(
+          p0: any,
+          p1: any,
+          p2: any,
+          p3: any,
+          p4: any,
+          p5: any
+        ): any
+      }
+
+      namespace x {
+        function isRequired(
+          p0: any,
+          p1: any,
+          p2: any,
+          p3: any,
+          p4: any,
+          p5: any
+        ): any
+      }
+
+      namespace y {
         function isRequired(
           p0: any,
           p1: any,

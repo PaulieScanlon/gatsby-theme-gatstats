@@ -28,31 +28,32 @@ export default {
     bold: 700
   },
 
-  initialColorModeName: 'light',
+  initialColorModeName: 'dark',
+
   colors: {
-    text: '#37474f',
-    textSecondary: '#436271',
-    textMuted: '#eceff1',
+    text: '#ffffff',
+    textSecondary: '#d2d2f1',
+    textMuted: '#4e4c7a',
 
-    primary: '#0288d1',
-    secondary: '#4fc3f7',
+    primary: '#a92aeb',
+    secondary: '#688ce0',
 
-    surface: '#f6f6f6',
-    background: '#fdfdfd',
+    surface: '#1a1832',
+    background: '#131127',
 
     transparent: `rgba(0,0,0,0)`,
 
     modes: {
-      dark: {
-        text: '#ffffff',
-        textSecondary: '#d2d2f1',
-        textMuted: '#4e4c7a',
+      light: {
+        text: '#37474f',
+        textSecondary: '#436271',
+        textMuted: '#afbec5',
 
-        primary: '#a92aeb',
-        secondary: '#688ce0',
+        primary: '#0288d1',
+        secondary: '#4fc3f7',
 
-        surface: '#1a1832',
-        background: '#131127',
+        surface: '#f6f6f6',
+        background: '#fdfdfd',
 
         transparent: `rgba(0,0,0,0)`
       }
