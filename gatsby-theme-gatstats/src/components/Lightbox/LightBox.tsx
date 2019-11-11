@@ -15,7 +15,7 @@ export const Lightbox: React.FC = () => {
         left: 0,
         width: '100%',
         height: '100%',
-        opacity: state.isNavOpen ? 0.5 : 0.5,
+        opacity: state.isNavOpen ? 0.4 : 0.4,
         cursor: state.isNavOpen ? 'pointer' : 'auto',
         zIndex: 1,
         transition: '.2s linear opacity',

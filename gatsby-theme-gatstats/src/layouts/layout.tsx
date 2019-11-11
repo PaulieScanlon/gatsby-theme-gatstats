@@ -39,9 +39,6 @@ const Layout: React.FC = ({ children }) => {
           <Location>
             {({ location }) => {
               const { pathname }: IPathname = location
-
-              console.log('pathname: ', pathname.split('/'))
-
               return (
                 <React.Fragment>
                   <HeaderContainer pathname={pathname} />
