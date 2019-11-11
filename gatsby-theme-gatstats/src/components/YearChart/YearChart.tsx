@@ -49,10 +49,9 @@ export const YearChart: React.FC<IYearChartProps> = ({
       height={height + margin}
       style={{ overflow: 'hidden' }}
       sx={{
-        backgroundColor: 'background',
         g: {
           path: {
-            stroke: 'secondary',
+            stroke: 'primary',
             strokeWidth: 3
           },
           '.vx-rows': {

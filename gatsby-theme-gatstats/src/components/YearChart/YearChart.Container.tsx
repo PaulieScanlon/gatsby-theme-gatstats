@@ -1,8 +1,9 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
+import { jsx } from 'theme-ui'
 import { StaticQuery, graphql } from 'gatsby'
 import { ParentSize } from '@vx/responsive'
 
+import { Panel } from '../Panel'
 import { YearChart } from './YearChart'
 
 const currentYear = new Date().getFullYear()
@@ -67,17 +68,17 @@ export const YearChartContainer = () => {
           })
 
         return (
-          <Styled.div>
+          <Panel heading="Posts" subHeading="This Year">
             <ParentSize>
               {(parent: any) => (
                 <YearChart
                   yearChartData={yearChartData}
                   width={parent.width}
-                  height={300}
+                  height={260}
                 />
               )}
             </ParentSize>
-          </Styled.div>
+          </Panel>
         )
       }}
     />

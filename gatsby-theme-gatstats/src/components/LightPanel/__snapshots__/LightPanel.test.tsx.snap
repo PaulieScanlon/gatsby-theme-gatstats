@@ -33,7 +33,7 @@ exports[`<LightPanel> renders correctly 1`] = `
         "secondary": "#4fc3f7",
         "surface": "#f6f6f6",
         "text": "#37474f",
-        "textMuted": "#afbec5",
+        "textMuted": "#eceff1",
         "textSecondary": "#436271",
         "transparent": "rgba(0,0,0,0)",
       },

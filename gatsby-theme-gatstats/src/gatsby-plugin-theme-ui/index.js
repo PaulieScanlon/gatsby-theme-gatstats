@@ -32,7 +32,7 @@ export default {
   colors: {
     text: '#37474f',
     textSecondary: '#436271',
-    textMuted: '#afbec5',
+    textMuted: '#eceff1',
 
     primary: '#0288d1',
     secondary: '#4fc3f7',

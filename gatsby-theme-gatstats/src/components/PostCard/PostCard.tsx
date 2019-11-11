@@ -15,7 +15,7 @@ export const PostCard: React.FC<IPostProps> = ({ ...props }) => {
 
   const { date, tags, title, featuredImage } = frontmatter
 
-  //@TODO need to get the current colours from theme and check this re-renders
+  //TODO need to get the current colours from theme and check this re-renders
   const scale = colorRange('#a92aeb', '#688ce0', tags.length)
 
   return (

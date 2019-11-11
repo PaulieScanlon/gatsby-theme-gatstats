@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Content> renders correctly 1`] = `
+exports[`<Panel> renders correctly 1`] = `
 <RootProvider
   theme={
     Object {
@@ -285,10 +285,12 @@ exports[`<Content> renders correctly 1`] = `
     }
   }
 >
-  <Content
-    sideBarWidth={0}
+  <Panel
+    heading="This is a heading"
+    subHeading="This is a sub heading"
   >
     children
-  </Content>
+     
+  </Panel>
 </RootProvider>
 `;
