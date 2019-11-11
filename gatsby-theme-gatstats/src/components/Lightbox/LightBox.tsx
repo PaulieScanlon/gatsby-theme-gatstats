@@ -27,6 +27,6 @@ export const Lightbox: React.FC = () => {
         ]
       }}
       onClick={() => dispatch({ type: 'closeNav' })}
-    ></Styled.div>
+    />
   )
 }
