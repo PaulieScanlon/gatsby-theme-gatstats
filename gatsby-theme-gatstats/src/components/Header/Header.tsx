@@ -24,7 +24,7 @@ export const Header: React.FC<IHeaderProps> = ({ sideBarWidth, pathname }) => {
         pb: 3,
         pl: 4,
         pr: 4,
-        marginBottom: 5,
+        marginBottom: 2,
         color: 'text',
         backgroundColor: 'background',
         borderBottomWidth: 0,
