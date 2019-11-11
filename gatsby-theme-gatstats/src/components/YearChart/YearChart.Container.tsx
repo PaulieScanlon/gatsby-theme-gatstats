@@ -68,7 +68,7 @@ export const YearChartContainer = () => {
           })
 
         return (
-          <Panel heading="Posts" subHeading="This Year">
+          <Panel heading="Posts" subHeading="This year">
             <ParentSize>
               {(parent: any) => (
                 <YearChart

@@ -2,7 +2,7 @@
 import { jsx, Flex, Box, Styled } from 'theme-ui'
 
 import { YearChartContainer } from '../../components/YearChart'
-// import { TagsChart } from "../features/TagsChart"
+import { TagsChartContainer } from '../../components/TagsChart'
 import { DaysChartContainer } from '../../components/DaysChart'
 // import { LatestPost } from "../features/LatestPost"
 
@@ -15,21 +15,27 @@ export const Dashboard = () => (
     >
       <Box
         sx={{
-          width: ['100%', '100%', '50%']
+          width: ['100%', '100%', '50%'],
+          pr: [0, 0, 2],
+          pb: 3
         }}
       >
         <YearChartContainer />
       </Box>
       <Box
         sx={{
-          width: ['100%', '100%', '50%']
+          width: ['100%', '100%', '50%'],
+          pl: [0, 0, 2],
+          pb: 3
         }}
       >
-        {/* <TagsChart /> */}
+        <TagsChartContainer />
       </Box>
       <Box
         sx={{
-          width: ['100%', '100%', '50%']
+          width: ['100%', '100%', '50%'],
+          pr: [0, 0, 2],
+          pb: 3
         }}
       >
         <DaysChartContainer />
