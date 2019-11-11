@@ -36,11 +36,10 @@ export const ButtonIcon: React.FC<IButtonIconProps> = ({
         borderRadius: 2,
         outline: 'none',
         //TODO widths and heights need to match ToggleSwitch so should be part of the theme
-        width: [28, 32],
-        height: [28, 32],
+        minWidth: 48,
+        height: 48,
         ':focus ': {
-          boxShadow: theme =>
-            `${theme.shadows[0]} ${theme.colors.textSecondary}`
+          boxShadow: theme => `${theme.shadows[0]} ${theme.colors.textMuted}`
         }
       }}
     >
