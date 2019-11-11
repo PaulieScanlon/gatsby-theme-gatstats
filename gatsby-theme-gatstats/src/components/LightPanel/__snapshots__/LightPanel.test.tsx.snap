@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Lightbox> renders correctly 1`] = `
+exports[`<LightPanel> renders correctly 1`] = `
 <RootProvider
   theme={
     Object {
@@ -285,6 +285,6 @@ exports[`<Lightbox> renders correctly 1`] = `
     }
   }
 >
-  <Lightbox />
+  <LightPanel />
 </RootProvider>
 `;
