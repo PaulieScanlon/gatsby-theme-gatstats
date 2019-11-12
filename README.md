@@ -10,8 +10,8 @@ npm install @pauliescanlon/gatsby-theme-gatstats
 
 ### Preview
 
-[Live Demo](https://gatsby-theme-gatstats.netlify.com/)
-[Storybook](https://gatsby-theme-gatstats.netlify.com/storybook/)
+- [Live Demo](https://gatsby-theme-gatstats.netlify.com/)
+- [Storybook](https://gatsby-theme-gatstats.netlify.com/storybook/)
 
 **Develop**
 
