@@ -19,11 +19,11 @@ export const Header: React.FC<IHeaderProps> = ({ sideBarWidth, pathname }) => {
         position: 'sticky',
         top: 0,
         display: 'flex',
+        alignItems: 'center',
         justifyContent: 'space-between',
-        pt: 3,
-        pb: 3,
         pl: 4,
         pr: 4,
+        minHeight: theme => theme.space[7],
         marginBottom: 2,
         color: 'text',
         backgroundColor: 'background',
@@ -57,23 +57,23 @@ export const Header: React.FC<IHeaderProps> = ({ sideBarWidth, pathname }) => {
           flexBasis: '100%'
         }}
       >
-        <Styled.div
-          sx={{
-            overflow: 'hidden'
-          }}
-        >
-          <Styled.h6
+        <Styled.div>
+          <Styled.h5
             sx={{
               mb: 0,
-              width: [170, 400, 600, 650],
-              color: 'textSecondary',
-              whiteSpace: 'nowrap',
-              overflow: 'hidden',
-              textOverflow: 'ellipsis'
+              textTransform: 'capitalize',
+              color: 'textSecondary'
             }}
           >
-            {pathname}
-          </Styled.h6>
+            {pathname.split('/')[2] ? (
+              <ButtonIcon
+                onClick={() => window.history.back()}
+                iconPath="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+              />
+            ) : (
+              pathname.split('/')[1]
+            )}
+          </Styled.h5>
         </Styled.div>
         <ToggleSwitch />
       </Styled.div>

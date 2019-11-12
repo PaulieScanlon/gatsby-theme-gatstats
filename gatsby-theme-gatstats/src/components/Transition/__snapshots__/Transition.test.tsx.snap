@@ -80,6 +80,7 @@ exports[`<Transition> renders correctly 1`] = `
         24,
         32,
         48,
+        64,
       ],
       "styles": Object {
         "a": Object {
@@ -89,7 +90,7 @@ exports[`<Transition> renders correctly 1`] = `
           ":hover": Object {
             "color": "text",
           },
-          "color": "secondary",
+          "color": "primary",
           "cursor": "pointer",
           "fontSize": Array [
             1,

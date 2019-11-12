@@ -8,7 +8,7 @@ const headings = {
 }
 
 export default {
-  space: [0, 4, 8, 16, 24, 32, 48],
+  space: [0, 4, 8, 16, 24, 32, 48, 64],
 
   radii: [4, 8, 50],
 
@@ -141,7 +141,7 @@ export default {
     },
 
     a: {
-      color: 'secondary',
+      color: 'primary',
       cursor: 'pointer',
       fontSize: [1, 2],
       outline: 'none',
