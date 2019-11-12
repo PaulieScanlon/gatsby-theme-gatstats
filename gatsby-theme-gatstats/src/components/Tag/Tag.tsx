@@ -23,8 +23,7 @@ export const Tag: React.FC<ITagProps> = ({ children, color = '#ff00ff' }) => {
         borderRadius: 0,
         borderWidth: 0,
         borderStyle: 'solid',
-        borderColor: color,
-        backgroundColor: 'surface'
+        borderColor: color
       }}
     >
       {children}

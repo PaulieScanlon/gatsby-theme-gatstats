@@ -45,15 +45,15 @@ export default {
 
     modes: {
       light: {
-        text: '#37474f',
-        textSecondary: '#436271',
-        textMuted: '#afbec5',
+        text: '#455a78',
+        textSecondary: '#688796',
+        textMuted: '#90b4c5',
 
-        primary: '#0288d1',
-        secondary: '#4fc3f7',
+        primary: '#f9526b',
+        secondary: '#87ceeb',
 
-        surface: '#f6f6f6',
-        background: '#fdfdfd',
+        surface: '#ffffff',
+        background: '#f9f9f9',
 
         transparent: `rgba(0,0,0,0)`
       }

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import * as React from 'react'
-import { jsx, Styled } from 'theme-ui'
+import { jsx, Styled, useThemeUI } from 'theme-ui'
 import Img from 'gatsby-image'
 
 import { Tag } from '../Tag'
@@ -11,12 +11,15 @@ import { IPostCard } from '../../types'
 interface IPostProps extends IPostCard {}
 
 export const PostCard: React.FC<IPostProps> = ({ ...props }) => {
+  const context = useThemeUI()
   const { excerpt, frontmatter, timeToRead, wordCount } = props.node
-
   const { date, tags, title, featuredImage } = frontmatter
 
-  //TODO need to get the current colours from theme and check this re-renders
-  const scale = colorRange('#a92aeb', '#688ce0', tags.length)
+  const scale = colorRange(
+    context.theme.colors!.primary!,
+    context.theme.colors!.secondary!,
+    tags.length
+  )
 
   return (
     <article
