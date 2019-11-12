@@ -1,40 +1,53 @@
 ## 🚀 Getting started
 
-1.  **Develop.**
+GatStats is a dashboard for your tech blog. Data Viz graphs are created based on frontmatter found in `src/posts/[name].mdx`. Key metrics are pulled from date / day published and tags used.
 
-To see the output of the theme start the demo app up.
+### Install
 
-    ```sh
-        yarn develop
-    ```
+```
+npm install @pauliescanlon/gatsby-theme-gatstats
+```
+
+### Preview
+
+[Live Demo](https://gatsby-theme-gatstats.netlify.com/)
+[Storybook](https://gatsby-theme-gatstats.netlify.com/storybook/)
+
+**Develop**
+
+To see the output of the theme clone the repo and start the demo app up.
+
+```
+yarn develop
+```
 
 To preview and develop componets/features run storybook.
 
-    ```sh
-        yarn storybook
-    ```
+```
+yarn storybook
+```
 
 To preview the build serve the static files.
 
-```sh
-    yarn serve
+```
+yarn serve
 ```
 
-1-2. **Helpers.**
+**Helpers**
 
-    Occasional you'll need to clear the Gatsby cache.
+Occasionally you'll need to clear the Gatsby cache.
 
-    ```sh
-        yarn clean
-    ```
+```
+yarn clean
+```
 
-2-1. **Build.**
+**Build**
 
-    To see a build version of the demo app. This also builds a static version Storybook and outputs it to demo `public` folder.
+To see a build version of the demo app. This also builds a static version Storybook and outputs it to demo `public` folder.
 
-    ```sh
-        yarn build
-    ```
+```
+yarn build
+```
 
-3. **Yarn Workspaces.**
-   There are x2 workspaces `demo` and `@pauliescanlon/gatsby-theme-gatstats` the dir in the repo is just called `gatsby-theme-gatstats` confusingly!
+**Yarn Workspaces**
+There are x2 workspaces `demo` and `@pauliescanlon/gatsby-theme-gatstats` the dir in the repo is just called `gatsby-theme-gatstats` confusingly!
