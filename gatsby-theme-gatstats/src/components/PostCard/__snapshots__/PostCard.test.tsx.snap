@@ -19,10 +19,10 @@ exports[`<PostCard> renders correctly 1`] = `
         "background": "#131127",
         "modes": Object {
           "light": Object {
-            "background": "#f9f9f9",
-            "primary": "#f9526b",
-            "secondary": "#87ceeb",
-            "surface": "#ffffff",
+            "background": "#f8edfa",
+            "primary": "#ff94c2",
+            "secondary": "#90caf9",
+            "surface": "#f7eff8",
             "text": "#455a78",
             "textMuted": "#90b4c5",
             "textSecondary": "#688796",
@@ -128,7 +128,7 @@ exports[`<PostCard> renders correctly 1`] = `
           "lineHeight": "normal",
           "margin": 0,
           "marginBottom": 3,
-          "wordBreak": "break-all",
+          "wordBreak": "break-word",
         },
         "h2": Object {
           "color": "text",
@@ -141,7 +141,7 @@ exports[`<PostCard> renders correctly 1`] = `
           "lineHeight": "normal",
           "margin": 0,
           "marginBottom": 3,
-          "wordBreak": "break-all",
+          "wordBreak": "break-word",
         },
         "h3": Object {
           "color": "text",
@@ -154,7 +154,7 @@ exports[`<PostCard> renders correctly 1`] = `
           "lineHeight": "normal",
           "margin": 0,
           "marginBottom": 3,
-          "wordBreak": "break-all",
+          "wordBreak": "break-word",
         },
         "h4": Object {
           "color": "text",
@@ -167,7 +167,7 @@ exports[`<PostCard> renders correctly 1`] = `
           "lineHeight": "normal",
           "margin": 0,
           "marginBottom": 3,
-          "wordBreak": "break-all",
+          "wordBreak": "break-word",
         },
         "h5": Object {
           "color": "text",
@@ -180,7 +180,7 @@ exports[`<PostCard> renders correctly 1`] = `
           "lineHeight": "normal",
           "margin": 0,
           "marginBottom": 2,
-          "wordBreak": "break-all",
+          "wordBreak": "break-word",
         },
         "h6": Object {
           "color": "text",
@@ -193,7 +193,7 @@ exports[`<PostCard> renders correctly 1`] = `
           "lineHeight": "normal",
           "margin": 0,
           "marginBottom": 2,
-          "wordBreak": "break-all",
+          "wordBreak": "break-word",
         },
         "hr": Object {
           "opacity": 0,
@@ -227,6 +227,7 @@ exports[`<PostCard> renders correctly 1`] = `
           "lineHeight": "normal",
           "marginBottom": 4,
           "marginTop": 0,
+          "wordBreak": "break-word",
         },
         "pre": Object {
           "backgroundColor": "background",

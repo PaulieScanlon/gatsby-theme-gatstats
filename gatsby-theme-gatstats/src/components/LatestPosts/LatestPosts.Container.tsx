@@ -37,7 +37,7 @@ export const LatestPostsContainer = () => {
         const { edges } = data.allMdx
 
         return (
-          <Panel heading="Latest Posts" subHeading="2 new posts">
+          <Panel heading="Latest Posts" subHeading="New posts!">
             <Styled.div
               sx={{
                 mb: 3

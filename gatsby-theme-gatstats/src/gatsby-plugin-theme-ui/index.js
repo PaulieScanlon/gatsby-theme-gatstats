@@ -3,7 +3,7 @@ const headings = {
   fontFamily: 'heading',
   fontWeight: 'heading',
   lineHeight: 'normal',
-  wordBreak: 'break-all',
+  wordBreak: 'break-word',
   margin: 0
 }
 
@@ -49,11 +49,11 @@ export default {
         textSecondary: '#688796',
         textMuted: '#90b4c5',
 
-        primary: '#f9526b',
-        secondary: '#87ceeb',
+        primary: '#ff94c2',
+        secondary: '#90caf9',
 
-        surface: '#ffffff',
-        background: '#f9f9f9',
+        surface: '#f7eff8',
+        background: '#f8edfa',
 
         transparent: `rgba(0,0,0,0)`
       }
@@ -125,6 +125,7 @@ export default {
       fontSize: [1, 2],
       fontWeight: 'body',
       lineHeight: 'normal',
+      wordBreak: 'break-word',
       marginTop: 0,
       marginBottom: 4
     },

@@ -10,4 +10,4 @@ export default {
   }
 }
 
-export const usage = () => <Tag>Javascript</Tag>
+export const usage = () => <Tag color="#a92aeb">Javascript</Tag>

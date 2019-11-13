@@ -4,9 +4,9 @@ import { jsx, Styled, useThemeUI } from 'theme-ui'
 import Img from 'gatsby-image'
 
 import { Tag } from '../Tag'
+import { IPostCard } from '../../types'
 
 import { formatDate, colorRange } from '../../utils'
-import { IPostCard } from '../../types'
 
 interface IPostProps extends IPostCard {}
 
@@ -71,6 +71,7 @@ export const PostCard: React.FC<IPostProps> = ({ ...props }) => {
         <ul
           sx={{
             display: 'flex',
+            flexWrap: 'wrap',
             p: 0,
             mt: 0,
             mb: 4,
@@ -79,7 +80,7 @@ export const PostCard: React.FC<IPostProps> = ({ ...props }) => {
             }
           }}
         >
-          {tags.map((tag, index) => (
+          {tags.map((tag: string, index: number) => (
             <Tag key={index} color={scale[index]}>
               {tag}
             </Tag>
@@ -93,24 +94,15 @@ export const PostCard: React.FC<IPostProps> = ({ ...props }) => {
               mr: 2
             }
           }}
-        >
-          <Styled.div
-            sx={{
-              fontSize: 0,
-              color: 'textMuted'
-            }}
-          >
-            Time to read: {timeToRead}
-          </Styled.div>
-          <Styled.div
-            sx={{
-              fontSize: 0,
-              color: 'textMuted'
-            }}
-          >
-            Word count: {wordCount.words}
-          </Styled.div>
-        </Styled.div>
+        ></Styled.div>
+        <Styled.div
+          sx={{
+            color: 'textMuted',
+            fontSize: 0,
+            fontFamily: 'body',
+            textAlign: 'right'
+          }}
+        >{`${timeToRead} min read / ${wordCount.words} words`}</Styled.div>
       </Styled.div>
     </article>
   )
