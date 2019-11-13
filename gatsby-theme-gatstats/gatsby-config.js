@@ -23,28 +23,28 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
-        path: path.resolve(__dirname, './src/pages')
+        path: path.resolve(__dirname, 'src/pages')
       }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
-        path: path.resolve('./src/pages')
+        path: path.resolve('src/pages')
       }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
-        path: path.resolve(__dirname, './src/posts')
+        path: path.resolve(__dirname, 'src/posts')
       }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
-        path: path.resolve('./src/posts')
+        path: path.resolve('src/posts')
       }
     }
   ]
