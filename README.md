@@ -8,7 +8,7 @@ GatStats is a dashboard for your tech blog. Data Viz graphs are created based on
 npm install @pauliescanlon/gatsby-theme-gatstats
 ```
 
-### Preview
+### Preview 👁️
 
 - [Live Demo](https://gatsby-theme-gatstats.netlify.com/)
 - [Storybook](https://gatsby-theme-gatstats.netlify.com/storybook/)
@@ -48,6 +48,16 @@ To see a build version of the demo app. This also builds a static version Storyb
 ```
 yarn build
 ```
+
+**Publish**
+
+To publish the package run
+
+```
+yarn release
+```
+
+which also copies the README from the root into `gatsby-theme-gatstats`. At the prompt enter the package version
 
 **Yarn Workspaces**
 There are x2 workspaces `demo` and `@pauliescanlon/gatsby-theme-gatstats` the dir in the repo is just called `gatsby-theme-gatstats` confusingly!

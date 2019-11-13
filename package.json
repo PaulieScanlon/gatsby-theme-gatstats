@@ -12,7 +12,8 @@
     "storybook:build": "yarn workspace @pauliescanlon/gatsby-theme-gatstats storybook:build",
     "prettier": "yarn workspace @pauliescanlon/gatsby-theme-gatstats prettier",
     "lint": "yarn workspace @pauliescanlon/gatsby-theme-gatstats lint",
-    "lint:fix": "yarn workspace @pauliescanlon/gatsby-theme-gatstats lint:fix"
+    "lint:fix": "yarn workspace @pauliescanlon/gatsby-theme-gatstats lint:fix",
+    "release": "node copy-readme.js && yarn workspace @pauliescanlon/gatsby-theme-gatstats publish"
   },
   "husky": {
     "hooks": {
