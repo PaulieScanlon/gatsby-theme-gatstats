@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/pauliescanlon/gatsby-theme-gatstats.git"
   },
-  "version": "0.0.3",
+  "version": "0.0.9",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -16,7 +16,8 @@
     "storybook:build": "build-storybook -s ./public -o ../demo/public/storybook",
     "prettier": "pretty-quick",
     "lint": "eslint \"src/**/*.{js,ts,tsx}\" --quiet",
-    "lint:fix": "eslint \"src/**/*.{js,ts,tsx}\" --fix --quiet"
+    "lint:fix": "eslint \"src/**/*.{js,ts,tsx}\" --fix --quiet",
+    "publish": "npm login"
   },
   "dependencies": {
     "@emotion/core": "^10.0.21",
