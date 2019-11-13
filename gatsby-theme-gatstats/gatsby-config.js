@@ -2,10 +2,10 @@ const path = require('path')
 
 module.exports = {
   siteMetadata: {
-    title: 'Gat Stats',
+    title: 'GatStats',
     description: 'Data viz for blogs',
     config: {
-      sideBarWidth: 244
+      sideBarWidth: 240
     }
   },
   plugins: [
@@ -19,35 +19,32 @@ module.exports = {
         component: require.resolve('./src/layouts/layout.tsx')
       }
     },
-    // {
-    //   resolve: 'gatsby-plugin-mdx',
-    //   options: {
-    //     defaultLayouts: {
-    //       default: require.resolve('./src/layouts/layout.tsx')
-    //     }
-    //   }
-    // },
     {
-      resolve: 'gatsby-plugin-page-creator',
+      resolve: 'gatsby-source-filesystem',
       options: {
-        // path: path.join(__dirname, `src/pages`)
-        path: 'src/pages'
+        name: 'pages',
+        path: path.resolve(__dirname, './src/pages')
       }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
-        // path: path.join(__dirname, `src/pages`)
-        path: 'src/pages'
+        path: path.resolve('./src/pages')
       }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
-        // path: path.join(__dirname, `src/posts`)
-        path: 'src/posts'
+        path: path.resolve(__dirname, './src/posts')
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'posts',
+        path: path.resolve('./src/posts')
       }
     }
   ]

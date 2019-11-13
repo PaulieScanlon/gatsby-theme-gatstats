@@ -19,37 +19,64 @@ npm install @pauliescanlon/gatsby-theme-gatstats
 
 ### Setup
 
-Add `@pauliescanlon/gatsby-theme-gatstats` to your `gatsby-config`
+#### gatsby-config.js
+
+Add the `siteMetaData` and `@pauliescanlon/gatsby-theme-gatstats` to your `gatsby-config.js`
 
 ```
 module.exports = {
-  plugins: [
-    {
-      resolve: `@pauliescanlon/gatsby-theme-gatstats`,
-    },
-  ],
-
   siteMetadata: {
     title: "Your blog title",
     description: "I like tech",
     config: {
-      // this controls the width of the sidebar and is required
       sideBarWidth: 240,
     },
   },
+  plugins: ['@pauliescanlon/gatsby-theme-gatstats']
 }
 ```
 
-GatStats requires you have at least an `index.mdx` in `pages` one `blog-post.mdx` in `posts` that contains a featured image.
+#### directory structure
+
+If you'd like to add more pages or posts add them to your src dir
 
 <!-- prettier-ignore -->
 ```
-|src
-    |-- gatsby-theme-gatstats
+|-- src
     |-- pages
-        |-- index.mdx
+        |-- about.mdx
     |-- posts
         |-- some-post-dir
             |-- some-post.mdx
             |-- some-image.jpg
+```
+
+#### frontmatter setup
+
+For **pages** use the following template
+
+```
+---
+title: About
+icon: 'M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 10c2.7 0 5.8 1.29 6 2H6c.23-.72 3.31-2 6-2m0-12C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'
+---
+
+# Demo About
+
+This is about from the demo
+
+```
+
+For **posts** use the following template
+
+```
+---
+title: Some Post
+
+tags: ["Gatsbyjs", "React"]
+date: 2019-11-13
+featuredImage: ./some-image.jpg
+---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ```
