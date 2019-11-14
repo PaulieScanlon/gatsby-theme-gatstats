@@ -38,7 +38,7 @@ module.exports = {
 
 #### directory structure
 
-If you'd like to add more pages or posts add them to your src dir
+If you'd like to add more pages or posts add them to your src dir. **At least 1 post with a featured image is reqiured in the `posts` dir**
 
 <!-- prettier-ignore -->
 ```
