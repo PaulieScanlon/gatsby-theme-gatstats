@@ -1,11 +1,12 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, useThemeUI } from 'theme-ui'
 import { Bar } from '@vx/shape'
 import { Group } from '@vx/group'
 import { AxisBottom } from '@vx/axis'
 import { scaleBand, scaleLinear } from '@vx/scale'
-
 import { GridRows } from '@vx/grid'
+
+import { colorRange } from '../../utils'
 
 import { IBarChart } from '../../types'
 
@@ -25,6 +26,8 @@ export const DaysChart: React.FC<IDaysChartProps> = ({
   width,
   height
 }) => {
+  const context = useThemeUI()
+
   const margin = 32
 
   if (!daysChartData) return null
@@ -40,6 +43,12 @@ export const DaysChart: React.FC<IDaysChartProps> = ({
     domain: [0, Math.max(...daysChartData.map(y))]
   })
 
+  const colorScale = colorRange(
+    context.theme.colors!.primary!,
+    context.theme.colors!.secondary!,
+    daysChartData.length
+  )
+
   return (
     <svg
       width="100%"
@@ -47,9 +56,6 @@ export const DaysChart: React.FC<IDaysChartProps> = ({
       style={{ overflow: 'visible', marginTop: margin }}
       sx={{
         g: {
-          rect: {
-            fill: 'primary'
-          },
           '.vx-rows': {
             '.vx-line': {
               stroke: 'textMuted',
@@ -77,9 +83,8 @@ export const DaysChart: React.FC<IDaysChartProps> = ({
           scale={yScale}
           width={width}
         />
-        {daysChartData.map((d, i) => {
+        {daysChartData.map((d: any, index: number) => {
           const day = x(d)
-          const opacity = 0.1 * (d.count + 2)
           const barWidth = xScale.bandwidth()
           const barHeight = height - yScale(y(d))
           const barX = xScale(day)
@@ -87,13 +92,13 @@ export const DaysChart: React.FC<IDaysChartProps> = ({
 
           return (
             <Bar
-              key={`bar-${day}-${i}`}
+              key={`bar-${day}-${index}`}
               x={barX}
               y={barY}
               width={barWidth}
               height={barHeight}
               rx={8}
-              opacity={opacity}
+              fill={colorScale[index]}
             />
           )
         })}

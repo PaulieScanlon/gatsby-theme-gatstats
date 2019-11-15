@@ -1017,6 +1017,9 @@ declare module '@vx/shape' {
         p5: any
       ): any
 
+      function fill(p0: any, p1: any, p2: any, p3: any, p4: any, p5: any): any
+
+
       namespace className {
         function isRequired(
           p0: any,

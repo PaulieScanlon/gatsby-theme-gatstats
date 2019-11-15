@@ -1,7 +1,9 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, useThemeUI } from 'theme-ui'
 import { Pie } from '@vx/shape'
 import { Group } from '@vx/group'
+
+import { colorRange } from '../../utils'
 
 import { IPieChart } from '../../types'
 
@@ -18,6 +20,8 @@ export const TagsChart: React.FC<IYearChartProps> = ({
   width,
   height
 }) => {
+  const context = useThemeUI()
+
   const margin = 32
 
   if (!tagsChartData) return null
@@ -25,6 +29,12 @@ export const TagsChart: React.FC<IYearChartProps> = ({
   const radius = Math.min(width, height) / 2
   const centerY = height / 2
   const centerX = width / 2
+
+  const colorScale = colorRange(
+    context.theme.colors!.primary!,
+    context.theme.colors!.secondary!,
+    tagsChartData.length
+  )
 
   return (
     <svg
@@ -35,9 +45,6 @@ export const TagsChart: React.FC<IYearChartProps> = ({
           fill: 'none'
         },
         '.vx-group': {
-          path: {
-            fill: 'primary'
-          },
           text: {
             fill: 'text',
             fontSize: 0,
@@ -59,13 +66,12 @@ export const TagsChart: React.FC<IYearChartProps> = ({
         >
           {(pie: any) => {
             return pie.arcs.map((arc: any, index: number) => {
-              const opacity = 1 / (index + 2)
               const [centroidX, centroidY] = pie.path.centroid(arc)
               const { startAngle, endAngle } = arc
               const hasSpaceForLabel = endAngle - startAngle >= 0.1
               return (
                 <g key={`arc-${arc.data.label}-${index}`}>
-                  <path d={pie.path(arc)} fillOpacity={opacity} />
+                  <path d={pie.path(arc)} fill={colorScale[index]} />
                   {hasSpaceForLabel && (
                     <text
                       x={centroidX}

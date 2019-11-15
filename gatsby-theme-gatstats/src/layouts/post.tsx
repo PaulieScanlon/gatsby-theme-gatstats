@@ -15,7 +15,7 @@ const Post = ({ data: { mdx } }: any) => {
   const { timeToRead, wordCount, excerpt } = mdx
   const { title, date, tags, featuredImage } = mdx.frontmatter
 
-  const scale = colorRange(
+  const colorScale = colorRange(
     context.theme.colors!.primary!,
     context.theme.colors!.secondary!,
     tags.length
@@ -75,7 +75,7 @@ const Post = ({ data: { mdx } }: any) => {
         }}
       >
         {tags.map((tag: string, index: number) => (
-          <Tag key={index} color={scale[index]}>
+          <Tag key={index} color={colorScale[index]}>
             {tag}
           </Tag>
         ))}

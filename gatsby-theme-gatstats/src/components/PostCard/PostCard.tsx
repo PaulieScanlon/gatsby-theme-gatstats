@@ -15,7 +15,7 @@ export const PostCard: React.FC<IPostProps> = ({ ...props }) => {
   const { excerpt, frontmatter, timeToRead, wordCount } = props.node
   const { date, tags, title, featuredImage } = frontmatter
 
-  const scale = colorRange(
+  const colorScale = colorRange(
     context.theme.colors!.primary!,
     context.theme.colors!.secondary!,
     tags.length
@@ -81,7 +81,7 @@ export const PostCard: React.FC<IPostProps> = ({ ...props }) => {
           }}
         >
           {tags.map((tag: string, index: number) => (
-            <Tag key={index} color={scale[index]}>
+            <Tag key={index} color={colorScale[index]}>
               {tag}
             </Tag>
           ))}
