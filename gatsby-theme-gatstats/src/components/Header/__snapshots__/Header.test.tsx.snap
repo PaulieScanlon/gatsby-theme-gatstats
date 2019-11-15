@@ -19,11 +19,11 @@ exports[`<Header> renders correctly 1`] = `
         "background": "#131127",
         "modes": Object {
           "light": Object {
-            "background": "#f8edfa",
+            "background": "#fcf2ff",
             "primary": "#ff94c2",
             "secondary": "#90caf9",
-            "surface": "#f7eff8",
-            "text": "#455a78",
+            "surface": "#fdfafe",
+            "text": "#304250",
             "textMuted": "#90b4c5",
             "textSecondary": "#688796",
             "transparent": "rgba(0,0,0,0)",
