@@ -1,11 +1,15 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
+import { css } from '@emotion/core'
+
 import { Group } from '@vx/group'
 import { LinePath } from '@vx/shape'
 import { AxisBottom } from '@vx/axis'
 import { scaleTime, scaleLinear } from '@vx/scale'
 import { curveMonotoneX } from '@vx/curve'
 import { GridRows } from '@vx/grid'
+
+import { fadeIn } from '../../utils'
 
 import { ILineChart } from '../../types'
 
@@ -48,6 +52,9 @@ export const YearChart: React.FC<IYearChartProps> = ({
       width="100%"
       height={height + margin}
       style={{ overflow: 'hidden' }}
+      css={css`
+        animation: ${fadeIn} 2s linear;
+      `}
       sx={{
         g: {
           path: {

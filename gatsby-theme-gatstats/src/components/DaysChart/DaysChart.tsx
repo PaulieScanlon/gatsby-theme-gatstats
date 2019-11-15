@@ -1,12 +1,14 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from 'theme-ui'
+import { css } from '@emotion/core'
+
 import { Bar } from '@vx/shape'
 import { Group } from '@vx/group'
 import { AxisBottom } from '@vx/axis'
 import { scaleBand, scaleLinear } from '@vx/scale'
 import { GridRows } from '@vx/grid'
 
-import { colorRange } from '../../utils'
+import { colorRange, fadeIn } from '../../utils'
 
 import { IBarChart } from '../../types'
 
@@ -54,6 +56,9 @@ export const DaysChart: React.FC<IDaysChartProps> = ({
       width="100%"
       height={height + margin}
       style={{ overflow: 'visible', marginTop: margin }}
+      css={css`
+        animation: ${fadeIn} 2s linear;
+      `}
       sx={{
         g: {
           '.vx-rows': {

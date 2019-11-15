@@ -1,9 +1,12 @@
 /** @jsx jsx */
+import * as React from 'react'
 import { jsx, useThemeUI } from 'theme-ui'
+import { css } from '@emotion/core'
+
 import { Pie } from '@vx/shape'
 import { Group } from '@vx/group'
 
-import { colorRange } from '../../utils'
+import { colorRange, fadeIn } from '../../utils'
 
 import { IPieChart } from '../../types'
 
@@ -40,6 +43,9 @@ export const TagsChart: React.FC<IYearChartProps> = ({
     <svg
       width="100%"
       height={height + margin}
+      css={css`
+        animation: ${fadeIn} 2s linear;
+      `}
       sx={{
         rect: {
           fill: 'none'
