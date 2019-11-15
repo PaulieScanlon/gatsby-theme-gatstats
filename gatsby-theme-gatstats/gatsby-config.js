@@ -2,8 +2,9 @@ const path = require('path')
 
 module.exports = {
   siteMetadata: {
-    title: 'GatStats',
-    description: 'Data viz for blogs',
+    title: '',
+    description: '',
+    keywords: [],
     config: {
       sideBarWidth: 240
     }

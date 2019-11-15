@@ -6,12 +6,13 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Img from 'gatsby-image'
 
 import { Tag } from '../components/Tag'
+import { Seo } from '../components/Seo'
 
 import { formatDate, colorRange } from '..//utils'
 
 const Post = ({ data: { mdx } }: any) => {
   const context = useThemeUI()
-  const { timeToRead, wordCount } = mdx
+  const { timeToRead, wordCount, excerpt } = mdx
   const { title, date, tags, featuredImage } = mdx.frontmatter
 
   const scale = colorRange(
@@ -22,6 +23,12 @@ const Post = ({ data: { mdx } }: any) => {
 
   return (
     <React.Fragment>
+      <Seo
+        title={title}
+        description={excerpt}
+        keywords={tags}
+        image={featuredImage ? featuredImage.childImageSharp.fluid.src : ''}
+      />
       {featuredImage && (
         <Styled.div
           sx={{

@@ -25,6 +25,7 @@
     "@mdx-js/react": "^1.5.1",
     "@storybook/addon-docs": "^5.2.4",
     "@storybook/react": "^5.2.6",
+    "@types/react-helmet": "^5.0.14",
     "@types/react-transition-group": "^4.2.3",
     "@types/theme-ui": "^0.2.3",
     "@vx/axis": "^0.0.192",
@@ -49,6 +50,7 @@
     "gatsby-transformer-sharp": "^2.3.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-helmet": "^5.2.1",
     "react-transition-group": "^4.3.0",
     "theme-ui": "^0.2.44",
     "typescript": "^3.6.4"

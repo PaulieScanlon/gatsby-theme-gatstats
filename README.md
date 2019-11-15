@@ -28,6 +28,7 @@ module.exports = {
   siteMetadata: {
     title: "Your blog title",
     description: "I like tech",
+    keywords: ["tech", "blog", "boop"],
     config: {
       sideBarWidth: 240,
     },

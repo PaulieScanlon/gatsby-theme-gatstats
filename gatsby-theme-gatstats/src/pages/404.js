@@ -1,11 +1,8 @@
 /** @jsx jsx */
 import { Styled, jsx } from 'theme-ui'
 
-import Layout from '../layouts/layout'
-
 export default () => (
-  <Layout>
-    <Styled.h1>Page not found</Styled.h1>
-    <Styled.p>Say something useful here</Styled.p>
-  </Layout>
+  <Styled.div>
+    <Styled.h1>🤦‍♂️ Page not found</Styled.h1>
+  </Styled.div>
 )
