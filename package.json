@@ -23,7 +23,7 @@
   },
   "workspaces": [
     "demo",
-    "gatsby-theme-gatstats"
+    "@pauliescanlon/gatsby-theme-gatstats"
   ],
   "devDependencies": {
     "husky": "^3.0.9"

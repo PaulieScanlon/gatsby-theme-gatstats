@@ -2,9 +2,11 @@
 import * as React from 'react'
 import { jsx, Styled } from 'theme-ui'
 
+import { Logo } from '../Logo'
 import { SideBarNavList } from '../SideBarNavList'
-import { ILink } from '../../types'
 import { SideBarContext } from '../SideBarContext'
+
+import { ILink } from '../../types'
 
 interface ISideBarProps {
   /** The width of the SideBar */
@@ -39,16 +41,18 @@ export const SideBar: React.FC<ISideBarProps> = ({ sideBarWidth, links }) => {
     >
       <Styled.div
         sx={{
-          pl: 3,
-          pr: 3
+          pl: 4,
+          pr: 4
         }}
       >
         <Styled.div
-          className="this-will-be-the-profile"
           sx={{
-            height: 64
+            pt: 3,
+            mb: 5
           }}
-        />
+        >
+          <Logo />
+        </Styled.div>
         <SideBarNavList links={links} />
       </Styled.div>
     </Styled.div>

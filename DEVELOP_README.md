@@ -45,4 +45,4 @@ yarn release
 which also copies the README from the root into `gatsby-theme-gatstats`. At the prompt enter the package version
 
 **Yarn Workspaces**
-There are x2 workspaces `demo` and `@pauliescanlon/gatsby-theme-gatstats` the dir in the repo is just called `gatsby-theme-gatstats` confusingly!
+There are x2 workspaces `demo` and `@pauliescanlon/gatsby-theme-gatstats`

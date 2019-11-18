@@ -56,8 +56,6 @@ export const SideBarNavList: React.FC<ISideBarNavListProps> = ({ links }) => {
                 display: 'block',
                 borderRadius: 2,
                 cursor: 'pointer',
-                ml: 3,
-                mr: 3,
                 mb: 3,
                 ':focus ': {
                   outline: 'none',
