@@ -52,6 +52,7 @@ export const Search: React.FC<ISearchProps> = ({ filterData, onSearch }) => {
                     borderStyle: 'solid',
                     borderColor: 'background',
                     borderRadius: 2,
+                    appearance: 'none',
                     p: 3,
                     mr: 2,
                     fontFamily: 'body',

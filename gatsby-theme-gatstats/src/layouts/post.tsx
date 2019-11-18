@@ -35,7 +35,6 @@ const Post = ({ data: { mdx } }: any) => {
             display: 'flex',
             alignItems: 'center',
             width: '100%',
-            height: [250, 300],
             overflow: 'hidden',
             mb: 4
           }}
