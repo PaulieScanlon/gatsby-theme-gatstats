@@ -6,6 +6,7 @@ module.exports = {
     description: '',
     keywords: [],
     config: {
+      headerHeight: 64,
       sideBarWidth: 240
     }
   },

@@ -6,16 +6,19 @@ import { Logo } from '../Logo'
 import { SideBarNavList } from '../SideBarNavList'
 import { SideBarContext } from '../SideBarContext'
 
-import { ILink } from '../../types'
+import { ILink, ISite } from '../../types'
+import { ToggleSwitch } from '../ToggleSwitch'
 
-interface ISideBarProps {
-  /** The width of the SideBar */
-  sideBarWidth: number
+interface ISideBarProps extends ISite {
   /** Array of Links to display */
   links: ILink[]
 }
 
-export const SideBar: React.FC<ISideBarProps> = ({ sideBarWidth, links }) => {
+export const SideBar: React.FC<ISideBarProps> = ({
+  sideBarWidth,
+  headerHeight,
+  links
+}) => {
   const { state } = React.useContext(SideBarContext)
 
   const conditionalLeft = state.isNavOpen ? 0 : sideBarWidth
@@ -41,19 +44,42 @@ export const SideBar: React.FC<ISideBarProps> = ({ sideBarWidth, links }) => {
     >
       <Styled.div
         sx={{
+          display: 'flex',
+          flexDirection: 'column',
           pl: 4,
-          pr: 4
+          pr: 4,
+          height: '100%'
         }}
       >
         <Styled.div
           sx={{
-            pt: 3,
-            mb: 5
+            display: 'flex',
+            alignItems: 'center',
+            minHeight: `${headerHeight}px`,
+            pt: 1,
+            pl: 3,
+            mb: 3
           }}
         >
           <Logo />
         </Styled.div>
-        <SideBarNavList links={links} />
+        <Styled.div
+          sx={{
+            display: 'flex',
+            flexBasis: '100%',
+            mb: 6
+          }}
+        >
+          <SideBarNavList links={links} />
+        </Styled.div>
+        <Styled.div
+          sx={{
+            mb: 4,
+            display: ['flex', 'flex', 'flex', 'none']
+          }}
+        >
+          <ToggleSwitch toggleSwitchName="sidebar-theme-toggle" />
+        </Styled.div>
       </Styled.div>
     </Styled.div>
   )

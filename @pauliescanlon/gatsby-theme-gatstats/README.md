@@ -30,6 +30,7 @@ module.exports = {
     description: "I like tech",
     keywords: ["tech", "blog", "boop"],
     config: {
+      headerHeight: 55,
       sideBarWidth: 240,
     },
   },

@@ -2,9 +2,14 @@
 import * as React from 'react'
 import { useColorMode, jsx } from 'theme-ui'
 
-const toggleSwitchName = 'gatstats-toggle-switch'
+interface IToggleSwitchProps {
+  /** id, htmlFor and label  */
+  toggleSwitchName: string
+}
 
-export const ToggleSwitch: React.FC = () => {
+export const ToggleSwitch: React.FC<IToggleSwitchProps> = ({
+  toggleSwitchName
+}) => {
   const [colorMode, setColorMode] = useColorMode()
 
   const [isChecked, setIsChecked] = React.useState(false)

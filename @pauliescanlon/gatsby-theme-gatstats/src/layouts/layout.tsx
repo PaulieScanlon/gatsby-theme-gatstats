@@ -59,7 +59,7 @@ const Layout: React.FC = ({ children }) => {
                     const { pathname }: IPathname = location
                     return (
                       <React.Fragment>
-                        <HeaderContainer pathname={pathname} />
+                        <HeaderContainer />
                         <SideBarContainer />
                         <LightPanel />
                         <ContentContainer>

@@ -4,16 +4,7 @@ import { Link } from 'gatsby'
 
 export const Logo: React.FC = () => (
   <Link to="/">
-    <svg
-      id="demo-logo"
-      x="0px"
-      y="0px"
-      viewBox="0 0 220 50"
-      width="150px"
-      sx={{
-        ml: 2
-      }}
-    >
+    <svg id="demo-logo" x="0px" y="0px" viewBox="0 0 220 50" width="150px">
       <path
         sx={{
           fill: 'primary'
