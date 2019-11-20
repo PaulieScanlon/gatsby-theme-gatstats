@@ -288,7 +288,7 @@ exports[`<Header> renders correctly 1`] = `
   }
 >
   <Header
-    pathname="/posts"
+    headerHeight={48}
     sideBarWidth={0}
   />
 </RootProvider>

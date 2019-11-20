@@ -10,4 +10,4 @@ export default {
   }
 }
 
-export const usage = () => <Header sideBarWidth={0} pathname="/posts" />
+export const usage = () => <Header sideBarWidth={0} headerHeight={48} />
