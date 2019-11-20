@@ -57,7 +57,7 @@ export const SideBar: React.FC<ISideBarProps> = ({
             alignItems: 'center',
             minHeight: `${headerHeight}px`,
             pt: 1,
-            pl: 3,
+            pl: 4,
             mb: 3
           }}
         >
