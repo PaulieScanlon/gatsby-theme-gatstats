@@ -22,7 +22,11 @@ const Post = ({ data: { mdx } }: any) => {
   )
 
   return (
-    <React.Fragment>
+    <article
+      sx={{
+        mb: 7
+      }}
+    >
       <Seo
         title={title}
         description={excerpt}
@@ -90,7 +94,7 @@ const Post = ({ data: { mdx } }: any) => {
       >{`${timeToRead} min read / ${wordCount.words} words`}</Styled.div>
 
       <MDXRenderer>{mdx.body}</MDXRenderer>
-    </React.Fragment>
+    </article>
   )
 }
 

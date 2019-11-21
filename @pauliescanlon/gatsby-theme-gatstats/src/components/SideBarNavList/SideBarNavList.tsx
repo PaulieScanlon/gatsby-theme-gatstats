@@ -57,10 +57,14 @@ export const SideBarNavList: React.FC<ISideBarNavListProps> = ({ links }) => {
                 borderRadius: 2,
                 cursor: 'pointer',
                 mb: 3,
+                // ! the padding is to allow for the box-shadow focus stateof the <SideBarNavItem />
+                padding: '0 2px',
                 ':focus ': {
                   outline: 'none',
-                  boxShadow: theme =>
-                    `${theme.shadows[0]} ${theme.colors.textMuted}`
+                  div: {
+                    boxShadow: theme =>
+                      `${theme.shadows[0]} ${theme.colors.textMuted}`
+                  }
                 }
               }}
             >

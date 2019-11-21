@@ -57,8 +57,7 @@ export const SideBar: React.FC<ISideBarProps> = ({
             alignItems: 'center',
             minHeight: `${headerHeight}px`,
             pt: 1,
-            pl: 4,
-            mb: 3
+            pl: 4
           }}
         >
           <Logo />
@@ -66,19 +65,36 @@ export const SideBar: React.FC<ISideBarProps> = ({
         <Styled.div
           sx={{
             display: 'flex',
+            pt: 3,
+            flexDirection: 'column',
             flexBasis: '100%',
-            mb: 6
+            overflowY: 'scroll',
+            WbkitOverflowScrolling: 'touch'
           }}
         >
           <SideBarNavList links={links} />
-        </Styled.div>
-        <Styled.div
-          sx={{
-            mb: 4,
-            display: ['flex', 'flex', 'flex', 'none']
-          }}
-        >
-          <ToggleSwitch toggleSwitchName="sidebar-theme-toggle" />
+          <Styled.div
+            sx={{
+              pl: 3,
+              pr: 3,
+              pt: 6,
+              mb: 4,
+              display: ['flex', 'flex', 'flex', 'none'],
+              alignItems: 'center',
+              justifyContent: 'space-between'
+            }}
+          >
+            <ToggleSwitch toggleSwitchName="sidebar-theme-toggle" />
+            <Styled.h6
+              sx={{
+                fontSize: 1,
+                mb: 0,
+                color: 'textMuted'
+              }}
+            >
+              Toggle Theme
+            </Styled.h6>
+          </Styled.div>
         </Styled.div>
       </Styled.div>
     </Styled.div>
