@@ -3,7 +3,12 @@ import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 
 export const Logo: React.FC = () => (
-  <Link to="/">
+  <Link
+    to="/"
+    style={{
+      outline: 'none'
+    }}
+  >
     <svg id="demo-logo" x="0px" y="0px" viewBox="0 0 205 50" width="150px">
       <g
         sx={{

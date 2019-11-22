@@ -10,7 +10,7 @@ import { Transition } from '../components/Transition'
 import { HeaderContainer } from '../components/Header'
 import { LightPanel } from '../components/LightPanel'
 import { ContentContainer } from '../components/Content'
-import { SideBarContainer } from '../components/SideBar/SideBar.Container'
+import { SideBarContainer } from '../components/SideBar/SideBarContainer'
 
 import { SideBarProvider } from '../components/SideBarContext'
 import { IPathname } from '../types'

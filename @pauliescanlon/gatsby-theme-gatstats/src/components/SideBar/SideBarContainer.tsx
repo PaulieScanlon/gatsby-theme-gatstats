@@ -36,8 +36,7 @@ export const SideBarContainer: React.FC = () => (
       }
     `}
     render={data => {
-      const { sideBarWidth, headerHeight } = data.site.siteMetadata.config
-
+      const { config } = data.site.siteMetadata
       const links = data.allMdx.edges.map((item: any) => {
         return {
           slug: item.node.fields.slug,
@@ -69,11 +68,7 @@ export const SideBarContainer: React.FC = () => (
             zIndex: 2
           }}
         >
-          <SideBar
-            sideBarWidth={sideBarWidth}
-            headerHeight={headerHeight}
-            links={links}
-          />
+          <SideBar config={config} links={links} />
         </Styled.div>
       )
     }}

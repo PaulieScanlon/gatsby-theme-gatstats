@@ -38,7 +38,7 @@ export const LatestPosts: React.FC<ILatestPostsProps> = ({ ...props }) => {
         >
           {formatDate(date)}
         </Styled.div>
-        <Styled.h6
+        <Styled.h5
           sx={{
             ':hover': {
               textDecoration: 'underline'
@@ -46,7 +46,7 @@ export const LatestPosts: React.FC<ILatestPostsProps> = ({ ...props }) => {
           }}
         >
           {title}
-        </Styled.h6>
+        </Styled.h5>
         <Styled.p
           sx={{
             mb: 0,

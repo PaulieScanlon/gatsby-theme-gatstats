@@ -1,2 +1,2 @@
 export * from './SideBar'
-export * from './SideBar.Container'
+export * from './SideBarContainer'

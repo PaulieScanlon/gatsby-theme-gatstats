@@ -6,21 +6,17 @@ import { Logo } from '../Logo'
 import { SideBarNavList } from '../SideBarNavList'
 import { SideBarContext } from '../SideBarContext'
 
-import { ILink, ISite } from '../../types'
+import { ILink, ISiteMetadata } from '../../types'
 import { ToggleSwitch } from '../ToggleSwitch'
 
-interface ISideBarProps extends ISite {
+interface ISideBarProps extends ISiteMetadata {
   /** Array of Links to display */
   links: ILink[]
 }
 
-export const SideBar: React.FC<ISideBarProps> = ({
-  sideBarWidth,
-  headerHeight,
-  links
-}) => {
+export const SideBar: React.FC<ISideBarProps> = ({ config, links }) => {
   const { state } = React.useContext(SideBarContext)
-
+  const { sideBarWidth, headerHeight } = config
   const conditionalLeft = state.isNavOpen ? 0 : sideBarWidth
 
   return (

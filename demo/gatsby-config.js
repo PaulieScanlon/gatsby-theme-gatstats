@@ -2,12 +2,14 @@ const path = require('path')
 
 module.exports = {
   siteMetadata: {
-    title: 'GatStats',
-    description: 'This is a demo for @pauliescanlon/gatsby-theme-gatstats',
+    title: 'Introducing GatStats',
+    description: `GatStats is a dashboard for your tech blog, or a <i>dashblog</i> if you prefer? <br /> More here 👉 <a href='https://www.npmjs.com/package/@pauliescanlon/gatsby-theme-gatstats' target='_blank'>@pauliescanlon/gatsby-theme-gatstats</a>`,
     keywords: ['GatsbyJs', 'React', 'theme-ui'],
     config: {
       headerHeight: 64,
-      sideBarWidth: 240
+      sideBarWidth: 240,
+      twitter: 'pauliescanlon',
+      github: 'pauliescanlon'
     }
   },
   plugins: ['@pauliescanlon/gatsby-theme-gatstats']

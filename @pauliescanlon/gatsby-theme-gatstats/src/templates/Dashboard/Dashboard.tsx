@@ -5,6 +5,7 @@ import { YearChartContainer } from '../../components/YearChart'
 import { TagsChartContainer } from '../../components/TagsChart'
 import { DaysChartContainer } from '../../components/DaysChart'
 import { LatestPostsContainer } from '../../components/LatestPosts'
+import { BioContainer } from '../../components/Bio/BioContainer'
 
 export const Dashboard = () => (
   <Styled.div>
@@ -13,6 +14,13 @@ export const Dashboard = () => (
         flexWrap: 'wrap'
       }}
     >
+      <Box
+        sx={{
+          width: '100%'
+        }}
+      >
+        <BioContainer />
+      </Box>
       <Box
         sx={{
           width: ['100%', '100%', '50%'],

@@ -1,2 +1,2 @@
 export * from './Header'
-export * from './Header.Container'
+export * from './HeaderContainer'

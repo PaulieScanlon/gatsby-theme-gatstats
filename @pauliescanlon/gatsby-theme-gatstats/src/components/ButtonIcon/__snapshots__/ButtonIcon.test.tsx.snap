@@ -8,6 +8,7 @@ exports[`<ButtonIcon> renders correctly 1`] = `
         1,
         2,
         3,
+        7,
       ],
       "breakpoints": Array [
         "576px",
@@ -217,14 +218,30 @@ exports[`<ButtonIcon> renders correctly 1`] = `
           "paddingLeft": 3,
         },
         "p": Object {
+          "a": Object {
+            ":focus": Object {
+              "color": "text",
+            },
+            ":hover": Object {
+              "color": "text",
+            },
+            "color": "primary",
+            "cursor": "pointer",
+            "fontSize": Array [
+              1,
+              2,
+            ],
+            "outline": "none",
+            "transition": ".2s linear all",
+          },
           "color": "textSecondary",
           "fontFamily": "body",
           "fontSize": Array [
-            1,
             2,
+            3,
           ],
           "fontWeight": "body",
-          "lineHeight": "normal",
+          "lineHeight": "28px",
           "marginBottom": 4,
           "marginTop": 0,
           "wordBreak": "break-word",
@@ -301,6 +318,7 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
         1,
         2,
         3,
+        7,
       ],
       "breakpoints": Array [
         "576px",
@@ -510,14 +528,30 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
           "paddingLeft": 3,
         },
         "p": Object {
+          "a": Object {
+            ":focus": Object {
+              "color": "text",
+            },
+            ":hover": Object {
+              "color": "text",
+            },
+            "color": "primary",
+            "cursor": "pointer",
+            "fontSize": Array [
+              1,
+              2,
+            ],
+            "outline": "none",
+            "transition": ".2s linear all",
+          },
           "color": "textSecondary",
           "fontFamily": "body",
           "fontSize": Array [
-            1,
             2,
+            3,
           ],
           "fontWeight": "body",
-          "lineHeight": "normal",
+          "lineHeight": "28px",
           "marginBottom": 4,
           "marginTop": 0,
           "wordBreak": "break-word",
@@ -587,6 +621,7 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
           1,
           2,
           3,
+          7,
         ],
         "breakpoints": Array [
           "576px",
@@ -796,14 +831,30 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
             "paddingLeft": 3,
           },
           "p": Object {
+            "a": Object {
+              ":focus": Object {
+                "color": "text",
+              },
+              ":hover": Object {
+                "color": "text",
+              },
+              "color": "primary",
+              "cursor": "pointer",
+              "fontSize": Array [
+                1,
+                2,
+              ],
+              "outline": "none",
+              "transition": ".2s linear all",
+            },
             "color": "textSecondary",
             "fontFamily": "body",
             "fontSize": Array [
-              1,
               2,
+              3,
             ],
             "fontWeight": "body",
-            "lineHeight": "normal",
+            "lineHeight": "28px",
             "marginBottom": 4,
             "marginTop": 0,
             "wordBreak": "break-word",
@@ -1116,6 +1167,7 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
               1,
               2,
               3,
+              7,
             ],
             "breakpoints": Array [
               "576px",
@@ -1325,14 +1377,30 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
                 "paddingLeft": 3,
               },
               "p": Object {
+                "a": Object {
+                  ":focus": Object {
+                    "color": "text",
+                  },
+                  ":hover": Object {
+                    "color": "text",
+                  },
+                  "color": "primary",
+                  "cursor": "pointer",
+                  "fontSize": Array [
+                    1,
+                    2,
+                  ],
+                  "outline": "none",
+                  "transition": ".2s linear all",
+                },
                 "color": "textSecondary",
                 "fontFamily": "body",
                 "fontSize": Array [
-                  1,
                   2,
+                  3,
                 ],
                 "fontWeight": "body",
-                "lineHeight": "normal",
+                "lineHeight": "28px",
                 "marginBottom": 4,
                 "marginTop": 0,
                 "wordBreak": "break-word",

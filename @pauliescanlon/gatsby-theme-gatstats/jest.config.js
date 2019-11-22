@@ -12,7 +12,7 @@ module.exports = {
     'src/**/*.{ts,tsx}',
     '!src/**/index.ts',
     '!src/**/*.stories.tsx',
-    '!src/**/*.Container.tsx',
+    '!src/**/*Container.tsx',
     '!src/layouts/*.tsx',
     '!src/pages/*.tsx'
   ],

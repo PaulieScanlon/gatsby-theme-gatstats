@@ -19,13 +19,9 @@ export const HeaderContainer: React.FC = ({ children }) => (
       }
     `}
     render={data => {
-      const { sideBarWidth, headerHeight } = data.site.siteMetadata.config
+      const { config } = data.site.siteMetadata
 
-      return (
-        <Header sideBarWidth={sideBarWidth} headerHeight={headerHeight}>
-          {children}
-        </Header>
-      )
+      return <Header config={config}>{children}</Header>
     }}
   />
 )

@@ -1,2 +1,2 @@
 export * from './DaysChart'
-export * from './DaysChart.Container'
+export * from './DaysChartContainer'

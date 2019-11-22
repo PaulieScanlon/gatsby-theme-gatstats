@@ -1,2 +1,2 @@
 export * from './TagsChart'
-export * from './TagsChart.Container'
+export * from './TagsChartContainer'

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Styled } from 'theme-ui'
 
-import { ISite } from '../../types'
+import { ISiteMetadata } from '../../types'
 
 const commonStyles = {
   display: 'flex',
@@ -21,28 +21,29 @@ const commonStyles = {
   paddingTop: 2
 }
 
-interface IContentProps extends ISite {}
+interface IContentProps extends ISiteMetadata {}
 
-export const Content: React.FC<IContentProps> = ({
-  children,
-  sideBarWidth
-}) => (
-  <Styled.div
-    sx={{
-      ...commonStyles
-    }}
-  >
+export const Content: React.FC<IContentProps> = ({ children, config }) => {
+  const { sideBarWidth } = config
+
+  return (
     <Styled.div
       sx={{
-        ...commonStyles,
-        marginLeft: [0, 0, 0, `${sideBarWidth}px`],
-        paddingLeft: [3, 4],
-        paddingRight: [3, 4],
-        overflow: 'hidden',
-        transition: theme => theme.sideBarTranstion
+        ...commonStyles
       }}
     >
-      {children}
+      <Styled.div
+        sx={{
+          ...commonStyles,
+          marginLeft: [0, 0, 0, `${sideBarWidth}px`],
+          paddingLeft: [3, 4],
+          paddingRight: [3, 4],
+          overflow: 'hidden',
+          transition: theme => theme.sideBarTranstion
+        }}
+      >
+        {children}
+      </Styled.div>
     </Styled.div>
-  </Styled.div>
-)
+  )
+}

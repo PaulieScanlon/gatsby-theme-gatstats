@@ -1,1 +1,1 @@
-export * from './PostsList.Container'
+export * from './PostsListContainer'

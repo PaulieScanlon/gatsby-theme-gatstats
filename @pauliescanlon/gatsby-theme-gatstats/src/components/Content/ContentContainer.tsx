@@ -18,9 +18,9 @@ export const ContentContainer: React.FC = ({ children }) => (
       }
     `}
     render={data => {
-      const { sideBarWidth } = data.site.siteMetadata.config
+      const { config } = data.site.siteMetadata
 
-      return <Content sideBarWidth={sideBarWidth}>{children}</Content>
+      return <Content config={config}>{children}</Content>
     }}
   />
 )

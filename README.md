@@ -1,6 +1,6 @@
-## 📈 GatStats is a Dashboard for your tech blog.
+## 📈 GatStats is a dashboard for your tech blog.
 
-##### ... or, a Dashblog if you prefer? 🤷‍♂️
+##### ... or a dashblog if you prefer? 🤷‍♂️
 
 Properties sourced from frontmatter in `src/posts/[name].mdx` are used to create data visualisations to wow your readers.
 

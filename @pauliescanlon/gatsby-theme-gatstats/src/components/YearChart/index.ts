@@ -1,2 +1,2 @@
 export * from './YearChart'
-export * from './YearChart.Container'
+export * from './YearChartContainer'

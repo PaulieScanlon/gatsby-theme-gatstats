@@ -7,7 +7,9 @@ module.exports = {
     keywords: [],
     config: {
       headerHeight: 64,
-      sideBarWidth: 240
+      sideBarWidth: 240,
+      twitter: '',
+      github: ''
     }
   },
   plugins: [

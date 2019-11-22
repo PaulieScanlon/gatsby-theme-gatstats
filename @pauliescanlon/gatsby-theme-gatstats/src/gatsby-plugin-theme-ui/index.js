@@ -7,12 +7,26 @@ const headings = {
   margin: 0
 }
 
+const anchors = {
+  color: 'primary',
+  cursor: 'pointer',
+  fontSize: [1, 2],
+  outline: 'none',
+  transition: '.2s linear all',
+  ':hover': {
+    color: 'text'
+  },
+  ':focus': {
+    color: 'text'
+  }
+}
+
 export default {
   space: [0, 4, 8, 16, 24, 32, 48, 64],
 
   radii: [4, 8, 50],
 
-  borderWidths: [1, 2, 3],
+  borderWidths: [1, 2, 3, 7],
 
   fonts: {
     body: 'system-ui, sans-serif',
@@ -122,12 +136,15 @@ export default {
     p: {
       color: 'textSecondary',
       fontFamily: 'body',
-      fontSize: [1, 2],
+      fontSize: [2, 3],
       fontWeight: 'body',
-      lineHeight: 'normal',
+      lineHeight: '28px',
       wordBreak: 'break-word',
       marginTop: 0,
-      marginBottom: 4
+      marginBottom: 4,
+      a: {
+        ...anchors
+      }
     },
 
     ul: { color: 'text', fontFamily: 'body', fontSize: [1, 2], paddingLeft: 3 },
@@ -142,17 +159,7 @@ export default {
     },
 
     a: {
-      color: 'primary',
-      cursor: 'pointer',
-      fontSize: [1, 2],
-      outline: 'none',
-      transition: '.2s linear all',
-      ':hover': {
-        color: 'text'
-      },
-      ':focus': {
-        color: 'text'
-      }
+      ...anchors
     },
 
     pre: {

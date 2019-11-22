@@ -6,14 +6,12 @@ import { ToggleSwitch } from '../ToggleSwitch'
 import { ButtonIcon } from '../ButtonIcon'
 import { Logo } from '../Logo'
 import { SideBarContext } from '../SideBarContext'
-import { ISite } from '../../types'
+import { ISiteMetadata } from '../../types'
 
-interface IHeaderProps extends ISite {}
+interface IHeaderProps extends ISiteMetadata {}
 
-export const Header: React.FC<IHeaderProps> = ({
-  sideBarWidth,
-  headerHeight
-}) => {
+export const Header: React.FC<IHeaderProps> = ({ config }) => {
+  const { sideBarWidth, headerHeight } = config
   const { dispatch } = React.useContext(SideBarContext)
 
   return (
