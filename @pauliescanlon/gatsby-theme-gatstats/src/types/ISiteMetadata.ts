@@ -16,6 +16,8 @@ export interface ISiteMetadata {
   description?: string
   /** Tags used for SEO */
   keywords?: []
+  /** The URL of the site */
+  siteURL?: string
   /** ISiteMetaConfig */
-  config: ISiteMetaConfig
+  config?: ISiteMetaConfig
 }

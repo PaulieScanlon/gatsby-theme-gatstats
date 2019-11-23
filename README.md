@@ -29,9 +29,12 @@ module.exports = {
     title: "Your blog title",
     description: "I like tech",
     keywords: ["tech", "blog", "boop"],
+    siteUrl: 'https://gatsby-theme-gatstats.netlify.com/'
     config: {
       headerHeight: 64,
       sideBarWidth: 240,
+      twitter: 'pauliescanlon' // no need to include the @
+      github: 'pauliescanlon'
     },
   },
   plugins: ['@pauliescanlon/gatsby-theme-gatstats']

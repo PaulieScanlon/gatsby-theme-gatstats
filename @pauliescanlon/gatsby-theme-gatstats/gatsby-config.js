@@ -5,6 +5,7 @@ module.exports = {
     title: '',
     description: '',
     keywords: [],
+    siteURL: '',
     config: {
       headerHeight: 64,
       sideBarWidth: 240,

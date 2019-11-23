@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import * as React from 'react'
 import { jsx, Styled, useThemeUI } from 'theme-ui'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
@@ -10,8 +9,9 @@ import { Seo } from '../components/Seo'
 
 import { formatDate, colorRange } from '..//utils'
 
-const Post = ({ data: { mdx } }: any) => {
+const Post = ({ data: { mdx, site } }: any) => {
   const context = useThemeUI()
+  const { siteURL } = site.siteMetadata
   const { timeToRead, wordCount, excerpt } = mdx
   const { title, date, tags, featuredImage } = mdx.frontmatter
 
@@ -31,6 +31,7 @@ const Post = ({ data: { mdx } }: any) => {
         title={title}
         description={excerpt}
         keywords={tags}
+        siteURL={siteURL}
         image={featuredImage ? featuredImage.childImageSharp.fluid.src : ''}
       />
       {featuredImage && (
@@ -98,8 +99,15 @@ const Post = ({ data: { mdx } }: any) => {
   )
 }
 
+// 21266d50-dea9-55e5-8192-9b41cd6346c6
+
 export const contentQuery = graphql`
   query postQuery($id: String) {
+    site {
+      siteMetadata {
+        siteURL
+      }
+    }
     mdx(id: { eq: $id }) {
       id
       body

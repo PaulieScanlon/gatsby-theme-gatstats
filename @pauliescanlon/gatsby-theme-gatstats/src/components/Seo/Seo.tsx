@@ -2,11 +2,10 @@ import * as React from 'react'
 
 import Helmet from 'react-helmet'
 
-interface ISeoProps {
-  title: string
+import { ISiteMetadata } from '../../types'
+
+interface ISeoProps extends ISiteMetadata {
   titleTemplate?: string
-  description: string
-  keywords?: string[]
   image?: string
   lang?: string
   meta?: any[]
@@ -16,6 +15,7 @@ export const Seo: React.FC<ISeoProps> = ({
   title,
   titleTemplate,
   description,
+  siteURL,
   image,
   keywords = [],
   lang = 'eng',
@@ -35,7 +35,11 @@ export const Seo: React.FC<ISeoProps> = ({
         },
         {
           property: 'og:image',
-          content: image
+          content: `${siteURL}/${image}`
+        },
+        {
+          property: 'og:url',
+          content: siteURL
         },
         {
           property: 'og:title',

@@ -26,12 +26,14 @@ const Layout: React.FC = ({ children }) => {
               title
               description
               keywords
+              siteURL
             }
           }
         }
       `}
       render={data => {
-        const { title, description, keywords } = data.site.siteMetadata
+        const { title, description, keywords, siteURL } = data.site.siteMetadata
+        const pathname = window.location.pathname.replace(/\//g, '')
 
         return (
           <React.Fragment>
@@ -45,7 +47,15 @@ const Layout: React.FC = ({ children }) => {
                 }
               `}
             />
-            <Seo title={title} description={description} keywords={keywords} />
+            <Seo
+              title={title}
+              titleTemplate={`${pathname
+                .charAt(0)
+                .toUpperCase()}${pathname.slice(1)}`}
+              description={description}
+              keywords={keywords}
+              siteURL={siteURL}
+            />
             <Styled.div
               sx={{
                 margin: '0 auto',
