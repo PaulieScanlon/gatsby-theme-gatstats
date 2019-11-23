@@ -80,16 +80,9 @@ export const SideBar: React.FC<ISideBarProps> = ({ config, links }) => {
               justifyContent: 'space-between'
             }}
           >
-            <ToggleSwitch toggleSwitchName="sidebar-theme-toggle" />
-            <Styled.h6
-              sx={{
-                fontSize: 1,
-                mb: 0,
-                color: 'textMuted'
-              }}
-            >
+            <ToggleSwitch toggleSwitchName="sidebar-theme-toggle">
               Toggle Theme
-            </Styled.h6>
+            </ToggleSwitch>
           </Styled.div>
         </Styled.div>
       </Styled.div>

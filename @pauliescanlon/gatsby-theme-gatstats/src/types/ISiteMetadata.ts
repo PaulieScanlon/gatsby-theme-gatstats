@@ -11,9 +11,9 @@ interface ISiteMetaConfig {
 
 export interface ISiteMetadata {
   /** Title to use for SEO */
-  title?: ''
+  title?: string
   /** Description used for SEO */
-  description?: ''
+  description?: string
   /** Tags used for SEO */
   keywords?: []
   /** ISiteMetaConfig */

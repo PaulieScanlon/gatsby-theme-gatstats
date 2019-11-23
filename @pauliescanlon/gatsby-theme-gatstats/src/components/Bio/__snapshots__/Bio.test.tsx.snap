@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ToggleSwitch> renders correctly 1`] = `
+exports[`<Bio> renders correctly 1`] = `
 <RootProvider
   theme={
     Object {
@@ -302,8 +302,17 @@ exports[`<ToggleSwitch> renders correctly 1`] = `
     }
   }
 >
-  <ToggleSwitch
-    toggleSwitchName="toggle-switch-usage"
+  <Bio
+    siteMetadata={
+      Object {
+        "config": Object {
+          "github": "github_user-name",
+          "twitter": "twitter_user-name",
+        },
+        "description": "This is the description",
+        "title": "This is the title",
+      }
+    }
   />
 </RootProvider>
 `;

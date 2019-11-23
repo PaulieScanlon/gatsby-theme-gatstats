@@ -12,7 +12,7 @@ interface IHeaderProps extends ISiteMetadata {}
 
 export const Header: React.FC<IHeaderProps> = ({ config }) => {
   const { sideBarWidth, headerHeight } = config
-  const { dispatch } = React.useContext(SideBarContext)
+  const { state, dispatch } = React.useContext(SideBarContext)
 
   return (
     <header
@@ -48,7 +48,12 @@ export const Header: React.FC<IHeaderProps> = ({ config }) => {
         </Styled.div>
         <Styled.div
           sx={{
-            display: ['flex', 'flex', 'flex', 'none'],
+            display: [
+              `${state.isNavOpen ? 'none' : 'flex'}`,
+              `${state.isNavOpen ? 'none' : 'flex'}`,
+              `${state.isNavOpen ? 'none' : 'flex'}`,
+              'none'
+            ],
             justifyContent: 'flex-end',
             flexBasis: '100%'
           }}

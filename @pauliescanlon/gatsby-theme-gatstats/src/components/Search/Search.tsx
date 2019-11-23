@@ -99,8 +99,6 @@ export const Search: React.FC<ISearchProps> = ({ filterData, onSearch }) => {
               <Styled.div
                 sx={{
                   backgroundColor: 'surface',
-                  position: 'absolute',
-                  width: '100%',
                   borderRadius: 1,
                   zIndex: 2,
                   mt: 3
@@ -114,11 +112,8 @@ export const Search: React.FC<ISearchProps> = ({ filterData, onSearch }) => {
                       pl: 0,
                       maxHeight: isOpen ? '310px' : '0px',
                       overflowY: 'scroll',
-                      borderRadius: 1,
-                      boxShadow: isOpen
-                        ? theme =>
-                            `${theme.shadows[0]} ${theme.colors.textMuted}`
-                        : ''
+                      WbkitOverflowScrolling: 'touch',
+                      borderRadius: 1
                     }}
                   >
                     {isOpen
@@ -143,7 +138,7 @@ export const Search: React.FC<ISearchProps> = ({ filterData, onSearch }) => {
                                 p: 3,
                                 margin: 0,
                                 borderBottomStyle: 'solid',
-                                borderBottomWidth: 1,
+                                borderBottomWidth: 0,
                                 borderColor: 'background',
                                 listStyle: 'none',
 
