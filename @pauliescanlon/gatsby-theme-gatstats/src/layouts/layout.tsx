@@ -33,7 +33,6 @@ const Layout: React.FC = ({ children }) => {
       `}
       render={data => {
         const { title, description, keywords, siteURL } = data.site.siteMetadata
-        const pathname = window.location.pathname.replace(/\//g, '')
 
         return (
           <React.Fragment>
@@ -47,15 +46,7 @@ const Layout: React.FC = ({ children }) => {
                 }
               `}
             />
-            <Seo
-              title={title}
-              titleTemplate={`${pathname
-                .charAt(0)
-                .toUpperCase()}${pathname.slice(1)}`}
-              description={description}
-              keywords={keywords}
-              siteURL={siteURL}
-            />
+
             <Styled.div
               sx={{
                 margin: '0 auto',
@@ -67,8 +58,18 @@ const Layout: React.FC = ({ children }) => {
                 <Location>
                   {({ location }) => {
                     const { pathname }: IPathname = location
+                    const pathnameFormat = pathname.replace(/\//g, '')
                     return (
                       <React.Fragment>
+                        <Seo
+                          title={title}
+                          titleTemplate={`${pathnameFormat
+                            .charAt(0)
+                            .toUpperCase()}${pathnameFormat.slice(1)}`}
+                          description={description}
+                          keywords={keywords}
+                          siteURL={siteURL}
+                        />
                         <HeaderContainer />
                         <SideBarContainer />
                         <LightPanel />
