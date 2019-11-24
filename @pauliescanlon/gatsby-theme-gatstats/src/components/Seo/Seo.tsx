@@ -21,13 +21,17 @@ export const Seo: React.FC<ISeoProps> = ({
   lang = 'eng',
   meta = []
 }) => {
+  const formatTitleTemplate = `${title} ${
+    titleTemplate ? `| ${titleTemplate}` : ''
+  }`
+
   return (
     <Helmet
       htmlAttributes={{
         lang
       }}
       title={title}
-      titleTemplate={titleTemplate ? `%s | ${titleTemplate}` : ''}
+      titleTemplate={formatTitleTemplate}
       meta={[
         {
           name: 'description',
@@ -35,7 +39,7 @@ export const Seo: React.FC<ISeoProps> = ({
         },
         {
           property: 'og:image',
-          content: `${siteURL}/${image}`
+          content: `${siteURL}/${image ? image : ''}`
         },
         {
           property: 'og:url',
@@ -43,7 +47,7 @@ export const Seo: React.FC<ISeoProps> = ({
         },
         {
           property: 'og:title',
-          content: title
+          content: formatTitleTemplate
         },
         {
           property: 'og:description',
@@ -59,11 +63,11 @@ export const Seo: React.FC<ISeoProps> = ({
         },
         {
           name: 'twitter:creator',
-          content: title
+          content: siteURL
         },
         {
           name: 'twitter:title',
-          content: title
+          content: formatTitleTemplate
         },
         {
           name: 'twitter:description',

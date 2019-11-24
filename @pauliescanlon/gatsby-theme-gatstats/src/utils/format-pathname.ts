@@ -5,5 +5,5 @@ export const formatPathname = (pathname: string) => {
     return `${pathsArr[1].charAt(0).toUpperCase()}${pathsArr[1].slice(1)}`
   }
 
-  return
+  return ''
 }

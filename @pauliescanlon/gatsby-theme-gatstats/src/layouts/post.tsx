@@ -9,7 +9,7 @@ import { Seo } from '../components/Seo'
 
 import { formatDate, formatPathname, colorRange } from '..//utils'
 
-const Post = ({ location, data: { mdx, site } }: any) => {
+const Post = ({ data: { mdx, site } }: any) => {
   const context = useThemeUI()
 
   const { timeToRead, wordCount, excerpt } = mdx
@@ -28,10 +28,7 @@ const Post = ({ location, data: { mdx, site } }: any) => {
       }}
     >
       <Seo
-        title={`${site.siteMetadata.title} | ${formatPathname(
-          location.pathname
-        )}`}
-        titleTemplate={title}
+        title={`${site.siteMetadata.title} | ${title}`}
         description={excerpt}
         keywords={tags}
         siteURL={site.siteMetadata.siteURL}
@@ -103,7 +100,6 @@ const Post = ({ location, data: { mdx, site } }: any) => {
 }
 
 // 21266d50-dea9-55e5-8192-9b41cd6346c6
-
 export const contentQuery = graphql`
   query postQuery($id: String) {
     site {
