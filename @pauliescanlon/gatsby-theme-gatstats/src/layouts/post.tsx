@@ -7,11 +7,11 @@ import Img from 'gatsby-image'
 import { Tag } from '../components/Tag'
 import { Seo } from '../components/Seo'
 
-import { formatDate, colorRange } from '..//utils'
+import { formatDate, formatPathname, colorRange } from '..//utils'
 
-const Post = ({ data: { mdx, site } }: any) => {
+const Post = ({ location, data: { mdx, site } }: any) => {
   const context = useThemeUI()
-  const { siteURL } = site.siteMetadata
+
   const { timeToRead, wordCount, excerpt } = mdx
   const { title, date, tags, featuredImage } = mdx.frontmatter
 
@@ -28,10 +28,13 @@ const Post = ({ data: { mdx, site } }: any) => {
       }}
     >
       <Seo
-        title={title}
+        title={`${site.siteMetadata.title} | ${formatPathname(
+          location.pathname
+        )}`}
+        titleTemplate={title}
         description={excerpt}
         keywords={tags}
-        siteURL={siteURL}
+        siteURL={site.siteMetadata.siteURL}
         image={featuredImage ? featuredImage.childImageSharp.fluid.src : ''}
       />
       {featuredImage && (
@@ -105,6 +108,7 @@ export const contentQuery = graphql`
   query postQuery($id: String) {
     site {
       siteMetadata {
+        title
         siteURL
       }
     }

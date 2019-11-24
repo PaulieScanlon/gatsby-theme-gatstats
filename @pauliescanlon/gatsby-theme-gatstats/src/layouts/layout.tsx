@@ -11,10 +11,11 @@ import { HeaderContainer } from '../components/Header'
 import { LightPanel } from '../components/LightPanel'
 import { ContentContainer } from '../components/Content'
 import { SideBarContainer } from '../components/SideBar/SideBarContainer'
-
 import { SideBarProvider } from '../components/SideBarContext'
-import { IPathname } from '../types'
 import { Seo } from '../components/Seo'
+
+import { formatPathname } from '../utils'
+import { IPathname } from '../types'
 
 const Layout: React.FC = ({ children }) => {
   return (
@@ -58,14 +59,12 @@ const Layout: React.FC = ({ children }) => {
                 <Location>
                   {({ location }) => {
                     const { pathname }: IPathname = location
-                    const pathnameFormat = pathname.replace(/\//g, '')
+
                     return (
                       <React.Fragment>
                         <Seo
                           title={title}
-                          titleTemplate={`${pathnameFormat
-                            .charAt(0)
-                            .toUpperCase()}${pathnameFormat.slice(1)}`}
+                          titleTemplate={formatPathname(pathname)}
                           description={description}
                           keywords={keywords}
                           siteURL={siteURL}
