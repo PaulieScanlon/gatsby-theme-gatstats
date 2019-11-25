@@ -62,6 +62,10 @@ export const Seo: React.FC<ISeoProps> = ({
           content: 'summary'
         },
         {
+          name: 'twitter:site',
+          content: siteURL
+        },
+        {
           name: 'twitter:creator',
           content: siteURL
         },

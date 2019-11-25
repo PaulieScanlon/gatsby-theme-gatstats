@@ -147,15 +147,17 @@ export default {
       }
     },
 
-    ul: { color: 'text', fontFamily: 'body', fontSize: [1, 2], paddingLeft: 3 },
+    ul: { color: 'text', fontFamily: 'body', marginTop: 3, paddingLeft: 3 },
 
-    ol: { color: 'text', fontFamily: 'body', fontSize: [1, 2], paddingLeft: 3 },
+    ol: { color: 'text', fontFamily: 'body', marginTop: 3, paddingLeft: 3 },
 
     li: {
       color: 'text',
       fontFamily: 'body',
-      fontSize: [1, 2],
-      marginBottom: 3
+      marginBottom: 3,
+      p: {
+        color: 'text'
+      }
     },
 
     a: {
@@ -163,11 +165,12 @@ export default {
     },
 
     pre: {
-      backgroundColor: 'background',
+      backgroundColor: 'surface',
       fontFamily: 'monospace',
       fontSize: 0,
       px: 3,
       py: 3,
+      borderRadius: 1,
       borderStyle: 'solid',
       borderWidth: 0,
       borderColor: 'background'
@@ -202,10 +205,10 @@ export default {
     th: {
       backgroundColor: 'background',
       color: 'text',
-      borderTopColor: 'textSecondary',
-      borderLeftColor: 'textSecondary',
+      borderTopColor: 'textMuted',
+      borderLeftColor: 'textMuted',
       borderBottomColor: 'transparent',
-      borderRightColor: 'textSecondary',
+      borderRightColor: 'textMuted',
       borderStyle: 'solid',
       borderWidth: 0,
       px: 2,
@@ -215,13 +218,18 @@ export default {
     td: {
       borderStyle: 'solid',
       borderWidth: 0,
-      borderColor: 'textSecondary',
+      borderColor: 'textMuted',
       px: 2,
       py: 2
     },
 
     hr: {
       opacity: 0
+    },
+
+    img: {
+      width: '100%',
+      height: 'auto'
     }
   }
 }

@@ -197,22 +197,22 @@ exports[`<Icon> renders correctly 1`] = `
         "hr": Object {
           "opacity": 0,
         },
+        "img": Object {
+          "height": "auto",
+          "width": "100%",
+        },
         "li": Object {
           "color": "text",
           "fontFamily": "body",
-          "fontSize": Array [
-            1,
-            2,
-          ],
           "marginBottom": 3,
+          "p": Object {
+            "color": "text",
+          },
         },
         "ol": Object {
           "color": "text",
           "fontFamily": "body",
-          "fontSize": Array [
-            1,
-            2,
-          ],
+          "marginTop": 3,
           "paddingLeft": 3,
         },
         "p": Object {
@@ -245,8 +245,9 @@ exports[`<Icon> renders correctly 1`] = `
           "wordBreak": "break-word",
         },
         "pre": Object {
-          "backgroundColor": "background",
+          "backgroundColor": "surface",
           "borderColor": "background",
+          "borderRadius": 1,
           "borderStyle": "solid",
           "borderWidth": 0,
           "fontFamily": "monospace",
@@ -267,7 +268,7 @@ exports[`<Icon> renders correctly 1`] = `
           "width": "100%",
         },
         "td": Object {
-          "borderColor": "textSecondary",
+          "borderColor": "textMuted",
           "borderStyle": "solid",
           "borderWidth": 0,
           "px": 2,
@@ -276,10 +277,10 @@ exports[`<Icon> renders correctly 1`] = `
         "th": Object {
           "backgroundColor": "background",
           "borderBottomColor": "transparent",
-          "borderLeftColor": "textSecondary",
-          "borderRightColor": "textSecondary",
+          "borderLeftColor": "textMuted",
+          "borderRightColor": "textMuted",
           "borderStyle": "solid",
-          "borderTopColor": "textSecondary",
+          "borderTopColor": "textMuted",
           "borderWidth": 0,
           "color": "text",
           "px": 2,
@@ -289,10 +290,7 @@ exports[`<Icon> renders correctly 1`] = `
         "ul": Object {
           "color": "text",
           "fontFamily": "body",
-          "fontSize": Array [
-            1,
-            2,
-          ],
+          "marginTop": 3,
           "paddingLeft": 3,
         },
       },
