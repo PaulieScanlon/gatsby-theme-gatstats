@@ -43,21 +43,7 @@ export const Bio: React.FC<IBioProps> = ({ siteMetadata }) => {
           mb: [4, 2]
         }}
       >
-        <Styled.div
-          sx={{
-            position: 'relative',
-            display: 'flex',
-            alignItems: 'center',
-            borderRadius: '100%',
-            overflow: 'hidden',
-            width: '200px',
-            borderWidth: 1,
-            borderStyle: 'solid',
-            borderColor: 'primary'
-          }}
-        >
-          <ProfilePic />
-        </Styled.div>
+        <ProfilePic />
       </Styled.div>
 
       <Styled.div>

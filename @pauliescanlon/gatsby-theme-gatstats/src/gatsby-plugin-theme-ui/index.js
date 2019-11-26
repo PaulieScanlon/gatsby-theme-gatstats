@@ -61,12 +61,12 @@ export default {
       light: {
         text: '#0e3c61',
         textSecondary: '#2b618c',
-        textMuted: '#fcc5dc',
+        textMuted: '#c7a9ce',
 
-        primary: '#90caf9',
-        secondary: '#ff94c2',
+        primary: '#ff94c2',
+        secondary: '#90caf9',
 
-        surface: '#fcf3fe',
+        surface: '#fbf4fc',
         background: '#fefbff',
 
         transparent: `rgba(0,0,0,0)`

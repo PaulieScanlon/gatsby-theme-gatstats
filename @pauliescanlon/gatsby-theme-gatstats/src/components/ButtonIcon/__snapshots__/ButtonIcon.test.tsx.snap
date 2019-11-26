@@ -19,11 +19,11 @@ exports[`<ButtonIcon> renders correctly 1`] = `
         "modes": Object {
           "light": Object {
             "background": "#fefbff",
-            "primary": "#90caf9",
-            "secondary": "#ff94c2",
-            "surface": "#fcf3fe",
+            "primary": "#ff94c2",
+            "secondary": "#90caf9",
+            "surface": "#fbf4fc",
             "text": "#0e3c61",
-            "textMuted": "#fcc5dc",
+            "textMuted": "#c7a9ce",
             "textSecondary": "#2b618c",
             "transparent": "rgba(0,0,0,0)",
           },
@@ -325,11 +325,11 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
         "modes": Object {
           "light": Object {
             "background": "#fefbff",
-            "primary": "#90caf9",
-            "secondary": "#ff94c2",
-            "surface": "#fcf3fe",
+            "primary": "#ff94c2",
+            "secondary": "#90caf9",
+            "surface": "#fbf4fc",
             "text": "#0e3c61",
-            "textMuted": "#fcc5dc",
+            "textMuted": "#c7a9ce",
             "textSecondary": "#2b618c",
             "transparent": "rgba(0,0,0,0)",
           },
@@ -624,11 +624,11 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
           "modes": Object {
             "light": Object {
               "background": "#fefbff",
-              "primary": "#90caf9",
-              "secondary": "#ff94c2",
-              "surface": "#fcf3fe",
+              "primary": "#ff94c2",
+              "secondary": "#90caf9",
+              "surface": "#fbf4fc",
               "text": "#0e3c61",
-              "textMuted": "#fcc5dc",
+              "textMuted": "#c7a9ce",
               "textSecondary": "#2b618c",
               "transparent": "rgba(0,0,0,0)",
             },
@@ -1166,11 +1166,11 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
               "modes": Object {
                 "light": Object {
                   "background": "#fefbff",
-                  "primary": "#90caf9",
-                  "secondary": "#ff94c2",
-                  "surface": "#fcf3fe",
+                  "primary": "#ff94c2",
+                  "secondary": "#90caf9",
+                  "surface": "#fbf4fc",
                   "text": "#0e3c61",
-                  "textMuted": "#fcc5dc",
+                  "textMuted": "#c7a9ce",
                   "textSecondary": "#2b618c",
                   "transparent": "rgba(0,0,0,0)",
                 },

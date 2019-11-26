@@ -33,7 +33,7 @@ export const Card: React.FC<IPostProps> = ({ ...props }) => {
         borderRadius: 1,
         transition: '.2s linear all',
         ':hover': {
-          filter: 'brightness(110%)'
+          filter: 'brightness(105%)'
         }
       }}
     >
