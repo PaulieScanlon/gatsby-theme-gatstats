@@ -4,9 +4,9 @@ import { shallow } from 'enzyme'
 import { ThemeProvider } from 'theme-ui'
 import theme from '../../gatsby-plugin-theme-ui'
 
-import { usage } from './PostCard.stories'
+import { usage } from './Card.stories'
 
-describe('<PostCard>', () => {
+describe('<Card>', () => {
   it('renders correctly', () => {
     const wrapper = shallow(
       <ThemeProvider theme={theme}>{usage()}</ThemeProvider>

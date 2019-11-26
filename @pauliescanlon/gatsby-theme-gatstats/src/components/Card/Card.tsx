@@ -10,7 +10,7 @@ import { formatDate, colorRange } from '../../utils'
 
 interface IPostProps extends IPostCard {}
 
-export const PostCard: React.FC<IPostProps> = ({ ...props }) => {
+export const Card: React.FC<IPostProps> = ({ ...props }) => {
   const context = useThemeUI()
   const { excerpt, frontmatter, timeToRead, wordCount } = props.node
   const { date, tags, title, featuredImage } = frontmatter

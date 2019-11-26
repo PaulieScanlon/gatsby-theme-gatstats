@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<PostCard> renders correctly 1`] = `
+exports[`<Card> renders correctly 1`] = `
 <RootProvider
   theme={
     Object {
@@ -300,7 +300,7 @@ exports[`<PostCard> renders correctly 1`] = `
     }
   }
 >
-  <PostCard
+  <Card
     node={
       Object {
         "excerpt": "This is a blog post excerpt limited to 100 characters",

@@ -1,17 +1,18 @@
 import * as React from 'react'
 
-import { PostCard } from './PostCard'
+import { Card } from './Card'
 
 export default {
-  title: 'PostCard',
+  title: 'Card',
   parameters: {
-    component: PostCard,
-    componentSubtitle: 'PostCard is...'
+    component: Card,
+    componentSubtitle:
+      'Card is used to displa a post or any .mdx file sourced from the dir structure'
   }
 }
 
 export const usage = () => (
-  <PostCard
+  <Card
     node={{
       excerpt: 'This is a blog post excerpt limited to 100 characters',
       fields: {
@@ -41,7 +42,7 @@ export const usage = () => (
 )
 
 export const withoutImage = () => (
-  <PostCard
+  <Card
     node={{
       excerpt: 'This is a blog post excerpt limited to 100 characters',
       fields: {
@@ -63,7 +64,7 @@ export const withoutImage = () => (
 withoutImage.story = {
   parameters: {
     docs: {
-      storyDescription: 'PostCard can be used without a `featuredImage`'
+      storyDescription: 'Card can be used without a `featuredImage`'
     }
   }
 }
