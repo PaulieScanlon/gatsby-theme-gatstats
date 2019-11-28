@@ -32,61 +32,71 @@ export const Seo: React.FC<ISeoProps> = ({
       }}
       title={title}
       titleTemplate={formatTitleTemplate}
-      meta={[
-        {
-          name: 'description',
-          content: description
-        },
-        {
-          property: 'og:image',
-          content: `${siteURL}/${image ? image : ''}`
-        },
-        {
-          property: 'og:url',
-          content: siteURL
-        },
-        {
-          property: 'og:title',
-          content: formatTitleTemplate
-        },
-        {
-          property: 'og:description',
-          content: description
-        },
-        {
-          property: 'og:type',
-          content: 'website'
-        },
-        {
-          name: 'twitter:card',
-          content: 'summary'
-        },
-        {
-          name: 'twitter:site',
-          content: siteURL
-        },
-        {
-          name: 'twitter:creator',
-          content: siteURL
-        },
-        {
-          name: 'twitter:title',
-          content: formatTitleTemplate
-        },
-        {
-          name: 'twitter:description',
-          content: description
-        }
-      ]
-        .concat(
-          keywords.length > 0
-            ? {
-                name: 'keywords',
-                content: keywords.join(', ')
-              }
-            : []
-        )
-        .concat(meta)}
-    />
+    >
+      <meta
+        data-react-helmet="true"
+        property="og:title"
+        content={formatTitleTemplate}
+      />
+      <meta data-react-helmet="true" property="og:url" content={siteURL} />
+      <meta
+        data-react-helmet="true"
+        property="og:description"
+        content={description}
+      />
+      <meta
+        data-react-helmet="true"
+        property="og:image"
+        content={`${siteURL}/${image ? image : ''}`}
+      />
+      <meta data-react-helmet="true" property="og:type" content="website" />
+      <meta
+        data-react-helmet="true"
+        property="og:image:alt"
+        content={description}
+      />
+      <meta
+        data-react-helmet="true"
+        name="twitter:card"
+        content={`${siteURL}/${image ? image : ''}`}
+      />
+      <meta
+        data-react-helmet="true"
+        name="twitter:title"
+        content={formatTitleTemplate}
+      />
+      <meta data-react-helmet="true" name="twitter:url" content={siteURL} />
+      <meta
+        data-react-helmet="true"
+        name="twitter:description"
+        content={description}
+      />
+      <meta
+        data-react-helmet="true"
+        name="twitter:image"
+        content={`${siteURL}/${image ? image : ''}`}
+      />
+      <meta
+        data-react-helmet="true"
+        name="twitter:image:alt"
+        content={description}
+      ></meta>
+
+      <meta
+        data-react-helmet="true"
+        name="twitter:creator"
+        content={siteURL}
+      ></meta>
+      <meta
+        data-react-helmet="true"
+        name="gatsby-theme"
+        content="@pauliescanlon/gatsby-theme-gatstats"
+      />
+      <meta
+        data-react-helmet="true"
+        name="keywords"
+        content={keywords.join(', ')}
+      />
+    </Helmet>
   )
 }
