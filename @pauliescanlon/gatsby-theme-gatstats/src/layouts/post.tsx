@@ -122,7 +122,7 @@ export const contentQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         featuredImage {
           childImageSharp {
-            fluid {
+            fluid(quality: 90) {
               aspectRatio
               src
               srcSet
