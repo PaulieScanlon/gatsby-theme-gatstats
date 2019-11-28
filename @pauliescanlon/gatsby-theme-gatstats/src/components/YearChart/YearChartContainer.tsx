@@ -1,45 +1,12 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, Styled } from 'theme-ui'
 import { StaticQuery, graphql } from 'gatsby'
 import { ParentSize } from '@vx/responsive'
 
 import { Panel } from '../Panel'
 import { YearChart } from './YearChart'
-
-type YearChartObjectShape = {
-  /** The count of times an .mdx file is dated in a single month */
-  count?: number
-  /** A single letter represenation for month */
-  label: string
-  /** Month */
-  month: number
-  /** Three digit letter representation for month */
-  monthName: string
-  // Year
-  year: number
-}
-
-const nowYear = new Date().getFullYear()
-
-enum yearNames {
-  CURRENT_YEAR = 'currentYear',
-  PREVIOUS_YEAR = 'previousYear'
-}
-
-const monthNames = [
-  'Jan',
-  'Feb',
-  'Mar',
-  'Apr',
-  'May',
-  'Jun',
-  'Jul',
-  'Aug',
-  'Sep',
-  'Oct',
-  'Nov',
-  'Dec'
-]
+import { Dictionary, ILineChart } from '../../types'
+import { monthNames } from '../../utils'
 
 type MonthCount = [
   number,
@@ -56,27 +23,7 @@ type MonthCount = [
   number
 ]
 
-type YearChartObject = {
-  /** Amount of posts per month */
-  count: number
-  /** Single character month name used in legend */
-  label: string
-  /** Month number in array */
-  month: number
-  /** Three digit character name used in tooltip */
-  monthName: string
-  /** Year data is from */
-  year?: number
-}
-
-interface Dictionary<T = any> {
-  [key: string]: T
-}
-
-const convertToChartObject = (
-  count: number,
-  index: number
-): YearChartObject => {
+const convertToChartObject = (count: number, index: number): ILineChart => {
   return {
     count: count,
     label: monthNames[index].charAt(0),
@@ -120,23 +67,54 @@ export const YearChartContainer = () => {
             return dates
           }, [])
 
-        const currentYearData = postsByMonth[postsByMonth.length - 1].map(
-          convertToChartObject
-        )
+        const nowYear = new Date().getFullYear()
+        const lastYear = nowYear - 1
 
-        const previousData = postsByMonth[postsByMonth.length - 2].map(
-          convertToChartObject
-        )
+        const currentYearData = postsByMonth[nowYear].map(convertToChartObject)
 
-        // console.log(previousData)
-
-        // console.log(postsByMonth)
+        const previousYearData = postsByMonth[lastYear]
+          ? postsByMonth[lastYear].map(convertToChartObject)
+          : null
 
         return (
-          <Panel heading="Posts" subHeading="This year">
+          <Panel heading="Posts">
+            <Styled.div
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-between'
+              }}
+            >
+              {postsByMonth[lastYear] && (
+                <Styled.p
+                  sx={{
+                    display: 'inline',
+                    margin: 0,
+                    color: 'secondary',
+                    borderBottomWidth: '2px',
+                    borderBottomStyle: 'dashed',
+                    borderBottomColor: 'secondary'
+                  }}
+                >
+                  {nowYear - 1}
+                </Styled.p>
+              )}
+              <Styled.p
+                sx={{
+                  display: 'inline',
+                  margin: 0,
+                  color: 'primary',
+                  borderBottomWidth: '2px',
+                  borderBottomStyle: 'solid',
+                  borderBottomColor: 'primary'
+                }}
+              >
+                {nowYear}
+              </Styled.p>
+            </Styled.div>
             <ParentSize>
               {(parent: any) => (
                 <YearChart
+                  previousYearData={previousYearData}
                   currentYearData={currentYearData}
                   width={parent.width}
                   height={260}

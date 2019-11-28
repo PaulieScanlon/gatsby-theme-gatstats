@@ -11,13 +11,16 @@ import { curveMonotoneX } from '@vx/curve'
 import { GridRows } from '@vx/grid'
 import { GlyphDot } from '@vx/glyph'
 
-import { fadeIn } from '../../utils'
+import { fadeIn, monthNames } from '../../utils'
 
 import { Tooltipper } from '../Tooltipper'
 
 import { ILineChart } from '../../types'
 
 interface IYearChartProps {
+  /** Previous years data */
+  previousYearData?: ILineChart[]
+  /** Current years data */
   currentYearData: ILineChart[]
   /** The width of the chart */
   width: number
@@ -25,8 +28,14 @@ interface IYearChartProps {
   height: number
 }
 
+enum yearNames {
+  CURRENT_YEAR = 'current-year',
+  PREVIOUS_YEAR = 'previous-year'
+}
+
 const YearChartComponent: React.FC<IYearChartProps> = ({ ...props }: any) => {
   const {
+    previousYearData,
     currentYearData,
     width,
     height,
@@ -47,7 +56,7 @@ const YearChartComponent: React.FC<IYearChartProps> = ({ ...props }: any) => {
   const count = (d: ILineChart) => d.count
 
   const xScale = scaleTime({
-    domain: [0, 11]
+    domain: [0, monthNames.length - 1]
   })
 
   const yScale = scaleLinear({
@@ -79,9 +88,11 @@ const YearChartComponent: React.FC<IYearChartProps> = ({ ...props }: any) => {
         `}
         sx={{
           g: {
-            path: {
-              stroke: 'primary',
-              strokeWidth: 3
+            [`.${yearNames.PREVIOUS_YEAR}`]: {
+              stroke: 'secondary'
+            },
+            [`.${yearNames.CURRENT_YEAR}`]: {
+              stroke: 'primary'
             },
             '.vx-rows': {
               '.vx-line': {
@@ -97,8 +108,11 @@ const YearChartComponent: React.FC<IYearChartProps> = ({ ...props }: any) => {
               '.vx-dot-fill': {
                 fill: 'surface'
               },
-              '.vx-dot-outline': {
+              [`.vx-dot-outline-${yearNames.CURRENT_YEAR}`]: {
                 fill: 'primary'
+              },
+              [`.vx-dot-outline-${yearNames.PREVIOUS_YEAR}`]: {
+                fill: 'secondary'
               }
             }
           },
@@ -124,14 +138,38 @@ const YearChartComponent: React.FC<IYearChartProps> = ({ ...props }: any) => {
             numTicks={6}
           />
 
-          <LinePath data={currentYearData} x={x} y={y} curve={curveMonotoneX} />
+          <LinePath
+            className={yearNames.CURRENT_YEAR}
+            data={currentYearData}
+            x={x}
+            y={y}
+            strokeWidth={2}
+            curve={curveMonotoneX}
+          />
+
+          {previousYearData && (
+            <LinePath
+              className={yearNames.PREVIOUS_YEAR}
+              data={previousYearData}
+              x={x}
+              y={y}
+              strokeWidth={2}
+              strokeDasharray="6,6"
+              curve={curveMonotoneX}
+            />
+          )}
 
           {currentYearData.map((d: any, index: number) => {
             const cx = x(d)
             const cy = y(d)
             return (
               <g key={`line-point-${index}`}>
-                <GlyphDot className="vx-dot-outline" cx={cx} cy={cy} r={7} />
+                <GlyphDot
+                  className={`vx-dot-outline-${yearNames.CURRENT_YEAR}`}
+                  cx={cx}
+                  cy={cy}
+                  r={6}
+                />
                 <GlyphDot className="vx-dot-fill" cx={cx} cy={cy} r={4} />
                 <GlyphDot
                   className="vx-dot-hidden"

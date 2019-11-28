@@ -6,7 +6,7 @@ interface IPanelProps {
   /** The heading to display */
   heading: string
   /** The subHeading to display */
-  subHeading: string
+  subHeading?: string
 }
 
 export const Panel: React.FC<IPanelProps> = ({

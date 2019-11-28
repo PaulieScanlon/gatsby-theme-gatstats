@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import * as React from 'react'
 import { jsx } from 'theme-ui'
 
 import { Tooltip } from '@vx/tooltip'
@@ -9,11 +8,9 @@ interface ITooltipProps {
   title: string
   /** The tooltip value */
   value: number | string
-
   /** Left position required by @vx/toottip */
   left: number
-
-  /** top position required by @vx/toottip */
+  /** Top position required by @vx/toottip */
   top: number
 }
 
@@ -38,15 +35,11 @@ export const Tooltipper: React.FC<ITooltipProps> = ({
         sx={{
           position: 'relative',
           color: 'primary',
-          backgroundColor: 'background',
+          backgroundColor: 'surface',
           display: 'inline-flex',
           fontFamily: 'body',
           fontSize: 0,
-          pt: 2,
-          pb: 2,
-          pl: 2,
-          pr: 2,
-          mb: 2,
+          p: 2,
           borderRadius: 0,
           borderWidth: 0,
           borderStyle: 'solid',
@@ -59,7 +52,7 @@ export const Tooltipper: React.FC<ITooltipProps> = ({
             top: '100%',
             left: '50%',
             transform: 'translate(-50%,-50%) rotate(45deg)',
-            backgroundColor: 'background',
+            backgroundColor: 'surface',
             borderBottomWidth: 0,
             borderBottomStyle: 'solid',
             borderBottomColor: 'primary',

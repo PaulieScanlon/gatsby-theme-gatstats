@@ -6,7 +6,7 @@ exports[`<ButtonIcon> renders correctly 1`] = `
     Object {
       "borderWidths": Array [
         1,
-        6,
+        4,
       ],
       "breakpoints": Array [
         "576px",
@@ -312,7 +312,7 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
     Object {
       "borderWidths": Array [
         1,
-        6,
+        4,
       ],
       "breakpoints": Array [
         "576px",
@@ -611,7 +611,7 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
       Object {
         "borderWidths": Array [
           1,
-          6,
+          4,
         ],
         "breakpoints": Array [
           "576px",
@@ -1153,7 +1153,7 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
           "theme": Object {
             "borderWidths": Array [
               1,
-              6,
+              4,
             ],
             "breakpoints": Array [
               "576px",

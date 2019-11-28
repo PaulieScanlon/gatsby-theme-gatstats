@@ -1,17 +1,4 @@
-export const monthNames = [
-  'Jan',
-  'Feb',
-  'Mar',
-  'Apr',
-  'May',
-  'Jun',
-  'Jul',
-  'Aug',
-  'Sep',
-  'Oct',
-  'Nov',
-  'Dec'
-]
+import { monthNames } from './month-names'
 
 export const formatDate = (srcDate: string | null): string => {
   if (srcDate) {

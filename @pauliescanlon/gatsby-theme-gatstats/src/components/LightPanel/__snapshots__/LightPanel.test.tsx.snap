@@ -6,7 +6,7 @@ exports[`<LightPanel> renders correctly 1`] = `
     Object {
       "borderWidths": Array [
         1,
-        6,
+        4,
       ],
       "breakpoints": Array [
         "576px",

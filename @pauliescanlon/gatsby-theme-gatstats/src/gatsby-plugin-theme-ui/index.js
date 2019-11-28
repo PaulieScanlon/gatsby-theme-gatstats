@@ -26,7 +26,7 @@ export default {
 
   radii: [4, 8, 50],
 
-  borderWidths: [1, 6],
+  borderWidths: [1, 4],
 
   fonts: {
     body: 'system-ui, sans-serif',
