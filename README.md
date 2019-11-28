@@ -30,7 +30,7 @@ module.exports = {
     description: "I like tech",
     keywords: ["tech", "blog", "boop"],
     siteUrl: 'https://gatsby-theme-gatstats.netlify.com/'
-    siteImage: 'static/name-of-open-graphy-image.jpg'
+    siteImage: 'name-of-open-graphy-image.jpg' // pop an image in the static folder to use it as og:image
     config: {
       headerHeight: 64,
       sideBarWidth: 240,
