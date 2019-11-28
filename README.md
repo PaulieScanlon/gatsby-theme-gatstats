@@ -30,7 +30,7 @@ module.exports = {
     description: "I like tech",
     keywords: ["tech", "blog", "boop"],
     siteUrl: 'https://gatsby-theme-gatstats.netlify.com/'
-    siteImage: './images/name-of-open-graphy-image.jpg'
+    siteImage: './static/name-of-open-graphy-image.jpg'
     config: {
       headerHeight: 64,
       sideBarWidth: 240,
