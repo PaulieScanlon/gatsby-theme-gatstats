@@ -28,13 +28,20 @@ const Layout: React.FC = ({ children }) => {
               description
               keywords
               siteURL
+              siteImage
             }
           }
         }
       `}
       render={data => {
-        const { title, description, keywords, siteURL } = data.site.siteMetadata
-
+        const {
+          title,
+          description,
+          keywords,
+          siteURL,
+          siteImage
+        } = data.site.siteMetadata
+        console.log('siteImage: ', siteImage)
         return (
           <React.Fragment>
             <Global
@@ -68,6 +75,7 @@ const Layout: React.FC = ({ children }) => {
                           description={description}
                           keywords={keywords}
                           siteURL={siteURL}
+                          image={siteImage}
                         />
                         <HeaderContainer />
                         <SideBarContainer />
