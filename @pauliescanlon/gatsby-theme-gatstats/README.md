@@ -1,10 +1,14 @@
-## 📈 GatStats is a dashboard for your tech blog.
+<a href="https://gatsby-theme-gatstats.netlify.com/" target="_blank">
+<img src="https://gatsby-theme-gatstats.netlify.com/gatstats_1080x608.jpg" alt="gatsby-theme-gatstats main image" />
+</a>
+
+## GatStats is a dashboard for your tech blog.
 
 ##### ... or a dashblog if you prefer? 🤷‍♂️
 
 Properties sourced from frontmatter in `src/posts/[name].mdx` are used to create data visualisations to wow your readers.
 
-### Preview 👁️
+## 👁️ Preview
 
 - [Live Demo](https://gatsby-theme-gatstats.netlify.com/)
 - [Storybook](https://gatsby-theme-gatstats.netlify.com/storybook/)
@@ -17,9 +21,9 @@ Properties sourced from frontmatter in `src/posts/[name].mdx` are used to create
 npm install @pauliescanlon/gatsby-theme-gatstats
 ```
 
-### Setup
+## Setup
 
-#### gatsby-config.js
+### gatsby-config.js
 
 Add the `siteMetaData` and `@pauliescanlon/gatsby-theme-gatstats` to your `gatsby-config.js`
 
@@ -30,6 +34,7 @@ module.exports = {
     description: "I like tech",
     keywords: ["tech", "blog", "boop"],
     siteUrl: 'https://gatsby-theme-gatstats.netlify.com/'
+    siteImage: 'name-of-open-graphy-image.jpg' // pop an image in the static folder to use it as og:image
     config: {
       headerHeight: 64,
       sideBarWidth: 240,
@@ -41,7 +46,7 @@ module.exports = {
 }
 ```
 
-#### directory structure
+### directory structure
 
 If you'd like to add more pages or posts add them to your src dir. **At least 1 post with a featured image is reqiured in the `posts` dir**
 
@@ -51,12 +56,13 @@ If you'd like to add more pages or posts add them to your src dir. **At least 1 
     |-- pages
         |-- about.mdx
     |-- posts
-        |-- some-post-dir
-            |-- some-post.mdx
-            |-- some-image.jpg
+        |-- year-post-dir
+              |-- some-post-dir
+              |-- some-post.mdx
+              |-- some-image.jpg
 ```
 
-#### frontmatter setup
+### frontmatter setup
 
 For **pages** use the following template
 
