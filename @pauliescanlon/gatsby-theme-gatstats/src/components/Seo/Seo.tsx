@@ -28,6 +28,7 @@ export const Seo: React.FC<ISeoProps> = ({
       <html lang={lang} />
       <meta name="description" content={description} />
       <meta name="image" content={`${siteURL}/${image ? image : ''}`} />
+      <meta name="image:alt" content={description} />
       <meta
         name="gatsby-theme"
         content="@pauliescanlon/gatsby-theme-gatstats"
@@ -41,7 +42,7 @@ export const Seo: React.FC<ISeoProps> = ({
       <meta property="og:type" content="website" />
       <meta property="og:image:alt" content={description} />
       {/* Twitter */}
-      <meta name="twitter:card" content={`${siteURL}/${image ? image : ''}`} />
+      <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={formatTitleTemplate} />
       <meta name="twitter:url" content={siteURL} />
       <meta name="twitter:description" content={description} />
