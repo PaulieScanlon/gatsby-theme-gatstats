@@ -1,5 +1,5 @@
 <a href="https://gatsby-theme-gatstats.netlify.com/" target="_blank">
-<img src="https://gatsby-theme-gatstats.netlify.com/gatstats_1080x608.jpg" alt="gatsby-theme-gatstats main image" />
+<img src="https://gatsby-theme-gatstats.netlify.com/gatstats-open-graph-image.jpg" alt="gatsby-theme-gatstats main image" />
 </a>
 
 ## GatStats is a dashboard for your tech blog.
