@@ -8,7 +8,6 @@ interface ISeoProps extends ISiteMetadata {
   titleTemplate?: string
   image?: string
   lang?: string
-  meta?: any[]
 }
 
 export const Seo: React.FC<ISeoProps> = ({
@@ -18,8 +17,7 @@ export const Seo: React.FC<ISeoProps> = ({
   siteURL,
   image,
   keywords = [],
-  lang = 'eng',
-  meta = []
+  lang = 'eng'
 }) => {
   const formatTitleTemplate = `${title} ${
     titleTemplate ? `| ${titleTemplate}` : ''

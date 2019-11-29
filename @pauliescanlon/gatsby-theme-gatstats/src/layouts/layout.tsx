@@ -54,6 +54,14 @@ const Layout: React.FC = ({ children }) => {
                 }
               `}
             />
+            <Seo
+              title={title}
+              // titleTemplate={formatPathname(pathname)}
+              description={description}
+              keywords={keywords}
+              siteURL={siteURL}
+              image={siteImage}
+            />
 
             <Styled.div
               sx={{
@@ -69,14 +77,6 @@ const Layout: React.FC = ({ children }) => {
 
                     return (
                       <React.Fragment>
-                        <Seo
-                          title={title}
-                          titleTemplate={formatPathname(pathname)}
-                          description={description}
-                          keywords={keywords}
-                          siteURL={siteURL}
-                          image={siteImage}
-                        />
                         <HeaderContainer />
                         <SideBarContainer />
                         <LightPanel />
