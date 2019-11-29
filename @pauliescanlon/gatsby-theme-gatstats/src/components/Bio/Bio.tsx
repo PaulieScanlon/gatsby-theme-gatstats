@@ -14,12 +14,6 @@ interface IBioProps {
 export const Bio: React.FC<IBioProps> = ({ siteMetadata }) => {
   const { title, description, config } = siteMetadata
 
-  const descriptionMarkup = () => {
-    return {
-      __html: description
-    }
-  }
-
   return (
     <Styled.div
       sx={{
@@ -48,7 +42,7 @@ export const Bio: React.FC<IBioProps> = ({ siteMetadata }) => {
 
       <Styled.div>
         <Styled.h2>{title}</Styled.h2>
-        <Styled.p dangerouslySetInnerHTML={descriptionMarkup()}></Styled.p>
+        <Styled.p>{description}</Styled.p>
         <Styled.a
           sx={{
             display: 'inline-flex',

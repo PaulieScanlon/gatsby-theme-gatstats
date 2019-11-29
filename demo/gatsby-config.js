@@ -3,7 +3,8 @@ const path = require('path')
 module.exports = {
   siteMetadata: {
     title: 'Introducing GatStats',
-    description: `GatStats is a dashboard for your tech blog, or a <i>dashblog</i> if you prefer? <br /> More here 👉 <a href='https://www.npmjs.com/package/@pauliescanlon/gatsby-theme-gatstats' target='_blank'>@pauliescanlon/gatsby-theme-gatstats</a>`,
+    description:
+      'GatStats is a dashboard for your tech blog, or a dashblog if you prefer? ',
     keywords: ['GatsbyJs', 'React', 'theme-ui'],
     siteURL: 'https://gatsby-theme-gatstats.netlify.com',
     siteImage: 'gatstats_1080x608.jpg',
