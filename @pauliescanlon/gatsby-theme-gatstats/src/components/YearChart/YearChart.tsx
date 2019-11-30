@@ -11,10 +11,9 @@ import { curveMonotoneX } from '@vx/curve'
 import { GridRows } from '@vx/grid'
 import { GlyphDot } from '@vx/glyph'
 
-import { fadeIn, monthNames } from '../../utils'
-
 import { Tooltipper } from '../Tooltipper'
 
+import { fadeIn, monthNames } from '../../utils'
 import { ILineChart } from '../../types'
 
 interface IYearChartProps {

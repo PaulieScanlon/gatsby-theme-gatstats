@@ -8,6 +8,14 @@ import { YearChart } from './YearChart'
 import { Dictionary, ILineChart } from '../../types'
 import { monthNames } from '../../utils'
 
+interface IYearChartQuery {
+  node: {
+    frontmatter: {
+      date: string
+    }
+  }
+}
+
 type MonthCount = [
   number,
   number,
@@ -53,10 +61,7 @@ export const YearChartContainer = () => {
       `}
       render={data => {
         const postsByMonth = data.allMdx.edges
-          .map(
-            (item: { node: { frontmatter: { date: string } } }) =>
-              item.node.frontmatter.date
-          )
+          .map((item: IYearChartQuery) => item.node.frontmatter.date)
           .reduce((dates: Dictionary<MonthCount>, date: string) => {
             const month = new Date(date).getMonth()
             const year = new Date(date).getFullYear()

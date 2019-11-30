@@ -6,6 +6,16 @@ import { ParentSize } from '@vx/responsive'
 import { Panel } from '../Panel'
 import { TagsChart } from './TagsChart'
 
+interface ITagsChartQuery {
+  fieldValue: string
+  totalCount: number
+}
+
+interface ITagChartData {
+  label: string
+  usage: number
+}
+
 export const TagsChartContainer = () => {
   return (
     <StaticQuery
@@ -31,13 +41,15 @@ export const TagsChartContainer = () => {
       `}
       render={data => {
         const tagsChartData = data.allMdx.group
-          .map((item: any) => {
-            return {
-              label: item.fieldValue,
-              usage: item.totalCount
+          .map(
+            (item: ITagsChartQuery): ITagChartData => {
+              return {
+                label: item.fieldValue,
+                usage: item.totalCount
+              }
             }
-          })
-          .sort((a: any, b: any) => b.usage - a.usage)
+          )
+          .sort((a: ITagChartData, b: ITagChartData) => b.usage - a.usage)
           .splice(0, 5)
         return (
           <Panel heading="Tags" subHeading="By popularity">

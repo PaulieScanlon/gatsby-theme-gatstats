@@ -59,14 +59,14 @@ export const Tooltipper: React.FC<ITooltipProps> = ({
             borderRightWidth: 0,
             borderRightStyle: 'solid',
             borderRightColor: 'primary'
+          },
+          span: {
+            mr: 1
           }
         }}
       >
-        {title}
-        <strong>
-          {' '}
-          {':'} {value}
-        </strong>
+        <span>{`${title}:`}</span>
+        <strong>{`x${value}`}</strong>
       </span>
     </Tooltip>
   )
