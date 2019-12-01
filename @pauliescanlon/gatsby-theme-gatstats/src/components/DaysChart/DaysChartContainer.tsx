@@ -64,7 +64,7 @@ export const DaysChartContainer = () => {
         const currentYearData = postsByDay[nowYear].map(convertToChartObject)
 
         return (
-          <Panel heading="Posts" subHeading="By day of the week this year">
+          <Panel heading="Posts" subHeading="By day of the week">
             <ParentSize>
               {(parent: any) => (
                 <DaysChart

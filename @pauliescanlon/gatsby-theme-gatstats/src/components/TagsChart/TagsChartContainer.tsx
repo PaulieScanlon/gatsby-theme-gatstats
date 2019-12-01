@@ -52,7 +52,7 @@ export const TagsChartContainer = () => {
           .sort((a: ITagChartData, b: ITagChartData) => b.usage - a.usage)
           .splice(0, 5)
         return (
-          <Panel heading="Tags" subHeading="By most used this year">
+          <Panel heading="Tags" subHeading="By most used">
             <ParentSize>
               {(parent: any) => (
                 <TagsChart

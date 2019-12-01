@@ -22,11 +22,11 @@ export const Header: React.FC<IHeaderProps> = ({ config }) => {
         borderBottomWidth: 0,
         borderBottomStyle: 'solid',
         borderBottomColor: 'surface',
-        pl: 4,
-        pr: 4,
         marginBottom: 2,
         color: 'text',
         backgroundColor: 'background',
+        paddingLeft: [3, 4],
+        paddingRight: [3, 4],
         marginLeft: [0, 0, 0, `${sideBarWidth}px`],
         transition: theme => theme.sideBarTransition,
         zIndex: 1

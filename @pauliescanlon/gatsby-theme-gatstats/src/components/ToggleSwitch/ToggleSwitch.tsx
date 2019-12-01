@@ -48,11 +48,13 @@ export const ToggleSwitch: React.FC<IToggleSwitchProps> = ({
       }}
     >
       {children}
-      <span
-        sx={{
-          mr: 3
-        }}
-      />
+      {children && (
+        <span
+          sx={{
+            mr: 3
+          }}
+        />
+      )}
       <span
         sx={{
           position: 'relative',

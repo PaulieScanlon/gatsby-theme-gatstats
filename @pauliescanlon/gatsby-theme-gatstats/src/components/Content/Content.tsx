@@ -35,9 +35,9 @@ export const Content: React.FC<IContentProps> = ({ children, config }) => {
       <Styled.div
         sx={{
           ...commonStyles,
-          marginLeft: [0, 0, 0, `${sideBarWidth}px`],
           paddingLeft: [3, 4],
           paddingRight: [3, 4],
+          marginLeft: [0, 0, 0, `${sideBarWidth}px`],
           overflow: 'hidden',
           transition: theme => theme.sideBarTranstion
         }}
