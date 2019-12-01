@@ -35,7 +35,7 @@ export const Tooltipper: React.FC<ITooltipProps> = ({
         sx={{
           position: 'relative',
           color: 'primary',
-          backgroundColor: 'surface',
+          backgroundColor: 'background',
           display: 'inline-flex',
           fontFamily: 'body',
           fontSize: 0,
@@ -52,7 +52,7 @@ export const Tooltipper: React.FC<ITooltipProps> = ({
             top: '100%',
             left: '50%',
             transform: 'translate(-50%,-50%) rotate(45deg)',
-            backgroundColor: 'surface',
+            backgroundColor: 'background',
             borderBottomWidth: 0,
             borderBottomStyle: 'solid',
             borderBottomColor: 'primary',

@@ -5,6 +5,27 @@ import { ParentSize } from '@vx/responsive'
 
 import { Panel } from '../Panel'
 import { DaysChart } from './DaysChart'
+import { Dictionary, IBarChart } from '../../types'
+
+import { dayNames } from '../../utils'
+
+interface IDaysChartQuery {
+  node: {
+    frontmatter: {
+      date: string
+    }
+  }
+}
+
+type DayCount = [number, number, number, number, number, number, number]
+
+const convertToChartObject = (count: number, index: number): IBarChart => {
+  return {
+    count: count,
+    label: dayNames[index].charAt(0),
+    day: dayNames[index]
+  }
+}
 
 export const DaysChartContainer = () => {
   return (
@@ -26,43 +47,28 @@ export const DaysChartContainer = () => {
         }
       `}
       render={data => {
-        const daysChartData = data.allMdx.edges
-          .map((item: any) => {
-            return {
-              day: new Date(item.node.frontmatter.date).getDay()
-            }
-          })
-          .reduce(
-            (items: any, item: any) => {
-              const { day } = item
-              items[day] = items[day] || []
-              items[day].push(day)
-              return items
-            },
-            [
-              [{ label: 'M', day: 'Mon', count: 0 }],
-              [{ label: 'T', day: 'Tue', count: 0 }],
-              [{ label: 'W', day: 'Wed', count: 0 }],
-              [{ label: 'T', day: 'Thu', count: 0 }],
-              [{ label: 'F', day: 'Fri', count: 0 }],
-              [{ label: 'S', day: 'Sat', count: 0 }],
-              [{ label: 'S', day: 'Sun', count: 0 }]
-            ]
-          )
-          .map((item: any) => {
-            return {
-              label: item[0].label,
-              day: item[0].day,
-              count: item.length
-            }
-          })
+        const postsByDay = data.allMdx.edges
+          .map((item: IDaysChartQuery) => item.node.frontmatter.date)
+          .reduce((dates: Dictionary<DayCount>, date: string) => {
+            const year = new Date(date).getFullYear()
+            const day = new Date(date).getDay() - 1
+
+            dates[year] = dates[year] || [0, 0, 0, 0, 0, 0, 0]
+            dates[year][day]++
+
+            return dates
+          }, [])
+
+        const nowYear = new Date().getFullYear()
+
+        const currentYearData = postsByDay[nowYear].map(convertToChartObject)
 
         return (
-          <Panel heading="Posts" subHeading="By day of the week">
+          <Panel heading="Posts" subHeading="By day of the week this year">
             <ParentSize>
               {(parent: any) => (
                 <DaysChart
-                  daysChartData={daysChartData}
+                  currentYearData={currentYearData}
                   width={parent.width}
                   height={260}
                 />

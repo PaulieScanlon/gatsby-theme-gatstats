@@ -7,7 +7,7 @@ import Img from 'gatsby-image'
 import { Tag } from '../components/Tag'
 import { Seo } from '../components/Seo'
 
-import { formatDate, formatPathname, colorRange } from '..//utils'
+import { formatDate, colorRange } from '..//utils'
 
 const Post = ({ data: { mdx, site } }: any) => {
   const context = useThemeUI()

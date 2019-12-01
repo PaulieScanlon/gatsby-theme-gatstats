@@ -63,8 +63,8 @@ export const YearChartContainer = () => {
         const postsByMonth = data.allMdx.edges
           .map((item: IYearChartQuery) => item.node.frontmatter.date)
           .reduce((dates: Dictionary<MonthCount>, date: string) => {
-            const month = new Date(date).getMonth()
             const year = new Date(date).getFullYear()
+            const month = new Date(date).getMonth()
 
             dates[year] = dates[year] || [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             dates[year][month]++

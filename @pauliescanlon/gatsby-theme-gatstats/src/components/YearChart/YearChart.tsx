@@ -70,7 +70,7 @@ const YearChartComponent: React.FC<IYearChartProps> = ({ ...props }: any) => {
 
   const handleTooltip = ({ cx, cy, d }) => {
     showTooltip({
-      tooltipLeft: cx - 24,
+      tooltipLeft: cx - 28,
       tooltipTop: cy - 36,
       tooltipData: d
     })
