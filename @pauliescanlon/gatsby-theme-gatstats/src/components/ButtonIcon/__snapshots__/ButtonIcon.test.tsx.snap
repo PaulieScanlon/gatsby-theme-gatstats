@@ -1148,7 +1148,7 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
               "render": [Function],
             },
           },
-          "emotionVersion": "10.0.21",
+          "emotionVersion": "10.0.22",
           "setColorMode": [Function],
           "theme": Object {
             "borderWidths": Array [
@@ -1575,13 +1575,14 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
           iconPath="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
         >
           <EmotionCssPropInternal
+            __EMOTION_LABEL_PLEASE_DO_NOT_USE__="ButtonIcon"
             __EMOTION_TYPE_PLEASE_DO_NOT_USE__="button"
             autoFocus={true}
             css={[Function]}
           >
             <button
               autoFocus={true}
-              className="css-7bpblc"
+              className="css-1j43qpr-ButtonIcon"
             >
               <Icon
                 iconPath="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
