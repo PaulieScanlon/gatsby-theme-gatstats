@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@pauliescanlon/gatsby-theme-gatstats": "*",
-    "gatsby": "^2.16.3",
+    "gatsby": "^2.18.5",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
   },
