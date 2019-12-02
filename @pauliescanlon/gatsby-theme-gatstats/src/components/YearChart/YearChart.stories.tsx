@@ -15,7 +15,7 @@ export const usage = () => (
   <ParentSize>
     {(parent: any) => (
       <YearChart
-        yearChartData={[
+        currentYearData={[
           { label: 'J', monthName: 'Jan', month: 0, count: 1 },
           { label: 'F', monthName: 'Feb', month: 1, count: 1 },
           { label: 'M', monthName: 'Mar', month: 2, count: 1 },
