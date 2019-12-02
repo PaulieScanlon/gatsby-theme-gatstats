@@ -57,9 +57,9 @@ If you'd like to add more pages or posts add them to your src dir. **At least 1 
         |-- about.mdx
     |-- posts
         |-- year-post-dir
-              |-- some-post-dir
-              |-- some-post.mdx
-              |-- some-image.jpg
+            |-- some-post-dir
+                |-- some-post.mdx
+                |-- some-image.jpg
 ```
 
 ### frontmatter setup
