@@ -2,6 +2,18 @@
 <img src="https://gatsby-theme-gatstats.netlify.com/images/gatstats-open-graph-image.jpg" alt="gatsby-theme-gatstats main image" />
 </a>
 
+<div>
+
+![npm (scoped)](https://img.shields.io/npm/v/@pauliescanlon/gatsby-theme-gatstats?style=flat-square)
+
+![npm](https://img.shields.io/npm/dt/@pauliescanlon/gatsby-theme-gatstats?style=flat-square)
+
+![NPM](https://img.shields.io/npm/l/@pauliescanlon/gatsby-theme-gatstats?style=flat-square)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/675dda28-97f6-471c-9418-ae8357e30fcd/deploy-status)](https://app.netlify.com/sites/gatsby-theme-gatstats/deploys)
+
+</div>
+
 ## GatStats is a dashboard for your tech blog.
 
 ##### ... or a dashblog if you prefer? 🤷‍♂️
