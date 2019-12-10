@@ -18,7 +18,7 @@ const Post = ({ data: { mdx, site } }: any) => {
   const colorScale = colorRange(
     context.theme.colors!.primary!,
     context.theme.colors!.secondary!,
-    tags.length
+    tags ? tags.length : []
   )
 
   return (
@@ -30,7 +30,7 @@ const Post = ({ data: { mdx, site } }: any) => {
       <Seo
         title={`${site.siteMetadata.title} | ${title}`}
         description={excerpt}
-        keywords={tags}
+        keywords={tags || []}
         siteURL={site.siteMetadata.siteURL}
         image={featuredImage ? featuredImage.childImageSharp.fluid.src : ''}
       />
@@ -64,7 +64,7 @@ const Post = ({ data: { mdx, site } }: any) => {
         }}
       >
         <Styled.h1>{title}</Styled.h1>
-        {formatDate(date)}
+        {date && formatDate(date)}
       </Styled.div>
       <ul
         sx={{
@@ -78,12 +78,14 @@ const Post = ({ data: { mdx, site } }: any) => {
           }
         }}
       >
-        {tags.map((tag: string, index: number) => (
-          <Tag key={index} color={colorScale[index]}>
-            {tag}
-          </Tag>
-        ))}
+        {tags &&
+          tags.map((tag: string, index: number) => (
+            <Tag key={index} color={colorScale[index]}>
+              {tag}
+            </Tag>
+          ))}
       </ul>
+
       <Styled.div
         sx={{
           mb: 4,
@@ -92,7 +94,9 @@ const Post = ({ data: { mdx, site } }: any) => {
           fontFamily: 'body',
           textAlign: 'right'
         }}
-      >{`${timeToRead} min read / ${wordCount.words} words`}</Styled.div>
+      >
+        {`${timeToRead} min read / ${wordCount.words} words`}
+      </Styled.div>
 
       <MDXRenderer>{mdx.body}</MDXRenderer>
     </article>

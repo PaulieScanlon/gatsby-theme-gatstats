@@ -8,8 +8,8 @@ import { CardList } from './CardList'
 import { Search } from '../Search'
 
 interface ICardListContainerProps {
-  /** The directory to query */
-  dirName?: number
+  /** The directory name to filter mdx nodes from */
+  dirName?: string
 }
 
 export const CardListContainer: React.FC<ICardListContainerProps> = ({
@@ -71,7 +71,7 @@ export const CardListContainer: React.FC<ICardListContainerProps> = ({
             return item
           })
           .filter((item: any) =>
-            item.node.fileAbsolutePath.includes(`src/${dirName}`)
+            item.node.fileAbsolutePath.includes(`/${dirName}/`)
           )
           .filter(
             (obj: any) =>

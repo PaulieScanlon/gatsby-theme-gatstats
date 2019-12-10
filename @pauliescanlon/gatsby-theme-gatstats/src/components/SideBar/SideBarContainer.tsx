@@ -16,10 +16,7 @@ export const SideBarContainer: React.FC = () => (
             }
           }
         }
-        allMdx(
-          filter: { fileAbsolutePath: { regex: "//src/pages//" } }
-          sort: { order: ASC, fields: [fields___slug] }
-        ) {
+        allMdx {
           edges {
             node {
               fileAbsolutePath
@@ -37,13 +34,17 @@ export const SideBarContainer: React.FC = () => (
     `}
     render={data => {
       const { config } = data.site.siteMetadata
-      const links = data.allMdx.edges.map((item: any) => {
-        return {
-          slug: item.node.fields.slug,
-          icon: item.node.frontmatter.icon,
-          title: item.node.frontmatter.title
-        }
-      })
+
+      const links = data.allMdx.edges
+        .map((item: any) => {
+          // console.log('item.node.fields.slug: ', item.node.fields.slug)
+          return {
+            slug: item.node.fields.slug,
+            icon: item.node.frontmatter.icon,
+            title: item.node.frontmatter.title
+          }
+        })
+        .filter(item => item.icon)
 
       return (
         <Styled.div

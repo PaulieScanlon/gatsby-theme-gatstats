@@ -1,8 +1,10 @@
 const { createFilePath } = require('gatsby-source-filesystem')
 const path = require('path')
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+exports.onCreateNode = ({ node, actions, getNode }, themeOptions) => {
   const { createNodeField } = actions
+
+  basePath = themeOptions.basePath || `/`
 
   if (node.internal.type === 'Mdx') {
     const value = createFilePath({ node, getNode })

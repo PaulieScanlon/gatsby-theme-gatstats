@@ -41,6 +41,7 @@ const Layout: React.FC = ({ children }) => {
           siteURL,
           siteImage
         } = data.site.siteMetadata
+
         return (
           <React.Fragment>
             <Global
