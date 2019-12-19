@@ -1,10 +1,8 @@
 const { createFilePath } = require('gatsby-source-filesystem')
 const path = require('path')
 
-exports.onCreateNode = ({ node, actions, getNode }, themeOptions) => {
+exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
-
-  basePath = themeOptions.basePath || `/`
 
   if (node.internal.type === 'Mdx') {
     const value = createFilePath({ node, getNode })
@@ -16,8 +14,9 @@ exports.onCreateNode = ({ node, actions, getNode }, themeOptions) => {
   }
 }
 
-exports.createPages = async ({ page, graphql, actions, reporter }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
+
   const result = await graphql(`
     query {
       allMdx {

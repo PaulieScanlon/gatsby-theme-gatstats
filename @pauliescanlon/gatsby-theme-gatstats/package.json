@@ -49,9 +49,12 @@
     "gatsby-plugin-typescript": "^2.1.15",
     "gatsby-source-filesystem": "^2.1.33",
     "gatsby-transformer-sharp": "^2.3.0",
+    "mdx-utils": "^0.2.0",
+    "prism-react-renderer": "^1.0.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
+    "react-live": "^2.2.2",
     "react-transition-group": "^4.3.0",
     "theme-ui": "^0.2.44",
     "typescript": "^3.6.4"

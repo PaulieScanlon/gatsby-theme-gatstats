@@ -1,13 +1,34 @@
 /** @jsx jsx */
+import * as React from 'react'
 import { jsx, Styled, useThemeUI } from 'theme-ui'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { MDXProvider } from '@mdx-js/react'
 import Img from 'gatsby-image'
+
+import { preToCodeBlock } from 'mdx-utils'
 
 import { Tag } from '../components/Tag'
 import { Seo } from '../components/Seo'
+import { Code } from '../components/Code'
 
 import { formatDate, colorRange } from '..//utils'
+
+// https://www.lekoarts.de/en/blog/language-tabs-for-gatsbys-code-blocks
+// components is its own object outside of render so that the references to
+// components are stable
+const components = {
+  pre: preProps => {
+    const props = preToCodeBlock(preProps)
+    // if there's a codeString and some props, we passed the test
+    if (props) {
+      return <Code {...props} />
+    }
+    // it's possible to have a pre without a code in it
+    return <pre {...preProps} />
+  },
+  wrapper: ({ children }) => <React.Fragment>{children}</React.Fragment>
+}
 
 const Post = ({ data: { mdx, site } }: any) => {
   const context = useThemeUI()
@@ -98,7 +119,9 @@ const Post = ({ data: { mdx, site } }: any) => {
         {`${timeToRead} min read / ${wordCount.words} words`}
       </Styled.div>
 
-      <MDXRenderer>{mdx.body}</MDXRenderer>
+      <MDXProvider components={components}>
+        <MDXRenderer>{mdx.body}</MDXRenderer>
+      </MDXProvider>
     </article>
   )
 }

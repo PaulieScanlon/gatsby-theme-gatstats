@@ -103,3 +103,106 @@ featuredImage: ./some-image.jpg
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ```
+
+### 👥 Component Shadowing
+
+You know about component shadowing right? By shadowing the `filePath/fileName` you can replace any component in the theme with your own.
+
+Once such component might be `src/components/Code/Code.tsx` this file is in charge of formatting code snippets. For the time being the only way to format the colours used in code snippets is to change the theme used by `prism-react-renderer`
+
+If you need to re-style the code snippets shadow this component and change the bits you need. Here's the soure
+
+##### src/components/Code/Code.tsx
+
+```js
+import * as React from 'react'
+import Highlight, { defaultProps } from 'prism-react-renderer'
+import theme from 'prism-react-renderer/themes/dracula'
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
+
+import './styles.css'
+
+export const Code = ({ codeString, language, ...props }) => {
+  if (props['react-live']) {
+    return (
+      <LiveProvider code={codeString} noInline={true} theme={theme as any}>
+        <LiveEditor />
+        <LiveError />
+        <LivePreview />
+      </LiveProvider>
+    )
+  }
+  return (
+    <Highlight
+      {...defaultProps}
+      code={codeString}
+      language={language}
+      theme={theme as any}
+    >
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <div className="gatsby-highlight" data-language={language}>
+          <pre className={className} style={style}>
+            {tokens.map((line, i) => (
+              <div {...getLineProps({ line, key: i })}>
+                {line.map((token, key) => (
+                  <span {...getTokenProps({ token, key })} />
+                ))}
+              </div>
+            ))}
+          </pre>
+        </div>
+      )}
+    </Highlight>
+  )
+}
+
+```
+
+##### src/components/Code/styles.css
+
+```css
+.gatsby-highlight {
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+.gatsby-highlight pre[class*='language-'] {
+  -webkit-overflow-scrolling: touch;
+  padding: 1rem 0.75rem;
+  border-radius: 0.25rem;
+}
+.gatsby-highlight pre[class*='language-']::before {
+  background: black;
+  border-radius: 0 0 0.25rem 0.25rem;
+  color: white;
+  font-size: 12px;
+  letter-spacing: 0.025rem;
+  padding: 0.1rem 0.5rem;
+  position: absolute;
+  right: 1rem;
+  text-align: right;
+  text-transform: uppercase;
+  top: 0;
+}
+.gatsby-highlight pre[class~='language-javascript']::before {
+  content: 'js';
+  background: #f7df1e;
+  color: black;
+}
+.gatsby-highlight pre[class~='language-js']::before {
+  content: 'js';
+  background: #f7df1e;
+  color: black;
+}
+
+.gatsby-highlight pre[class~='language-html']::before {
+  content: 'html';
+  background: #005a9c;
+  color: white;
+}
+
+.gatsby-highlight pre[class~='language-css']::before {
+  content: 'css';
+  background: #ff9800;
+  color: white;
+}
+```

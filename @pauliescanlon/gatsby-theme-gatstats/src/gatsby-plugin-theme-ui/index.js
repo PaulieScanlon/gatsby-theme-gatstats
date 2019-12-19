@@ -164,23 +164,6 @@ export default {
       ...anchors
     },
 
-    pre: {
-      backgroundColor: 'surface',
-      fontFamily: 'monospace',
-      fontSize: 0,
-      px: 3,
-      py: 3,
-      borderRadius: 1,
-      borderStyle: 'solid',
-      borderWidth: 0,
-      borderColor: 'background'
-    },
-
-    code: {
-      fontFamily: 'monospace',
-      fontSize: 0
-    },
-
     blockquote: {
       backgroundColor: 'background',
       borderLeftStyle: 'solid',

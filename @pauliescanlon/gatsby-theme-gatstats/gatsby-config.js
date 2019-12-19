@@ -1,6 +1,6 @@
 const path = require('path')
 
-module.exports = themeOptions => {
+module.exports = () => {
   return {
     siteMetadata: {
       title: '',
@@ -20,7 +20,12 @@ module.exports = themeOptions => {
       'gatsby-plugin-theme-ui',
       'gatsby-plugin-typescript',
       'gatsby-transformer-sharp',
-      'gatsby-plugin-mdx',
+      {
+        resolve: 'gatsby-plugin-mdx',
+        options: {
+          extensions: [`.mdx`, `.md`]
+        }
+      },
       {
         resolve: 'gatsby-plugin-layout',
         options: {

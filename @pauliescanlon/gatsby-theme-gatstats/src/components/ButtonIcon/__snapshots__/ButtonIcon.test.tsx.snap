@@ -111,10 +111,6 @@ exports[`<ButtonIcon> renders correctly 1`] = `
           "px": 3,
           "py": 3,
         },
-        "code": Object {
-          "fontFamily": "monospace",
-          "fontSize": 0,
-        },
         "h1": Object {
           "color": "text",
           "fontFamily": "heading",
@@ -243,17 +239,6 @@ exports[`<ButtonIcon> renders correctly 1`] = `
           "marginBottom": 4,
           "marginTop": 0,
           "wordBreak": "break-word",
-        },
-        "pre": Object {
-          "backgroundColor": "surface",
-          "borderColor": "background",
-          "borderRadius": 1,
-          "borderStyle": "solid",
-          "borderWidth": 0,
-          "fontFamily": "monospace",
-          "fontSize": 0,
-          "px": 3,
-          "py": 3,
         },
         "root": Object {
           "fontFamily": "body",
@@ -417,10 +402,6 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
           "px": 3,
           "py": 3,
         },
-        "code": Object {
-          "fontFamily": "monospace",
-          "fontSize": 0,
-        },
         "h1": Object {
           "color": "text",
           "fontFamily": "heading",
@@ -549,17 +530,6 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
           "marginBottom": 4,
           "marginTop": 0,
           "wordBreak": "break-word",
-        },
-        "pre": Object {
-          "backgroundColor": "surface",
-          "borderColor": "background",
-          "borderRadius": 1,
-          "borderStyle": "solid",
-          "borderWidth": 0,
-          "fontFamily": "monospace",
-          "fontSize": 0,
-          "px": 3,
-          "py": 3,
         },
         "root": Object {
           "fontFamily": "body",
@@ -716,10 +686,6 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
             "px": 3,
             "py": 3,
           },
-          "code": Object {
-            "fontFamily": "monospace",
-            "fontSize": 0,
-          },
           "h1": Object {
             "color": "text",
             "fontFamily": "heading",
@@ -848,17 +814,6 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
             "marginBottom": 4,
             "marginTop": 0,
             "wordBreak": "break-word",
-          },
-          "pre": Object {
-            "backgroundColor": "surface",
-            "borderColor": "background",
-            "borderRadius": 1,
-            "borderStyle": "solid",
-            "borderWidth": 0,
-            "fontFamily": "monospace",
-            "fontSize": 0,
-            "px": 3,
-            "py": 3,
           },
           "root": Object {
             "fontFamily": "body",
@@ -1258,10 +1213,6 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
                 "px": 3,
                 "py": 3,
               },
-              "code": Object {
-                "fontFamily": "monospace",
-                "fontSize": 0,
-              },
               "h1": Object {
                 "color": "text",
                 "fontFamily": "heading",
@@ -1390,17 +1341,6 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
                 "marginBottom": 4,
                 "marginTop": 0,
                 "wordBreak": "break-word",
-              },
-              "pre": Object {
-                "backgroundColor": "surface",
-                "borderColor": "background",
-                "borderRadius": 1,
-                "borderStyle": "solid",
-                "borderWidth": 0,
-                "fontFamily": "monospace",
-                "fontSize": 0,
-                "px": 3,
-                "py": 3,
               },
               "root": Object {
                 "fontFamily": "body",

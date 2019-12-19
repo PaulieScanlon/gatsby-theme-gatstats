@@ -19,7 +19,6 @@ export const SideBarContainer: React.FC = () => (
         allMdx {
           edges {
             node {
-              fileAbsolutePath
               fields {
                 slug
               }
