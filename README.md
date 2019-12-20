@@ -206,3 +206,40 @@ export const Code = ({ codeString, language, ...props }) => {
   color: white;
 }
 ```
+
+### 🖼️ Embedding Images
+
+Embedding images into `.mdx` can be tricky but using `MdxRenderer` we can still use `frontmatter` to pass graphQL image data to any part of the post body
+
+### frontmatter
+
+Add locally sourced images to frontmatter using `embeddedImages` and import the `EmbeddedImage` component from the theme.
+
+Then use it to reference an image from `embeddedImages`. There's a couple of optional helper props for `width` and `justifyContent` so you get a bit more control over sizd and alignment.
+
+```
+---
+embeddedImages:
+  - './image1.jpg'
+  - './image2.jpg'
+---
+
+import { EmbeddedImage } from '@pauliescanlon/gatsby-theme-gatstats/src/components/EmbeddedImage'
+
+
+Post body text
+
+<EmbeddedImage
+  src={props.embedded.image1}
+  width={['100%', '75%', '50%', '25%']}
+/>
+
+More post body text
+
+<EmbeddedImage
+  src={props.embedded.image2}
+  width="25%"
+  justifyContent="center"
+/>
+
+```

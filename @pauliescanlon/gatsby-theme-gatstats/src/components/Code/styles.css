@@ -4,14 +4,19 @@
 }
 .gatsby-highlight pre[class*='language-'] {
   -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
   padding: 1rem 0.75rem;
   border-radius: 0.25rem;
+  font-size: 16px;
+  font-family: system-ui, sans-serif;
+  line-height: 28px;
 }
 .gatsby-highlight pre[class*='language-']::before {
   background: black;
   border-radius: 0 0 0.25rem 0.25rem;
   color: white;
   font-size: 12px;
+  line-height: 16px;
   letter-spacing: 0.025rem;
   padding: 0.1rem 0.5rem;
   position: absolute;
@@ -22,23 +27,23 @@
 }
 .gatsby-highlight pre[class~='language-javascript']::before {
   content: 'js';
-  background: #f7df1e;
+  background: #8acf17;
   color: black;
 }
 .gatsby-highlight pre[class~='language-js']::before {
   content: 'js';
-  background: #f7df1e;
+  background: #8acf17;
   color: black;
 }
 
 .gatsby-highlight pre[class~='language-html']::before {
   content: 'html';
-  background: #005a9c;
+  background: #f16529;
   color: white;
 }
 
 .gatsby-highlight pre[class~='language-css']::before {
   content: 'css';
-  background: #ff9800;
+  background: #28a8e0;
   color: white;
 }

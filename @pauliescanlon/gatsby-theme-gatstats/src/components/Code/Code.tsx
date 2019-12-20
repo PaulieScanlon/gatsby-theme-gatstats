@@ -5,7 +5,7 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 
 import './styles.css'
 
-export const Code = ({ codeString, language, ...props }) => {
+export const Code: React.FC = ({ codeString, language, ...props }: any) => {
   if (props['react-live']) {
     return (
       <LiveProvider code={codeString} noInline={true} theme={theme as any}>

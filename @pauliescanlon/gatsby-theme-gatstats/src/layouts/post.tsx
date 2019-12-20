@@ -34,7 +34,18 @@ const Post = ({ data: { mdx, site } }: any) => {
   const context = useThemeUI()
 
   const { timeToRead, wordCount, excerpt } = mdx
-  const { title, date, tags, featuredImage } = mdx.frontmatter
+  const { title, date, tags, featuredImage, embeddedImages } = mdx.frontmatter
+
+  const embedded = {}
+
+  if (embeddedImages) {
+    embeddedImages.forEach((image: any, index: number) => {
+      if (image && image.childImageSharp.fluid) {
+        embedded[`image${index + 1}`] = () =>
+          image.childImageSharp.fluid || null
+      }
+    })
+  }
 
   const colorScale = colorRange(
     context.theme.colors!.primary!,
@@ -120,7 +131,7 @@ const Post = ({ data: { mdx, site } }: any) => {
       </Styled.div>
 
       <MDXProvider components={components}>
-        <MDXRenderer>{mdx.body}</MDXRenderer>
+        <MDXRenderer embedded={embedded}>{mdx.body}</MDXRenderer>
       </MDXProvider>
     </article>
   )
@@ -154,6 +165,25 @@ export const contentQuery = graphql`
               src
               srcSet
               sizes
+            }
+          }
+        }
+        embeddedImages {
+          publicURL
+          childImageSharp {
+            fluid {
+              base64
+              tracedSVG
+              aspectRatio
+              src
+              srcSet
+              srcWebp
+              srcSetWebp
+              sizes
+              originalImg
+              originalName
+              presentationWidth
+              presentationHeight
             }
           }
         }
