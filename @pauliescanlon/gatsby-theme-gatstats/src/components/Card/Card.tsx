@@ -26,6 +26,7 @@ export const Card: React.FC<IPostProps> = ({ ...props }) => {
       sx={{
         display: 'flex',
         flexDirection: 'column',
+        flex: '1 1 auto',
         color: 'text',
         fontFamily: 'body',
         backgroundColor: 'surface',

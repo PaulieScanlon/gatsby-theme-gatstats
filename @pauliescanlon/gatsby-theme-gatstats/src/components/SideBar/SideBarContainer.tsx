@@ -4,6 +4,12 @@ import { jsx, Styled } from 'theme-ui'
 
 import { SideBar } from './SideBar'
 
+interface ILink {
+  slug: string
+  icon: string
+  title: string
+}
+
 export const SideBarContainer: React.FC = () => (
   <StaticQuery
     query={graphql`
@@ -35,15 +41,18 @@ export const SideBarContainer: React.FC = () => (
       const { config } = data.site.siteMetadata
 
       const links = data.allMdx.edges
-        .map((item: any) => {
-          // console.log('item.node.fields.slug: ', item.node.fields.slug)
-          return {
-            slug: item.node.fields.slug,
-            icon: item.node.frontmatter.icon,
-            title: item.node.frontmatter.title
+        .map(
+          (item: any): ILink => {
+            // console.log('item.node.fields.slug: ', item.node.fields.slug)
+            return {
+              slug: item.node.fields.slug,
+              icon: item.node.frontmatter.icon,
+              title: item.node.frontmatter.title
+            }
           }
-        })
-        .filter(item => item.icon)
+        )
+        .filter((link: ILink) => link.icon)
+        .sort((a: ILink, b: ILink) => a.slug.localeCompare(b.slug))
 
       return (
         <Styled.div

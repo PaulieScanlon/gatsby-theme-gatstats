@@ -15,16 +15,18 @@ export const LatestPosts: React.FC<ILatestPostsProps> = ({ ...props }) => {
   return (
     <article
       sx={{
+        backgroundColor: 'background',
+        p: 3,
         display: 'flex',
+        flexDirection: 'column',
+        flex: '1 1 auto',
         color: 'text',
         fontFamily: 'body',
-        backgroundColor: 'background',
         overflow: 'hidden',
         borderRadius: 1,
-        p: 3,
         transition: '.2s linear all',
         ':hover': {
-          filter: 'brightness(110%)'
+          filter: 'brightness(105%)'
         }
       }}
     >
