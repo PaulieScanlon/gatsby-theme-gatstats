@@ -14,12 +14,11 @@
   },
   "dependencies": {
     "@pauliescanlon/gatsby-theme-gatstats": "*",
+    "@theme-ui/components": "^0.2.50",
     "gatsby": "^2.18.5",
     "gatsby-plugin-google-analytics": "^2.1.29",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
   },
-  "devDependencies": {
-    "prettier": "^1.18.2"
-  }
+  "devDependencies": {}
 }

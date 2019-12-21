@@ -1,0 +1,78 @@
+---
+title: Components example
+tags: ['Components']
+date: 2019-12-21
+embeddedImages:
+  - './nicolagypsicola-tW_-BwcVzM0-unsplash.jpg'
+  - './niketh-vellanki-QkSN_8XcXwQ-unsplash.jpg'
+---
+
+import { EmbeddedImage } from '@pauliescanlon/gatsby-theme-gatstats/src/components/EmbeddedImage'
+import { Flex, Box } from '@theme-ui/components'
+
+
+This page consists of...
+
+```js
+
+---
+title: Components example
+tags: ['Components']
+date: 2019-12-21
+embeddedImages:
+  - './nicolagypsicola-tW_-BwcVzM0-unsplash.jpg'
+  - './niketh-vellanki-QkSN_8XcXwQ-unsplash.jpg'
+---
+
+import { EmbeddedImage } from '@pauliescanlon/gatsby-theme-gatstats/src/components/EmbeddedImage'
+import { Flex, Box } from '@theme-ui/components'
+
+<Flex
+  sx={{
+    flexWrap: 'wrap'
+  }}
+>
+  <Box
+    sx={{
+      p: 8,
+      width: ['100%', '100%', '50%']
+    }}
+  >
+    <EmbeddedImage src={props.embedded.image2} width="100%" />
+  </Box>
+
+  <Box
+    sx={{
+      p: 8,
+      width: ['100%', '100%', '50%']
+    }}
+  >
+    <EmbeddedImage src={props.embedded.image1} width="100%" />
+  </Box>
+</Flex>
+```
+
+<Flex
+  sx={{
+    flexWrap: 'wrap'
+  }}
+>
+  <Box
+    sx={{
+      p: 8,
+      width: ['100%', '100%', '50%']
+    }}
+  >
+    <EmbeddedImage src={props.embedded.image2} width="100%" />
+  </Box>
+
+  <Box
+    sx={{
+      p: 8,
+      width: ['100%', '100%', '50%']
+    }}
+  >
+    <EmbeddedImage src={props.embedded.image1} width="100%" />
+  </Box>
+</Flex>
+
