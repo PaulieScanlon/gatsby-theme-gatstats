@@ -3,7 +3,6 @@ import * as React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { Global, css } from '@emotion/core'
 import { jsx, Styled } from 'theme-ui'
-
 import { Location } from '@reach/router'
 
 import { Transition } from '../components/Transition'
@@ -15,7 +14,7 @@ import { SideBarProvider } from '../components/SideBarContext'
 import { Seo } from '../components/Seo'
 
 import { formatPathname } from '../utils'
-import { IPathname } from '../types'
+import { ILocation } from '../types'
 
 const Layout: React.FC = ({ children }) => {
   return (
@@ -65,8 +64,7 @@ const Layout: React.FC = ({ children }) => {
               <SideBarProvider>
                 <Location>
                   {({ location }) => {
-                    const { pathname }: IPathname = location
-
+                    const { pathname }: ILocation = location
                     return (
                       <React.Fragment>
                         <Seo

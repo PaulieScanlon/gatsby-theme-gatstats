@@ -11,16 +11,22 @@ interface ISearchProps {
   filterData: ISearchItem[]
   /** Callback function that takes a value and returns nothing */
   onSearch: (value: string) => void
+  /** Filter applied */
+  selectedTag: string
 }
 
-export const Search: React.FC<ISearchProps> = ({ filterData, onSearch }) => {
+export const Search: React.FC<ISearchProps> = ({
+  filterData,
+  onSearch,
+  selectedTag
+}) => {
   return (
     <Styled.div>
       <Downshift
         onChange={selection =>
           selection ? onSearch(selection.value) : onSearch('')
         }
-        itemToString={item => (item ? item.value : '')}
+        selectedItem={selectedTag ? selectedTag : ''}
       >
         {({
           getInputProps,

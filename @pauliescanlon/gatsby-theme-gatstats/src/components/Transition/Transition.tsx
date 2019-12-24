@@ -4,7 +4,7 @@ import {
   Transition as ReactTransition
 } from 'react-transition-group'
 
-import { IPathname } from '../../types'
+import { ILocation } from '../../types'
 
 const timeout = 250
 
@@ -31,7 +31,7 @@ const getTransitionStyles: TTransitionStyles = {
   }
 }
 
-interface ITransitionProps extends IPathname {}
+interface ITransitionProps extends ILocation {}
 
 export const Transition: React.FC<ITransitionProps> = ({
   children,

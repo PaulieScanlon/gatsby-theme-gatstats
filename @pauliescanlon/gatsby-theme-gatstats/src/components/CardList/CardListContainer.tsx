@@ -2,20 +2,33 @@
 import * as React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { jsx } from 'theme-ui'
+import { History } from '@reach/router'
+
+import queryString from 'query-string'
 
 import { CardList } from './CardList'
-
 import { Search } from '../Search'
 
-interface ICardListContainerProps {
-  /** The directory name to filter mdx nodes from */
-  dirName?: string
-}
+interface ICardListContainerProps extends History {}
+const DIR_NAME = 'posts'
 
 export const CardListContainer: React.FC<ICardListContainerProps> = ({
-  dirName = 'posts'
+  location
 }) => {
-  const [listFilter, setListFilter] = React.useState('')
+  const [searchParam, setSearchParam] = React.useState('')
+
+  const handleSearchParam = (filterValue: string) => {
+    !filterValue
+      ? history.replaceState(null, null, location.pathname)
+      : history.replaceState({}, '', `?tag=${filterValue}`)
+
+    setSearchParam(filterValue)
+  }
+
+  React.useEffect(() => {
+    const filterVal = queryString.parse(location.search).tag
+    filterVal && setSearchParam(filterVal)
+  }, [])
 
   return (
     <StaticQuery
@@ -71,12 +84,12 @@ export const CardListContainer: React.FC<ICardListContainerProps> = ({
             return item
           })
           .filter((item: any) =>
-            item.node.fileAbsolutePath.includes(`/${dirName}/`)
+            item.node.fileAbsolutePath.includes(`/${DIR_NAME}/`)
           )
           .filter(
             (obj: any) =>
-              obj.node.frontmatter.tags.includes(listFilter) ||
-              listFilter === ''
+              obj.node.frontmatter.tags.includes(searchParam) ||
+              searchParam === ''
           )
 
         // TODO sort out the any types!
@@ -88,13 +101,14 @@ export const CardListContainer: React.FC<ICardListContainerProps> = ({
             })
             return newTags
           }, [])
-          .filter((obj: any) => obj.value === listFilter || listFilter === '')
+          .filter((obj: any) => obj.value === searchParam || searchParam === '')
 
         return (
           <React.Fragment>
             <Search
+              selectedTag={searchParam}
               filterData={listTags}
-              onSearch={filterValue => setListFilter(filterValue)}
+              onSearch={filterValue => handleSearchParam(filterValue)}
             />
             <CardList listItems={listItems} />
           </React.Fragment>

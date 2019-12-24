@@ -12,7 +12,7 @@ import { Tag } from '../components/Tag'
 import { Seo } from '../components/Seo'
 import { Code } from '../components/Code'
 
-import { formatDate, colorRange } from '..//utils'
+import { formatDate, colorRange } from '../utils'
 
 // https://www.lekoarts.de/en/blog/language-tabs-for-gatsbys-code-blocks
 // components is its own object outside of render so that the references to
@@ -30,7 +30,7 @@ const components = {
   wrapper: ({ children }) => <React.Fragment>{children}</React.Fragment>
 }
 
-const Post = ({ data: { mdx, site } }: any) => {
+const Post = ({ data: { mdx, site }, ...props }: any) => {
   const context = useThemeUI()
 
   const { timeToRead, wordCount, excerpt } = mdx
@@ -95,7 +95,8 @@ const Post = ({ data: { mdx, site } }: any) => {
           mb: 3
         }}
       >
-        <Styled.h1>{title}</Styled.h1>
+        {title && <Styled.h1>{title}</Styled.h1>}
+
         {date && formatDate(date)}
       </Styled.div>
       <ul
@@ -131,7 +132,9 @@ const Post = ({ data: { mdx, site } }: any) => {
       </Styled.div>
 
       <MDXProvider components={components}>
-        <MDXRenderer embedded={embedded}>{mdx.body}</MDXRenderer>
+        <MDXRenderer embedded={embedded} location={props.location}>
+          {mdx.body}
+        </MDXRenderer>
       </MDXProvider>
     </article>
   )
