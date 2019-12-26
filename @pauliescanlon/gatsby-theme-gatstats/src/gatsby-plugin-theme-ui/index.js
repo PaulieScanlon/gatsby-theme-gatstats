@@ -147,13 +147,22 @@ export default {
       }
     },
 
-    ul: { color: 'text', fontFamily: 'body', marginTop: 3, paddingLeft: 3 },
+    ul: {
+      marginTop: 3,
+      paddingLeft: 3
+    },
 
-    ol: { color: 'text', fontFamily: 'body', marginTop: 3, paddingLeft: 3 },
+    ol: {
+      marginTop: 3,
+      paddingLeft: 3
+    },
 
     li: {
       color: 'text',
       fontFamily: 'body',
+      fontSize: [1, 2],
+      fontWeight: 'body',
+      lineHeight: '28px',
       marginBottom: 3,
       p: {
         color: 'text'

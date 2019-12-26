@@ -7,11 +7,14 @@ import { Pie } from '@vx/shape'
 import { Group } from '@vx/group'
 import { withTooltip } from '@vx/tooltip'
 
-import { Tooltipper } from '../Tooltipper'
-
 import { colorRange, fadeIn } from '../../utils'
 
 import { IPieChart } from '../../types'
+
+interface ITooltip {
+  index: number
+  arc: any
+}
 
 interface IYearChartProps {
   tagsChartData: IPieChart[]
@@ -30,15 +33,13 @@ const TagsChartComponent: React.FC<IYearChartProps> = ({ ...props }: any) => {
     showTooltip,
     hideTooltip,
     tooltipData,
-    tooltipOpen,
-    tooltipLeft,
-    tooltipTop
+    tooltipOpen
   } = props
 
   if (!tagsChartData) return null
 
   const margin = 32
-  let tooltipTimeout = null
+  let tooltipTimeout: number | null = null
 
   const radius = Math.min(width, height) / 2
   const centerX = width / 2
@@ -50,7 +51,7 @@ const TagsChartComponent: React.FC<IYearChartProps> = ({ ...props }: any) => {
     tagsChartData.length
   )
 
-  const handleTooltip = ({ arc, index }) => {
+  const handleTooltip = ({ arc, index }: ITooltip) => {
     const d = {
       usage: arc.data.usage,
       label: arc.data.label,
@@ -63,6 +64,9 @@ const TagsChartComponent: React.FC<IYearChartProps> = ({ ...props }: any) => {
 
   return (
     <Styled.div
+      sx={{
+        mt: -3
+      }}
       css={css`
         animation: ${fadeIn} 2s linear;
       `}
@@ -98,78 +102,96 @@ const TagsChartComponent: React.FC<IYearChartProps> = ({ ...props }: any) => {
             data={tagsChartData}
             pieValue={(d: any) => d.usage}
             outerRadius={radius - 0}
-            innerRadius={radius - 60}
-            cornerRadius={6}
+            innerRadius={radius - 40}
+            cornerRadius={4}
             padAngle={0.04}
           >
             {(pie: any) => {
-              return pie.arcs.map((arc: any, index: number) => {
-                const [centroidX, centroidY] = pie.path.centroid(arc)
-                const { startAngle, endAngle } = arc
-                const hasSpaceForLabel = endAngle - startAngle >= 0.1
-                return (
-                  <g
-                    key={`arc-${arc.data.label}-${index}`}
-                    onMouseEnter={() => {
-                      if (tooltipTimeout) clearTimeout(tooltipTimeout)
-                      handleTooltip({ arc, index })
-                    }}
-                    onMouseLeave={() => {
-                      tooltipTimeout = setTimeout(() => {
-                        hideTooltip()
-                      }, 500)
-                    }}
-                    onTouchStart={() => {
-                      if (tooltipTimeout) clearTimeout(tooltipTimeout)
-                      handleTooltip({ arc, index })
-                    }}
-                    onTouchEnd={() => {
-                      tooltipTimeout = setTimeout(() => {
-                        hideTooltip()
-                      }, 500)
-                    }}
-                  >
-                    {tooltipOpen && (
-                      <g>
-                        <text
-                          dy="-.1em"
-                          textAnchor="middle"
-                          className="tooltip-usage"
-                        >
-                          {`x${tooltipData.usage}`}
-                        </text>
-                        <text
-                          dy="1.2em"
-                          textAnchor="middle"
-                          className="tooltip-label"
-                          fill={tooltipData.color}
-                        >
-                          {tooltipData.label}
-                        </text>
-                      </g>
-                    )}
-
-                    <path d={pie.path(arc)} fill={colorScale[index]} />
-                    {hasSpaceForLabel && (
+              return pie.arcs.map((arc: any, index: number) => (
+                <g
+                  key={`arc-${arc.data.label}-${index}`}
+                  onMouseEnter={() => {
+                    if (tooltipTimeout) clearTimeout(tooltipTimeout)
+                    handleTooltip({ arc, index })
+                  }}
+                  onMouseLeave={() => {
+                    tooltipTimeout = setTimeout(() => {
+                      hideTooltip()
+                    }, 500)
+                  }}
+                  onTouchStart={() => {
+                    if (tooltipTimeout) clearTimeout(tooltipTimeout)
+                    handleTooltip({ arc, index })
+                  }}
+                  onTouchEnd={() => {
+                    tooltipTimeout = setTimeout(() => {
+                      hideTooltip()
+                    }, 500)
+                  }}
+                >
+                  {tooltipOpen && (
+                    <g>
                       <text
-                        x={centroidX}
-                        y={centroidY}
-                        dy=".32em"
+                        dy=".1em"
                         textAnchor="middle"
-                        className="chart-label"
+                        className="tooltip-usage"
                       >
-                        {arc.data.label}
+                        {`x${tooltipData.usage}`}
                       </text>
-                    )}
-                  </g>
-                )
-              })
+                      <text
+                        dy="1.6em"
+                        textAnchor="middle"
+                        className="tooltip-label"
+                        fill={tooltipData.color}
+                      >
+                        {tooltipData.label}
+                      </text>
+                    </g>
+                  )}
+
+                  <path d={pie.path(arc)} fill={colorScale[index]} />
+                </g>
+              ))
             }}
           </Pie>
         </Group>
       </svg>
+      <Styled.div
+        sx={{
+          mt: 2
+        }}
+      >
+        <ul
+          sx={{
+            m: 0,
+            p: 0,
+            columnCount: 2,
+            columnRule: theme => `1px solid ${theme.colors.surface}`,
+            backgroundColor: 'background',
+            borderRadius: 1
+          }}
+        >
+          {tagsChartData.map((item: IPieChart, index: number) => (
+            <li
+              key={index}
+              sx={{
+                display: 'flex',
+                listStyle: 'none',
+                breakInside: 'avoid',
+                p: 2,
+                fontSize: 0,
+                justifyContent: 'space-between'
+              }}
+              style={{ color: colorScale[index] }}
+            >
+              {item.label}
+              <strong>x{item.usage}</strong>
+            </li>
+          ))}
+        </ul>
+      </Styled.div>
     </Styled.div>
   )
 }
 
-export const TagsChart = withTooltip(TagsChartComponent)
+export const TagsChart = withTooltip(TagsChartComponent, {})

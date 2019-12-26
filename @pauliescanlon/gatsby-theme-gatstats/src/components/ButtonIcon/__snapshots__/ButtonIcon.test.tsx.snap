@@ -200,14 +200,18 @@ exports[`<ButtonIcon> renders correctly 1`] = `
         "li": Object {
           "color": "text",
           "fontFamily": "body",
+          "fontSize": Array [
+            1,
+            2,
+          ],
+          "fontWeight": "body",
+          "lineHeight": "28px",
           "marginBottom": 3,
           "p": Object {
             "color": "text",
           },
         },
         "ol": Object {
-          "color": "text",
-          "fontFamily": "body",
           "marginTop": 3,
           "paddingLeft": 3,
         },
@@ -273,8 +277,6 @@ exports[`<ButtonIcon> renders correctly 1`] = `
         },
         "tr": Object {},
         "ul": Object {
-          "color": "text",
-          "fontFamily": "body",
           "marginTop": 3,
           "paddingLeft": 3,
         },
@@ -491,14 +493,18 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
         "li": Object {
           "color": "text",
           "fontFamily": "body",
+          "fontSize": Array [
+            1,
+            2,
+          ],
+          "fontWeight": "body",
+          "lineHeight": "28px",
           "marginBottom": 3,
           "p": Object {
             "color": "text",
           },
         },
         "ol": Object {
-          "color": "text",
-          "fontFamily": "body",
           "marginTop": 3,
           "paddingLeft": 3,
         },
@@ -564,8 +570,6 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
         },
         "tr": Object {},
         "ul": Object {
-          "color": "text",
-          "fontFamily": "body",
           "marginTop": 3,
           "paddingLeft": 3,
         },
@@ -775,14 +779,18 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
           "li": Object {
             "color": "text",
             "fontFamily": "body",
+            "fontSize": Array [
+              1,
+              2,
+            ],
+            "fontWeight": "body",
+            "lineHeight": "28px",
             "marginBottom": 3,
             "p": Object {
               "color": "text",
             },
           },
           "ol": Object {
-            "color": "text",
-            "fontFamily": "body",
             "marginTop": 3,
             "paddingLeft": 3,
           },
@@ -848,8 +856,6 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
           },
           "tr": Object {},
           "ul": Object {
-            "color": "text",
-            "fontFamily": "body",
             "marginTop": 3,
             "paddingLeft": 3,
           },
@@ -1302,14 +1308,18 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
               "li": Object {
                 "color": "text",
                 "fontFamily": "body",
+                "fontSize": Array [
+                  1,
+                  2,
+                ],
+                "fontWeight": "body",
+                "lineHeight": "28px",
                 "marginBottom": 3,
                 "p": Object {
                   "color": "text",
                 },
               },
               "ol": Object {
-                "color": "text",
-                "fontFamily": "body",
                 "marginTop": 3,
                 "paddingLeft": 3,
               },
@@ -1375,8 +1385,6 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
               },
               "tr": Object {},
               "ul": Object {
-                "color": "text",
-                "fontFamily": "body",
                 "marginTop": 3,
                 "paddingLeft": 3,
               },

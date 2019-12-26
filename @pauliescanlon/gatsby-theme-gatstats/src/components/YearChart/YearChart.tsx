@@ -49,7 +49,7 @@ const YearChartComponent: React.FC<IYearChartProps> = ({ ...props }: any) => {
   if (!currentYearData) return null
 
   const margin = 32
-  let tooltipTimeout = null
+  let tooltipTimeout: number | null = null
 
   const month = (d: ILineChart) => d.month
   const count = (d: ILineChart) => d.count
@@ -68,7 +68,7 @@ const YearChartComponent: React.FC<IYearChartProps> = ({ ...props }: any) => {
   xScale.range([margin, width - margin])
   yScale.range([height - margin, margin])
 
-  const handleTooltip = ({ cx, cy, d }) => {
+  const handleTooltip = ({ cx, cy, d }: any) => {
     showTooltip({
       tooltipLeft: cx - 28,
       tooltipTop: cy - 36,
@@ -77,7 +77,12 @@ const YearChartComponent: React.FC<IYearChartProps> = ({ ...props }: any) => {
   }
 
   return (
-    <Styled.div>
+    <Styled.div
+      sx={{
+        position: 'relative',
+        mt: 6
+      }}
+    >
       <svg
         width="100%"
         height={height + margin}
@@ -232,4 +237,4 @@ const YearChartComponent: React.FC<IYearChartProps> = ({ ...props }: any) => {
   )
 }
 
-export const YearChart = withTooltip(YearChartComponent)
+export const YearChart = withTooltip(YearChartComponent, {})
