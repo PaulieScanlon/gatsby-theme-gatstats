@@ -16,7 +16,7 @@ import { formatDate, colorRange } from '../utils'
 
 // https://www.lekoarts.de/en/blog/language-tabs-for-gatsbys-code-blocks
 const components = {
-  pre: ({ preProps }: any) => {
+  pre: (preProps: any) => {
     const props = preToCodeBlock(preProps)
     if (props) {
       return <Code {...props} />
