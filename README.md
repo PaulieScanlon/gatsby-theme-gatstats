@@ -60,7 +60,7 @@ module.exports = {
 
 ### directory structure
 
-If you'd like to add more pages or posts add them to your src dir. **At least 1 post with a featured image is reqiured in the `posts` dir**
+If you'd like to add more pages or posts add them to your src dir. **At least 1 post with a featuredImage and embeddedImage is reqiured in the `posts` dir**
 
 <!-- prettier-ignore -->
 ```
@@ -72,11 +72,12 @@ If you'd like to add more pages or posts add them to your src dir. **At least 1 
             |-- some-post-dir
                 |-- some-post.mdx
                 |-- some-image.jpg
+                |-- some-embedding-image.jpg
 ```
 
 ### frontmatter setup
 
-For **pages** use the following template
+For **pages** use the following template. The icon field is a path for any icon. This is example is from [Material Icons](https://material.io/resources/icons/?style=baseline). The icon fild is what is used to determin if an `.mdx` file is used as a navigation item or not.
 
 ```
 ---
@@ -99,9 +100,48 @@ title: Some Post
 tags: ["Gatsbyjs", "React"]
 date: 2019-11-13
 featuredImage: ./some-image.jpg
+embeddedImages:
+  - './som-embeddedImage.jpg'
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+```
+
+### 🖼️ Embedding Images
+
+Embedding images into `.mdx` can be tricky but using `MdxRenderer` we can still use `frontmatter` to pass graphQL image data to any part of the post body
+
+### frontmatter
+
+Add locally sourced images to frontmatter using `embeddedImages` and import the `EmbeddedImage` component from the theme.
+
+Then use it to reference an image from `embeddedImages`. There's a couple of optional helper props for `width` and `justifyContent` so you get a bit more control over sizd and alignment.
+
+```
+---
+embeddedImages:
+  - './image1.jpg'
+  - './image2.jpg'
+---
+
+import { EmbeddedImage } from '@pauliescanlon/gatsby-theme-gatstats/src/components/EmbeddedImage'
+
+
+Post body text
+
+<EmbeddedImage
+  src={props.embedded.image1}
+  width={['100%', '75%', '50%', '25%']}
+/>
+
+More post body text
+
+<EmbeddedImage
+  src={props.embedded.image2}
+  width="25%"
+  justifyContent="center"
+/>
+
 ```
 
 ### 👥 Component Shadowing
@@ -165,12 +205,12 @@ export const Code = ({ codeString, language, ...props }) => {
   position: relative;
   -webkit-overflow-scrolling: touch;
 }
-.gatsby-highlight pre[class*='language-'] {
+.gatsby-highlight pre[class*="language-"] {
   -webkit-overflow-scrolling: touch;
   padding: 1rem 0.75rem;
   border-radius: 0.25rem;
 }
-.gatsby-highlight pre[class*='language-']::before {
+.gatsby-highlight pre[class*="language-"]::before {
   background: black;
   border-radius: 0 0 0.25rem 0.25rem;
   color: white;
@@ -183,63 +223,26 @@ export const Code = ({ codeString, language, ...props }) => {
   text-transform: uppercase;
   top: 0;
 }
-.gatsby-highlight pre[class~='language-javascript']::before {
-  content: 'js';
+.gatsby-highlight pre[class~="language-javascript"]::before {
+  content: "js";
   background: #f7df1e;
   color: black;
 }
-.gatsby-highlight pre[class~='language-js']::before {
-  content: 'js';
+.gatsby-highlight pre[class~="language-js"]::before {
+  content: "js";
   background: #f7df1e;
   color: black;
 }
 
-.gatsby-highlight pre[class~='language-html']::before {
-  content: 'html';
+.gatsby-highlight pre[class~="language-html"]::before {
+  content: "html";
   background: #005a9c;
   color: white;
 }
 
-.gatsby-highlight pre[class~='language-css']::before {
-  content: 'css';
+.gatsby-highlight pre[class~="language-css"]::before {
+  content: "css";
   background: #ff9800;
   color: white;
 }
-```
-
-### 🖼️ Embedding Images
-
-Embedding images into `.mdx` can be tricky but using `MdxRenderer` we can still use `frontmatter` to pass graphQL image data to any part of the post body
-
-### frontmatter
-
-Add locally sourced images to frontmatter using `embeddedImages` and import the `EmbeddedImage` component from the theme.
-
-Then use it to reference an image from `embeddedImages`. There's a couple of optional helper props for `width` and `justifyContent` so you get a bit more control over sizd and alignment.
-
-```
----
-embeddedImages:
-  - './image1.jpg'
-  - './image2.jpg'
----
-
-import { EmbeddedImage } from '@pauliescanlon/gatsby-theme-gatstats/src/components/EmbeddedImage'
-
-
-Post body text
-
-<EmbeddedImage
-  src={props.embedded.image1}
-  width={['100%', '75%', '50%', '25%']}
-/>
-
-More post body text
-
-<EmbeddedImage
-  src={props.embedded.image2}
-  width="25%"
-  justifyContent="center"
-/>
-
 ```

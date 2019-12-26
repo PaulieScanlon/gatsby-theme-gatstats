@@ -10,12 +10,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "allowSyntheticDefaultImports": true,
-    "typeRoots": ["gatsby-theme-gatstats/src/types"]
+    "typeRoots": ["@pauliescanlon/gatsby-theme-gatstats/src/types/**/*"]
   },
-
-  "include": ["gatsby-theme-gatstats/src/**/*"],
+  "include": ["@pauliescanlon/gatsby-theme-gatstats/src/**/*"],
   "exclude": [
-    "gatsby-theme-gatstats/src/**/*.stories.tsx",
+    "@pauliescanlon/gatsby-theme-gatstats/src/**/*.stories.tsx",
     "**/*.test.ts",
     "**/*.test.tsx"
   ]

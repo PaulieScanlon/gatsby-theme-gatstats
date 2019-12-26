@@ -1103,7 +1103,7 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
               "render": [Function],
             },
           },
-          "emotionVersion": "10.0.22",
+          "emotionVersion": "10.0.27",
           "setColorMode": [Function],
           "theme": Object {
             "borderWidths": Array [
