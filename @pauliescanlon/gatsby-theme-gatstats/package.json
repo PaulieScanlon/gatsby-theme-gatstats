@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/pauliescanlon/gatsby-theme-gatstats.git"
   },
-  "version": "0.0.41",
+  "version": "0.0.42",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
