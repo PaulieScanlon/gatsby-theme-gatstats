@@ -15,19 +15,15 @@ import { Code } from '../components/Code'
 import { formatDate, colorRange } from '../utils'
 
 // https://www.lekoarts.de/en/blog/language-tabs-for-gatsbys-code-blocks
-// components is its own object outside of render so that the references to
-// components are stable
 const components = {
-  pre: preProps => {
+  pre: ({ preProps }: any) => {
     const props = preToCodeBlock(preProps)
-    // if there's a codeString and some props, we passed the test
     if (props) {
       return <Code {...props} />
     }
-    // it's possible to have a pre without a code in it
     return <pre {...preProps} />
   },
-  wrapper: ({ children }) => <React.Fragment>{children}</React.Fragment>
+  wrapper: ({ children }: any) => <React.Fragment>{children}</React.Fragment>
 }
 
 const Post = ({ data: { mdx, site }, ...props }: any) => {
@@ -36,7 +32,8 @@ const Post = ({ data: { mdx, site }, ...props }: any) => {
   const { timeToRead, wordCount, excerpt } = mdx
   const { title, date, tags, featuredImage, embeddedImages } = mdx.frontmatter
 
-  const embedded = {}
+  // https://deltaskelta.github.io/blog/using-gatsby-images-with-gatsby-mdx/
+  const embedded: { [k: string]: React.ReactNode } = {}
 
   if (embeddedImages) {
     embeddedImages.forEach((image: any, index: number) => {
