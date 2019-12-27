@@ -27,6 +27,8 @@ const components = {
 }
 
 const Post = ({ data: { mdx, site }, ...props }: any) => {
+  console.log(`${site.siteMetadata.siteURL}${props.path}`)
+
   const context = useThemeUI()
 
   const { timeToRead, wordCount, excerpt } = mdx
@@ -61,6 +63,7 @@ const Post = ({ data: { mdx, site }, ...props }: any) => {
         description={excerpt}
         keywords={tags || []}
         siteURL={site.siteMetadata.siteURL}
+        path={props.path}
         image={
           featuredImage
             ? featuredImage.childImageSharp.fluid.src.replace('/', '')

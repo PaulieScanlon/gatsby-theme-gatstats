@@ -11,9 +11,9 @@ import { LightPanel } from '../components/LightPanel'
 import { ContentContainer } from '../components/Content'
 import { SideBarContainer } from '../components/SideBar/SideBarContainer'
 import { SideBarProvider } from '../components/SideBarContext'
-import { Seo } from '../components/Seo'
+// import { Seo } from '../components/Seo'
 
-import { formatPathname } from '../utils'
+// import { formatPathname } from '../utils'
 import { ILocation } from '../types'
 
 const Layout: React.FC = ({ children }) => {
@@ -33,13 +33,13 @@ const Layout: React.FC = ({ children }) => {
         }
       `}
       render={data => {
-        const {
-          title,
-          description,
-          keywords,
-          siteURL,
-          siteImage
-        } = data.site.siteMetadata
+        // const {
+        //   title,
+        //   description,
+        //   keywords,
+        //   siteURL,
+        //   siteImage
+        // } = data.site.siteMetadata
 
         return (
           <React.Fragment>
@@ -67,14 +67,14 @@ const Layout: React.FC = ({ children }) => {
                     const { pathname }: ILocation = location
                     return (
                       <React.Fragment>
-                        <Seo
+                        {/* <Seo
                           title={title}
                           titleTemplate={formatPathname(pathname)}
                           description={description}
                           keywords={keywords}
                           siteURL={siteURL}
                           image={siteImage}
-                        />
+                        /> */}
                         <HeaderContainer />
                         <SideBarContainer />
                         <LightPanel />
