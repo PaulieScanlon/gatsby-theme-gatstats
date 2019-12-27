@@ -61,7 +61,11 @@ const Post = ({ data: { mdx, site }, ...props }: any) => {
         description={excerpt}
         keywords={tags || []}
         siteURL={site.siteMetadata.siteURL}
-        image={featuredImage ? featuredImage.childImageSharp.fluid.src : ''}
+        image={
+          featuredImage
+            ? featuredImage.childImageSharp.fluid.src.replace('/', '')
+            : ''
+        }
       />
       {featuredImage && (
         <Styled.div
