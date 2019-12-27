@@ -10,7 +10,10 @@ const headings = {
 const anchors = {
   color: 'primary',
   cursor: 'pointer',
-  fontSize: [1, 2],
+  fontFamily: 'body',
+  fontSize: [2, 3],
+  fontWeight: 'body',
+  lineHeight: '28px',
   outline: 'none',
   transition: '.2s linear all',
   ':hover': {
@@ -144,6 +147,16 @@ export default {
       marginBottom: 4,
       a: {
         ...anchors
+      },
+      code: {
+        fontFamily: 'monospace',
+        fontSize: [2, 3],
+        fontWeight: 'body',
+        lineHeight: '28px',
+        backgroundColor: 'surface',
+        p: 1,
+        borderRadius: 0,
+        WebkitFontSmoothing: 'antialiased'
       }
     },
 
