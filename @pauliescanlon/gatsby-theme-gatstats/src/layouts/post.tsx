@@ -29,7 +29,7 @@ const components = {
 const Post = ({ data: { mdx, site }, ...props }: any) => {
   const context = useThemeUI()
 
-  const { timeToRead, wordCount, excerpt } = mdx
+  const { timeToRead, wordCount, excerpt, fields } = mdx
   const { title, date, tags, featuredImage, embeddedImages } = mdx.frontmatter
 
   // https://deltaskelta.github.io/blog/using-gatsby-images-with-gatsby-mdx/
@@ -61,7 +61,7 @@ const Post = ({ data: { mdx, site }, ...props }: any) => {
         description={excerpt}
         keywords={tags || []}
         siteURL={site.siteMetadata.siteURL}
-        path={props.path}
+        path={fields.slug}
         image={
           featuredImage
             ? featuredImage.childImageSharp.fluid.src.replace('/', '')
@@ -158,6 +158,9 @@ export const contentQuery = graphql`
       timeToRead
       wordCount {
         words
+      }
+      fields {
+        slug
       }
       frontmatter {
         title

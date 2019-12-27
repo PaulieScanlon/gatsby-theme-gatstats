@@ -24,8 +24,6 @@ export const Seo: React.FC<ISeoProps> = ({
     titleTemplate ? `| ${titleTemplate}` : ''
   }`
 
-  console.log('seo: ', `${siteURL}${path}`)
-
   return (
     <Helmet
       title={title}
@@ -56,7 +54,11 @@ export const Seo: React.FC<ISeoProps> = ({
       <meta name="keywords" content={keywords.join(', ')} />
 
       {/* Facebook */}
-      {path ? <meta property="og:type" content="article" /> : null}
+      {path ? (
+        <meta property="og:type" content="article" />
+      ) : (
+        <meta property="og:type" content="website" />
+      )}
       <meta property="og:title" content={formatTitleTemplate} />
       <meta property="og:url" content={`${siteURL}${path ? path : ''}`} />
       <meta property="og:description" content={description} />
