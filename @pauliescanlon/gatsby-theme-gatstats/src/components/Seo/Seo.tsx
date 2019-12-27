@@ -1,5 +1,4 @@
 import * as React from 'react'
-
 import { Helmet } from 'react-helmet'
 
 import { ISiteMetadata } from '../../types'
@@ -24,6 +23,8 @@ export const Seo: React.FC<ISeoProps> = ({
   const formatTitleTemplate = `${title} ${
     titleTemplate ? `| ${titleTemplate}` : ''
   }`
+
+  console.log('seo: ', `${siteURL}${path}`)
 
   return (
     <Helmet

@@ -54,7 +54,7 @@
     "query-string": "^6.9.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-helmet": "^6.0.0-beta",
+    "react-helmet": "^5.2.1",
     "react-live": "^2.2.2",
     "react-transition-group": "^4.3.0",
     "theme-ui": "^0.2.52",
