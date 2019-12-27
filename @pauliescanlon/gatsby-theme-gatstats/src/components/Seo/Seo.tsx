@@ -47,8 +47,8 @@ export const Seo: React.FC<ISeoProps> = ({
     >
       <html lang={lang} />
       <meta name="description" content={description} />
-      {image ? <meta name="image" content={`${siteURL}/${image}`} /> : null}
-      {image ? <meta name="image:alt" content={description} /> : null}
+      <meta name="image" content={`${siteURL}/${image}`} />
+      <meta name="image:alt" content={description} />
       <meta
         name="gatsby-theme"
         content="@pauliescanlon/gatsby-theme-gatstats"
@@ -56,41 +56,20 @@ export const Seo: React.FC<ISeoProps> = ({
       <meta name="keywords" content={keywords.join(', ')} />
 
       {/* Facebook */}
-      <meta property="og:type" content="website" />
+      {path ? <meta property="og:type" content="article" /> : null}
       <meta property="og:title" content={formatTitleTemplate} />
-
-      {path ? (
-        <meta property="og:url" content={`${siteURL}${path}`} />
-      ) : (
-        <meta property="og:url" content={siteURL} />
-      )}
-
+      <meta property="og:url" content={`${siteURL}${path ? path : ''}`} />
       <meta property="og:description" content={description} />
-
-      {image ? (
-        <meta property="og:image" content={`${siteURL}/${image}`} />
-      ) : null}
-      {image ? (
-        <meta property="og:image:alt" content={description}></meta>
-      ) : null}
+      <meta property="og:image" content={`${siteURL}/${image}`} />
+      <meta property="og:image:alt" content={description}></meta>
 
       {/* Twitter */}
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={formatTitleTemplate} />
-
-      {path ? (
-        <meta name="twitter:url" content={`${siteURL}${path}`} />
-      ) : (
-        <meta name="twitter:url" content={siteURL} />
-      )}
-
+      <meta name="twitter:url" content={`${siteURL}${path ? path : ''}`} />
       <meta name="twitter:description" content={description} />
-      {image ? (
-        <meta name="twitter:image" content={`${siteURL}/${image}`} />
-      ) : null}
-      {image ? (
-        <meta name="twitter:image:alt" content={description}></meta>
-      ) : null}
+      <meta name="twitter:image" content={`${siteURL}/${image}`} />
+      <meta name="twitter:image:alt" content={description}></meta>
       <meta name="twitter:creator" content={siteURL}></meta>
     </Helmet>
   )
