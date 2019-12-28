@@ -27,6 +27,7 @@ export const Search: React.FC<ISearchProps> = ({
           selection ? onSearch(selection.value) : onSearch('')
         }
         selectedItem={selectedTag ? selectedTag : ''}
+        itemToString={item => (item ? item : '')}
       >
         {({
           getInputProps,

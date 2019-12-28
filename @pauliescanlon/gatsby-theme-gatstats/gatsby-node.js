@@ -19,8 +19,27 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const result = await graphql(`
     query {
-      allMdx {
+      allMdx(
+        filter: { frontmatter: { icon: { eq: null } } }
+        sort: { order: DESC, fields: [frontmatter___date] }
+      ) {
         edges {
+          previous {
+            frontmatter {
+              title
+            }
+            fields {
+              slug
+            }
+          }
+          next {
+            frontmatter {
+              title
+            }
+            fields {
+              slug
+            }
+          }
           node {
             id
             fields {
@@ -36,11 +55,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
   }
 
-  result.data.allMdx.edges.forEach(({ node }) => {
+  const posts = result.data.allMdx.edges
+
+  posts.forEach(({ node, previous, next }, index) => {
     createPage({
       path: node.fields.slug,
       component: path.join(__dirname, `src/layouts/post.tsx`),
-      context: { id: node.id }
+      context: {
+        id: node.id,
+        prev: index === 0 ? null : previous,
+        next: index === posts.length - 1 ? null : next
+      }
     })
   })
 }

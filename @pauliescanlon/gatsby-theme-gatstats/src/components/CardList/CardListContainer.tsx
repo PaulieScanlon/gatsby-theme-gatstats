@@ -19,7 +19,7 @@ export const CardListContainer: React.FC<ICardListContainerProps> = ({
 
   const handleSearchParam = (filterValue: string) => {
     !filterValue
-      ? history.replaceState(null, null, location.pathname)
+      ? history.replaceState(null, '', location.pathname)
       : history.replaceState({}, '', `?tag=${filterValue}`)
 
     setSearchParam(filterValue)
@@ -27,7 +27,7 @@ export const CardListContainer: React.FC<ICardListContainerProps> = ({
 
   React.useEffect(() => {
     const filterVal = queryString.parse(location.search).tag
-    filterVal && setSearchParam(filterVal)
+    filterVal && setSearchParam(filterVal as string)
   }, [])
 
   return (

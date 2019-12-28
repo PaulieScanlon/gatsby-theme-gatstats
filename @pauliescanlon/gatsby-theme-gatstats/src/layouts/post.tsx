@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import * as React from 'react'
 import { jsx, Styled, useThemeUI } from 'theme-ui'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 import Img from 'gatsby-image'
@@ -13,6 +13,7 @@ import { Seo } from '../components/Seo'
 import { Code } from '../components/Code'
 
 import { formatDate, colorRange } from '../utils'
+import { ButtonIcon } from '../components/ButtonIcon'
 
 // https://www.lekoarts.de/en/blog/language-tabs-for-gatsbys-code-blocks
 const components = {
@@ -26,11 +27,12 @@ const components = {
   wrapper: ({ children }: any) => <React.Fragment>{children}</React.Fragment>
 }
 
-const Post = ({ data: { mdx, site }, ...props }: any) => {
+const Post = ({ data: { mdx, site }, pageContext, ...props }: any) => {
   const context = useThemeUI()
 
-  const { timeToRead, wordCount, excerpt, fields } = mdx
+  const { body, timeToRead, wordCount, excerpt, fields } = mdx
   const { title, date, tags, featuredImage, embeddedImages } = mdx.frontmatter
+  const { next, prev } = pageContext
 
   // https://deltaskelta.github.io/blog/using-gatsby-images-with-gatsby-mdx/
   const embedded: { [k: string]: React.ReactNode } = {}
@@ -53,7 +55,7 @@ const Post = ({ data: { mdx, site }, ...props }: any) => {
   return (
     <article
       sx={{
-        mb: 7
+        mb: 5
       }}
     >
       <Seo
@@ -135,14 +137,46 @@ const Post = ({ data: { mdx, site }, ...props }: any) => {
 
       <MDXProvider components={components}>
         <MDXRenderer embedded={embedded} location={props.location}>
-          {mdx.body}
+          {body}
         </MDXRenderer>
       </MDXProvider>
+      <Styled.div
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          mt: 5,
+          a: {
+            ':focus': {
+              outline: 'none'
+            }
+          }
+        }}
+      >
+        <span>
+          {prev && (
+            <Link to={prev.fields.slug} tabIndex={-1}>
+              <ButtonIcon iconPath="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z" />
+            </Link>
+          )}
+        </span>
+        <span>
+          {next && (
+            <Link to={next.fields.slug} tabIndex={-1}>
+              <ButtonIcon iconPath="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+            </Link>
+          )}
+        </span>
+      </Styled.div>
     </article>
   )
 }
 
-// 21266d50-dea9-55e5-8192-9b41cd6346c6
+// {
+//   mdx(id: {eq: "64d8121e-1838-50ff-b8bf-cf5dff069084"}) {
+//     id
+//     excerpt
+//   }
+// }
 export const contentQuery = graphql`
   query postQuery($id: String) {
     site {
