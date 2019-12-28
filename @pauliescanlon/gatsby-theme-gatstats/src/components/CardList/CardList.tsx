@@ -35,6 +35,7 @@ export const CardList: React.FC<ICardListProps> = ({ listItems }) => {
             <Box
               key={index}
               sx={{
+                display: 'flex',
                 width: ['100%', '100%', '50%']
               }}
             >
@@ -42,6 +43,7 @@ export const CardList: React.FC<ICardListProps> = ({ listItems }) => {
                 to={slug}
                 sx={{
                   display: 'flex',
+                  flex: '1 1 auto',
                   textDecoration: 'none',
                   borderRadius: 1,
                   mb: 4,

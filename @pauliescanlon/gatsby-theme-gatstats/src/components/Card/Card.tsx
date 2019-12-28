@@ -46,6 +46,9 @@ export const Card: React.FC<IPostProps> = ({ ...props }) => {
 
       <Styled.div
         sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          flex: '1 1 auto',
           p: [2, 3]
         }}
       >
@@ -68,7 +71,13 @@ export const Card: React.FC<IPostProps> = ({ ...props }) => {
         >
           {formatDate(date)}
         </Styled.div>
-        <Styled.p>{excerpt}</Styled.p>
+        <Styled.p
+          sx={{
+            flex: '1 1 auto'
+          }}
+        >
+          {excerpt}
+        </Styled.p>
         <ul
           sx={{
             display: 'flex',
@@ -87,15 +96,6 @@ export const Card: React.FC<IPostProps> = ({ ...props }) => {
             </Tag>
           ))}
         </ul>
-        <Styled.div
-          sx={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-            '> :nth-of-type(odd)': {
-              mr: 2
-            }
-          }}
-        ></Styled.div>
         <Styled.div
           sx={{
             color: 'textMuted',
