@@ -113,13 +113,15 @@ Embedding images into `.mdx` can be tricky but using `MdxRenderer` we can still 
 
 ### frontmatter
 
-Add locally sourced images to frontmatter using `embeddedImages` and import the `EmbeddedImage` component from the theme.
+Add locally sourced images to frontmatter using `embeddedImages` then pass a reference to them to the `<EmbeddedImage />` component via props.
 
-Then use it to reference an image from `embeddedImages`. There's a couple of optional helper props for `width` and `justifyContent` so you get a bit more control over sizd and alignment.
+The `<EmbeddedImage />` component is part of the theme and is passed to all `.mdx` files using the `MDXProvider` so you don't have to import anything for this to work.
+
+There's a couple of optional helper props for `width` and `justifyContent` so you get a bit more control over sizd and alignment.
 
 ### EmbeddedImage
 
-The EmbeddedImage component accepts a width prop which can be used to control the image size. The `width` prop can either be a single string which will apply the the same size across all breakpoints or an array of sizes to use across the breakpoints defined in the theme.
+The `<EmbeddedImage />` component accepts a width prop which can be used to control the image size. The `width` prop can either be a single string which will apply the the same size across all breakpoints or an array of sizes to use across the breakpoints defined in the theme.
 
 ```
 ---
@@ -127,9 +129,6 @@ embeddedImages:
   - image1.jpg
   - image2.jpg
 ---
-
-import { EmbeddedImage } from '@pauliescanlon/gatsby-theme-gatstats/src/components/EmbeddedImage'
-
 
 Post body text
 

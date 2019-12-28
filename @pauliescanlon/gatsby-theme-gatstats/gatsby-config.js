@@ -20,6 +20,7 @@ module.exports = () => {
       'gatsby-plugin-theme-ui',
       'gatsby-plugin-typescript',
       'gatsby-transformer-sharp',
+      'gatsby-plugin-twitter',
       {
         resolve: 'gatsby-plugin-mdx',
         options: {

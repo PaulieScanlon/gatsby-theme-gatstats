@@ -11,6 +11,9 @@ import { preToCodeBlock } from 'mdx-utils'
 import { Tag } from '../components/Tag'
 import { Seo } from '../components/Seo'
 import { Code } from '../components/Code'
+import { EmbeddedImage } from '../components/EmbeddedImage'
+import { YouTube, IYouTubeProps } from '../components/YouTube'
+import { Tweet, ITweetProps } from '../components/Twitter'
 
 import { formatDate, colorRange } from '../utils'
 import { ButtonIcon } from '../components/ButtonIcon'
@@ -24,6 +27,9 @@ const components = {
     }
     return <pre {...preProps} />
   },
+  YouTube: (props: IYouTubeProps) => <YouTube {...props} />,
+  Tweet: (props: ITweetProps) => <Tweet {...props} />,
+  EmbeddedImage: (props: any) => <EmbeddedImage {...props} />,
   wrapper: ({ children }: any) => <React.Fragment>{children}</React.Fragment>
 }
 
@@ -140,6 +146,7 @@ const Post = ({ data: { mdx, site }, pageContext, ...props }: any) => {
           {body}
         </MDXRenderer>
       </MDXProvider>
+
       <Styled.div
         sx={{
           display: 'flex',
