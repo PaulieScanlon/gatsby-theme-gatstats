@@ -4,7 +4,14 @@ const headings = {
   fontWeight: 'heading',
   lineHeight: 'normal',
   wordBreak: 'break-word',
-  margin: 0
+  margin: 0,
+  a: {
+    // content: `"∞"`,
+    fontSize: 'inherit',
+    fontWeight: 'inherit',
+    lineHeight: 'inherit',
+    color: 'inherit'
+  }
 }
 
 const anchors = {

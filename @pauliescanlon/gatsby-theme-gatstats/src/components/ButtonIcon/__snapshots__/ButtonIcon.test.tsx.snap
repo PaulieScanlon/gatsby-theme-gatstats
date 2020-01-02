@@ -115,6 +115,12 @@ exports[`<ButtonIcon> renders correctly 1`] = `
           "py": 3,
         },
         "h1": Object {
+          "a": Object {
+            "color": "inherit",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "lineHeight": "inherit",
+          },
           "color": "text",
           "fontFamily": "heading",
           "fontSize": Array [
@@ -129,6 +135,12 @@ exports[`<ButtonIcon> renders correctly 1`] = `
           "wordBreak": "break-word",
         },
         "h2": Object {
+          "a": Object {
+            "color": "inherit",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "lineHeight": "inherit",
+          },
           "color": "text",
           "fontFamily": "heading",
           "fontSize": Array [
@@ -142,6 +154,12 @@ exports[`<ButtonIcon> renders correctly 1`] = `
           "wordBreak": "break-word",
         },
         "h3": Object {
+          "a": Object {
+            "color": "inherit",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "lineHeight": "inherit",
+          },
           "color": "text",
           "fontFamily": "heading",
           "fontSize": Array [
@@ -155,6 +173,12 @@ exports[`<ButtonIcon> renders correctly 1`] = `
           "wordBreak": "break-word",
         },
         "h4": Object {
+          "a": Object {
+            "color": "inherit",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "lineHeight": "inherit",
+          },
           "color": "text",
           "fontFamily": "heading",
           "fontSize": Array [
@@ -168,6 +192,12 @@ exports[`<ButtonIcon> renders correctly 1`] = `
           "wordBreak": "break-word",
         },
         "h5": Object {
+          "a": Object {
+            "color": "inherit",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "lineHeight": "inherit",
+          },
           "color": "text",
           "fontFamily": "heading",
           "fontSize": Array [
@@ -181,6 +211,12 @@ exports[`<ButtonIcon> renders correctly 1`] = `
           "wordBreak": "break-word",
         },
         "h6": Object {
+          "a": Object {
+            "color": "inherit",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "lineHeight": "inherit",
+          },
           "color": "text",
           "fontFamily": "heading",
           "fontSize": Array [
@@ -427,6 +463,12 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
           "py": 3,
         },
         "h1": Object {
+          "a": Object {
+            "color": "inherit",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "lineHeight": "inherit",
+          },
           "color": "text",
           "fontFamily": "heading",
           "fontSize": Array [
@@ -441,6 +483,12 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
           "wordBreak": "break-word",
         },
         "h2": Object {
+          "a": Object {
+            "color": "inherit",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "lineHeight": "inherit",
+          },
           "color": "text",
           "fontFamily": "heading",
           "fontSize": Array [
@@ -454,6 +502,12 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
           "wordBreak": "break-word",
         },
         "h3": Object {
+          "a": Object {
+            "color": "inherit",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "lineHeight": "inherit",
+          },
           "color": "text",
           "fontFamily": "heading",
           "fontSize": Array [
@@ -467,6 +521,12 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
           "wordBreak": "break-word",
         },
         "h4": Object {
+          "a": Object {
+            "color": "inherit",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "lineHeight": "inherit",
+          },
           "color": "text",
           "fontFamily": "heading",
           "fontSize": Array [
@@ -480,6 +540,12 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
           "wordBreak": "break-word",
         },
         "h5": Object {
+          "a": Object {
+            "color": "inherit",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "lineHeight": "inherit",
+          },
           "color": "text",
           "fontFamily": "heading",
           "fontSize": Array [
@@ -493,6 +559,12 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
           "wordBreak": "break-word",
         },
         "h6": Object {
+          "a": Object {
+            "color": "inherit",
+            "fontSize": "inherit",
+            "fontWeight": "inherit",
+            "lineHeight": "inherit",
+          },
           "color": "text",
           "fontFamily": "heading",
           "fontSize": Array [
@@ -732,6 +804,12 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
             "py": 3,
           },
           "h1": Object {
+            "a": Object {
+              "color": "inherit",
+              "fontSize": "inherit",
+              "fontWeight": "inherit",
+              "lineHeight": "inherit",
+            },
             "color": "text",
             "fontFamily": "heading",
             "fontSize": Array [
@@ -746,6 +824,12 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
             "wordBreak": "break-word",
           },
           "h2": Object {
+            "a": Object {
+              "color": "inherit",
+              "fontSize": "inherit",
+              "fontWeight": "inherit",
+              "lineHeight": "inherit",
+            },
             "color": "text",
             "fontFamily": "heading",
             "fontSize": Array [
@@ -759,6 +843,12 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
             "wordBreak": "break-word",
           },
           "h3": Object {
+            "a": Object {
+              "color": "inherit",
+              "fontSize": "inherit",
+              "fontWeight": "inherit",
+              "lineHeight": "inherit",
+            },
             "color": "text",
             "fontFamily": "heading",
             "fontSize": Array [
@@ -772,6 +862,12 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
             "wordBreak": "break-word",
           },
           "h4": Object {
+            "a": Object {
+              "color": "inherit",
+              "fontSize": "inherit",
+              "fontWeight": "inherit",
+              "lineHeight": "inherit",
+            },
             "color": "text",
             "fontFamily": "heading",
             "fontSize": Array [
@@ -785,6 +881,12 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
             "wordBreak": "break-word",
           },
           "h5": Object {
+            "a": Object {
+              "color": "inherit",
+              "fontSize": "inherit",
+              "fontWeight": "inherit",
+              "lineHeight": "inherit",
+            },
             "color": "text",
             "fontFamily": "heading",
             "fontSize": Array [
@@ -798,6 +900,12 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
             "wordBreak": "break-word",
           },
           "h6": Object {
+            "a": Object {
+              "color": "inherit",
+              "fontSize": "inherit",
+              "fontWeight": "inherit",
+              "lineHeight": "inherit",
+            },
             "color": "text",
             "fontFamily": "heading",
             "fontSize": Array [
@@ -1280,6 +1388,12 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
                 "py": 3,
               },
               "h1": Object {
+                "a": Object {
+                  "color": "inherit",
+                  "fontSize": "inherit",
+                  "fontWeight": "inherit",
+                  "lineHeight": "inherit",
+                },
                 "color": "text",
                 "fontFamily": "heading",
                 "fontSize": Array [
@@ -1294,6 +1408,12 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
                 "wordBreak": "break-word",
               },
               "h2": Object {
+                "a": Object {
+                  "color": "inherit",
+                  "fontSize": "inherit",
+                  "fontWeight": "inherit",
+                  "lineHeight": "inherit",
+                },
                 "color": "text",
                 "fontFamily": "heading",
                 "fontSize": Array [
@@ -1307,6 +1427,12 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
                 "wordBreak": "break-word",
               },
               "h3": Object {
+                "a": Object {
+                  "color": "inherit",
+                  "fontSize": "inherit",
+                  "fontWeight": "inherit",
+                  "lineHeight": "inherit",
+                },
                 "color": "text",
                 "fontFamily": "heading",
                 "fontSize": Array [
@@ -1320,6 +1446,12 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
                 "wordBreak": "break-word",
               },
               "h4": Object {
+                "a": Object {
+                  "color": "inherit",
+                  "fontSize": "inherit",
+                  "fontWeight": "inherit",
+                  "lineHeight": "inherit",
+                },
                 "color": "text",
                 "fontFamily": "heading",
                 "fontSize": Array [
@@ -1333,6 +1465,12 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
                 "wordBreak": "break-word",
               },
               "h5": Object {
+                "a": Object {
+                  "color": "inherit",
+                  "fontSize": "inherit",
+                  "fontWeight": "inherit",
+                  "lineHeight": "inherit",
+                },
                 "color": "text",
                 "fontFamily": "heading",
                 "fontSize": Array [
@@ -1346,6 +1484,12 @@ exports[`<ButtonIcon> renders the correct styles for :focus 1`] = `
                 "wordBreak": "break-word",
               },
               "h6": Object {
+                "a": Object {
+                  "color": "inherit",
+                  "fontSize": "inherit",
+                  "fontWeight": "inherit",
+                  "lineHeight": "inherit",
+                },
                 "color": "text",
                 "fontFamily": "heading",
                 "fontSize": Array [
