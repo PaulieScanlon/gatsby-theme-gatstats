@@ -62,6 +62,7 @@ export const YearChartContainer = () => {
       render={data => {
         const nowYear = new Date().getFullYear()
         const lastYear = nowYear - 1
+        const emptyMonths = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
         const postsByMonth = data.allMdx.edges
           .map((item: IYearChartQuery) => item.node.frontmatter.date)
@@ -69,17 +70,24 @@ export const YearChartContainer = () => {
             const year = new Date(date).getFullYear()
             const month = new Date(date).getMonth()
 
-            dates[year] = dates[year] || [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-            dates[year][month]++
+            if (year == nowYear || year == lastYear) {
+              dates[year] = dates[year] || [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+              dates[year][month]++
+            }
 
             return dates
           }, [])
 
-        const currentYearData = postsByMonth[nowYear].map(convertToChartObject)
+        const currentYearData = postsByMonth[nowYear]
+          ? postsByMonth[nowYear].map(convertToChartObject)
+          : emptyMonths.map(convertToChartObject)
 
-        const previousYearData = postsByMonth[lastYear].map(
-          convertToChartObject
-        )
+        const previousYearData = postsByMonth[lastYear]
+          ? postsByMonth[lastYear].map(convertToChartObject)
+          : emptyMonths.map(convertToChartObject)
+
+        // TODO compare the two arrays and create an array that
+        // calculates the max count value from both so i can pass it in for the yScale
 
         return (
           <Panel heading="Posts">

@@ -47,6 +47,9 @@ export const DaysChartContainer = () => {
         }
       `}
       render={data => {
+        const nowYear = new Date().getFullYear()
+        const emptyDays = [0, 0, 0, 0, 0, 0, 0]
+
         const postsByDay = data.allMdx.edges
           .map((item: IDaysChartQuery) => item.node.frontmatter.date)
           .reduce((dates: Dictionary<DayCount>, date: string) => {
@@ -59,9 +62,9 @@ export const DaysChartContainer = () => {
             return dates
           }, [])
 
-        const nowYear = new Date().getFullYear()
-
-        const currentYearData = postsByDay[nowYear].map(convertToChartObject)
+        const currentYearData = postsByDay[nowYear]
+          ? postsByDay[nowYear].map(convertToChartObject)
+          : emptyDays.map(convertToChartObject)
 
         return (
           <Panel heading="Posts" subHeading="By day of the week">
