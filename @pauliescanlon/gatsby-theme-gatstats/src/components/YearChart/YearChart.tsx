@@ -59,7 +59,8 @@ const YearChartComponent: React.FC<IYearChartProps> = ({ ...props }: any) => {
   })
 
   const yScale = scaleLinear({
-    domain: [0, Math.max(...currentYearData.map(count))]
+    // @TODO, the mzx is gonna need to be taken from the max value in either the previousYearData or currentYearData
+    domain: [0, Math.max(...previousYearData.map(count))]
   })
 
   const x = (d: ILineChart) => xScale(month(d))

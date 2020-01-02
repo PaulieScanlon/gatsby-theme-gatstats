@@ -60,6 +60,9 @@ export const YearChartContainer = () => {
         }
       `}
       render={data => {
+        const nowYear = new Date().getFullYear()
+        const lastYear = nowYear - 1
+
         const postsByMonth = data.allMdx.edges
           .map((item: IYearChartQuery) => item.node.frontmatter.date)
           .reduce((dates: Dictionary<MonthCount>, date: string) => {
@@ -72,14 +75,11 @@ export const YearChartContainer = () => {
             return dates
           }, [])
 
-        const nowYear = new Date().getFullYear()
-        const lastYear = nowYear - 1
-
         const currentYearData = postsByMonth[nowYear].map(convertToChartObject)
 
-        const previousYearData = postsByMonth[lastYear]
-          ? postsByMonth[lastYear].map(convertToChartObject)
-          : null
+        const previousYearData = postsByMonth[lastYear].map(
+          convertToChartObject
+        )
 
         return (
           <Panel heading="Posts">

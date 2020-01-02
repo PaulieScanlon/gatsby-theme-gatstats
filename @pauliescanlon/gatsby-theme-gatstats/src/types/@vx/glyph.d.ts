@@ -382,6 +382,83 @@ declare module '@vx/glyph' {
         ): any
       }
 
+      namespace cx {
+        function isRequired(
+          p0: any,
+          p1: any,
+          p2: any,
+          p3: any,
+          p4: any,
+          p5: any
+        ): any
+      }
+
+      namespace cy {
+        function isRequired(
+          p0: any,
+          p1: any,
+          p2: any,
+          p3: any,
+          p4: any,
+          p5: any
+        ): any
+      }
+
+      namespace r {
+        function isRequired(
+          p0: any,
+          p1: any,
+          p2: any,
+          p3: any,
+          p4: any,
+          p5: any
+        ): any
+      }
+
+      namespace onMouseEnter {
+        function isRequired(
+          p0: any,
+          p1: any,
+          p2: any,
+          p3: any,
+          p4: any,
+          p5: any
+        ): any
+      }
+
+      namespace onMouseLeave {
+        function isRequired(
+          p0: any,
+          p1: any,
+          p2: any,
+          p3: any,
+          p4: any,
+          p5: any
+        ): any
+      }
+
+      namespace onTouchStart {
+        function isRequired(
+          p0: any,
+          p1: any,
+          p2: any,
+          p3: any,
+          p4: any,
+          p5: any
+        ): any
+      }
+
+      namespace onTouchEnd {
+        function isRequired(
+          p0: any,
+          p1: any,
+          p2: any,
+          p3: any,
+          p4: any,
+          p5: any
+        ): any
+      }
+
       namespace left {
         function isRequired(
           p0: any,
