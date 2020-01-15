@@ -154,3 +154,5 @@ You know about component shadowing right? By shadowing the `filePath/fileName` y
 Once such component might be `src/components/Code/Code.tsx` this file is in charge of formatting code snippets. For the time being the only way to format the colours used in code snippets is to change the theme used by `prism-react-renderer`
 
 If you need to re-style the code snippets shadow this component and change the bits you need.
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P31B7G8)
