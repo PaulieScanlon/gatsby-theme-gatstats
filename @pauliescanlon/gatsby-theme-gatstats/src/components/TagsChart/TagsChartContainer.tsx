@@ -22,7 +22,10 @@ export const TagsChartContainer = () => {
       query={graphql`
         query tagsChartQuery {
           allMdx(
-            filter: { fileAbsolutePath: { regex: "//posts//" } }
+            filter: {
+              fileAbsolutePath: { regex: "//posts//" }
+              frontmatter: { status: { ne: "draft" } }
+            }
             sort: { order: DESC, fields: [frontmatter___date] }
           ) {
             group(field: frontmatter___tags) {

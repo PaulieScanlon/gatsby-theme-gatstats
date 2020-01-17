@@ -33,6 +33,7 @@ module.exports = () => {
           component: require.resolve('./src/layouts/layout.tsx')
         }
       },
+      // Theme pages
       {
         resolve: 'gatsby-source-filesystem',
         options: {
@@ -45,6 +46,14 @@ module.exports = () => {
         options: {
           name: 'pages',
           path: path.resolve(`src/pages`)
+        }
+      },
+      // Theme posts
+      {
+        resolve: 'gatsby-source-filesystem',
+        options: {
+          name: 'pages',
+          path: path.resolve(__dirname, `src/posts`)
         }
       },
       {

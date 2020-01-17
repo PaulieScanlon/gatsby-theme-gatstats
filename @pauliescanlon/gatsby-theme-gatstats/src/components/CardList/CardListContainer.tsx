@@ -10,7 +10,9 @@ import { CardList } from './CardList'
 import { Search } from '../Search'
 
 interface ICardListContainerProps extends History {}
+
 const DIR_NAME = 'posts'
+const STATUS = 'draft'
 
 export const CardListContainer: React.FC<ICardListContainerProps> = ({
   location
@@ -34,7 +36,10 @@ export const CardListContainer: React.FC<ICardListContainerProps> = ({
     <StaticQuery
       query={graphql`
         query listQuery {
-          allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
+          allMdx(
+            sort: { order: DESC, fields: [frontmatter___date] }
+            filter: { frontmatter: { status: { ne: "draft" } } }
+          ) {
             group(field: frontmatter___tags) {
               fieldValue
               totalCount
@@ -54,6 +59,7 @@ export const CardListContainer: React.FC<ICardListContainerProps> = ({
                   title
                   tags
                   date
+                  status
                   featuredImage {
                     childImageSharp {
                       fixed(fit: COVER, width: 130, height: 130) {
@@ -78,6 +84,7 @@ export const CardListContainer: React.FC<ICardListContainerProps> = ({
         }
       `}
       render={data => {
+        // console.log(data)
         // TODO sort out the any types!
         const listItems = data.allMdx.edges
           .map((item: any) => {

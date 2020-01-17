@@ -20,7 +20,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(`
     query {
       allMdx(
-        filter: { frontmatter: { icon: { eq: null } } }
+        filter: { frontmatter: { status: { ne: "draft" }, icon: { eq: null } } }
         sort: { order: DESC, fields: [frontmatter___date] }
       ) {
         edges {
