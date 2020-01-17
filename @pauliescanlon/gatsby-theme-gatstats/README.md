@@ -18,7 +18,7 @@
 
 ##### ... or a dashblog if you prefer? 🤷‍♂️
 
-Properties sourced from frontmatter in `src/posts/[name].mdx` are used to create data visualisations to wow your readers.
+Properties sourced from frontmatter in `src/posts/[name].mdx` are used to create data visualizations to wow your readers.
 
 ## 👁️ Preview
 
@@ -60,7 +60,7 @@ module.exports = {
 
 ### directory structure
 
-If you'd like to add more pages or posts add them to your src dir. **At least 1 post with a featuredImage and embeddedImage is reqiured in the `posts` dir**
+If you'd like to add more pages and posts add them to your src dir.
 
 <!-- prettier-ignore -->
 ```
@@ -77,7 +77,7 @@ If you'd like to add more pages or posts add them to your src dir. **At least 1 
 
 ### frontmatter setup
 
-For **pages** use the following template. The icon field is a path for any icon. This is example is from [Material Icons](https://material.io/resources/icons/?style=baseline). The icon fild is what is used to determin if an `.mdx` file is used as a navigation item or not.
+For **pages** use the following template. The icon field is a path for any icon. This is an example is from [Material Icons](https://material.io/resources/icons/?style=baseline). The icon property is whats used to determine if an `.mdx` file is a page or a post. Pages appear in the side bar navigation
 
 ```
 ---
@@ -96,9 +96,9 @@ For **posts** use the following template
 ```
 ---
 title: Some Post
-
 tags: ["Gatsbyjs", "React"]
 date: 2019-11-13
+status: draft // setting the status to draft hides the post from blog
 featuredImage: some-image.jpg
 embeddedImages:
   - some-embeddedImage.jpg
@@ -117,7 +117,7 @@ Add locally sourced images to frontmatter using `embeddedImages` then pass a ref
 
 The `<EmbeddedImage />` component is part of the theme and is passed to all `.mdx` files using the `MDXProvider` so you don't have to import anything for this to work.
 
-There's a couple of optional helper props for `width` and `justifyContent` so you get a bit more control over sizd and alignment.
+There's a couple of optional helper props for `width` and `justifyContent` so you get a bit more control over size and alignment.
 
 ### EmbeddedImage
 

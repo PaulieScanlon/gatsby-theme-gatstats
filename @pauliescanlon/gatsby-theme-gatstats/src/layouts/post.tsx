@@ -206,6 +206,7 @@ export const contentQuery = graphql`
       frontmatter {
         title
         tags
+        status
         date(formatString: "MMMM DD, YYYY")
         featuredImage {
           childImageSharp {

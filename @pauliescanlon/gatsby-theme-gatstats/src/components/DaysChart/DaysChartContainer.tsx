@@ -33,7 +33,10 @@ export const DaysChartContainer = () => {
       query={graphql`
         query daysChartQuery {
           allMdx(
-            filter: { fileAbsolutePath: { regex: "//posts//" } }
+            filter: {
+              fileAbsolutePath: { regex: "//posts//" }
+              frontmatter: { status: { ne: "draft" } }
+            }
             sort: { fields: [frontmatter___date] }
           ) {
             edges {

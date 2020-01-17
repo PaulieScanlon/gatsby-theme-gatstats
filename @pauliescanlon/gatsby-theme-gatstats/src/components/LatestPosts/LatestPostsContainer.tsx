@@ -5,6 +5,8 @@ import { jsx, Styled } from 'theme-ui'
 import { Panel } from '../Panel'
 import { LatestPosts } from './LatestPosts'
 
+const STATUS = 'draft'
+
 import { ILatestPosts } from '../../types'
 
 export const LatestPostsContainer = () => {
@@ -13,7 +15,10 @@ export const LatestPostsContainer = () => {
       query={graphql`
         query latestPostQuery {
           allMdx(
-            filter: { fileAbsolutePath: { regex: "//posts//" } }
+            filter: {
+              fileAbsolutePath: { regex: "//posts//" }
+              frontmatter: { status: { ne: "draft" } }
+            }
             sort: { order: DESC, fields: [frontmatter___date] }
             limit: 2
           ) {
@@ -25,7 +30,7 @@ export const LatestPostsContainer = () => {
                 }
                 frontmatter {
                   title
-
+                  status
                   date
                 }
               }
@@ -34,7 +39,7 @@ export const LatestPostsContainer = () => {
         }
       `}
       render={data => {
-        const { edges } = data.allMdx
+        const listItems = data.allMdx.edges
 
         return (
           <Panel heading="Latest Posts" subHeading="New posts!">
@@ -43,7 +48,7 @@ export const LatestPostsContainer = () => {
                 mb: 3
               }}
             />
-            {edges.map((item: ILatestPosts, index: number) => {
+            {listItems.map((item: ILatestPosts, index: number) => {
               const { slug } = item.node.fields
 
               return (
