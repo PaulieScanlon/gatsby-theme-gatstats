@@ -25,7 +25,7 @@ To see the full Formik setup with validation used in this page here's the [src](
       .required('Please enter an email address'),
     message: Yup.string().required('Please enter a message')
   })}
-  onSubmit={(values, { setSubmitting }) => {
+  onSubmit={(values, { setSubmitting, resetForm }) => {
     const encode = (data) => {
       return Object.keys(data)
         .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
@@ -37,11 +37,15 @@ To see the full Formik setup with validation used in this page here's the [src](
       body: encode({ "form-name": "contact", ...values })
     })
     .then(() => {
-      setSubmitting(false)
+      setTimeout(() => {
+        setSubmitting(false)
+         resetForm()
+      }, 2000)
     })
     .catch((error) => {
       console.log('form error: ', error)
       setSubmitting(false)
+     
     })
   }}
 >
@@ -97,7 +101,7 @@ To see the full Formik setup with validation used in this page here's the [src](
             isSubmitting || errors.name || errors.email || errors.message
           }
         >
-          Submit
+        { isSubmitting ? <Spinner /> : 'Submit' }
         </Button>
         <div style={{ height: 48 }} />
       </NetlifyForm>

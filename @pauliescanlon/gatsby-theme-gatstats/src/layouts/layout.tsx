@@ -20,6 +20,7 @@ import { TextArea, ITextAreaProps } from '../components/TextArea'
 import { InputLabel, IInputLabelProps } from '../components/InputLabel'
 import { InputAnnounce, IInputAnnounceProps } from '../components/InputAnnounce'
 import { Button, IButtonProps } from '../components/Button'
+import { Spinner } from '../components/Spinner'
 
 import { formatPathname } from '../utils'
 import { ILocation } from '../types'
@@ -36,7 +37,8 @@ const components = {
   InputAnnounce: ({ children, ...props }: IInputAnnounceProps) => (
     <InputAnnounce {...props}>{children}</InputAnnounce>
   ),
-  Button: (props: IButtonProps) => <Button {...props} />
+  Button: (props: IButtonProps) => <Button {...props} />,
+  Spinner: () => <Spinner />
 }
 
 const Layout: React.FC = ({ children }) => {
