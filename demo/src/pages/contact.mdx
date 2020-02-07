@@ -8,7 +8,9 @@ import * as Yup from "yup"
 
 # Contact
 
-You can use the form elements provided by GatStats (storybook link) and by adding the `netlify` attribute to the `<NetlifForm />` component (source link) you can setup serverless forms using Netlify's [built-in form service](https://www.netlify.com/products/forms/)
+You can use the form elements provided by GatStats (storybook link) `<NetlifForm />` component (source link) you can setup serverless forms using Netlify's [built-in form service](https://www.netlify.com/products/forms/)
+
+To see the full Formik setup with validation used in this page here's the [src](https://github.com/PaulieScanlon/gatsby-theme-gatstats/blob/master/demo/src/pages/contact.mdx)
 
 <Formik
   initialValues={{
@@ -24,10 +26,23 @@ You can use the form elements provided by GatStats (storybook link) and by addin
     message: Yup.string().required('Please enter a message')
   })}
   onSubmit={(values, { setSubmitting }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2))
+    const encode = (data) => {
+      return Object.keys(data)
+        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+        .join('&')
+    } 
+    fetch('/?no-cache=1', {
+      method: "POST",
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ "form-name": "contact", ...values })
+    })
+    .then(() => {
       setSubmitting(false)
-    }, 400)
+    })
+    .catch((error) => {
+      console.log('form error: ', error)
+      setSubmitting(false)
+    })
   }}
 >
   {({

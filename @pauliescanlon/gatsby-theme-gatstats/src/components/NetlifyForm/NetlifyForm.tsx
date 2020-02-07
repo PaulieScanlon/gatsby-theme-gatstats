@@ -12,6 +12,7 @@ export const NetlifyForm: React.FC<INetlifyFormProps> = ({
   <form
     {...rest}
     data-netlify="true"
+    data-netlify-honeypot="bot-field"
     method="POST"
     sx={{ display: 'flex', flexDirection: 'column', p: 2 }}
   >

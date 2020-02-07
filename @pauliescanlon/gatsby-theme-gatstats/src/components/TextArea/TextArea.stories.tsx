@@ -1,10 +1,10 @@
 import * as React from 'react'
 
-import { TextInput } from '.'
+import { TextArea } from '.'
 import { NetlifyForm } from '../NetlifyForm'
 
 export default {
-  title: 'TextInput',
+  title: 'TextArea',
   decorators: [
     (storFn: any) => (
       <div style={{ color: '#fff' }}>
@@ -13,14 +13,14 @@ export default {
     )
   ],
   parameters: {
-    component: TextInput,
-    componentSubtitle: 'TextInput is ...'
+    component: TextArea,
+    componentSubtitle: 'TextArea is ...'
   }
 }
 
-export const usage = () => <TextInput />
+export const usage = () => <TextArea />
 
-export const placeholder = () => <TextInput placeholder="Placeholder text" />
+export const placeholder = () => <TextArea placeholder="Placeholder text" />
 
 placeholder.story = {
   parameters: {
