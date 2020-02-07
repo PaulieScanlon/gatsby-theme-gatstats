@@ -64,6 +64,7 @@ If you use the [NetlifyForm]((https://gatsby-theme-gatstats.netlify.com/storyboo
   }) => {
     return (
       <NetlifyForm name="contact" onSubmit={handleSubmit}>
+        <TextInput type='hidden' name='bot-field'/>
         <InputLabel for='name'>Your name</InputLabel>
         <TextInput
           name="name"
