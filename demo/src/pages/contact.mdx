@@ -8,9 +8,13 @@ import * as Yup from "yup"
 
 # Contact
 
-You can use the form elements provided by GatStats (storybook link) `<NetlifForm />` component (source link) you can setup serverless forms using Netlify's [built-in form service](https://www.netlify.com/products/forms/)
+GatStats provides a number of form short codes for use in `.mdx`, see the Storybook links below
 
-To see the full Formik setup with validation used in this page here's the [src](https://github.com/PaulieScanlon/gatsby-theme-gatstats/blob/master/demo/src/pages/contact.mdx)
+- [TextInput](https://gatsby-theme-gatstats.netlify.com/storybook/?path=/story/textinput--usage)
+- [TextArea](https://gatsby-theme-gatstats.netlify.com/storybook/?path=/story/textarea--usage)
+- [InputAnnounce](https://gatsby-theme-gatstats.netlify.com/storybook/?path=/story/inputannounce--usage)
+
+If you use the [NetlifyForm]((https://gatsby-theme-gatstats.netlify.com/storybook/?path=/story/netlifyform--usage)) component you can setup serverless forms using Netlify's [built-in form service](https://www.netlify.com/products/forms/), and here's the [source code](https://github.com/PaulieScanlon/gatsby-theme-gatstats/blob/master/demo/src/pages/contact.mdx) including [Formik](https://jaredpalmer.com/formik/) setup and [Yup](https://github.com/jquense/yup) validation used to create the contact form on this page.
 
 <Formik
   initialValues={{

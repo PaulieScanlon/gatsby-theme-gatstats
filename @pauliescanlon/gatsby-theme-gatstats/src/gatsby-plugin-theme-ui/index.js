@@ -183,7 +183,6 @@ export default {
       fontSize: [1, 2],
       fontWeight: 'body',
       lineHeight: '28px',
-      marginBottom: 3,
       p: {
         color: 'text'
       }

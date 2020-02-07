@@ -245,7 +245,6 @@ exports[`<Icon> renders correctly 1`] = `
           ],
           "fontWeight": "body",
           "lineHeight": "28px",
-          "marginBottom": 3,
           "p": Object {
             "color": "text",
           },
