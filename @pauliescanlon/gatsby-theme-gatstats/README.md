@@ -45,12 +45,12 @@ module.exports = {
     title: "Your blog title",
     description: "I like tech",
     keywords: ["tech", "blog", "boop"],
-    siteUrl: 'https://gatsby-theme-gatstats.netlify.com/'
-    siteImage: 'name-of-open-graphy-image.jpg' // pop an image in the static folder to use it as og:image
+    siteUrl: 'https://gatsby-theme-gatstats.netlify.com/',
+    siteImage: 'name-of-open-graphy-image.jpg', // pop an image in the static folder to use it as og:image
     config: {
       headerHeight: 64,
       sideBarWidth: 240,
-      twitter: 'pauliescanlon' // no need to include the @
+      twitter: 'pauliescanlon', // no need to include the @
       github: 'pauliescanlon'
     },
   },
