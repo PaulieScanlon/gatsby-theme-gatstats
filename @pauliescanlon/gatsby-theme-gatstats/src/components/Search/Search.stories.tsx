@@ -5,7 +5,9 @@ import { Search } from './Search'
 export default {
   title: 'Search',
   decorators: [
-    (storFn: any) => <div style={{ minHeight: 300 }}>{storFn()}</div>
+    (storFn: any) => (
+      <div style={{ minHeight: 300, color: '#fff' }}>{storFn()}</div>
+    )
   ],
   parameters: {
     component: Search,
@@ -15,6 +17,7 @@ export default {
 
 export const usage = () => (
   <Search
+    selectedTag="TypeScript"
     filterData={[
       { value: 'TypeScript' },
       { value: 'React' },

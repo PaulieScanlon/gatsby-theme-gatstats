@@ -71,10 +71,10 @@ export default {
       light: {
         text: '#111111',
         textSecondary: '#333333',
-        textMuted: '#969cce',
+        textMuted: '#d2d5f2',
 
-        primary: '#F7B8E6',
-        secondary: '#A2C7EA',
+        primary: '#f98ddc',
+        secondary: '#87bff5',
 
         surface: '#fafafa',
         background: '#ffffff',

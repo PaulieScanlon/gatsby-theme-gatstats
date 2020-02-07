@@ -7,17 +7,19 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "clean": "gatsby clean",
-    "format": "prettier --write src/**/*.{js,jsx}",
+    "format": "prettier --write src/**/*.{js,jsx,mdx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
     "@pauliescanlon/gatsby-theme-gatstats": "*",
+    "formik": "^2.1.4",
     "gatsby": "^2.18.5",
     "gatsby-plugin-google-analytics": "^2.1.29",
     "react": "^16.10.2",
-    "react-dom": "^16.10.2"
+    "react-dom": "^16.10.2",
+    "yup": "^0.28.1"
   },
   "devDependencies": {}
 }

@@ -1,0 +1,91 @@
+---
+title: Contact
+icon: "M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+---
+
+import { Formik, Form, Field, ErrorMessage } from "formik"
+import * as Yup from "yup"
+
+# Contact
+
+You can use the form elements provided by GatStats (storybook link) and by adding the `netlify` attribute to the `<NetlifForm />` component (source link) you can setup serverless forms using Netlify's [built-in form service](https://www.netlify.com/products/forms/)
+
+<Formik
+  initialValues={{
+    name: '',
+    email: '',
+    message: ''
+  }}
+  validationSchema={Yup.object().shape({
+    name: Yup.string().required('Please enter a name'),
+    email: Yup.string()
+      .email()
+      .required('Please enter an email address'),
+    message: Yup.string().required('Please enter a message')
+  })}
+  onSubmit={(values, { setSubmitting }) => {
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2))
+      setSubmitting(false)
+    }, 400)
+  }}
+>
+  {({
+    values,
+    errors,
+    touched,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    isSubmitting
+  }) => {
+    return (
+      <NetlifyForm name="contact" onSubmit={handleSubmit}>
+        <InputLabel>Your name</InputLabel>
+        <TextInput
+          name="name"
+          placeholder="Paul"
+          value={values.name}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
+        {errors.name && touched.name ? (
+          <InputAnnounce>{errors.name}</InputAnnounce>
+        ) : null}
+        <InputLabel>Your email</InputLabel>
+        <TextInput
+          name="email"
+          type="email"
+          placeholder="paul@email.com"
+          value={values.email}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
+        {errors.email && touched.email ? (
+          <InputAnnounce>{errors.email}</InputAnnounce>
+        ) : null}
+        <InputLabel>Your message</InputLabel>
+        <TextArea
+          name="message"
+          placeholder="Hello there!"
+          value={values.message}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
+        {errors.message && touched.message ? (
+          <InputAnnounce>{errors.message}</InputAnnounce>
+        ) : null}
+        <div style={{ height: 24 }} />
+        <Button
+          type="submit"
+          disabled={
+            isSubmitting || errors.name || errors.email || errors.message
+          }
+        >
+          Submit
+        </Button>
+        <div style={{ height: 48 }} />
+      </NetlifyForm>
+    )
+  }}
+</Formik>

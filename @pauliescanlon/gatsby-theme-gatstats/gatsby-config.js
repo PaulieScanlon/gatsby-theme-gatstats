@@ -16,6 +16,7 @@ module.exports = () => {
       }
     },
     plugins: [
+      'gatsby-plugin-sharp',
       'gatsby-plugin-react-helmet',
       'gatsby-plugin-theme-ui',
       'gatsby-plugin-typescript',

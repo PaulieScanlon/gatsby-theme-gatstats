@@ -19,11 +19,11 @@ exports[`<ToggleSwitch> renders correctly 1`] = `
         "modes": Object {
           "light": Object {
             "background": "#ffffff",
-            "primary": "#F7B8E6",
-            "secondary": "#A2C7EA",
+            "primary": "#f98ddc",
+            "secondary": "#87bff5",
             "surface": "#fafafa",
             "text": "#111111",
-            "textMuted": "#969cce",
+            "textMuted": "#d2d5f2",
             "textSecondary": "#333333",
             "transparent": "rgba(0,0,0,0)",
           },
