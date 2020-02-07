@@ -64,7 +64,7 @@ If you use the [NetlifyForm]((https://gatsby-theme-gatstats.netlify.com/storyboo
   }) => {
     return (
       <NetlifyForm name="contact" onSubmit={handleSubmit}>
-        <InputLabel>Your name</InputLabel>
+        <InputLabel for='name'>Your name</InputLabel>
         <TextInput
           name="name"
           placeholder="Paul"
@@ -75,7 +75,7 @@ If you use the [NetlifyForm]((https://gatsby-theme-gatstats.netlify.com/storyboo
         {errors.name && touched.name ? (
           <InputAnnounce>{errors.name}</InputAnnounce>
         ) : null}
-        <InputLabel>Your email</InputLabel>
+        <InputLabel for='email'>Your email</InputLabel>
         <TextInput
           name="email"
           type="email"
@@ -87,7 +87,7 @@ If you use the [NetlifyForm]((https://gatsby-theme-gatstats.netlify.com/storyboo
         {errors.email && touched.email ? (
           <InputAnnounce>{errors.email}</InputAnnounce>
         ) : null}
-        <InputLabel>Your message</InputLabel>
+        <InputLabel for='message'>Your message</InputLabel>
         <TextArea
           name="message"
           placeholder="Hello there!"
