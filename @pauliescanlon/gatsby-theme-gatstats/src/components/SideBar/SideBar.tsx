@@ -12,6 +12,11 @@ import { ToggleSwitch } from '../ToggleSwitch'
 interface ISideBarProps extends ISiteMetadata {
   /** Array of Links to display */
   links: ILink[]
+  /** Config from metaMetadata */
+  config: {
+    sideBarWidth: number
+    headerHeight: number
+  }
 }
 
 export const SideBar: React.FC<ISideBarProps> = ({ config, links }) => {
@@ -64,7 +69,7 @@ export const SideBar: React.FC<ISideBarProps> = ({ config, links }) => {
             pt: 3,
             flexDirection: 'column',
             flexBasis: '100%',
-            overflowY: 'scroll',
+            overflowY: 'auto',
             WbkitOverflowScrolling: 'touch'
           }}
         >

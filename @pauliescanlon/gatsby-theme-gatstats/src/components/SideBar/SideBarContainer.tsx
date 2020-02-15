@@ -74,6 +74,7 @@ export const SideBarContainer: React.FC = () => (
             paddingLeft: 0,
             paddingRight: 0,
             paddingTop: 0,
+            width: config.sideBarWidth,
             zIndex: 2
           }}
         >
