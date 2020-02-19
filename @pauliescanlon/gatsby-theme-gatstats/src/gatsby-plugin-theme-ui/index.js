@@ -200,7 +200,10 @@ export default {
       px: 3,
       py: 3,
       my: 3,
-      mx: [2, 3]
+      mx: [2, 3],
+      p: {
+        mb: 0
+      }
     },
 
     table: {
